@@ -6,7 +6,7 @@ trait UserHelpers
 {
     public function getIsAdminAttribute()
     {
-        return $this->role->is_super ? $this->role->is_super : $this->role->is_admin;
+        return $this->role->is_admin;
     }
 
     public function getIsSuperAttribute()

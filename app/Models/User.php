@@ -34,13 +34,17 @@ class User extends Authenticatable
     // jobs that are created by designers only
     public function jobs()
     {
-        return $this->hasMany(Job::class);
+        return $this->belongsToMany(Job::class);
     }
 
     // only clients have one balance record
     public function balance()
     {
         return $this->hasOne(Balance::class);
+    }
+
+    public function role() {
+        return $this->belongsTo(Role::class);
     }
 
 

@@ -19,9 +19,10 @@ class CreatePaymentPlansTable extends Migration
             $table->string('path')->nullable();
             $table->string('slug_ar')->nullable();
             $table->string('slug_en')->nullable();
-            $table->integer('amount')->nullable();
+
             $table->integer('bonus')->nullable();
-            $table->boolean('is_applied')->default(0);
+            $table->boolean('apply_bonus')->default(0);
+            $table->integer('order')->nullable();
             $table->boolean('active')->default(0);
             $table->timestamps();
         });

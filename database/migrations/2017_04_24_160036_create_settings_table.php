@@ -38,7 +38,7 @@ class CreateSettingsTable extends Migration
             $table->string('description_en')->nullable();
             $table->string('on_home_speech_ar')->nullable();
             $table->string('on_home_speech_en')->nullable();
-            $table->boolean('maintenance_mode')->default(1);
+            $table->boolean('maintenance_mode')->default(0);
             $table->timestamps();
         });
     }

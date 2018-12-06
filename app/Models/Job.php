@@ -18,9 +18,9 @@ class Job extends PrimaryModel
         return $this->hasMany(Version::class);
     }
 
-    public function designer()
+    public function designers()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsToMany(User::class);
     }
 
     /**

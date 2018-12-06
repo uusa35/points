@@ -22,6 +22,7 @@ class CreateServicesTable extends Migration
             $table->string('caption_ar')->nullable();
             $table->string('caption_en')->nullable();
             $table->integer('duration')->nullable();
+            $table->string('path')->nullable();
 
             $table->boolean('on_sale')->default(0);
             $table->integer('points')->unsigned();

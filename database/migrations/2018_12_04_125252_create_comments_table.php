@@ -19,6 +19,7 @@ class CreateCommentsTable extends Migration
             $table->string('path')->nullable();
             $table->morphs('commentable');
             $table->boolean('active')->default(1);
+            $table->boolean('viewed')->nullable();
             $table->timestamps();
         });
     }

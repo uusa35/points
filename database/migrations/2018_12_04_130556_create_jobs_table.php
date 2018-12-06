@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVersionsTable extends Migration
+class CreateJobsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,17 +12,19 @@ class CreateVersionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('versions', function (Blueprint $table) {
+        Schema::create('jobs', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('notes')->nullable();
             $table->text('description')->nullable();
+            $table->text('notes')->nullable();
             $table->string('path')->nullable();
-            $table->boolean('active')->default(1);
+            $table->boolean('active')->nullable();
             $table->boolean('is_complete')->default(0);
-            $table->boolean('is_viewed')->default(0);
+            $table->boolean('is_client_viewed')->default(0);
+            $table->boolean('is_designer_viewed')->default(0);
 
-            $table->integer('job_id')->unsigned()->index();
-            $table->foreign('job_id')->references('id')->on('jobs');
+
+            $table->integer('order_id')->unsigned()->index();
+            $table->foreign('order_id')->references('id')->on('orders');
             $table->timestamps();
         });
     }
@@ -34,6 +36,6 @@ class CreateVersionsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('versions');
+        Schema::drop('jobs');
     }
 }

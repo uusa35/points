@@ -26,6 +26,7 @@ class CreateRolesTable extends Migration
             $table->boolean('is_designer')->default(0);
             $table->boolean('is_visible')->default(0);
             $table->boolean('active')->default(1);
+            $table->integer('order')->nullable();
             $table->timestamps();
         });
     }

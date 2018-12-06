@@ -9,7 +9,7 @@
                 </div>
                 <div class="details">
                     <div class="number">
-                        <span data-counter="counterup" data-value="10">{{ $activeProjects->count() }}</span>
+                        <span data-counter="counterup" data-value="10">10000</span>
                     </div>
                     <div class="desc ">{{ trans('total_active_projects') }}</div>
                 </div>
@@ -22,7 +22,7 @@
                 </div>
                 <div class="details">
                     <div class="number">
-                        <span data-counter="counterup" data-value="10">{{ $activeClients->count() }}</span>
+                        <span data-counter="counterup" data-value="10">10000</span>
                     </div>
                     <div class="desc">{{ trans('general.total_active_clients') }}</div>
                 </div>
@@ -35,7 +35,7 @@
                 </div>
                 <div class="details">
                     <div class="number">
-                        <span data-counter="counterup" data-value="10">{{ $activeSubContractors->count() }}</span></div>
+                        <span data-counter="counterup" data-value="10">10000</span></div>
                     <div class="desc">{{ trans('general.total_active_subcontractors') }}</div>
                 </div>
             </a>
@@ -47,7 +47,7 @@
                 </div>
                 <div class="details">
                     <div class="number">
-                        <span data-counter="counterup" data-value="10">{{ $activeConsultants->count() }}</span>
+                        <span data-counter="counterup" data-value="10">10000</span>
                     </div>
                     <div class="desc">{{ trans('general.total_active_consultants') }}</div>
                 </div>

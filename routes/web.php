@@ -16,7 +16,12 @@ Route::group(['namespace' => 'Frontend','as' => 'frontend.', 'middleware' => []]
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('language/{locale}', 'HomeController@changeLanguage')->name('language.change');
 });
-Route::group(['namespace' => 'Backend','prefix' => 'backend', 'as' => 'backend.', 'middleware' => ['auth', 'adminAccessOnly','onlyActiveUsers']], function () {
+Route::group(['namespace' => 'Backend','prefix' => 'backend', 'as' => 'backend.', 'middleware' => ['auth', 'admin','onlyActiveUsers']], function () {
+
+    Route::get('/', 'HomeController@index')->name('index');
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('language/{locale}', 'HomeController@changeLanguage')->name('language.change');
+    Route::resource('user', 'UserController');
 
 });
 
