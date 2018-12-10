@@ -21,7 +21,7 @@ class OrdersTableSeeder extends Seeder
             $job = factory(Job::class)->create();
             $o->images()->saveMany(factory(Image::class, 3)->create());
             $o->job()->save($job);
-            $job->onlyDesigners()->saveMany(User::onlyDesigners()->get()->random()->take(2));
+            $job->designers()->onlyDesigners()->saveMany(User::onlyDesigners()->get()->random()->take(2));
             $job->comments()->saveMany(factory(Comment::class,10)->create());
             $job->versions()->saveMany(factory(Version::class, 3)->create()->each(function ($v) {
                 $v->images()->saveMany(factory(Image::class, 3)->create());

@@ -34,7 +34,7 @@
           <entry key="env" value="22" />
           <entry key="js" value="2" />
           <entry key="json" value="10" />
-          <entry key="php" value="8719" />
+          <entry key="php" value="8778" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -43,7 +43,7 @@
           <entry key="CSS" value="6" />
           <entry key="JSON" value="10" />
           <entry key="JavaScript" value="2" />
-          <entry key="PHP" value="8342" />
+          <entry key="PHP" value="8401" />
           <entry key="PLAIN_TEXT" value="27" />
         </counts>
       </usages-collector>
@@ -53,7 +53,7 @@
           <entry key="env" value="1" />
           <entry key="js" value="5" />
           <entry key="json" value="3" />
-          <entry key="php" value="266" />
+          <entry key="php" value="267" />
           <entry key="ttf" value="1" />
         </counts>
       </usages-collector>
@@ -63,7 +63,7 @@
           <entry key="CSS" value="1" />
           <entry key="JSON" value="3" />
           <entry key="JavaScript" value="5" />
-          <entry key="PHP" value="254" />
+          <entry key="PHP" value="255" />
           <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
@@ -76,8 +76,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/database/seeds/OrdersTableSeeder.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="414">
-                  <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+                <state relative-caret-position="486">
+                  <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
                   <folding>
                     <element signature="e#7#30#0#PHP" expanded="true" />
                   </folding>
@@ -137,20 +137,20 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_04_125252_create_comments_table.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="396">
-                  <caret line="23" column="11" lean-forward="true" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+                <state relative-caret-position="630">
+                  <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Models/Job.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="540">
-                  <caret line="30" column="30" lean-forward="true" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
+                <state relative-caret-position="360">
+                  <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
                 </state>
               </provider>
             </entry>
@@ -181,6 +181,15 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="432">
                   <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/Models/UserHelpers.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="421">
+                  <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
                 </state>
               </provider>
             </entry>
@@ -269,10 +278,10 @@
         <option value="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" />
         <option value="$PROJECT_DIR$/database/factories/BalanceFactory.php" />
         <option value="$PROJECT_DIR$/database/factories/JobFactory.php" />
-        <option value="$PROJECT_DIR$/app/Models/Job.php" />
         <option value="$PROJECT_DIR$/app/Models/Order.php" />
         <option value="$PROJECT_DIR$/app/Models/Version.php" />
         <option value="$PROJECT_DIR$/database/factories/CommentFactory.php" />
+        <option value="$PROJECT_DIR$/app/Models/Job.php" />
         <option value="$PROJECT_DIR$/database/seeds/OrdersTableSeeder.php" />
       </list>
     </option>
@@ -580,7 +589,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="CommentF&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/CommentFactory.php&#10;comments_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2018_12_04_125252_create_comments_table.php&#10;Version&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Version.php&#10;Order&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Order.php&#10;Job&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Job.php&#10;version.php&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Version.php&#10;Orderst&#9;null&#9;null&#10;OrderFa&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/OrderFactory.php&#10;jobs_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2018_12_04_130556_create_jobs_table.php&#10;Order.php&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Order.php&#10;User&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/User.php&#10;JobFa&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/JobFactory.php&#10;balances_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2018_12_04_150611_create_balances_table.php&#10;BalanceF&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/BalanceFactory.php&#10;UsersTab&#9;FILE&#9;file:///Users/mac/Sites/points/database/seeds/UsersTableSeeder.php&#10;Trans&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/TransactionFactory.php&#10;Payment&#9;FILE&#9;file:///Users/mac/Sites/points/database/seeds/PaymentPlansTableSeeder.php&#10;Service&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Service.php&#10;order&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Order.php&#10;orders_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2018_12_04_130012_create_orders_table.php&#10;settingF&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/SettingFactory.php&#10;SettingC&#9;null&#9;null&#10;UserFa&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/UserFactory.php&#10;users_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2014_10_12_000000_create_users_table.php&#10;RolesTab&#9;FILE&#9;file:///Users/mac/Sites/points/database/seeds/RolesTableSeeder.php&#10;Datase&#9;FILE&#9;file:///Users/mac/Sites/points/database/seeds/DatabaseSeeder.php&#10;OrdersTab&#9;FILE&#9;file:///Users/mac/Sites/points/database/seeds/OrdersTableSeeder.php&#10;Order.&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Order.php&#10;OrderFac&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/OrderFactory.php&#10;UserHe&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/UserHelpers.php&#10;OrdersTa&#9;FILE&#9;file:///Users/mac/Sites/points/database/seeds/OrdersTableSeeder.php&#10;ServiceTa&#9;null&#9;null&#10;Category&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Category.php&#10;Service.php&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Service.php&#10;Image&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/ImageFactory.php&#10;ServiceTab&#9;FILE&#9;file:///Users/mac/Sites/points/database/seeds/ServicesTableSeeder.php&#10;ServiceFa&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/ServiceFactory.php&#10;DataSe&#9;FILE&#9;file:///Users/mac/Sites/points/database/seeds/DatabaseSeeder.php&#10;ImageF&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/ImageFactory.php&#10;images_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2017_04_24_132934_create_images_table.php&#10;ImageFa&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/ImageFactory.php&#10;CategoriesTa&#9;FILE&#9;file:///Users/mac/Sites/points/database/seeds/CategoriesTableSeeder.php&#10;categories_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2014_04_23_152318_create_categories_table.php&#10;CategoryF&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/CategoryFactory.php&#10;Categor&#9;FILE&#9;file:///Users/mac/Sites/points/database/seeds/CategoriesTableSeeder.php&#10;roles_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2014_02_01_041517_create_roles_table.php&#10;RoleF&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/RoleFactory.php&#10;SettingF&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/SettingFactory.php&#10;settings_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2017_04_24_160036_create_settings_table.php&#10;balances&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2018_12_04_150611_create_balances_table.php" />
+    <property name="SearchEverywhereHistoryKey" value="Job&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Job.php&#10;UserH&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/UserHelpers.php&#10;CommentF&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/CommentFactory.php&#10;comments_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2018_12_04_125252_create_comments_table.php&#10;Version&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Version.php&#10;Order&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Order.php&#10;version.php&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Version.php&#10;Orderst&#9;null&#9;null&#10;OrderFa&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/OrderFactory.php&#10;jobs_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2018_12_04_130556_create_jobs_table.php&#10;Order.php&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Order.php&#10;User&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/User.php&#10;JobFa&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/JobFactory.php&#10;balances_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2018_12_04_150611_create_balances_table.php&#10;BalanceF&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/BalanceFactory.php&#10;UsersTab&#9;FILE&#9;file:///Users/mac/Sites/points/database/seeds/UsersTableSeeder.php&#10;Trans&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/TransactionFactory.php&#10;Payment&#9;FILE&#9;file:///Users/mac/Sites/points/database/seeds/PaymentPlansTableSeeder.php&#10;Service&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Service.php&#10;order&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Order.php&#10;orders_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2018_12_04_130012_create_orders_table.php&#10;settingF&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/SettingFactory.php&#10;SettingC&#9;null&#9;null&#10;UserFa&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/UserFactory.php&#10;users_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2014_10_12_000000_create_users_table.php&#10;RolesTab&#9;FILE&#9;file:///Users/mac/Sites/points/database/seeds/RolesTableSeeder.php&#10;Datase&#9;FILE&#9;file:///Users/mac/Sites/points/database/seeds/DatabaseSeeder.php&#10;OrdersTab&#9;FILE&#9;file:///Users/mac/Sites/points/database/seeds/OrdersTableSeeder.php&#10;Order.&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Order.php&#10;OrderFac&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/OrderFactory.php&#10;UserHe&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/UserHelpers.php&#10;OrdersTa&#9;FILE&#9;file:///Users/mac/Sites/points/database/seeds/OrdersTableSeeder.php&#10;ServiceTa&#9;null&#9;null&#10;Category&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Category.php&#10;Service.php&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Service.php&#10;Image&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/ImageFactory.php&#10;ServiceTab&#9;FILE&#9;file:///Users/mac/Sites/points/database/seeds/ServicesTableSeeder.php&#10;ServiceFa&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/ServiceFactory.php&#10;DataSe&#9;FILE&#9;file:///Users/mac/Sites/points/database/seeds/DatabaseSeeder.php&#10;ImageF&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/ImageFactory.php&#10;images_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2017_04_24_132934_create_images_table.php&#10;ImageFa&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/ImageFactory.php&#10;CategoriesTa&#9;FILE&#9;file:///Users/mac/Sites/points/database/seeds/CategoriesTableSeeder.php&#10;categories_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2014_04_23_152318_create_categories_table.php&#10;CategoryF&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/CategoryFactory.php&#10;Categor&#9;FILE&#9;file:///Users/mac/Sites/points/database/seeds/CategoriesTableSeeder.php&#10;roles_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2014_02_01_041517_create_roles_table.php&#10;RoleF&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/RoleFactory.php&#10;SettingF&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/SettingFactory.php&#10;settings_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2017_04_24_160036_create_settings_table.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="" />
@@ -637,12 +646,12 @@
       <workItem from="1544101713455" duration="1010000" />
       <workItem from="1544302235075" duration="7000" />
       <workItem from="1544346497884" duration="7532000" />
-      <workItem from="1544417333689" duration="12769000" />
+      <workItem from="1544417333689" duration="12898000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36527000" />
+    <option name="totallyTimeSpent" value="36656000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
@@ -837,13 +846,6 @@
           <folding>
             <element signature="e#7#31#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/UserHelpers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="723">
-          <caret line="48" column="5" lean-forward="true" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1042,13 +1044,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Job.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="30" column="30" lean-forward="true" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/Order.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -1063,13 +1058,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_04_125252_create_comments_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="23" column="11" lean-forward="true" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/factories/CommentFactory.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -1080,10 +1068,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_04_125252_create_comments_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/UserHelpers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Job.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/database/seeds/OrdersTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+        <state relative-caret-position="486">
+          <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
           <folding>
             <element signature="e#7#30#0#PHP" expanded="true" />
           </folding>
