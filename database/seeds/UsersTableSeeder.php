@@ -16,7 +16,7 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(User::class, app()->environment('production') ? 5 : 120)->create()->each(function ($user) {
+        factory(User::class, app()->environment('production') ? 4 : 120)->create()->each(function ($user) {
             if ($user->id === 1) {
                 $user->update(['role_id' => Role::where('name', 'super')->first()->id]);
                 $user->galleries()->saveMany(factory(Gallery::class, 3)->create()->each(function ($g) {

@@ -14,9 +14,9 @@ class CreateJobUserPivotTable extends Migration
     {
         Schema::create('job_user', function (Blueprint $table) {
             $table->integer('job_id')->unsigned()->index();
-            $table->foreign('job_id')->references('id')->on('job');
+            $table->foreign('job_id')->references('id')->on('jobs');
             $table->integer('user_id')->unsigned()->index();
-            $table->foreign('user_id')->references('id')->on('user');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->primary(['job_id', 'user_id']);
         });
     }

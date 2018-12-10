@@ -27,53 +27,10 @@
                 </button>
                 <ul class="dropdown-menu" role="menu">
                     <li>
-                        <a href="{{ route('backend.project.create') }}">
-                            <i class="icon-plus"></i> {{ trans('general.create_new_project') }}</a>
+                        <a href="{{ route('backend.order.index') }}">
+                            <i class="icon-plus"></i> {{ trans('general.create_new_products') }}</a>
                     </li>
                     <li class="divider"></li>
-                    <li>
-                        <a href="{{ route('backend.report.create') }}">
-                            <i class="icon-docs"></i> {{ trans('general.create_new_report') }}</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('backend.phase.create') }}">
-                            <i class="icon-layers"></i> {{ trans('general.create_new_phase') }}</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('backend.timeline.create') }}">
-                            <i class="icon-layers"></i> {{ trans('general.create_new_timeline') }}</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('backend.document.create') }}">
-                            <i class="icon-doc"></i> {{ trans('general.create_new_document') }}</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('backend.drawing.create') }}">
-                            <i class="icon-plus"></i> {{ trans('general.create_new_drawing') }}</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('backend.payment.create') }}">
-                            <i class="icon-credit-card"></i> {{ trans('general.create_new_payment') }}</a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="{{ route('backend.user.create') }}">
-                            <i class="icon-user-follow"></i> {{ trans('general.create_new_user') }}
-                            {{--<span class="badge badge-danger">2</span>--}}
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="{{ route('backend.category.create',['parent_id' => 0]) }}">
-                            <i class="icon-user-follow"></i> {{ trans('general.create_new_parent_category') }}
-                            {{--<span class="badge badge-danger">2</span>--}}
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('backend.slider.create') }}">
-                            <i class="icon-plus"></i> {{ trans('general.create_new_slider') }}
-                        </a>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -420,7 +377,7 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-default">
                             <li>
-                                <a href="{{ route('frontend.home') }}">
+                                <a href="{{ route('home') }}">
                                     <i class="icon-home"></i>{{ trans('general.home') }}</a>
                             </li>
                             <li>

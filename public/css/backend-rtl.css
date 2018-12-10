@@ -4393,13 +4393,13 @@ body, html, div, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, thead, tf
     font-family: 'ABeeZee', sans-serif !important;
 }
 
-.page-top , .page-header.navbar .page-logo {
-    background-color: #fbda6c;
-}
+/*.page-top , .page-header.navbar .page-logo {*/
+    /*background-color: dimgrey;*/
+/*}*/
 
-.page-header.navbar {
-    background-color: #fbda6c;
-}
+/*.page-header.navbar {*/
+    /*background-color: dimgrey;*/
+/*}*/
 
 .page-header.navbar .page-top {
     height : 130% !important;
@@ -4433,6 +4433,7 @@ body, html, div, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, thead, tf
 .page-breadcrumb {
     padding: 2px !important;
 }
+
 @font-face {
     font-family: "Cairo";
     src: url('../fonts/Cairo-Bold.ttf') format('embedded-opentype'),

@@ -19,14 +19,9 @@ trait UserHelpers
         return $this->role->is_client;
     }
 
-    public function getIsSubContractorAttribute()
+    public function getIsDesignerAttribute()
     {
-        return $this->role->name === 'subcontractor' ? true : false;
-    }
-
-    public function getIsConsultantAttribute()
-    {
-        return $this->role->name === 'consultant' ? true : false;
+        return $this->role->is_designer;
     }
 
     public function getCategoryNameAttribute()
@@ -38,28 +33,29 @@ trait UserHelpers
     public function scopeOnlyClients($q)
     {
         $q->whereHas('role', function ($q) {
-            return $q->where('name', 'client');
+            return $q->where('is_client', true);
         });
     }
 
-    public function scopeOnlySubContractors($q)
+    public function scopeOnlyDesigners($q)
     {
         $q->whereHas('role', function ($q) {
-            return $q->where('name', 'subcontractor');
+            return $q->where('is_client', true);
         });
     }
 
-    public function scopeOnlyConsultants($q)
+
+    public function scopeOnlySupers($q)
     {
         $q->whereHas('role', function ($q) {
-            return $q->where('name', 'consultant');
+            return $q->where('is_super', true);
         });
     }
 
-    public function scopeOnlySuppliers($q)
+    public function scopeOnlyAdmins($q)
     {
         $q->whereHas('role', function ($q) {
-            return $q->where('name', 'supplier');
+            return $q->where('is_admin', true);
         });
     }
 

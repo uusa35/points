@@ -19,7 +19,7 @@ class RolesTableSeeder extends Seeder
             if ($role->name === 'super') {
                 $role->update(['is_super' => $v === 'super' ? 1 : 0, 'is_visible' => false, 'is_admin' => true]);
             } else if ($role->name === 'admin') {
-                $role->update(['is_admin' => $v === 'admin' ? 1 : 0, 'is_visible' => false, 'is_super' => false]);
+                $role->update(['is_admin' => $v === 'admin' ? 1 : 0, 'is_visible' => false, 'is_super' => false, 'is_admin' => true]);
             } else if ($role->name === 'designer') {
                 $role->update(['is_admin' => $v === 'admin' ? 1 : 0, 'is_visible' => true, 'is_super' => false, 'is_admin' => false, 'is_designer' => true]);
             }

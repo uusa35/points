@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Faker\Generator as Faker;
 
 /*
@@ -13,7 +14,7 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\User::class, function (Faker $faker) {
+$factory->define(User::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
@@ -36,6 +37,6 @@ $factory->define(App\User::class, function (Faker $faker) {
         'api_token' => $faker->iban(null),
         'device_id' => $faker->iban(null),
         'active' => $faker->boolean(true),
-        'role_id' => Role::all()->random()->id,
+        'role_id' => Role::where('is_visible', true)->get()->random()->id,
     ];
 });

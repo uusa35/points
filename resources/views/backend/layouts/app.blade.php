@@ -28,7 +28,13 @@
 @include('backend.partials._confirm_delete_modal')
 <div class="clearfix"></div>
 <div class="page-container">
-    @include('backend.partials.sidebar')
+    @if(auth()->user()->isSuper)
+        @include('backend.partials.sidebar._super_sidebar')
+    @elseif(auth()->user()->isClient)
+        @include('backend.partials.sidebar._client_sidebar')
+    @elseif(auth()->user()->isDesigner)
+        @include('backend.partials.sidebar._designer_sidebar')
+    @endif
     <div class="page-content-wrapper">
         <div class="page-content" style="min-height: 800px;">
             {{--@include('backend.partials.breadcrumbs')--}}
