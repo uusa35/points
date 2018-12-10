@@ -21,10 +21,12 @@ class CreateJobsTable extends Migration
             $table->boolean('is_complete')->default(0);
             $table->boolean('is_client_viewed')->default(0);
             $table->boolean('is_designer_viewed')->default(0);
-
+            $table->integer('priority')->nullable();
+            $table->boolean('is_urgent')->nullable();
 
             $table->integer('order_id')->unsigned()->index();
             $table->foreign('order_id')->references('id')->on('orders');
+
             $table->timestamps();
         });
     }

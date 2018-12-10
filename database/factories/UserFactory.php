@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Role;
 use App\Models\User;
 use Faker\Generator as Faker;
 
@@ -16,7 +17,6 @@ use Faker\Generator as Faker;
 
 $factory->define(User::class, function (Faker $faker) {
     return [
-        'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
         'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
@@ -38,5 +38,10 @@ $factory->define(User::class, function (Faker $faker) {
         'device_id' => $faker->iban(null),
         'active' => $faker->boolean(true),
         'role_id' => Role::where('is_visible', true)->get()->random()->id,
+        'website' => $faker->url,
+        'facebook' => $faker->url,
+        'instagram' => $faker->url,
+        'youtube' => $faker->url,
+        'twitter' => $faker->url,
     ];
 });

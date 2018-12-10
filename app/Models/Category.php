@@ -3,13 +3,14 @@
 namespace App\Models;
 
 use App\Services\Search\QueryFilters;
+use App\Services\Traits\LocaleTrait;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Category extends PrimaryModel
 {
-    public $localeStrings = ['slug'];
+    use LocaleTrait, SoftDeletes;
+    public $localeStrings = ['slug','caption','description'];
     protected $guarded = [''];
-    use SoftDeletes;
 
     /**
      * * ParentCategory

@@ -2,6 +2,14 @@
 
 namespace App\Providers;
 
+use App\Models\Balance;
+use App\Models\Order;
+use App\Models\Transaction;
+use App\Models\User;
+use App\Observers\BalanceObserver;
+use App\Observers\OrderObserver;
+use App\Observers\TransactionObserver;
+use App\Observers\UserObserver;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +21,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        if (app()->environment('production')) {
+            Order::observe(OrderObserver::class);
+            Balance::observe(BalanceObserver::class);
+            User::observe(UserObserver::class);
+            Transaction::observe(TransactionObserver::class);
+        }
     }
 
     /**

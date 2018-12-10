@@ -28,7 +28,6 @@ class CreateOrdersTable extends Migration
             $table->string('fax')->nullable();
             $table->string('whatsapp')->nullable();
             $table->string('snapchat')->nullable();
-            $table->string('qr')->nullable();
             $table->string('iphone')->nullable();
             $table->string('android')->nullable();
             $table->string('path')->nullable();

@@ -1,7 +1,6 @@
 <?php
 
-use App\Models\Gallery;
-use App\Models\Image;
+use App\Models\Balance;
 use App\Models\Project;
 use App\Models\Role;
 use App\Models\User;
@@ -19,10 +18,8 @@ class UsersTableSeeder extends Seeder
         factory(User::class, app()->environment('production') ? 4 : 120)->create()->each(function ($user) {
             if ($user->id === 1) {
                 $user->update(['role_id' => Role::where('name', 'super')->first()->id]);
-                $user->galleries()->saveMany(factory(Gallery::class, 3)->create()->each(function ($g) {
-                    return $g->images()->saveMany(factory(Image::class, 10)->create());
-                }));
             }
+            $user->balance()->save(factory(Balance::class)->create());
         });
     }
 }

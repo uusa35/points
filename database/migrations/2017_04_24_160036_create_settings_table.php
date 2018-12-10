@@ -39,6 +39,13 @@ class CreateSettingsTable extends Migration
             $table->text('address_en')->nullable();
             $table->string('logo')->nullable();
             $table->string('bg')->nullable();
+            $table->string('path')->nullable();
+            $table->string('zapper')->nullable();
+            $table->string('qr')->nullable();
+            $table->string('longitude')->nullable();
+            $table->string('latitude')->nullable();
+            $table->text('on_home_speech_ar')->nullable();
+            $table->text('on_home_speech_en')->nullable();
             $table->boolean('annual_subscription')->default(0);
             $table->timestamps();
         });

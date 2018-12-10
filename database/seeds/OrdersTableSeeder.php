@@ -17,13 +17,14 @@ class OrdersTableSeeder extends Seeder
     public function run()
     {
         factory(Order::class, app()->environment('production') ? 2 : 200)->create()->each(function ($o) {
-            $job = factory(Job::class)->create();
+//            $job = factory(Job::class,1)->create();
+//            dd($job);
             $o->images()->saveMany(factory(Image::class, 3)->create());
-            $o->jobs()->save($job);
-            $job->designers()->saveMany(User::designers()->random()->take(2));
-            $job->versions()->saveMany(factory(Version::class, 3)->create()->each(function ($v) {
-                $v->images()->saveMany(factory(Image::class, 3)->create());
-            }));
+//            $o->jobs()->save($job);
+//            $job->designers()->saveMany(User::designers()->random()->take(2));
+//            $job->versions()->saveMany(factory(Version::class, 3)->create()->each(function ($v) {
+//                $v->images()->saveMany(factory(Image::class, 3)->create());
+//            }));
         });
     }
 }
