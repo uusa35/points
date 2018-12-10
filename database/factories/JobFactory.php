@@ -6,8 +6,8 @@ use Faker\Generator as Faker;
 
 $factory->define(Job::class, function (Faker $faker) {
     return [
-        'description' => $faker->paragraphs,
-        'notes' => $faker->paragraphs,
+        'description' => $faker->paragraph,
+        'notes' => $faker->paragraph,
         'path' => '1.pdf',
         'active' => $faker->boolean,
         'is_complete' => $faker->boolean,

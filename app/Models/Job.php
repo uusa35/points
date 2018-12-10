@@ -10,7 +10,7 @@ class Job extends PrimaryModel
 
     public function order()
     {
-        return $this->belongsTo(Order);
+        return $this->belongsTo(Order::class);
     }
 
     public function versions()

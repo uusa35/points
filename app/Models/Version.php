@@ -20,4 +20,14 @@ class Version extends PrimaryModel
     {
         return $this->morphMany(Comment::class, 'commentable');
     }
+
+    /**
+     * MorphRelation
+     * MorphOne = many hasONe relation
+     * @return \Illuminate\Database\Eloquent\Relations\MorphOne
+     */
+    public function images()
+    {
+        return $this->morphMany(Image::class, 'imagable');
+    }
 }

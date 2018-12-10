@@ -30,4 +30,8 @@ class Order extends PrimaryModel
     {
         return $this->morphMany(Image::class, 'imagable');
     }
+
+    public function job() {
+        return $this->hasOne(Job::class);
+    }
 }
