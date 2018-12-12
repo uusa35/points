@@ -15,7 +15,7 @@
                     <div class="col-lg-12">
                         <h3 class="text-uppercase">{{ trans('general.settings') }}</h3>
                         <hr>
-                        <a href="{{ route('backend.setting.edit',$element->id) }}"
+                        <a href="{{ route('backend.admin.setting.edit',$element->id) }}"
                            class="btn btn-primary pull-right">{{ trans('general.edit') }}</a>
                         <div class="col-md-8">
                             <table class="table table-striped">

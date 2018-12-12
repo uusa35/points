@@ -57,7 +57,7 @@
                                     {{ $element->email }}
                                 </td>
                                 <td>
-                                    <span class="label {{ activeLabel($element->active) }}">{{ activeText($element->active,$element->role->name ) }}</span>
+                                    <span class="label {{ activeLabel($element->active) }}" style="background-color: {{ $element->role->color }}">{{ activeText($element->active,$element->role->name ) }}</span>
                                 </td>
                                 <td>
                                     {{ $element->device_id }}
@@ -74,27 +74,15 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
-                                                <a href="{{ route('backend.user.edit',$element->id) }}">
+                                                <a href="{{ route('backend.admin.user.edit',$element->id) }}">
                                                     <i class="fa fa-fw fa-edit"></i> Edit User</a>
                                             </li>
-                                            @if(!$element->projects->isEmpty())
-                                                <li>
-                                                    <a href="{{ route('backend.project.index',['user_id' => $element->id]) }}">
-                                                        <i class="fa fa-fw fa-list-ul"></i> List Of Projects</a>
-                                                </li>
-                                            @endif
-                                            @if(!$element->isClient)
-                                                <li>
-                                                    <a href="{{ route('backend.gallery.index',['type' => 'user', 'element_id' => $element->id]) }}">
-                                                        <i class="fa fa-fw fa-edit"></i> View Galleries</a>
-                                                </li>
-                                            @endif
                                             <li>
-                                                <a href="{{ route('backend.reset.password',['email' => $element->email]) }}">
+                                                <a href="{{ route('backend.admin.reset.password',['email' => $element->email]) }}">
                                                     <i class="fa fa-fw fa-edit"></i> Reset Password</a>
                                             </li>
                                             <li>
-                                                <a href="{{ route('backend.activate',['model' => 'user','id' => $element->id]) }}">
+                                                <a href="{{ route('backend.admin.activate',['model' => 'user','id' => $element->id]) }}">
                                                     <i class="fa fa-fw fa-check-circle"></i> toggle active</a>
                                             </li>
                                         </ul>

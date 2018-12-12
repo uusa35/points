@@ -24,23 +24,25 @@
 <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-md">
 {{--<body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-sidebar-closed">--}}
 {{--<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">--}}
-@include('backend.partials.nav')
-@include('backend.partials._confirm_delete_modal')
+@auth
+    @include('backend.partials.nav')
+    @include('backend.partials._confirm_delete_modal')
+@endauth
 <div class="clearfix"></div>
 <div class="page-container">
-    @if(auth()->user()->isSuper)
+    @can('admin')
         @include('backend.partials.sidebar._super_sidebar')
-    @elseif(auth()->user()->isClient)
+    @elsecan('client')
         @include('backend.partials.sidebar._client_sidebar')
-    @elseif(auth()->user()->isDesigner)
+    @elsecan('designer')
         @include('backend.partials.sidebar._designer_sidebar')
     @endif
     <div class="page-content-wrapper">
         <div class="page-content" style="min-height: 800px;">
-            {{--@include('backend.partials.breadcrumbs')--}}
-            {{--@include('backend.partials.notifications')--}}
+            @include('backend.partials.breadcrumbs')
+            @include('backend.partials.notifications')
             @include('backend.partials._confirm_delete_modal')
-            @section('content')
+                @section('content')
             @show
         </div>
     </div>

@@ -3,9 +3,13 @@
 namespace App\Models;
 
 
+use App\Services\Traits\LocaleTrait;
+
 class Service extends PrimaryModel
 {
+    use LocaleTrait;
     protected $guarded = [''];
+    protected $localeStrings = ['slug','description','caption'];
 
     public function orders() {
         return $this->hasMany(Order::class);
@@ -19,5 +23,9 @@ class Service extends PrimaryModel
     public function images()
     {
         return $this->morphMany(Image::class, 'imagable');
+    }
+
+    public function category() {
+        return $this->belongsTo(Category::class);
     }
 }

@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
+use App\Services\Traits\LocaleTrait;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable, UserHelpers;
+    use Notifiable, UserHelpers, LocaleTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -25,6 +26,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    protected $localeStrings =  ['name','caption','description','service','address'];
 
     public function orders()
     {

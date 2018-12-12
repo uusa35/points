@@ -6,7 +6,7 @@ trait UserHelpers
 {
     public function getIsAdminAttribute()
     {
-        return $this->role->is_admin;
+        return $this->role->is_super ? $this->role->is_super : $this->role->is_admin;
     }
 
     public function getIsSuperAttribute()
@@ -16,12 +16,12 @@ trait UserHelpers
 
     public function getIsClientAttribute()
     {
-        return $this->role->is_client;
+        return $this->role->is_admin ? $this->role->is_admin : $this->role->is_client;
     }
 
     public function getIsDesignerAttribute()
     {
-        return $this->role->is_designer;
+        return $this->role->is_admin ? $this->role->is_admin : $this->role->is_designer;
     }
 
     public function getCategoryNameAttribute()

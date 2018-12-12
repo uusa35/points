@@ -27,5 +27,10 @@ class ViewComposers
         }
         return $view->with(compact('roles'));
     }
+
+    public function getSettings(View $view) {
+        $settings = Setting::first();
+        return $view->with(compact('settings'));
+    }
 }
 

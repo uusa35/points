@@ -44,6 +44,10 @@ class Category extends PrimaryModel
         return $this->morphMany(Image::class, 'imagable');
     }
 
+    public function services() {
+        return $this->hasMany(Service::class);
+    }
+
 
     /**
      * @param $query

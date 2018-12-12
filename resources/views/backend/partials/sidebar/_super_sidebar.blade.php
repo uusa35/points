@@ -14,7 +14,7 @@
         <ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-hover-submenu page-sidebar-menu-closed"
             data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
             <li class="nav-item {{ activeItem('user') }}">
-                <a href="javascript:;" class="nav-link nav-toggle">
+                <a href="#" class="nav-link nav-toggle">
                     <i class="icon-users"></i>
                     <span class="title">{{ trans('general.users') }}</span>
                     <span class="selected"></span>
@@ -23,16 +23,16 @@
                 <ul class="sub-menu">
                     @foreach($roles as $r)
                         <li class="nav-item start ">
-                            <a href="{{ route('backend.user.index', ['role_id' => $r->id]) }}" class="nav-link ">
+                            <a href="{{ route('backend.admin.user.index', ['role_id' => $r->id]) }}" class="nav-link ">
                                 <i class="icon-user-following"></i>
-                                <span class="title">{{ $r->name }}</span>
+                                <span class="title">{{ $r->slug }}</span>
                             </a>
                         </li>
                     @endforeach
                 </ul>
             </li>
             <li class="nav-item {{ activeItem('order') }}">
-                <a href="{{ route('backend.order.index',['status' => 'paid']) }}" class="nav-link nav-toggle">
+                <a href="{{ route('backend.admin.order.index',['status' => 'on_progress']) }}" class="nav-link nav-toggle">
                     <i class="fa fa-fw fa-newspaper-o"></i>
                     <span class="title">{{ trans('general.orders') }}</span>
                     <span class="selected"></span>
@@ -40,16 +40,30 @@
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item start ">
-                        <a href="{{ route('backend.order.index',['active' => true, 'ongoing' => true]) }}"
+                        <a href="{{ route('backend.admin.order.index',['status' => 'on_progress']) }}"
                            class="nav-link ">
                             <i class="icon-plus"></i>
-                            <span class="title">{{ trans('general.active_ongoing_projects') }}</span>
+                            <span class="title">{{ trans('general.on_progress_orders') }}</span>
+                        </a>
+                    </li>
+                    <li class="nav-item start ">
+                        <a href="{{ route('backend.admin.order.index',['status' => 'is_complete']) }}"
+                           class="nav-link ">
+                            <i class="icon-plus"></i>
+                            <span class="title">{{ trans('general.completed_orders') }}</span>
+                        </a>
+                    </li>
+                    <li class="nav-item start ">
+                        <a href="{{ route('backend.admin.order.index') }}"
+                           class="nav-link ">
+                            <i class="icon-plus"></i>
+                            <span class="title">{{ trans('general.all_orders') }}</span>
                         </a>
                     </li>
                 </ul>
             </li>
             <li class="nav-item {{ activeItem('role') }}">
-                <a href="{{ route('backend.role.index') }}" class="nav-link nav-toggle">
+                <a href="{{ route('backend.admin.role.index') }}" class="nav-link nav-toggle">
                     <i class="icon-lock-open"></i>
                     <span class="title">{{ trans('general.roles') }}</span>
                     <span class="selected"></span>
@@ -57,7 +71,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item start ">
-                        <a href="{{ route('backend.role.index') }}" class="nav-link ">
+                        <a href="{{ route('backend.admin.role.index') }}" class="nav-link ">
                             <i class="icon-pencil"></i>
                             <span class="title">{{ trans('general.role_settings') }}</span>
                         </a>
@@ -67,21 +81,21 @@
 
             {{--categories about us--}}
             <li class="nav-item {{ activeItem('category') }}">
-                <a href="{{ route('backend.category.index') }}" class="nav-link nav-toggle">
+                <a href="{{ route('backend.admin.category.index') }}" class="nav-link nav-toggle">
                     <i class="fa fa-fw fa-list-ol"></i>
                     <span class="title">{{ trans('general.categories') }}</span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item ">
-                        <a href="{{ route('backend.category.index') }}" class="nav-link ">
+                        <a href="{{ route('backend.admin.category.index') }}" class="nav-link ">
                             <i class="fa fa-fw fa-list-ul"></i>
                             <span class="title">{{ trans('general.all_categories') }}</span>
                             <span class="arrow"></span>
                         </a>
                     </li>
                     <li class="nav-item ">
-                        <a href="{{ route('backend.category.create',['parent_id' => 0]) }}" class="nav-link ">
+                        <a href="{{ route('backend.admin.category.create',['parent_id' => 0]) }}" class="nav-link ">
                             <i class="fa fa-fw fa-plus-square"></i>
                             <span class="title">{{ trans('general.create_new_parent_category') }}</span>
                             <span class="arrow"></span>
@@ -92,28 +106,28 @@
 
             {{--Settings--}}
             <li class="nav-item {{ activeItem('setting', ['contactus', 'aboutus']) }}">
-                <a href="{{ route('backend.setting.index') }}" class="nav-link nav-toggle">
+                <a href="{{ route('backend.admin.setting.index') }}" class="nav-link nav-toggle">
                     <i class="fa fa-fw fa-cogs"></i>
                     <span class="title">{{ trans('general.app_settings') }}</span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item ">
-                        <a href="{{ route('backend.setting.index') }}" class="nav-link ">
+                        <a href="{{ route('backend.admin.setting.index') }}" class="nav-link ">
                             <i class="fa fa-fw fa-edit"></i>
                             <span class="title">{{ trans('general.edit_app_settings') }}</span>
                             <span class="arrow"></span>
                         </a>
                     </li>
                     <li class="nav-item ">
-                        <a href="{{ route('backend.slider.index') }}" class="nav-link ">
+                        <a href="{{ route('backend.admin.slider.index') }}" class="nav-link ">
                             <i class="fa fa-fw fa-edit"></i>
                             <span class="title">{{ trans('general.sliders') }}</span>
                             <span class="arrow"></span>
                         </a>
                     </li>
                     <li class="nav-item ">
-                        <a href="{{ route('backend.slider.create') }}" class="nav-link ">
+                        <a href="{{ route('backend.admin.slider.create') }}" class="nav-link ">
                             <i class="fa fa-fw fa-plus"></i>
                             <span class="title">{{ trans('general.create_new_slider') }}</span>
                             <span class="arrow"></span>
@@ -128,7 +142,7 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="{{ route('backend.image.index',['type' => 'user','element_id' => auth()->user()->id]) }}"
+                                <a href="{{ route('backend.admin.image.index',['type' => 'user','element_id' => auth()->user()->id]) }}"
                                    class="nav-link">
                                     <i class="icon-camera"></i>Images</a>
                             </li>

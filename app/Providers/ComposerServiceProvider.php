@@ -13,13 +13,20 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // frontend
+        // backend
         view()->composer([
             'backend.partials.sidebar._super_sidebar',
             'backend.modules.user.create',
             'backend.modules.user.edit',
         ],
             'App\Services\ViewComposers@getRoles');
+
+        // backend.admin
+        view()->composer([
+            'backend.partials.nav',
+            'welcome',
+        ],
+            'App\Services\ViewComposers@getSettings');
 
     }
 

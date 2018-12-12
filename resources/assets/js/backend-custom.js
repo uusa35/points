@@ -6,20 +6,38 @@ $(document).ready(function() {
     $('#dataTable').DataTable({
         "order": [[0, "desc"]],
         "bPaginate": true,
+        // "scrollY":        "500px",
+        // "scrollCollapse": false,
+        "paging":         true,
         "bLengthChange": true,
         "bFilter": true,
         "bInfo": true,
         "bAutoWidth": true,
-        "pageLength": 20
+        "pageLength": 50
+    });
+    $('table[id^="differentDataTable-"]').DataTable({
+        "order": [[0, "desc"]],
+        "bPaginate": true,
+        "scrollY":        "250px",
+        "scrollCollapse": false,
+        "paging":         true,
+        "bLengthChange": true,
+        "bFilter": true,
+        "bInfo": true,
+        "bAutoWidth": true,
+        // "pageLength": 50
     });
     $('table[id^="moreDataTable-"]').DataTable({
         "order": [[0, "desc"]],
         "bPaginate": true,
+        // "scrollY":        "500px",
+        // "scrollCollapse": false,
+        "paging":         true,
         "bLengthChange": true,
         "bFilter": true,
         "bInfo": true,
         "bAutoWidth": true,
-        "pageLength": 20
+        "pageLength": 50
     });
     $(document).on('show.bs.modal', function(event) {
         var element = $(event.relatedTarget) // Button that triggered the modal
@@ -34,6 +52,7 @@ $(document).ready(function() {
     $("#my_multi_select3").multiSelect();
     $("#my_multi_select4").multiSelect();
 });
+
 // tinymce.init({
 //     selector: '.tinymce',
 //     height: 300,

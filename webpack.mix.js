@@ -42,7 +42,6 @@ mix.styles([
     '../metronic_v4.5.6/theme/assets/global/css/plugins.min.css',
     '../metronic_v4.5.6/theme/assets/pages/css/portfolio.min.css',
     '../metronic_v4.5.6/theme/assets/pages/css/profile.min.css',
-
     '../metronic_v4.5.6/theme/assets/layouts/layout2/css/layout.min.css',
     // '../metronic_v4.5.6/theme/assets/layouts/layout/css/themes/darkblue.min.css',
     '../metronic_v4.5.6/theme/assets/layouts/layout2/css/themes/blue.min.css',
@@ -82,7 +81,6 @@ mix.styles([
     '../metronic_v4.5.6/theme_rtl/assets/global/css/plugins-rtl.min.css',
     '../metronic_v4.5.6/theme_rtl/assets/pages/css/profile.min.css',
     '../metronic_v4.5.6/theme_rtl/assets/pages/css/portfolio.min.css',
-
     '../metronic_v4.5.6/theme_rtl/assets/layouts/layout2/css/layout-rtl.min.css',
     // '../metronic_v4.5.6/theme_rtl/assets/layouts/layout/css/themes/darkblue-rtl.min.css',
     '../metronic_v4.5.6/theme_rtl/assets/layouts/layout2/css/themes/blue-rtl.min.css',
@@ -120,6 +118,7 @@ mix.scripts([
         '../metronic_v4.5.6/theme/assets/global/plugins/jquery.sparkline.min.js',
         '../metronic_v4.5.6/theme/assets/pages/scripts/profile.min.js',
         '../metronic_v4.5.6/theme/assets/pages/scripts/portfolio-4.min.js',
+        '../metronic_v4.5.6/theme/assets/pages/scripts/portfolio-1.min.js',
 
         '../metronic_v4.5.6/theme/assets/pages/scripts/components-multi-select.min.js',
         '../metronic_v4.5.6/theme/assets/pages/scripts/components-color-pickers.min.js',
@@ -133,6 +132,8 @@ mix.scripts([
 mix.scripts('resources/assets/js/backend-custom.js', 'public/js/backend-custom.js');
 mix.copyDirectory('../metronic_v4.5.6/theme/assets/global/plugins/simple-line-icons/fonts', 'public/css/fonts');
 mix.copyDirectory('./../metronic_v4.5.6/theme/assets/global/plugins/datatables/images', 'public/plugins/datatables/images');
+mix.copyDirectory('./../metronic_v4.5.6/theme/assets/global/plugins/cubeportfolio/img', 'public/img');
+mix.copyDirectory('./../metronic_v4.5.6/theme/assets/layouts/layout2/img', 'public/img');
 mix.copyDirectory('./node_modules/font-awesome/fonts', 'public/fonts');
 mix.copyDirectory('./node_modules/tinymce/plugins', 'public/js/plugins');
 mix.copyDirectory('./node_modules/tinymce/skins', 'public/js/skins');

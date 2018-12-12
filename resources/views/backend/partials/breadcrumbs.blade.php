@@ -22,12 +22,12 @@
                         <i class="icon-user-following"></i> {{ trans('general.dashboard') }}</a>
                 </li>
                 <li>
-                    <a href="{{ route('frontend.home') }}">
+                    <a href="{{ route('backend.home') }}">
                         <i class="icon-home"></i> {{ trans('general.home') }}</a>
                 </li>
                 <li class="divider"></li>
                 <li>
-                    <a href="{{ route('backend.setting.index') }}">
+                    <a href="{{ route('backend.admin.setting.index') }}">
                         <i class="icon-settings"></i> {{ trans('general.settings') }}</a>
                 </li>
             </ul>

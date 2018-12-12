@@ -16,7 +16,6 @@ class CreateVersionsTable extends Migration
             $table->increments('id');
             $table->text('notes')->nullable();
             $table->text('description')->nullable();
-            $table->string('path')->nullable();
             $table->boolean('active')->default(1);
             $table->boolean('is_complete')->default(0);
             $table->boolean('is_client_viewed')->default(0);

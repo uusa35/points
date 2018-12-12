@@ -18,7 +18,7 @@ class Order extends PrimaryModel
 
     public function client()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class,'user_id');
     }
 
     /**
@@ -31,7 +31,21 @@ class Order extends PrimaryModel
         return $this->morphMany(Image::class, 'imagable');
     }
 
+    /**
+     * MorphRelation
+     * MorphOne = many hasONe relation
+     * @return \Illuminate\Database\Eloquent\Relations\MorphOne
+     */
+    public function files()
+    {
+        return $this->morphMany(File::class, 'filable');
+    }
+
     public function job() {
         return $this->hasOne(Job::class);
+    }
+
+    public function getStatusAttribute() {
+        return $this->is_complete ? 'complete' : 'on_process';
     }
 }

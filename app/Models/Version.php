@@ -30,4 +30,14 @@ class Version extends PrimaryModel
     {
         return $this->morphMany(Image::class, 'imagable');
     }
+
+    /**
+     * MorphRelation
+     * MorphOne = many hasONe relation
+     * @return \Illuminate\Database\Eloquent\Relations\MorphOne
+     */
+    public function files()
+    {
+        return $this->morphMany(File::class, 'filable');
+    }
 }

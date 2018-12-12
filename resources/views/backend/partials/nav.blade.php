@@ -4,7 +4,7 @@
         <!-- BEGIN LOGO -->
         <div class="page-logo" style="display: flex; justify-content: center; align-items: center;">
             <a href="{{ route('backend.home') }}">
-                <img src="{{ asset('img/logo.png') }}" alt="logo"
+                <img src="{{ asset(env('THUMBNAIL').$settings->logo) }}" alt="logo"
                      class="img-logo logo-default"/> </a>
             <div class="menu-toggler sidebar-toggler">
                 <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
@@ -26,11 +26,13 @@
                     <i class="fa fa-angle-down"></i>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                    <li>
-                        <a href="{{ route('backend.order.index') }}">
-                            <i class="icon-plus"></i> {{ trans('general.create_new_products') }}</a>
-                    </li>
-                    <li class="divider"></li>
+                    @can('client')
+                        <li>
+                            <a href="{{ route('backend.client.order.create') }}">
+                                <i class="icon-plus"></i> {{ trans('general.create_new_order') }}</a>
+                        </li>
+                        <li class="divider"></li>
+                    @endcan
                 </ul>
             </div>
         </div>
@@ -390,15 +392,15 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('backend.setting.index') }}">
+                                <a href="{{ route('backend.admin.setting.index') }}">
                                     <i class="icon-settings"></i> {{ trans('general.app_settings') }} </a>
                             </li>
                             <li>
-                                <a href="{{ url('backend/translations') }}">
+                                <a href="{{ url('backend/admin/translations') }}">
                                     <i class="fa fa-fw fa-language"></i> {{ trans('general.translation_manager') }}</a>
                             </li>
                             <li>
-                                <a href="{{ route('backend.export.translation') }}">
+                                <a href="{{ route('backend.admin.export.translation') }}">
                                     <i class="icon-envelope-letter"></i> {{ trans('general.export_translations') }}</a>
                             </li>
                             <li class="divider"></li>

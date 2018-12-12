@@ -17,7 +17,10 @@ class UsersTableSeeder extends Seeder
     {
         factory(User::class, app()->environment('production') ? 4 : 120)->create()->each(function ($user) {
             if ($user->id === 1) {
-                $user->update(['role_id' => Role::where('name', 'super')->first()->id]);
+                $user->update(['role_id' => Role::where('is_super', true)->first()->id]);
+            }
+            if ($user->id === 2) {
+                $user->update(['role_id' => Role::where('name', 'admin')->first()->id]);
             }
             $user->balance()->save(factory(Balance::class)->create());
         });

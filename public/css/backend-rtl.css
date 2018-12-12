@@ -4434,6 +4434,10 @@ body, html, div, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, thead, tf
     padding: 2px !important;
 }
 
+.table-scrollable .dataTable td .btn-group {
+    position: relative;
+}
+
 @font-face {
     font-family: "Cairo";
     src: url('../fonts/Cairo-Bold.ttf') format('embedded-opentype'),
