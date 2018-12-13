@@ -14,12 +14,15 @@ class JobController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Order $element)
+    public function index(Request $request)
     {
-        if(!$element->has('job','>',0)) {
-            return view('backend.order.show', compact('element'))->with('error',trans('general.no_job_for_this_order'));
+        $validate = validator($request->all(), [
+            'order_id' => 'required|exists:orders,id'
+        ]);
+        if ($validate->fails()) {
+            return route('backend.order.show', $request->order_id)->withErrors($validate);
         }
-        $element = $element->job()->with('versions')->get();
+        $element = Job::where(['order_id' => $request->order_id])->with('versions')->first();
         return view('backend.modules.job.index', compact('element'));
     }
 
@@ -36,7 +39,7 @@ class JobController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -47,7 +50,7 @@ class JobController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -59,7 +62,7 @@ class JobController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -71,8 +74,8 @@ class JobController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -83,7 +86,7 @@ class JobController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

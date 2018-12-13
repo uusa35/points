@@ -4,7 +4,7 @@
         @include('backend.partials.forms.form_title')
         <div class="portlet-body form">
             <form class="horizontal-form" role="form" method="POST"
-                  action="{{ route('backend.user.store') }}" enctype="multipart/form-data">
+                  action="{{ route('backend.admin.user.store') }}" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="api_token" value="{{ str_random(rand(10,99)) }}">
                 <div class="form-body">

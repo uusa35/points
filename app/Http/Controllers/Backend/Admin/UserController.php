@@ -20,13 +20,12 @@ class UserController extends Controller
      */
     public function index()
     {
-        $validate = validator(request()->request->all(), [
-            'role_id' => 'required|exists:roles,id'
-        ]);
-        if ($validate->fails()) {
-            return redirect()->route('backend.home')->with('error', 'role does not exist')->withErrors($validate);
+        if(request()->has('role_id')) {
+            $elements = User::where('role_id', request('role_id'))->with('role')->paginate(self::PAGINATE);
+        } else {
+            $elements = User::with('role')->paginate(self::PAGINATE);
         }
-        $elements = User::where('role_id', request('role_id'))->with('role')->paginate(self::PAGINATE);
+
         return view('backend.modules.user.index', compact('elements'));
     }
 
@@ -56,9 +55,9 @@ class UserController extends Controller
         }
 
         if ($element) {
-            return redirect()->route('backend.user.index', ['role_id' => $request->role_id])->with('success', 'user saved');
+            return route('backend.admin.user.index', ['role_id' => $request->role_id])->with('success', 'user saved');
         }
-        return redirect()->route('backend.user.index', ['role_id' => $request->role_id])->with('error', 'error failure');
+        return route('backend.admin.user.index', ['role_id' => $request->role_id])->with('error', 'error failure');
     }
 
     /**
@@ -103,7 +102,7 @@ class UserController extends Controller
             if ($request->hasFile('bg')) {
                 $this->saveMimes($element, $request, ['bg'], ['750', '1334'], false);
             }
-            return redirect()->route('backend.user.index', ['role_id' => $element->role_id])->with('success', 'saved success');
+            return redirect()->route('backend.admin.user.index', ['role_id' => $element->role_id])->with('success', 'saved success');
         }
         return redirect()->back()->with('error', 'failure');
     }
@@ -120,7 +119,7 @@ class UserController extends Controller
         $roleId = $element->role_id;
         if (!$element->projects->isEmpoty()) {
             $element->softDelete();
-            return view('backend.user.index', ['role_id' => $roleId]);
+            return route('backend.admin.user.index', ['role_id' => $roleId]);
         }
         return redirect()->back()->with('error', trans('message.user_is_not_deleted'));
     }
@@ -156,7 +155,7 @@ class UserController extends Controller
         if ($user) {
             $user->password = bcrypt(request()->password);
             $user->save();
-            return redirect()->route('backend.user.index', ['role_id' => $user->role_id])->with('success', 'password changed');
+            return redirect()->route('backend.admin.user.index', ['role_id' => $user->role_id])->with('success', 'password changed');
         }
         return redirect()->back()->with('error', 'error occurred')->withInputs();
     }

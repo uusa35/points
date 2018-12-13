@@ -31,7 +31,6 @@ $factory->define(Order::class, function (Faker $faker) {
         'notes_en' => $faker->sentence,
         'is_paid' => $faker->boolean,
         'is_complete' => $faker->boolean,
-        'on_progress' => $faker->boolean,
         'service_id' => Service::all()->random()->id,
         'user_id' => User::onlyClients()->get()->random()->id,
         'preferred_colors_1' => $faker->colorName,

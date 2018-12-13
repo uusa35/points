@@ -15,9 +15,11 @@ class OrderController extends Controller
      */
     public function index()
     {
-        if(request()->has('status')) {
-            $elements = Order::where([request()->status => true])->with('job.versions','service.category','client')->orderBy('id','desc')->paginate(self::PAGINATE);
-        } else {
+        if(request()->has('is_complete')) {
+            $elements = Order::where(['is_complete' => request()->is_complete])->with('job.versions','service.category','client')->orderBy('id','desc')->paginate(self::PAGINATE);
+        } elseif(request()->has('is_paid')) {
+            $elements = Order::where(['is_paid' => request()->is_paid])->with('job.versions','service.category','client')->orderBy('id','desc')->paginate(self::PAGINATE);
+        }else {
             $elements = Order::with('job.versions','client','service.category')->orderBy('id','desc')->paginate(self::PAGINATE);
         }
         return view('backend.modules.order.index', compact('elements'));

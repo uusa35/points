@@ -12,13 +12,18 @@ Breadcrumbs::for('backend.index', function ($trail) {
 });
 
 // admins
-Breadcrumbs::for('backend.admin.user.index', function ($trail, $elements) {
+Breadcrumbs::for('backend.admin.user.index', function ($trail) {
     $trail->parent('backend.home');
     if (request()->has('role_id')) {
-        $trail->push(trans('general.' . $elements->first()->role->name), route('backend.user.index', ['role_id' => request('role_id')]));
+        $trail->push(trans('general.users'), route('backend.admin.user.index', ['role_id' => request('role_id')]));
     } else {
-        $trail->push(trans('general.user'), route('backend.user.index', ['role_id' => request('role_id')]));
+        $trail->push(trans('general.users'), route('backend.admin.user.index'));
     }
+});
+
+Breadcrumbs::for('backend.admin.user.create', function ($trail) {
+    $trail->parent('backend.admin.user.index');
+    $trail->push(trans('create_user'), route('backend.admin.user.create'));
 });
 
 Breadcrumbs::for('backend.admin.order.show', function ($trail, $element) {
@@ -56,6 +61,11 @@ Breadcrumbs::for('backend.order.index', function ($trail) {
     $trail->push(trans('general.orders'), route('backend.order.index'));
 });
 
+Breadcrumbs::for('backend.order.create', function ($trail) {
+    $trail->parent('backend.order.index');
+    $trail->push(trans('general.order'), route('backend.order.create'));
+});
+
 Breadcrumbs::for('backend.order.show', function ($trail,$element) {
     $trail->parent('backend.order.index');
     $trail->push(trans('general.order'), route('backend.order.show', $element->id));
@@ -80,7 +90,7 @@ Breadcrumbs::for('backend.country.edit', function ($trail, $element) {
 
 Breadcrumbs::for('backend.job.index', function ($trail, $element) {
     $trail->parent('backend.order.index');
-    $trail->push(trans('general.job'), route('backend.job.index',$element));
+    $trail->push(trans('general.job'), route('backend.job.index',['order_id' => $element['order_id']]));
 });
 Breadcrumbs::for('backend.job.create', function ($trail) {
     $trail->parent('backend.job.index');
@@ -88,7 +98,7 @@ Breadcrumbs::for('backend.job.create', function ($trail) {
 });
 
 Breadcrumbs::for('backend.job.show', function ($trail,$element) {
-    $trail->parent('backend.job.index', $element->order);
+    $trail->parent('backend.job.index',['order_id' => $element->order_id]);
     $trail->push(trans('general.show_job'), route('backend.job.show', $element->id));
 });
 

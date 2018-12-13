@@ -15,7 +15,7 @@ class ComposerServiceProvider extends ServiceProvider
     {
         // backend
         view()->composer([
-            'backend.partials.sidebar._super_sidebar',
+            'backend.partials.sidebar.sidebar',
             'backend.modules.user.create',
             'backend.modules.user.edit',
         ],

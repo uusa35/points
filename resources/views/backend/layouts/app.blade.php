@@ -30,19 +30,13 @@
 @endauth
 <div class="clearfix"></div>
 <div class="page-container">
-    @can('admin')
-        @include('backend.partials.sidebar._super_sidebar')
-    @elsecan('client')
-        @include('backend.partials.sidebar._client_sidebar')
-    @elsecan('designer')
-        @include('backend.partials.sidebar._designer_sidebar')
-    @endif
+    @include('backend.partials.sidebar.sidebar')
     <div class="page-content-wrapper">
         <div class="page-content" style="min-height: 800px;">
             @include('backend.partials.breadcrumbs')
             @include('backend.partials.notifications')
             @include('backend.partials._confirm_delete_modal')
-                @section('content')
+            @section('content')
             @show
         </div>
     </div>

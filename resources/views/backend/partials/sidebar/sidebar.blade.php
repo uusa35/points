@@ -13,60 +13,13 @@
         <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
         <ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-hover-submenu page-sidebar-menu-closed"
             data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
-            @if(auth()->user()->isSuper)
-                <li class="nav-item {{ activeItem('user') }}">
-                    <a href="javascript:;" class="nav-link nav-toggle">
-                        <i class="icon-users"></i>
-                        <span class="title">{{ trans('general.users') }}</span>
-                        <span class="selected"></span>
-                        <span class="arrow open"></span>
-                    </a>
-                    <ul class="sub-menu">
-                        @foreach($roles as $r)
-                            <li class="nav-item start ">
-                                <a href="{{ route('backend.user.index', ['role_id' => $r->id]) }}" class="nav-link ">
-                                    <i class="icon-user-following"></i>
-                                    <span class="title">{{ $r->name }}</span>
-                                </a>
-                            </li>
-                        @endforeach
-                    </ul>
-                </li>
-            @elseif(auth()->user()->isClient)
-                <li class="nav-item {{ activeItem('order') }}">
-                    <a href="{{ route('backend.order.index',['status' => 'paid']) }}" class="nav-link nav-toggle">
-                        <i class="fa fa-fw fa-newspaper-o"></i>
-                        <span class="title">{{ trans('general.orders') }}</span>
-                        <span class="selected"></span>
-                        <span class="arrow open"></span>
-                    </a>
-                    <ul class="sub-menu">
-                        <li class="nav-item start ">
-                            <a href="{{ route('backend.order.index',['active' => true, 'ongoing' => true]) }}"
-                               class="nav-link ">
-                                <i class="icon-plus"></i>
-                                <span class="title">{{ trans('general.active_ongoing_projects') }}</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            @elseif(auth()->user()->isDesigner)
-                <li class="nav-item {{ activeItem('role') }}">
-                    <a href="{{ route('backend.role.index') }}" class="nav-link nav-toggle">
-                        <i class="icon-lock-open"></i>
-                        <span class="title">{{ trans('general.roles') }}</span>
-                        <span class="selected"></span>
-                        <span class="arrow open"></span>
-                    </a>
-                    <ul class="sub-menu">
-                        <li class="nav-item start ">
-                            <a href="{{ route('backend.role.index') }}" class="nav-link ">
-                                <i class="icon-pencil"></i>
-                                <span class="title">{{ trans('general.role_settings') }}</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+            @can('super')
+                @include('backend.partials.sidebar._super_sidebar')
+            @endcan
+            @if(auth()->user()->role->is_client)
+                @include('backend.partials.sidebar._client_sidebar')
+            @elseif(auth()->user()->role->is_designer)
+                    @include('backend.partials.sidebar._designer_sidebar')
             @endif
 
 

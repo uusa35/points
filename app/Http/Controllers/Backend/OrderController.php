@@ -17,16 +17,16 @@ class OrderController extends Controller
     public function index()
     {
         if (auth()->user()->isClient) {
-            if (request()->has('status')) {
-                $elements = Order::where([request()->status => true])->with('job.versions', 'service.category', 'client')->orderBy('id', 'desc')->paginate(self::PAGINATE);
+            if (request()->has('is_complete')) {
+                $elements = Order::where(['is_complete' => request()->is_complete])->active()->with('job.versions', 'service.category', 'client')->orderBy('id', 'desc')->paginate(self::PAGINATE);
             } else {
-                $elements = Order::with('job.versions', 'client', 'service.category')->orderBy('id', 'desc')->paginate(self::PAGINATE);
+                $elements = Order::active()->with('job.versions', 'client', 'service.category')->orderBy('id', 'desc')->paginate(self::PAGINATE);
             }
         } elseif (auth()->user()->isDesigner) {
-            if (request()->has('status')) {
-                $elements = auth()->user()->jobs()->orders()->where([request()->status => true])->with('job.versions', 'service.category')->orderBy('id', 'desc')->get();
+            if (request()->has('is_complete')) {
+                $elements = auth()->user()->jobs()->where(['is_complete' => request()->is_complete])->with('job.versions', 'service.category')->orderBy('id', 'desc')->get();
             } else {
-                $elements = auth()->user()->jobs()->orders()->with('job.versions', 'service.category')->orderBy('id', 'desc')->get();
+                $elements = auth()->user()->jobs()->with('job.versions', 'service.category')->orderBy('id', 'desc')->get();
             }
         }
         return view('backend.modules.order.index', compact('elements'));

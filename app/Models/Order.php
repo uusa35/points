@@ -48,4 +48,8 @@ class Order extends PrimaryModel
     public function getStatusAttribute() {
         return $this->is_complete ? 'complete' : 'on_process';
     }
+
+    public function getOnProgressAttribute() {
+        return !$this->is_complete;
+    }
 }

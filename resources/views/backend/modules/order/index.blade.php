@@ -24,8 +24,9 @@
                             <th>{{ trans('general.client') }}</th>
                             <th>{{ trans('general.service_name') }}</th>
                             <th>{{ trans('general.category_name') }}</th>
-                            <th>{{ trans('general.start_date') }}</th>
+                            <th>{{ trans('general.created_at') }}</th>
                             <th>{{ trans('general.on_progress') }}</th>
+                            <th>{{ trans('general.is_complete') }}</th>
                             <th>{{ trans('general.Action') }}</th>
                         </tr>
                         </thead>
@@ -37,8 +38,9 @@
                             <th>{{ trans('general.client') }}</th>
                             <th>{{ trans('general.service_name') }}</th>
                             <th>{{ trans('general.category_name') }}</th>
-                            <th>{{ trans('general.start_date') }}</th>
+                            <th>{{ trans('general.created_at') }}</th>
                             <th>{{ trans('general.on_progress') }}</th>
+                            <th>{{ trans('general.is_complete') }}</th>
                             <th>{{ trans('general.Action') }}</th>
                         </tr>
                         </tfoot>
@@ -54,7 +56,11 @@
                                 <td>{{ $element->created_at->diffForHumans() }}</td>
                                 <td>
                                     <span
-                                        class="label {{ activeLabel($element->on_progress) }}">{{ activeText($element->on_progress) }}</span>
+                                        class="label {{ activeLabel($element->onProgress) }}">{{ activeText($element->onProgress) }}</span>
+                                </td>
+                                <td>
+                                    <span
+                                        class="label {{ activeLabel($element->is_complete) }}">{{ activeText($element->is_complete) }}</span>
                                 </td>
                                 <td>
                                     <div class="btn-group pull-right">

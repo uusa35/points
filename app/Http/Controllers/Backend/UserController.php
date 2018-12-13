@@ -14,54 +14,6 @@ class UserController extends Controller
     use ImageHelpers;
 
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index(Request $request)
-    {
-        $validate = validator($request->request->all(), [
-            'role_id' => 'required|exists:roles,id'
-        ]);
-        if ($validate->fails()) {
-            return redirect()->route('backend.home')->with('error', 'role does not exist')->withErrors($validate);
-        }
-        $elements = User::where('role_id', request('role_id'))->with('role', 'projects', 'subcontractors', 'consultants')->paginate(self::PAGINATE);
-        return view('backend.modules.user.index', compact('elements'));
-    }
-
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('backend.modules.user.create');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(UserStore $request)
-    {
-        $element = User::create($request->except('password_confirmation'));
-
-        if ($request->hasFile('logo')) {
-            $this->saveMimes($element, $request, ['logo'], ['250', '250'], false);
-        }
-
-        if ($element) {
-            return redirect()->route('backend.user.index', ['role_id' => $request->role_id])->with('success', 'user saved');
-        }
-        return redirect()->route('backend.user.index', ['role_id' => $request->role_id])->with('error', 'error failure');
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param  int $id
@@ -69,7 +21,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $element = User::active()->whereId($id)->with('role', 'projects')->first();
+        $element = User::active()->whereId($id)->with('role')->first();
         return response()->json($element, 200);
     }
 
@@ -103,27 +55,11 @@ class UserController extends Controller
             if ($request->hasFile('bg')) {
                 $this->saveMimes($element, $request, ['bg'], ['750', '1334'], false);
             }
-            return redirect()->route('backend.user.index', ['role_id' => $element->role_id])->with('success', 'saved success');
+            return redirect()->route('backend.user.show',$element->id)->with('success', 'saved success');
         }
         return redirect()->back()->with('error', 'failure');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        $element = User::whereId($id)->with('projects')->first();
-        $roleId = $element->role_id;
-        if (!$element->projects->isEmpoty()) {
-            $element->softDelete();
-            return view('backend.user.index', ['role_id' => $roleId]);
-        }
-        return redirect()->back()->with('error', trans('message.user_is_not_deleted'));
-    }
 
     public function getResetPassword(Request $request)
     {
@@ -156,7 +92,7 @@ class UserController extends Controller
         if ($user) {
             $user->password = bcrypt(request()->password);
             $user->save();
-            return redirect()->route('backend.user.index', ['role_id' => $user->role_id])->with('success', 'password changed');
+            return redirect()->route('backend.user.show', $user->id)->with('success', 'password changed');
         }
         return redirect()->back()->with('error', 'error occurred')->withInputs();
     }

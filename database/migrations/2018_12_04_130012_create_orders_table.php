@@ -41,8 +41,6 @@ class CreateOrdersTable extends Migration
 
             $table->boolean('is_paid')->default(0); // paid
             $table->boolean('is_complete')->default(0); // related to complete the job
-            $table->boolean('on_progress')->default(0); // related to working on the job
-
 
 
             $table->integer('service_id')->unsigned()->index();
@@ -57,6 +55,7 @@ class CreateOrdersTable extends Migration
             $table->string('unwanted_colors_1')->nullable();
             $table->string('unwanted_colors_2')->nullable();
             $table->string('unwanted_colors_3')->nullable();
+            $table->boolean('active')->default(1);
 
             $table->timestamps();
         });
