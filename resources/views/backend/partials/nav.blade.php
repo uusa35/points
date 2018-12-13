@@ -26,10 +26,17 @@
                     <i class="fa fa-angle-down"></i>
                 </button>
                 <ul class="dropdown-menu" role="menu">
+                    @can('admin')
+                        <li>
+                            <a href="{{ route('backend.admin.user.create') }}">
+                                <i class="icon-plus"></i> {{ trans('general.new_user') }}</a>
+                        </li>
+                        <li class="divider"></li>
+                    @endcan
                     @can('client')
                         <li>
-                            <a href="{{ route('backend.client.order.create') }}">
-                                <i class="icon-plus"></i> {{ trans('general.create_new_order') }}</a>
+                            <a href="{{ route('backend.order.create') }}">
+                                <i class="icon-plus"></i> {{ trans('general.new_order') }}</a>
                         </li>
                         <li class="divider"></li>
                     @endcan

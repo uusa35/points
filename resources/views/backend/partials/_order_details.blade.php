@@ -20,6 +20,10 @@
             </div>
         </div>
         <div class="row static-info">
+            <div class="col-md-5 name"> {{ trans('general.name') }}:</div>
+            <div class="col-md-7 value"> {{ $element->name }}</div>
+        </div>
+        <div class="row static-info">
             <div class="col-md-5 name"> {{ trans('general.created_at') }}:</div>
             <div class="col-md-7 value"> {{ $element->created_at->diffForHumans() }}</div>
         </div>

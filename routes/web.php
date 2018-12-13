@@ -36,20 +36,13 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::resource('setting', 'SettingController');
     });
 
-    // for all users
-    Route::group(['namespace' => 'Client', 'as' => 'client.', 'prefix' => 'client', 'middleware' => ['client']], function () {
-        Route::resource('order', 'OrderController');
-
-    });
-    Route::group(['namespace' => 'Designer', 'as' => 'designer.', 'prefix' => 'designer', 'middleware' => ['designer']], function () {
-        Route::resource('order', 'OrderController');
-    });
     Route::get('/', 'HomeController@index')->name('index');
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('language/{locale}', 'HomeController@changeLanguage')->name('language.change');
     Route::get('reset/password', 'UserController@getResetPassword')->name('reset.password');
     Route::post('reset/password', 'UserController@postResetPassword')->name('reset');
-    Route::resource('user', 'UserController');
+    Route::resource('user', 'UserController')->only(['edit','update']);
+    Route::resource('order', 'OrderController')->except(['destroy']);
     Route::resource('job', 'JobController');
     Route::resource('version', 'VersionController');
     Route::resource('image', 'ImageController');

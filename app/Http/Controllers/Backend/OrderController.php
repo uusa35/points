@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend\Client;
+namespace App\Http\Controllers\Backend;
 
 use App\Models\Order;
 use App\Models\User;
@@ -16,10 +16,18 @@ class OrderController extends Controller
      */
     public function index()
     {
-        if (request()->has('status')) {
-            $elements = Order::where([request()->status => true])->with('job.versions', 'service.category', 'client')->orderBy('id', 'desc')->paginate(self::PAGINATE);
-        } else {
-            $elements = Order::with('job.versions', 'client', 'service.category')->orderBy('id', 'desc')->paginate(self::PAGINATE);
+        if (auth()->isClient) {
+            if (request()->has('status')) {
+                $elements = Order::where([request()->status => true])->with('job.versions', 'service.category', 'client')->orderBy('id', 'desc')->paginate(self::PAGINATE);
+            } else {
+                $elements = Order::with('job.versions', 'client', 'service.category')->orderBy('id', 'desc')->paginate(self::PAGINATE);
+            }
+        } elseif (auth()->isDesigner) {
+            if (request()->has('status')) {
+                $elements = auth()->user()->jobs()->orders()->where([request()->status => true])->with('job.versions', 'service.category')->orderBy('id', 'desc')->get();
+            } else {
+                $elements = auth()->user()->jobs()->orders()->with('job.versions', 'service.category')->orderBy('id', 'desc')->get();
+            }
         }
         return view('backend.modules.order.index', compact('elements'));
     }
@@ -53,9 +61,7 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        return 'here we suppose to put all files of the order .. please refer to orders table.';
-        $element = Order::whereId($id)->first();
-        return view('backend.modules.order.show', compact('element'));
+        //
     }
 
     /**

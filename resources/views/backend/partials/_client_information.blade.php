@@ -1,29 +1,33 @@
 <div class="portlet blue-hoki box">
     <div class="portlet-title">
         <div class="caption">
-            <i class="fa fa-cogs"></i>Customer Information
+            <i class="fa fa-cogs"></i>{{ trans('general.client_information') }}
         </div>
         <div class="actions">
-            <a href="javascript:;" class="btn btn-default btn-sm">
-                <i class="fa fa-pencil"></i> Edit </a>
+            <a href="{{ route('backend.user.edit', $element->id) }}" class="btn btn-default btn-sm">
+                <i class="fa fa-pencil"></i> {{ trans('general.edit') }} </a>
         </div>
     </div>
     <div class="portlet-body">
         <div class="row static-info">
-            <div class="col-md-5 name"> Customer Name:</div>
-            <div class="col-md-7 value"> Jhon Doe</div>
+            <div class="col-md-5 name"> {{ trans('general.name') }}:</div>
+            <div class="col-md-7 value"> {{ $element->name  }}</div>
         </div>
         <div class="row static-info">
-            <div class="col-md-5 name"> Email:</div>
-            <div class="col-md-7 value"> jhon@doe.com</div>
+            <div class="col-md-5 name"> {{ trans('general.email') }}:</div>
+            <div class="col-md-7 value"> {{ $element->email }}</div>
         </div>
         <div class="row static-info">
-            <div class="col-md-5 name"> State:</div>
-            <div class="col-md-7 value"> New York</div>
+            <div class="col-md-5 name"> {{ trans('general.caption') }}:</div>
+            <div class="col-md-7 value"> {{ $element->caption }}</div>
         </div>
         <div class="row static-info">
-            <div class="col-md-5 name"> Phone Number:</div>
-            <div class="col-md-7 value"> 12234389</div>
+            <div class="col-md-5 name"> {{ trans('general.phone') }}:</div>
+            <div class="col-md-7 value"> {{ $element->phone }}</div>
+        </div>
+        <div class="row static-info">
+            <div class="col-md-5 name"> {{ trans('general.mobile') }}:</div>
+            <div class="col-md-7 value"> {{ $element->mobile }}</div>
         </div>
     </div>
 </div>

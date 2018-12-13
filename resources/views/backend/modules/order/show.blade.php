@@ -24,7 +24,7 @@
                         @include('backend.partials._order_details')
                     </div>
                     <div class="col-md-6 col-sm-12">
-                        @include('backend.partials._client_information')
+                        @include('backend.partials._client_information',['element' => $element->client])
                     </div>
                 </div>
                 <div class="row">
@@ -32,28 +32,8 @@
                     <div class="col-md-6">
                         <div class="well">
                             <div class="row static-info align-reverse">
-                                <div class="col-md-8 name"> Sub Total:</div>
-                                <div class="col-md-3 value"> $1,124.50</div>
-                            </div>
-                            <div class="row static-info align-reverse">
-                                <div class="col-md-8 name"> Shipping:</div>
-                                <div class="col-md-3 value"> $40.50</div>
-                            </div>
-                            <div class="row static-info align-reverse">
-                                <div class="col-md-8 name"> Grand Total:</div>
-                                <div class="col-md-3 value"> $1,260.00</div>
-                            </div>
-                            <div class="row static-info align-reverse">
-                                <div class="col-md-8 name"> Total Paid:</div>
-                                <div class="col-md-3 value"> $1,260.00</div>
-                            </div>
-                            <div class="row static-info align-reverse">
-                                <div class="col-md-8 name"> Total Refunded:</div>
-                                <div class="col-md-3 value"> $0.00</div>
-                            </div>
-                            <div class="row static-info align-reverse">
-                                <div class="col-md-8 name"> Total Due:</div>
-                                <div class="col-md-3 value"> $1,124.50</div>
+                                <div class="col-md-8 name"> {{ trans('general.total') }}:</div>
+                                <div class="col-md-3 value"> {{ $element->points }} {{ trans('general.points') }}</div>
                             </div>
                         </div>
                     </div>

@@ -63,13 +63,13 @@
                                             <i class="fa fa-angle-down"></i>
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
-                                            @if(auth()->user()->isAdmin)
+                                            @can('client')
                                                 <li>
                                                     <a href="{{ route('backend.admin.order.show',$element->id) }}">
                                                         <i class="fa fa-fw fa-edit"></i>{{ trans('general.view_details') }}
                                                     </a>
                                                 </li>
-                                            @endif
+                                            @endcan
                                             @if(auth()->user()->isAdmin)
                                                 <li>
                                                     <a data-toggle="modal" href="#" data-target="#basic"

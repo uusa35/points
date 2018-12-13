@@ -25,7 +25,7 @@ class OrderPolicy
      */
     public function view(User $user, Order $order)
     {
-        //
+        return true;
     }
 
     /**
@@ -48,7 +48,7 @@ class OrderPolicy
      */
     public function update(User $user, Order $order)
     {
-        //
+        return $user->isAdmin ? $user->isAdmin : $user->isClient;
     }
 
     /**
@@ -60,7 +60,7 @@ class OrderPolicy
      */
     public function delete(User $user, Order $order)
     {
-        //
+        return $user->isAdmin;
     }
 
     /**
@@ -72,7 +72,7 @@ class OrderPolicy
      */
     public function restore(User $user, Order $order)
     {
-        //
+        return $user->isAdmin
     }
 
     /**
@@ -84,6 +84,6 @@ class OrderPolicy
      */
     public function forceDelete(User $user, Order $order)
     {
-        //
+        return $user->isAdmin;
     }
 }

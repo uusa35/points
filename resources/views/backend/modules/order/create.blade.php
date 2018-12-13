@@ -9,27 +9,8 @@
                 <div class="form-body">
                     <div class="row">
                         <div class="col-md-4">
-                            <div class="form-group {{ $errors->has('reference_id') ? ' has-error' : '' }}">
-                                <label for="reference_id" class="control-label">reference_id</label>
-                                <input id="reference_id"
-                                       type="text"
-                                       class="form-control"
-                                       name="reference_id"
-                                       value="{{ old('reference_id') }}"
-                                       placeholder="reference_id"
-                                       required autofocus>
-                                @if ($errors->has('reference_id'))
-                                    <span class="help-block">
-                                        <strong>
-                                            {{ $errors->first('reference_id') }}
-                                        </strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                        <div class="col-md-4">
                             <div class="form-group {{ $errors->has('name_ar') ? ' has-error' : '' }}">
-                                <label for="name_ar" class="control-label">Name Arabic*</label>
+                                <label for="name_ar" class="control-label">name_ar</label>
                                 <input id="name_ar"
                                        type="text"
                                        class="form-control"
@@ -47,6 +28,25 @@
                             </div>
                         </div>
                         <div class="col-md-4">
+                            <div class="form-group {{ $errors->has('name_en') ? ' has-error' : '' }}">
+                                <label for="name_en" class="control-label">Name Arabic*</label>
+                                <input id="name_en"
+                                       type="text"
+                                       class="form-control"
+                                       name="name_en"
+                                       value="{{ old('name_en') }}"
+                                       placeholder="name_en"
+                                       required autofocus>
+                                @if ($errors->has('name_en'))
+                                    <span class="help-block">
+                                        <strong>
+                                            {{ $errors->first('name_en') }}
+                                        </strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="col-md-4">
                             <div class="form-group{{ $errors->has('name_en') ? ' has-error' : '' }}">
                                 <label for="name_en" class="control-label">Name English*</label>
                                 <input id="name_en"
@@ -55,7 +55,7 @@
                                        name="name_en"
                                        value="{{ old('name_en') }}"
                                        placeholder="name in english"
-                                       required autofocus>
+                                        autofocus>
                                 @if ($errors->has('name_en'))
                                     <span class="help-block">
                                         <strong>
