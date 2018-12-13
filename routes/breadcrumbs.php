@@ -26,9 +26,14 @@ Breadcrumbs::for('backend.admin.user.create', function ($trail) {
     $trail->push(trans('create_user'), route('backend.admin.user.create'));
 });
 
+Breadcrumbs::for('backend.admin.order.create', function ($trail) {
+    $trail->parent('backend.admin.order.index');
+    $trail->push(trans('general.create_order'), route('backend.admin.order.create'));
+});
+
 Breadcrumbs::for('backend.admin.order.show', function ($trail, $element) {
     $trail->parent('backend.admin.order.index', ['user_id' => $element->user_id]);
-    $trail->push(trans('Project' . $element->name), route('backend.admin.order.show', $element->id));
+    $trail->push($element->title, route('backend.admin.order.show', $element->id));
 });
 
 Breadcrumbs::for('backend.admin.order.index', function ($trail) {
@@ -36,14 +41,21 @@ Breadcrumbs::for('backend.admin.order.index', function ($trail) {
     $trail->push(trans('general.orders'), route('backend.admin.order.index'));
 });
 
+Breadcrumbs::for('backend.admin.role.index', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.order_index'), route('backend.admin.role.index'));
+});
+
+Breadcrumbs::for('backend.admin.role.edit', function ($trail, $element) {
+    $trail->parent('backend.admin.role.index');
+    $trail->push(trans('general.edit'), route('backend.admin.role.edit', $element->id));
+});
 
 // users
-
 Breadcrumbs::for('backend.admin.category.index', function ($trail) {
     $trail->parent('backend.home');
     $trail->push(trans('categories'), route('backend.admin.category.index'));
 });
-
 
 Breadcrumbs::for('backend.setting.index', function ($trail) {
     $trail->parent('backend.home');
@@ -66,15 +78,9 @@ Breadcrumbs::for('backend.order.create', function ($trail) {
     $trail->push(trans('general.order'), route('backend.order.create'));
 });
 
-Breadcrumbs::for('backend.order.show', function ($trail,$element) {
+Breadcrumbs::for('backend.order.show', function ($trail, $element) {
     $trail->parent('backend.order.index');
     $trail->push(trans('general.order'), route('backend.order.show', $element->id));
-});
-
-
-Breadcrumbs::for('backend.admin.role.edit', function ($trail, $element) {
-    $trail->parent('backend.admin.role.index');
-    $trail->push(trans('general.edit'), route('backend.admin.role.edit', $element->id));
 });
 
 
@@ -90,15 +96,15 @@ Breadcrumbs::for('backend.country.edit', function ($trail, $element) {
 
 Breadcrumbs::for('backend.job.index', function ($trail, $element) {
     $trail->parent('backend.order.index');
-    $trail->push(trans('general.job'), route('backend.job.index',['order_id' => $element['order_id']]));
+    $trail->push(trans('general.job'), route('backend.job.index', ['order_id' => $element['order_id']]));
 });
 Breadcrumbs::for('backend.job.create', function ($trail) {
     $trail->parent('backend.job.index');
     $trail->push(trans('general.create_new_job'), route('backend.job.create'));
 });
 
-Breadcrumbs::for('backend.job.show', function ($trail,$element) {
-    $trail->parent('backend.job.index',['order_id' => $element->order_id]);
+Breadcrumbs::for('backend.job.show', function ($trail, $element) {
+    $trail->parent('backend.job.index', ['order_id' => $element->order_id]);
     $trail->push(trans('general.show_job'), route('backend.job.show', $element->id));
 });
 

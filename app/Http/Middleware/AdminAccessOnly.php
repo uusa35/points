@@ -16,7 +16,7 @@ class AdminAccessOnly
     public function handle($request, Closure $next)
     {
         // will check is_super first then is_admin.
-        abort_if(!auth()->user()->isAdmin, '400',  'Admin zone only !!!');
+        abort_if(!auth()->user()->isAdminOrAbove, '400',  'Admin zone only !!!');
         return $next($request);
     }
 }

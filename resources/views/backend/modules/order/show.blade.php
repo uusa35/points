@@ -61,10 +61,11 @@
                                 </div>
                                 <div class="actions">
                                     @if(!$element->job)
-                                        @can('client')
-                                            <a href="{{ route('backend.client.order.edit') }}" class="btn btn-default btn-sm">
+                                        @if(auth()->user()->isClient)
+                                            <a href="{{ route('backend.client.order.edit') }}"
+                                               class="btn btn-default btn-sm">
                                                 <i class="fa fa-pencil"></i> {{ trans('general.edit') }}</a>
-                                        @endcan
+                                        @endif
                                     @endif
                                 </div>
                             </div>

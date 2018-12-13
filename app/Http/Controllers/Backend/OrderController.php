@@ -6,6 +6,7 @@ use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Gate;
 
 class OrderController extends Controller
 {
@@ -16,7 +17,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        if (auth()->can('onlyClient')) {
+        if (auth()->user()->onlyClient) {
             if (request()->has('is_complete')) {
                 $elements = Order::where(['is_complete' => request()->is_complete,'is_paid' => true])->active()->with('job.versions', 'service.category', 'client')->orderBy('id', 'desc')->paginate(self::PAGINATE);
             } elseif(request()->has('is_paid')) {
@@ -24,7 +25,7 @@ class OrderController extends Controller
             }else {
                 $elements = Order::where(['is_paid' => true ])->active()->with('job.versions', 'client', 'service.category')->orderBy('id', 'desc')->paginate(self::PAGINATE);
             }
-        } elseif (auth()->can('onlyDesigner')) {
+        } elseif (auth()->user()->onlyDesigner) {
             if (request()->has('is_complete')) {
                 $elements = auth()->user()->jobs()->where(['is_complete' => request()->is_complete])->with('job.versions', 'service.category')->orderBy('id', 'desc')->get();
             } else {
@@ -41,6 +42,7 @@ class OrderController extends Controller
      */
     public function create()
     {
+        $this->authorize('order.create');
         return view('backend.modules.order.create');
     }
 
@@ -64,6 +66,7 @@ class OrderController extends Controller
     public function show($id)
     {
         $element = Order::whereId($id)->first();
+        $this->authorize('order.view',auth()->user(),$element);
         return view('backend.modules.order.show', compact('element'));
     }
 

@@ -4,7 +4,7 @@ namespace App\Models;
 
 trait UserHelpers
 {
-    public function getIsAdminAttribute()
+    public function getIsAdminOrAboveAttribute()
     {
         return $this->role->is_super ? $this->role->is_super : $this->role->is_admin;
     }
@@ -14,14 +14,24 @@ trait UserHelpers
         return $this->role->is_super;
     }
 
-    public function getIsClientAttribute()
+    public function getIsClientOrAboveAttribute()
     {
-        return $this->role->is_admin ? $this->role->is_admin : $this->role->is_client;
+        return $this->isAdmin ? $this->isAdmin : $this->role->is_client;
     }
 
-    public function getIsDesignerAttribute()
+    public function getIsDesignerOrAboveAttribute()
     {
         return $this->role->is_admin ? $this->role->is_admin : $this->role->is_designer;
+    }
+
+    public function getOnlyClientAttribute()
+    {
+        return $this->role->is_client;
+    }
+
+    public function getOnlyDesignerAttribute()
+    {
+        return $this->role->is_designer;
     }
 
     public function getCategoryNameAttribute()

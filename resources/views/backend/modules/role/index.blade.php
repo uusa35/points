@@ -53,23 +53,29 @@
                                 <td>{{ $element->slug_ar }}</td>
                                 <td>{{ $element->slug_en }}</td>
                                 <td>
-                                    <span class="label {{ activeLabel($element->is_admin) }}">{{ activeText($element->is_admin,'Yes') }}</span>
+                                    <span
+                                        class="label {{ activeLabel($element->is_admin) }}">{{ activeText($element->is_admin,'Yes') }}</span>
                                 </td>
                                 <td>
-                                    <span class="label {{ activeLabel($element->is_client) }}">{{ activeText($element->is_client,'Yes') }}</span>
+                                    <span
+                                        class="label {{ activeLabel($element->is_client) }}">{{ activeText($element->is_client,'Yes') }}</span>
                                 </td>
                                 <td>
-                                    <span class="label {{ activeLabel($element->is_designer) }}">{{ activeText($element->is_designer,'Yes') }}</span>
+                                    <span
+                                        class="label {{ activeLabel($element->is_designer) }}">{{ activeText($element->is_designer,'Yes') }}</span>
                                 </td>
                                 <td>
-                                    <span class="label {{ activeLabel($element->is_visible) }}">{{ activeText($element->is_visible,'Yes') }}</span>
+                                    <span
+                                        class="label {{ activeLabel($element->is_visible) }}">{{ activeText($element->is_visible,'Yes') }}</span>
 
                                 </td>
                                 <td>
-                                    <span class="label {{ activeLabel($element->active) }}">{{ activeText($element->active) }}</span>
+                                    <span
+                                        class="label {{ activeLabel($element->active) }}">{{ activeText($element->active) }}</span>
                                 </td>
                                 <td>
-                                    <span class="label {{ activeLabel($element->active) }}" style="background-color: {{ $element->color }}">{{ $element->name }}</span>
+                                    <span class="label {{ activeLabel($element->active) }}"
+                                          style="background-color: {{ $element->color }}">{{ $element->name }}</span>
                                 </td>
                                 <td>
                                     <div class="btn-group pull-right">
@@ -87,14 +93,14 @@
                                                     <i class="fa fa-fw fa-check-circle"></i> toggle active</a>
                                             </li>
                                             {{--<li>--}}
-                                                {{--<form method="post"--}}
-                                                      {{--action="{{ route('backend.role.destroy',$element->id) }}">--}}
-                                                    {{--{{ csrf_field() }}--}}
-                                                    {{--<input type="hidden" name="_method" value="delete"/>--}}
-                                                    {{--<button type="submit" class="btn btn-outline btn-sm red">--}}
-                                                        {{--<i class="fa fa-remove"></i>delete--}}
-                                                    {{--</button>--}}
-                                                {{--</form>--}}
+                                            {{--<form method="post"--}}
+                                            {{--action="{{ route('backend.role.destroy',$element->id) }}">--}}
+                                            {{--{{ csrf_field() }}--}}
+                                            {{--<input type="hidden" name="_method" value="delete"/>--}}
+                                            {{--<button type="submit" class="btn btn-outline btn-sm red">--}}
+                                            {{--<i class="fa fa-remove"></i>delete--}}
+                                            {{--</button>--}}
+                                            {{--</form>--}}
                                             {{--</li>--}}
                                         </ul>
                                     </div>

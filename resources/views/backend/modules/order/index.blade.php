@@ -75,19 +75,27 @@
                                             <i class="fa fa-angle-down"></i>
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
-                                            <li>
-                                                <a href="{{ route('backend.order.show',$element->id) }}">
-                                                    <i class="fa fa-fw fa-edit"></i>{{ trans('general.view_details') }}
-                                                </a>
-                                            </li>
-                                            @can('client')
+                                            @can('isAdmin')
+                                                <li>
+                                                    <a href="{{ route('backend.admin.order.show',$element->id) }}">
+                                                        <i class="fa fa-fw fa-edit"></i>{{ trans('general.view_details') }}
+                                                    </a>
+                                                </li>
+                                            @else
+                                                <li>
+                                                    <a href="{{ route('backend.order.show',$element->id) }}">
+                                                        <i class="fa fa-fw fa-edit"></i>{{ trans('general.view_details') }}
+                                                    </a>
+                                                </li>
+                                            @endcan
+                                            @can('isClient')
                                                 <li>
                                                     <a href="{{ route('backend.order.edit',$element->id) }}">
                                                         <i class="fa fa-fw fa-edit"></i>{{ trans('general.edit') }}
                                                     </a>
                                                 </li>
                                             @endcan
-                                            @can('designer')
+                                            @if(auth()->user()->isClientOrAbove)
                                                 @if(!$element->job)
                                                     <li>
                                                         <a href="{{ route('backend.job.create',$element) }}">
@@ -96,18 +104,18 @@
                                                     </li>
                                                 @else
                                                     <li>
-                                                        <a href="{{ route('backend.job.show',$element->job->id) }}">
-                                                            <i class="fa fa-fw fa-eye-slash"></i>{{ trans('general.view_job') }}
-                                                        </a>
-                                                    </li>
-                                                    <li>
                                                         <a href="{{ route('backend.job.edit',$element->job->id) }}">
                                                             <i class="fa fa-fw fa-edit"></i>{{ trans('general.edit_current_job') }}
                                                         </a>
                                                     </li>
+                                                    <li>
+                                                        <a href="{{ route('backend.job.show',$element->job->id) }}">
+                                                            <i class="fa fa-fw fa-eye-slash"></i>{{ trans('general.view_job') }}
+                                                        </a>
+                                                    </li>
                                                 @endif
                                             @endcan
-                                            @can('admin')
+                                            @can('isAdmin')
                                                 <li>
                                                     <a data-toggle="modal" href="#" data-target="#basic"
                                                        data-title="Delete"

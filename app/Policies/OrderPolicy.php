@@ -10,12 +10,6 @@ class OrderPolicy
 {
     use HandlesAuthorization;
 
-
-    public function before(User $user, Order $order)
-    {
-        return $user->isAdmin ? $user->isAdmin : $user->isClient && $user->id === $order->user_id;
-    }
-
     /**
      * Determine whether the user can view the order.
      *
@@ -25,7 +19,11 @@ class OrderPolicy
      */
     public function view(User $user, Order $order)
     {
-        return true;
+        dd('from inside view');
+        dd($order->designers()->get()->toArray());
+        if(!$user->isAdmin) {
+            dd($order->designers()->get()->toArray());
+        }
     }
 
     /**

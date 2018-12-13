@@ -9,15 +9,34 @@
                 <div class="form-body">
                     <div class="row">
                         <div class="col-md-4">
+                            <div class="form-group {{ $errors->has('title') ? ' has-error' : '' }}">
+                                <label for="title" class="control-label">{{ trans('general.order_title') }}</label>
+                                <input id="title"
+                                       type="text"
+                                       class="form-control"
+                                       name="title"
+                                       value="{{ old('title') }}"
+                                       placeholder="title"
+                                       required autofocus>
+                                @if ($errors->has('title'))
+                                    <span class="help-block">
+                                        <strong>
+                                            {{ $errors->first('title') }}
+                                        </strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="col-md-4">
                             <div class="form-group {{ $errors->has('name_ar') ? ' has-error' : '' }}">
-                                <label for="name_ar" class="control-label">name_ar</label>
+                                <label for="name_ar" class="control-label">{{ trans('general.name_ar') }}</label>
                                 <input id="name_ar"
                                        type="text"
                                        class="form-control"
                                        name="name_ar"
                                        value="{{ old('name_ar') }}"
                                        placeholder="name_ar"
-                                       required autofocus>
+                                       autofocus>
                                 @if ($errors->has('name_ar'))
                                     <span class="help-block">
                                         <strong>
@@ -29,14 +48,14 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group {{ $errors->has('name_en') ? ' has-error' : '' }}">
-                                <label for="name_en" class="control-label">Name Arabic*</label>
+                                <label for="name_en" class="control-label">{{ trans('general.name_en') }}</label>
                                 <input id="name_en"
                                        type="text"
                                        class="form-control"
                                        name="name_en"
                                        value="{{ old('name_en') }}"
                                        placeholder="name_en"
-                                       required autofocus>
+                                       autofocus>
                                 @if ($errors->has('name_en'))
                                     <span class="help-block">
                                         <strong>
@@ -48,7 +67,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group{{ $errors->has('name_en') ? ' has-error' : '' }}">
-                                <label for="name_en" class="control-label">Name English*</label>
+                                <label for="name_en" class="control-label">{{ trans('general.name_en') }}</label>
                                 <input id="name_en"
                                        type="text"
                                        class="form-control"

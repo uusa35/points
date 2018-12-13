@@ -4,11 +4,11 @@
             <i class="fa fa-cogs"></i>{{ trans('general.job_versions') }}
         </div>
         <div class="actions">
-            @can('designer')
+            @if(auth()->user()->isDesigner)
                 <a href="{{ route('backend.version.create') }}"
                    class="btn btn-default btn-sm">
                     <i class="fa fa-pencil"></i> {{ trans('general.add_new_version') }} </a>
-            @endcan
+            @endif
         </div>
     </div>
     <div class="portlet-body">
@@ -52,14 +52,14 @@
                                             <i class="fa fa-fw fa-eye"></i>{{ trans('general.show') }}
                                         </a>
                                     </li>
-                                    @can('designer')
+                                    @if(auth()->user()->isDesigner)
                                         <li>
                                             <a href="{{ route('backend.version.edit',$element->id) }}">
                                                 <i class="fa fa-fw fa-user"></i>{{ trans('general.edit') }}
                                             </a>
                                         </li>
                                     @endcan
-                                    @can('admin')
+                                    @if(auth()->user()->isAdmin)
                                         <li>
                                             <a href="{{ route('backend.admin.activate',['model' => 'version','id' => $element->id]) }}">
                                                 <i class="fa fa-fw fa-check-circle"></i> {{ trans('general.toggle_active') }}

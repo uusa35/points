@@ -88,11 +88,11 @@
         </div>
 
         <div class="links">
-            @can('admin')
+            @if(auth()->user()->isAdmin)
                 <a href="{{ route('backend.admin.order.index') }}">Orders</a>
-            @elsecan('designer')
+            @elseif(auth()->user()->onlyDesigner)
                 <a href="{{ route('backend.designer.order.index') }}">Orders & Jobs</a>
-            @elsecan('client')
+            @elseif(auth()->user()->onlyClient)
                 <a href="{{ route('backend.client.order.index') }}">My Orders</a>
                 <a href="">My Files</a>
             @endcan

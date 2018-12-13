@@ -7,6 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Order::class, function (Faker $faker) {
     return [
+        'title' => $faker->sentence,
         'name_ar' => $faker->name,
         'name_en' => $faker->name,
         'slogan' => $faker->name,

@@ -26,19 +26,25 @@
                     <i class="fa fa-angle-down"></i>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                    @can('admin')
+                    @if(auth()->user()->isAdminOrAbove)
                         <li>
                             <a href="{{ route('backend.admin.user.create') }}">
                                 <i class="icon-plus"></i> {{ trans('general.new_user') }}</a>
                         </li>
                         <li class="divider"></li>
-                    @endcan
-                    @can('client')
+                    @endif
+                    @can('onlyClient')
+                        {{--change this later to onlyClient--}}
                         <li>
                             <a href="{{ route('backend.order.create') }}">
                                 <i class="icon-plus"></i> {{ trans('general.new_order') }}</a>
                         </li>
                         <li class="divider"></li>
+                    @elsecan('isAdmin')
+                        <li>
+                            <a href="{{ route('backend.admin.order.create') }}">
+                                <i class="icon-plus"></i> {{ trans('general.new_order') }}</a>
+                        </li>
                     @endcan
                 </ul>
             </div>

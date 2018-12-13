@@ -13,18 +13,15 @@
         <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
         <ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-hover-submenu page-sidebar-menu-closed"
             data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
-            @can('super')
+            @can('onlySuper')
                 @include('backend.partials.sidebar._super_sidebar')
-
-            @elsecan('admin')
+            @elsecan('onlyAdmin')
                 @include('backend.partials.sidebar._admin_sidebar')
             @elsecan('onlyClient')
                 @include('backend.partials.sidebar._client_sidebar')
             @elsecan('onlyDesigner')
                 @include('backend.partials.sidebar._designer_sidebar')
             @endcan
-
-
             {{--<li class="nav-item">--}}
             {{--<a href="javascript:;" class="nav-link nav-toggle">--}}
             {{--<i class="icon-folder"></i>--}}

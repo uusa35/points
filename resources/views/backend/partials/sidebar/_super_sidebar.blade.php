@@ -17,6 +17,14 @@
         @endforeach
     </ul>
 </li>
+<li class="nav-item {{ activeItem('role') }}">
+    <a href="{{ route('backend.admin.role.index') }}" class="nav-link nav-toggle">
+        <i class="icon-users"></i>
+        <span class="title">{{ trans('general.roles') }}</span>
+        <span class="selected"></span>
+        <span class="arrow open"></span>
+    </a>
+</li>
 <li class="nav-item {{ activeItem('order') }}">
     <a href="{{ route('backend.admin.order.index') }}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-newspaper-o"></i>
