@@ -15,12 +15,14 @@
             data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
             @can('super')
                 @include('backend.partials.sidebar._super_sidebar')
-            @endcan
-            @if(auth()->user()->role->is_client)
+
+            @elsecan('admin')
+                @include('backend.partials.sidebar._admin_sidebar')
+            @elsecan('onlyClient')
                 @include('backend.partials.sidebar._client_sidebar')
-            @elseif(auth()->user()->role->is_designer)
-                    @include('backend.partials.sidebar._designer_sidebar')
-            @endif
+            @elsecan('onlyDesigner')
+                @include('backend.partials.sidebar._designer_sidebar')
+            @endcan
 
 
             {{--<li class="nav-item">--}}

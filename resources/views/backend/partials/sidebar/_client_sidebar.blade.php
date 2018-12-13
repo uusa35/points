@@ -20,5 +20,12 @@
                 <span class="title">{{ trans('general.on_progress_orders') }}</span>
             </a>
         </li>
+        <li class="nav-item start ">
+            <a href="{{ route('backend.order.index',['is_paid' => false]) }}"
+               class="nav-link ">
+                <i class="icon-plus"></i>
+                <span class="title">{{ trans('general.unpaid_orders_history') }}</span>
+            </a>
+        </li>
     </ul>
 </li>

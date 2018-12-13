@@ -16,13 +16,15 @@ class OrderController extends Controller
      */
     public function index()
     {
-        if (auth()->user()->isClient) {
+        if (auth()->can('onlyClient')) {
             if (request()->has('is_complete')) {
-                $elements = Order::where(['is_complete' => request()->is_complete])->active()->with('job.versions', 'service.category', 'client')->orderBy('id', 'desc')->paginate(self::PAGINATE);
-            } else {
-                $elements = Order::active()->with('job.versions', 'client', 'service.category')->orderBy('id', 'desc')->paginate(self::PAGINATE);
+                $elements = Order::where(['is_complete' => request()->is_complete,'is_paid' => true])->active()->with('job.versions', 'service.category', 'client')->orderBy('id', 'desc')->paginate(self::PAGINATE);
+            } elseif(request()->has('is_paid')) {
+                $elements = Order::where(['is_complete' => false,'is_paid' => false])->active()->with('job.versions', 'service.category', 'client')->orderBy('id', 'desc')->paginate(self::PAGINATE);
+            }else {
+                $elements = Order::where(['is_paid' => true ])->active()->with('job.versions', 'client', 'service.category')->orderBy('id', 'desc')->paginate(self::PAGINATE);
             }
-        } elseif (auth()->user()->isDesigner) {
+        } elseif (auth()->can('onlyDesigner')) {
             if (request()->has('is_complete')) {
                 $elements = auth()->user()->jobs()->where(['is_complete' => request()->is_complete])->with('job.versions', 'service.category')->orderBy('id', 'desc')->get();
             } else {

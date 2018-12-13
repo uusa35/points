@@ -27,20 +27,29 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        Gate::define('super', function(User $user) {
-           return $user->isSuper;
+        Gate::define('super', function (User $user) {
+            return $user->isSuper;
         });
 
-        Gate::define('admin', function(User $user) {
-           return $user->isSuper ? $user->isSuper : $user->isAdmin;
+        Gate::define('admin', function (User $user) { // super always can access admin
+            return $user->isSuper ? $user->isSuper : $user->isAdmin;
         });
 
-        Gate::define('designer', function(User $user) {
-           return $user->isAdmin ? $user->isAdmin : $user->isDesigner;
+
+        Gate::define('designer', function (User $user) { // admin can access designers
+            return $user->isAdmin ? $user->isAdmin : $user->isDesigner;
         });
 
-        Gate::define('client', function(User $user) {
-           return $user->isAdmin ? $user->isAdmin : $user->isClient;
+        Gate::define('onlyDesigner', function (User $user) { // super can not access designer
+            return $user->is_designer;
+        });
+
+        Gate::define('client', function (User $user) {
+            return $user->isAdmin ? $user->isAdmin : $user->isClient;
+        });
+
+        Gate::define('onlyClient', function (User $user) { // super can not access client
+            return $user->is_client;
         });
     }
 }

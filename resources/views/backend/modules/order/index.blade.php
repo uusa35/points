@@ -27,6 +27,7 @@
                             <th>{{ trans('general.created_at') }}</th>
                             <th>{{ trans('general.on_progress') }}</th>
                             <th>{{ trans('general.is_complete') }}</th>
+                            <th>{{ trans('general.is_paid') }}</th>
                             <th>{{ trans('general.Action') }}</th>
                         </tr>
                         </thead>
@@ -41,6 +42,7 @@
                             <th>{{ trans('general.created_at') }}</th>
                             <th>{{ trans('general.on_progress') }}</th>
                             <th>{{ trans('general.is_complete') }}</th>
+                            <th>{{ trans('general.is_paid') }}</th>
                             <th>{{ trans('general.Action') }}</th>
                         </tr>
                         </tfoot>
@@ -61,6 +63,10 @@
                                 <td>
                                     <span
                                         class="label {{ activeLabel($element->is_complete) }}">{{ activeText($element->is_complete) }}</span>
+                                </td>
+                                <td>
+                                    <span
+                                        class="label {{ activeLabel($element->is_paid) }}">{{ activeText($element->is_paid) }}</span>
                                 </td>
                                 <td>
                                     <div class="btn-group pull-right">
