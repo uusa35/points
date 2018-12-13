@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Models\Job;
+use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -12,9 +14,13 @@ class JobController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Order $element)
     {
-        //
+        if(!$element->has('job','>',0)) {
+            return view('backend.order.show', compact('element'))->with('error',trans('general.no_job_for_this_order'));
+        }
+        $element = $element->job()->with('versions')->get();
+        return view('backend.modules.job.index', compact('element'));
     }
 
     /**
@@ -22,9 +28,9 @@ class JobController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Order $element)
     {
-        //
+        return view('backend.modules.job.create', compact('element'));
     }
 
     /**
@@ -46,7 +52,8 @@ class JobController extends Controller
      */
     public function show($id)
     {
-        //
+        $element = Job::whereId($id)->with('versions')->first();
+        return view('backend.modules.job.show', compact('element'));
     }
 
     /**
@@ -57,7 +64,8 @@ class JobController extends Controller
      */
     public function edit($id)
     {
-        //
+        $element = Job::whereId($id)->first();
+        return view('backend.modules.job.edit', compact('element'));
     }
 
     /**

@@ -16,13 +16,13 @@ class OrderController extends Controller
      */
     public function index()
     {
-        if (auth()->isClient) {
+        if (auth()->user()->isClient) {
             if (request()->has('status')) {
                 $elements = Order::where([request()->status => true])->with('job.versions', 'service.category', 'client')->orderBy('id', 'desc')->paginate(self::PAGINATE);
             } else {
                 $elements = Order::with('job.versions', 'client', 'service.category')->orderBy('id', 'desc')->paginate(self::PAGINATE);
             }
-        } elseif (auth()->isDesigner) {
+        } elseif (auth()->user()->isDesigner) {
             if (request()->has('status')) {
                 $elements = auth()->user()->jobs()->orders()->where([request()->status => true])->with('job.versions', 'service.category')->orderBy('id', 'desc')->get();
             } else {
@@ -61,7 +61,8 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        //
+        $element = Order::whereId($id)->first();
+        return view('backend.modules.order.show', compact('element'));
     }
 
     /**

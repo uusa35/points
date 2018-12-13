@@ -19,25 +19,13 @@
         </ul>
         <div class="tab-content">
             <div class="tab-pane active" id="tab_1">
-                <div class="row">
-                    <div class="col-md-6 col-sm-12">
-                        @include('backend.partials._order_details')
-                    </div>
-                    <div class="col-md-6 col-sm-12">
-                        @include('backend.partials._client_information',['element' => $element->client])
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6"></div>
-                    <div class="col-md-6">
-                        <div class="well">
-                            <div class="row static-info align-reverse">
-                                <div class="col-md-8 name"> {{ trans('general.total') }}:</div>
-                                <div class="col-md-3 value"> {{ $element->points }} {{ trans('general.points') }}</div>
-                            </div>
+                @if($element->versions->isNotEmpty())
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            @include('backend.partials._version_details',['elements' => $element->versions])
                         </div>
                     </div>
-                </div>
+                @endif
                 @if($element->images->isNotEmpty())
                     @include('backend.partials.gallery',['elements' => $element->images])
                 @endif
@@ -60,12 +48,9 @@
                                     <i class="fa fa-cogs"></i>{{ trans('general.order_details') }}
                                 </div>
                                 <div class="actions">
-                                    @if(!$element->job)
-                                        @can('client')
-                                            <a href="{{ route('backend.client.order.edit') }}" class="btn btn-default btn-sm">
+
+                                            <a href="#" class="btn btn-default btn-sm">
                                                 <i class="fa fa-pencil"></i> {{ trans('general.edit') }}</a>
-                                        @endcan
-                                    @endif
                                 </div>
                             </div>
                             <div class="portlet-body">
@@ -211,14 +196,6 @@
                         </div>
                     </div>
                 </div>
-                @if($element->job->versions->isNotEmpty())
-                    <div class="row">
-                        <div class="col-md-12 col-sm-12">
-                            @include('backend.partials._version_details',['elements' => $element->job->versions])
-                        </div>
-                    </div>
-                @endif
-
             </div>
 
         </div>

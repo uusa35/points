@@ -72,7 +72,7 @@ class OrderPolicy
      */
     public function restore(User $user, Order $order)
     {
-        return $user->isAdmin
+        return $user->isAdmin;
     }
 
     /**

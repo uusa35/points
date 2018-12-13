@@ -14,7 +14,7 @@
     <div class="portlet-body">
         <div class="table-responsive">
             <table class="table table-hover table-bordered table-striped"
-                   id="differentDataTable-{{ $element->job->id }}">
+                   id="differentDataTable-{{ rand() }}">
                 <thead>
                 <tr>
                     <th>{{ trans('general.id') }}</th>
@@ -29,16 +29,16 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($element->job->versions as $v)
+                @foreach($elements as $element)
                     <tr>
-                        <td>{{ $v->id }}</td>
-                        <td>{{ $v->notes }}</td>
-                        <td>{{ $v->description }}</td>
-                        <td>{{ $v->active }}</td>
-                        <td>{{ $v->is_complete }}</td>
-                        <td>{{ $v->is_client_viewed }}</td>
-                        <td>{{ $v->is_designer_viewed }}</td>
-                        <td>{{ $v->job->order->name }}</td>
+                        <td>{{ $element->id }}</td>
+                        <td>{{ $element->notes }}</td>
+                        <td>{{ $element->description }}</td>
+                        <td>{{ $element->active }}</td>
+                        <td>{{ $element->is_complete }}</td>
+                        <td>{{ $element->is_client_viewed }}</td>
+                        <td>{{ $element->is_designer_viewed }}</td>
+                        <td>{{ $element->job->order->name }}</td>
                         <td>
                             <div class="btn-group pull-right">
                                 <button type="button"
@@ -47,16 +47,21 @@
                                     <i class="fa fa-angle-down"></i>
                                 </button>
                                 <ul class="dropdown-menu pull-right" role="menu">
+                                    <li>
+                                        <a href="{{ route('backend.version.show',$element->id) }}">
+                                            <i class="fa fa-fw fa-eye"></i>{{ trans('general.show') }}
+                                        </a>
+                                    </li>
                                     @can('designer')
                                         <li>
-                                            <a href="{{ route('backend.version.edit',$v->id) }}">
+                                            <a href="{{ route('backend.version.edit',$element->id) }}">
                                                 <i class="fa fa-fw fa-user"></i>{{ trans('general.edit') }}
                                             </a>
                                         </li>
                                     @endcan
                                     @can('admin')
                                         <li>
-                                            <a href="{{ route('backend.admin.activate',['model' => 'version','id' => $v->id]) }}">
+                                            <a href="{{ route('backend.admin.activate',['model' => 'version','id' => $element->id]) }}">
                                                 <i class="fa fa-fw fa-check-circle"></i> {{ trans('general.toggle_active') }}
                                             </a>
                                         </li>

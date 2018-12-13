@@ -10,7 +10,7 @@
                     <div class="m-heading-1 border-green m-bordered">
                         <h3>{{ trans('general.instructions') }}</h3>
                         <p>
-                            {{ trans('message.backend_order_index_message') }}
+                            {{ trans('message.backend_job_index') }}
                         </p>
                     </div>
                     <table id="dataTable" class="table table-striped table-bordered table-hover" cellspacing="0"
@@ -43,7 +43,7 @@
                         </tr>
                         </tfoot>
                         <tbody>
-                        @foreach($elements as $element)
+                        @foreach($element as $element)
                             <tr>
                                 <td>{{ $element->id }}</td>
                                 <td>{{ $element->name_ar }}</td>
@@ -76,21 +76,10 @@
                                                 </li>
                                             @endcan
                                             @can('designer')
-                                                @if(!$element->job)
+                                                @if($element->job)
                                                     <li>
                                                         <a href="{{ route('backend.job.create',$element) }}">
                                                             <i class="fa fa-fw fa-edit"></i>{{ trans('general.create_new_job_for_this_order') }}
-                                                        </a>
-                                                    </li>
-                                                @else
-                                                    <li>
-                                                        <a href="{{ route('backend.job.show',$element->job->id) }}">
-                                                            <i class="fa fa-fw fa-eye-slash"></i>{{ trans('general.view_job') }}
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="{{ route('backend.job.edit',$element->job->id) }}">
-                                                            <i class="fa fa-fw fa-edit"></i>{{ trans('general.edit_current_job') }}
                                                         </a>
                                                     </li>
                                                 @endif
@@ -121,7 +110,7 @@
                         @endforeach
                         </tbody>
                     </table>
-                    {{ $elements->render() }}
+                    {{ $element->versions->render() }}
                 </div>
             </div>
         </div>
