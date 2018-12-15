@@ -51,11 +51,14 @@ Breadcrumbs::for('backend.admin.role.edit', function ($trail, $element) {
     $trail->push(trans('general.edit'), route('backend.admin.role.edit', $element->id));
 });
 
-// users
+
 Breadcrumbs::for('backend.admin.category.index', function ($trail) {
     $trail->parent('backend.home');
     $trail->push(trans('categories'), route('backend.admin.category.index'));
 });
+
+
+// users
 
 Breadcrumbs::for('backend.setting.index', function ($trail) {
     $trail->parent('backend.home');
@@ -67,6 +70,16 @@ Breadcrumbs::for('backend.notification.index', function ($trail) {
     $trail->push(trans('general.notifications'), route('backend.notification.index'));
 });
 
+
+Breadcrumbs::for('backend.file.index', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.files'), route('backend.file.index'));
+});
+
+Breadcrumbs::for('backend.file.show', function ($trail, $element) {
+    $trail->parent('backend.file.index');
+    $trail->push($element->title, route('backend.file.show', $element->id));
+});
 
 Breadcrumbs::for('backend.order.index', function ($trail) {
     $trail->parent('backend.home');
