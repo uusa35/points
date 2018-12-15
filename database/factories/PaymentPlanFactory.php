@@ -16,6 +16,6 @@ $factory->define(PaymentPlan::class, function (Faker $faker) {
         'apply_bonus' => $faker->boolean,
         'color' => $faker->colorName,
         'order' => $faker->numberBetween(1,40),
-        'active' => $faker->boolean,
+        'active' => $faker->boolean(true),
     ];
 });

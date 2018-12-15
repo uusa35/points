@@ -17,7 +17,7 @@ class PointController extends Controller
     {
         $paymentPlans = PaymentPlan::active()->get();
         $element = auth()->user()->balance()->get();
-        $elements = auth()->user()->transactions()->get();
+        $elements = auth()->user()->transactions()->with('payment_plan','user')->get();
         return view('backend.modules.point.index', compact('element','elements','paymentPlans'));
     }
 

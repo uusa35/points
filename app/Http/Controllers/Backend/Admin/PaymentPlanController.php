@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Backend\Admin;
 
+use App\Models\PaymentPlan;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Nature\Plant;
 
 class PaymentPlanController extends Controller
 {
@@ -15,7 +15,7 @@ class PaymentPlanController extends Controller
      */
     public function index()
     {
-        $elements = Plant::all();
+        $elements = PaymentPlan::all();
         return view('backend.modules.plan.index', compact('elements'));
     }
 

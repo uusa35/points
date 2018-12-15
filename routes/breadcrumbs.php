@@ -54,7 +54,12 @@ Breadcrumbs::for('backend.admin.role.edit', function ($trail, $element) {
 
 Breadcrumbs::for('backend.admin.category.index', function ($trail) {
     $trail->parent('backend.home');
-    $trail->push(trans('categories'), route('backend.admin.category.index'));
+    $trail->push(trans('general.categories'), route('backend.admin.category.index'));
+});
+
+Breadcrumbs::for('backend.admin.plan.index', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.payment_plans'), route('backend.admin.plan.index'));
 });
 
 

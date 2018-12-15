@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Transaction;
 use Illuminate\Database\Seeder;
 
 class TransactionsTableSeeder extends Seeder
@@ -11,6 +12,6 @@ class TransactionsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(Transaction::class, app()->environment('production') ? 2 : 150)->create();
     }
 }
