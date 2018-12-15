@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\Backend\Admin;
 
 use App\Models\PaymentPlan;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class PointController extends Controller
+class PaymentPlanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +15,8 @@ class PointController extends Controller
      */
     public function index()
     {
-        $paymentPlans = PaymentPlan::active()->get();
-        $element = auth()->user()->balance()->get();
-        $elements = auth()->user()->transactions()->with('payment_plan','user')->get();
-        return view('backend.modules.point.index', compact('element','elements','paymentPlans'));
+        $elements = PaymentPlan::all();
+        return view('backend.modules.plan.index', compact('elements'));
     }
 
     /**
@@ -28,13 +26,13 @@ class PointController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.modules.plan.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -45,7 +43,7 @@ class PointController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -56,7 +54,7 @@ class PointController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -67,8 +65,8 @@ class PointController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -79,7 +77,7 @@ class PointController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

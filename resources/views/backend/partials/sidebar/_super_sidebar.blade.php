@@ -19,8 +19,16 @@
 </li>
 <li class="nav-item {{ activeItem('role') }}">
     <a href="{{ route('backend.admin.role.index') }}" class="nav-link nav-toggle">
-        <i class="icon-users"></i>
+        <i class="icon-layers"></i>
         <span class="title">{{ trans('general.roles') }}</span>
+        <span class="selected"></span>
+        <span class="arrow open"></span>
+    </a>
+</li>
+<li class="nav-item {{ activeItem('plan') }}">
+    <a href="{{ route('backend.admin.plan.index') }}" class="nav-link nav-toggle">
+        <i class="icon-credit-card"></i>
+        <span class="title">{{ trans('general.payment_plans') }}</span>
         <span class="selected"></span>
         <span class="arrow open"></span>
     </a>
@@ -55,15 +63,28 @@
             </a>
         </li>
     </ul>
+</li>
+<li class="nav-item {{ activeItem('file') }}">
     <a href="{{ route('backend.file.index') }}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-file"></i>
         <span class="title">{{ trans('general.my_files') }}</span>
         <span class="selected"></span>
         <span class="arrow open"></span>
     </a>
+</li>
+<li class="nav-item {{ activeItem('point') }}">
     <a href="{{ route('backend.point.index') }}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-dollar"></i>
         <span class="title">{{ trans('general.my_points') }}</span>
+        <span class="selected"></span>
+        <span class="arrow open"></span>
+    </a>
+</li>
+
+<li class="nav-item {{ activeItem('setting') }}">
+    <a href="{{ route('backend.admin.setting.show', auth()->user()->id) }}" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-gears"></i>
+        <span class="title">{{ trans('general.settings') }}</span>
         <span class="selected"></span>
         <span class="arrow open"></span>
     </a>

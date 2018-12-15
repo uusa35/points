@@ -274,6 +274,8 @@
                         </div>
                     </div>
 
+                    @include('backend.modules.order._add_file')
+                    @include('backend.modules.order._add_image')
                     @include('backend.partials.forms._btn-group')
                 </div>
             </form>

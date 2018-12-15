@@ -13,8 +13,8 @@ class PaymentPlansTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(PaymentPlan::class, 3)->create()->each(function ($p) {
-            $p->transactions()->saveMany(factory(Transaction::class,app()->environment('production') ? 1 : 50)->create());
+        factory(PaymentPlan::class, app()->environment('production') ? 3 : 3)->create()->each(function ($p) {
+            $p->transactions()->saveMany(factory(Transaction::class,app()->environment('production') ? 1 : 60)->create());
         });
     }
 }

@@ -31,8 +31,15 @@
                             <a href="{{ route('backend.admin.user.create') }}">
                                 <i class="icon-plus"></i> {{ trans('general.new_user') }}</a>
                         </li>
-                        <li class="divider"></li>
+
                     @endif
+                    @if(auth()->user()->isSuper)
+                            <li>
+                                <a href="{{ route('backend.admin.plan.create') }}">
+                                    <i class="icon-plus"></i> {{ trans('general.create_new_payment_plan') }}</a>
+                            </li>
+                    @endif
+                        <li class="divider"></li>
                     @can('onlyClient')
                         {{--change this later to onlyClient--}}
                         <li>

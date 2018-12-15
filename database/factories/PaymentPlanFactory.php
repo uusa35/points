@@ -14,7 +14,8 @@ $factory->define(PaymentPlan::class, function (Faker $faker) {
         'path' => '1.pdf',
         'bonus' => $faker->numberBetween(2,20),
         'apply_bonus' => $faker->boolean,
+        'color' => $faker->colorName,
         'order' => $faker->numberBetween(1,40),
-        'active' => $faker->boolean,
+        'active' => $faker->boolean(true),
     ];
 });

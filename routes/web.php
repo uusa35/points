@@ -26,6 +26,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::get('reset/password', 'UserController@getResetPassword')->name('reset.password');
         Route::post('reset/password', 'UserController@postResetPassword')->name('reset');
         Route::resource('user', 'UserController');
+        Route::resource('plan', 'PaymentPlanController');
         Route::resource('role', 'RoleController');
         Route::resource('category', 'CategoryController');
         Route::resource('slider', 'SliderController');

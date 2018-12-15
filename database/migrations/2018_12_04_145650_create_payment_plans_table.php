@@ -22,6 +22,7 @@ class CreatePaymentPlansTable extends Migration
 
             $table->string('image')->nullable();
             $table->string('path')->nullable();
+            $table->string('color')->nullable();
 
             $table->integer('price')->nullable();
             $table->integer('bonus')->nullable();
