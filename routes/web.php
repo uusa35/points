@@ -47,6 +47,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     Route::resource('job', 'JobController');
     Route::resource('version', 'VersionController');
     Route::resource('image', 'ImageController');
+    Route::resource('point', 'PointController');
 });
 
 if ((app()->environment('production') || app()->environment('local')) && Schema::hasTable('users')) {
