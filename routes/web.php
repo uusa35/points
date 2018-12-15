@@ -43,6 +43,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     Route::post('reset/password', 'UserController@postResetPassword')->name('reset');
     Route::resource('user', 'UserController')->only(['edit','update']);
     Route::resource('order', 'OrderController')->except(['destroy']);
+    Route::resource('file', 'FileController');
     Route::resource('job', 'JobController');
     Route::resource('version', 'VersionController');
     Route::resource('image', 'ImageController');

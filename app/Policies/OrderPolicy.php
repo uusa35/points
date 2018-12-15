@@ -19,9 +19,8 @@ class OrderPolicy
      */
     public function view(User $user, Order $order)
     {
-        dd('from inside view');
         dd($order->designers()->get()->toArray());
-        if(!$user->isAdmin) {
+        if(!$user->isAdminOrAbove) {
             dd($order->designers()->get()->toArray());
         }
     }
@@ -34,7 +33,7 @@ class OrderPolicy
      */
     public function create(User $user)
     {
-        return $user->isAdmin ? $user->isAdmin : $user->isClient;
+        return $user->isAdminOrAbove ? $user->isAdminOrAbove: $user->onlyClient;
     }
 
     /**

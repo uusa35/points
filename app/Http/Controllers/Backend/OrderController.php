@@ -19,11 +19,18 @@ class OrderController extends Controller
     {
         if (auth()->user()->onlyClient) {
             if (request()->has('is_complete')) {
-                $elements = Order::where(['is_complete' => request()->is_complete,'is_paid' => true])->active()->with('job.versions', 'service.category', 'client')->orderBy('id', 'desc')->paginate(self::PAGINATE);
-            } elseif(request()->has('is_paid')) {
-                $elements = Order::where(['is_complete' => false,'is_paid' => false])->active()->with('job.versions', 'service.category', 'client')->orderBy('id', 'desc')->paginate(self::PAGINATE);
-            }else {
-                $elements = Order::where(['is_paid' => true ])->active()->with('job.versions', 'client', 'service.category')->orderBy('id', 'desc')->paginate(self::PAGINATE);
+                $elements = Order::where(['user_id' => auth()->id(), 'is_complete' => request()->is_complete, 'is_paid' => true])
+                    ->active()->with('job.versions', 'service.category', 'client')
+                    ->orderBy('id', 'desc'
+                    )->paginate(self::PAGINATE);
+            } elseif (request()->has('is_paid')) {
+                $elements = Order::where(['user_id' => auth()->id(), 'is_complete' => false, 'is_paid' => true])
+                    ->active()
+                    ->with('job.versions', 'service.category', 'client')
+                    ->orderBy('id', 'desc')
+                    ->paginate(self::PAGINATE);
+            } else {
+                $elements = Order::where(['user_id' => auth()->id(), 'is_paid' => true])->active()->with('job.versions', 'client', 'service.category')->orderBy('id', 'desc')->paginate(self::PAGINATE);
             }
         } elseif (auth()->user()->onlyDesigner) {
             if (request()->has('is_complete')) {
@@ -66,7 +73,7 @@ class OrderController extends Controller
     public function show($id)
     {
         $element = Order::whereId($id)->first();
-        $this->authorize('order.view',auth()->user(),$element);
+        $this->authorize('order.view', auth()->user(), $element);
         return view('backend.modules.order.show', compact('element'));
     }
 
