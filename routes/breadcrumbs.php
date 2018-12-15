@@ -152,6 +152,11 @@ Breadcrumbs::for('backend.user.edit', function ($trail, $element) {
     $trail->push(trans('general.edit_user'), route('backend.user.edit', $element->id));
 });
 
+Breadcrumbs::for('backend.user.show', function ($trail, $element) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.my_profile'), route('backend.user.show', $element->id));
+});
+
 
 Breadcrumbs::for('backend.category.create', function ($trail) {
     $trail->parent('backend.category.index');

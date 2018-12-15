@@ -80,7 +80,7 @@ class OrderController extends Controller
     public function show($id)
     {
         $element = Order::whereId($id)->first();
-        $this->authorize('order.view', auth()->user(), $element);
+//        $this->authorize(auth()->user(), $element);
         return view('backend.modules.order.show', compact('element'));
     }
 

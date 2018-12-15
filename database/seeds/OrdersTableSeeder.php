@@ -18,7 +18,7 @@ class OrdersTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Order::class, app()->environment('production') ? 2 : 200)->create()->each(function ($o) {
+        factory(Order::class, app()->environment('production') ? 2 : 100)->create()->each(function ($o) {
             $job = factory(Job::class)->create();
             $o->images()->saveMany(factory(Image::class, 3)->create());
             $o->files()->saveMany(factory(File::class, 3)->create());

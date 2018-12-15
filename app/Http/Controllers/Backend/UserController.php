@@ -21,8 +21,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $element = User::active()->whereId($id)->with('role')->first();
-        return response()->json($element, 200);
+        $element = User::whereId($id)->with('role')->first();
+        return view('backend.modules.user.show', compact('element'));
     }
 
     /**
