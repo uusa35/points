@@ -88,14 +88,16 @@
         </div>
 
         <div class="links">
-            @if(auth()->user()->isAdmin)
-                <a href="{{ route('backend.admin.order.index') }}">Orders</a>
-            @elseif(auth()->user()->onlyDesigner)
-                <a href="{{ route('backend.designer.order.index') }}">Orders & Jobs</a>
-            @elseif(auth()->user()->onlyClient)
-                <a href="{{ route('backend.client.order.index') }}">My Orders</a>
-                <a href="">My Files</a>
-            @endcan
+            @auth
+                @if(auth()->user()->isAdminOrAbove)
+                    <a href="{{ route('backend.admin.order.index') }}">Orders</a>
+                @elseif(auth()->user()->onlyDesigner)
+                    <a href="{{ route('backend.designer.order.index') }}">Orders & Jobs</a>
+                @elseif(auth()->user()->onlyClient)
+                    <a href="{{ route('backend.client.order.index') }}">My Orders</a>
+                    <a href="">My Files</a>
+                @endif
+            @endauth
         </div>
     </div>
 </div>
