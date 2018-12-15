@@ -42,6 +42,12 @@ class OrderController extends Controller
         return view('backend.modules.order.index', compact('elements'));
     }
 
+
+    public function chooseOrderLang()
+    {
+        return view('backend.modules.order.choose_lang');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -49,6 +55,7 @@ class OrderController extends Controller
      */
     public function create()
     {
+        session()->put('order_lang',request()->lang);
         $this->authorize('order.create');
         return view('backend.modules.order.create');
     }
