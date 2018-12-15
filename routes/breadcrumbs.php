@@ -71,6 +71,11 @@ Breadcrumbs::for('backend.notification.index', function ($trail) {
 });
 
 
+Breadcrumbs::for('backend.point.index', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.my_points'), route('backend.point.index'));
+});
+
 Breadcrumbs::for('backend.file.index', function ($trail) {
     $trail->parent('backend.home');
     $trail->push(trans('general.files'), route('backend.file.index'));

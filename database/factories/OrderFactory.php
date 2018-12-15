@@ -25,7 +25,6 @@ $factory->define(Order::class, function (Faker $faker) {
         'snapchat' => $faker->url,
         'iphone' => $faker->url,
         'android' => $faker->url,
-        'path' => '1.pdf',
         'points' => $faker->numberBetween(10, 100),
         'description_ar' => $faker->sentence,
         'description_en' => $faker->sentence,

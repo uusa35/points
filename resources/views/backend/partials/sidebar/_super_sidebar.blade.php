@@ -25,6 +25,14 @@
         <span class="arrow open"></span>
     </a>
 </li>
+<li class="nav-item {{ activeItem('plan') }}">
+    <a href="{{ route('backend.admin.plan.index') }}" class="nav-link nav-toggle">
+        <i class="icon-users"></i>
+        <span class="title">{{ trans('general.payment_plans') }}</span>
+        <span class="selected"></span>
+        <span class="arrow open"></span>
+    </a>
+</li>
 <li class="nav-item {{ activeItem('order') }}">
     <a href="{{ route('backend.admin.order.index') }}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-newspaper-o"></i>
