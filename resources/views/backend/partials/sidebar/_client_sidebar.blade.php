@@ -34,4 +34,16 @@
         <span class="selected"></span>
         <span class="arrow open"></span>
     </a>
+    <a href="{{ route('backend.point.index') }}" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-dollar"></i>
+        <span class="title">{{ trans('general.my_points') }}</span>
+        <span class="selected"></span>
+        <span class="arrow open"></span>
+    </a>
+    <a href="{{ route('backend.user.show') }}" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-user-circle"></i>
+        <span class="title">{{ trans('general.my_profile') }}</span>
+        <span class="selected"></span>
+        <span class="arrow open"></span>
+    </a>
 </li>

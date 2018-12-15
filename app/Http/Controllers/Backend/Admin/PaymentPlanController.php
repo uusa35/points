@@ -26,7 +26,7 @@ class PaymentPlanController extends Controller
      */
     public function create()
     {
-        retuen view('backend.modules.plan.create');
+        return view('backend.modules.plan.create');
     }
 
     /**
