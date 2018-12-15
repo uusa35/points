@@ -92,9 +92,9 @@
                 @if(auth()->user()->isAdminOrAbove)
                     <a href="{{ route('backend.admin.order.index') }}">Orders</a>
                 @elseif(auth()->user()->onlyDesigner)
-                    <a href="{{ route('backend.designer.order.index') }}">Orders & Jobs</a>
+                    <a href="{{ route('backend.order.index') }}">Orders & Jobs</a>
                 @elseif(auth()->user()->onlyClient)
-                    <a href="{{ route('backend.client.order.index') }}">My Orders</a>
+                    <a href="{{ route('backend.order.index') }}">My Orders</a>
                     <a href="">My Files</a>
                 @endif
             @endauth

@@ -8,15 +8,15 @@
                 <div class="portlet light profile-sidebar-portlet ">
                     <!-- SIDEBAR USERPIC -->
                     <div class="profile-userpic text-center">
-                        <img src="{{ asset('storage/uploads/images/thumbnail/'.$element->client->logo) }}"
+                        <img src="{{ asset('storage/uploads/images/thumbnail/'.$element->logo) }}"
                              class="img-responsive img-thumbnail"
                              alt=""></div>
                     <!-- END SIDEBAR USERPIC -->
                     <!-- SIDEBAR USER TITLE -->
                     <hr>
                     <div class="profile-usertitle">
-                        <div class="profile-usertitle-name text-center"> {{ $element->client->name }}</div>
-                        <div class="profile-usertitle-job text-center"> {{ $element->client->caption }}</div>
+                        <div class="profile-usertitle-name text-center"> {{ $element->name }}</div>
+                        <div class="profile-usertitle-job text-center"> {{ $element->caption }}</div>
                     </div>
                     <hr>
                     <!-- END SIDEBAR USER TITLE -->
@@ -25,7 +25,7 @@
                     <div class="profile-usermenu">
                         <ul class="nav">
                             <li>
-                                <a href="{{ route('backend.client.order.index',['user_id' => $element->user_id]) }}">
+                                <a href="{{ route('backend.order.index',['user_id' => $element->id]) }}">
                                     <i class="icon-user"></i> {{ trans('general.client_projects') }}</a>
                             </li>
                         </ul>
@@ -52,22 +52,22 @@
                                 <a href="{{ $element->ip_cam_url }}">{{ trans('general.view_cam') }}</a>
                             </div>
                         @endif
-                        @if($element->client->twitter_url)
+                        @if($element->twitter)
                             <div class="margin-top-20 profile-desc-link">
                                 <i class="fa fa-twitter"></i>
-                                <a href="{{ $element->twitter_url }}">{{ trans('general.twitter') }}</a>
+                                <a href="{{ $element->twitter }}">{{ trans('general.twitter') }}</a>
                             </div>
                         @endif
-                        @if($element->client->facebook_url)
+                        @if($element->facebook)
                             <div class="margin-top-20 profile-desc-link">
                                 <i class="fa fa-facebook"></i>
-                                <a href="{{ $element->facebook_url}}">{{ trans('general.facebook') }}</a>
+                                <a href="{{ $element->facebook}}">{{ trans('general.facebook') }}</a>
                             </div>
                         @endif
-                        @if($element->client->youtube_url)
+                        @if($element->youtube)
                             <div class="margin-top-20 profile-desc-link">
                                 <i class="fa fa-youtube"></i>
-                                <a href="{{ $element->youtube_url}}">{{ trans('general.youtube') }}</a>
+                                <a href="{{ $element->youtube}}">{{ trans('general.youtube') }}</a>
                             </div>
                         @endif
                     </div>
@@ -88,28 +88,7 @@
                                 </div>
                                 <ul class="nav nav-tabs">
                                     <li class="active">
-                                        <a href="#tab_1_1" data-toggle="tab">{{ trans('general.reports') }}</a>
-                                    </li>
-                                    <li>
-                                        <a href="#tab_1_2" data-toggle="tab">{{ trans('general.documents') }}</a>
-                                    </li>
-                                    <li>
-                                        <a href="#tab_1_3" data-toggle="tab">{{ trans('general.payments') }}</a>
-                                    </li>
-                                    <li>
-                                        <a href="#tab_1_4" data-toggle="tab">{{ trans('general.phases') }}</a>
-                                    </li>
-                                    <li>
-                                        <a href="#tab_1_5" data-toggle="tab">{{ trans('general.drawings') }}</a>
-                                    </li>
-                                    <li>
-                                        <a href="#tab_1_6" data-toggle="tab">{{ trans('general.subcontractors') }}</a>
-                                    </li>
-                                    <li>
-                                        <a href="#tab_1_7" data-toggle="tab">{{ trans('general.consultants') }}</a>
-                                    </li>
-                                    <li>
-                                        <a href="#tab_1_8" data-toggle="tab">{{ trans('general.suppliers') }}</a>
+                                        <a href="#tab_1_1" data-toggle="tab">{{ trans('general.orders') }}</a>
                                     </li>
                                 </ul>
                             </div>
@@ -117,7 +96,7 @@
                                 <div class="tab-content">
                                     <!-- PERSONAL INFO TAB -->
                                     <div class="tab-pane active" id="tab_1_1">
-{{--                                        @include('backend.modules.order._abstracted_table', ['elements' => $element->reports])--}}
+                                        // list of user orders will go here
                                     </div>
                                     <!-- END PERSONAL INFO TAB -->
                                     <!-- CHANGE AVATAR TAB -->

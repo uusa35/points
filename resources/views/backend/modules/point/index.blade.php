@@ -56,9 +56,7 @@
                     </div>
                 </div>
             @endif
-            @if($elements->isNotEmpty())
                 @include('backend.partials._transactions')
-            @endif
         </div>
     </div>
 @endsection
