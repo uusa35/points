@@ -32,6 +32,7 @@ class CreateOrdersTable extends Migration
             $table->string('iphone')->nullable();
             $table->string('android')->nullable();
             $table->string('path')->nullable();
+            $table->string('lang')->nullable();
             $table->integer('points')->nullable(); // in points only
 
             $table->text('description_ar')->nullable();

@@ -86,6 +86,11 @@ Breadcrumbs::for('backend.order.index', function ($trail) {
     $trail->push(trans('general.orders'), route('backend.order.index'));
 });
 
+Breadcrumbs::for('backend.order.choose.lang', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.choose_order_lang'), route('backend.order.choose.lang'));
+});
+
 Breadcrumbs::for('backend.order.create', function ($trail) {
     $trail->parent('backend.order.index');
     $trail->push(trans('general.order'), route('backend.order.create'));
