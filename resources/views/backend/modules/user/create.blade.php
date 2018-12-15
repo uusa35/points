@@ -68,25 +68,7 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <div class="form-group{{ $errors->has('mobile') ? ' has-error' : '' }}">
-                                <label for="mobile" class="control-label">{{ trans('general.mobile') }}</label>
-                                <input id="mobile"
-                                       type="text"
-                                       class="form-control"
-                                       name="mobile"
-                                       value="{{ old('mobile') }}"
-                                       placeholder="mobile"
-                                       autofocus>
-                                @if ($errors->has('mobile'))
-                                    <span class="help-block">
-                                        <strong>
-                                            {{ $errors->first('mobile') }}
-                                        </strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        
                     </div>
 
                     {{-- password + confirm password --}}
@@ -132,54 +114,6 @@
 
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="control-label">{{ trans('general.role') }} </label>
-                                <select class="bs-select form-control" name="role_id" required autofocus>
-                                    <option value="">{{ trans('general.select_role') }}</option>
-                                    @foreach($roles as $role)
-                                        <option value="{{ $role->id }}" {{ request()->role == $role->name ? 'selected' : null  }}>{{ $role->name }}
-                                            - {{ $role->slug }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-lg-3">
-                            <div class="form-group">
-                                <label for="form_control_1">{{ trans('general.logo') }}</label>
-                                <input type="file" class="form-control" name="logo" placeholder="logo">
-                                <div class="help-block text-left">
-                                    W H - Best fit 250 x 250 pixels
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
-                                <label for="phone" class="control-label">phone </label>
-                                <input id="phone"
-                                       type="text"
-                                       class="form-control"
-                                       name="phone"
-                                       value="{{ old('phone') }}"
-                                       placeholder="phone"
-                                       autofocus>
-                                @if ($errors->has('phone'))
-                                    <span class="help-block">
-                                        <strong>
-                                            {{ $errors->first('phone') }}
-                                        </strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-md-6">
                             <div class="form-group{{ $errors->has('caption_ar') ? ' has-error' : '' }}">
                                 <label for="caption_ar" class="control-label">{{ trans('general.caption_ar') }}</label>
                                 <input id="caption_ar"
@@ -220,6 +154,7 @@
                     </div>
 
 
+
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -238,6 +173,347 @@
                     </div>
 
 
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group{{ $errors->has('service_ar') ? ' has-error' : '' }}">
+                                <label for="service_ar" class="control-label">{{ trans('general.service_ar') }}</label>
+                                <input id="service_ar"
+                                       type="text"
+                                       class="form-control"
+                                       name="service_ar"
+                                       value="{{ old('service_ar') }}"
+                                       placeholder="service_ar arabic"
+                                       autofocus>
+                                @if ($errors->has('service_ar'))
+                                    <span class="help-block">
+                                        <strong>
+                                            {{ $errors->first('service_ar') }}
+                                        </strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group{{ $errors->has('service_en') ? ' has-error' : '' }}">
+                                <label for="service_en" class="control-label">{{ trans('general.service_en') }}</label>
+                                <input id="service_en"
+                                       type="text"
+                                       class="form-control"
+                                       name="service_en"
+                                       value="{{ old('service_en') }}"
+                                       placeholder="service_en arabic"
+                                       autofocus>
+                                @if ($errors->has('service_en'))
+                                    <span class="help-block">
+                                        <strong>
+                                            {{ $errors->first('service_en') }}
+                                        </strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group{{ $errors->has('address_ar') ? ' has-error' : '' }}">
+                                <label for="address_ar" class="control-label">{{ trans('general.address_ar') }}</label>
+                                <input id="address_ar"
+                                       type="text"
+                                       class="form-control"
+                                       name="address_ar"
+                                       value="{{ old('address_ar') }}"
+                                       placeholder="address_ar arabic"
+                                       autofocus>
+                                @if ($errors->has('address_ar'))
+                                    <span class="help-block">
+                                        <strong>
+                                            {{ $errors->first('address_ar') }}
+                                        </strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group{{ $errors->has('address_en') ? ' has-error' : '' }}">
+                                <label for="address_en" class="control-label">{{ trans('general.address_en') }}</label>
+                                <input id="address_en"
+                                       type="text"
+                                       class="form-control"
+                                       name="address_en"
+                                       value="{{ old('address_en') }}"
+                                       placeholder="address_en arabic"
+                                       autofocus>
+                                @if ($errors->has('address_en'))
+                                    <span class="help-block">
+                                        <strong>
+                                            {{ $errors->first('address_en') }}
+                                        </strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="form_control_1">{{ trans('general.logo') }}</label>
+                                <input type="file" class="form-control" name="logo" placeholder="logo">
+                                <div class="help-block text-left">
+                                    W H - Best fit 250 x 250 pixels
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group{{ $errors->has('website') ? ' has-error' : '' }}">
+                                <label for="website" class="control-label">website </label>
+                                <input id="website"
+                                       type="text"
+                                       class="form-control"
+                                       name="website"
+                                       value="{{ old('website') }}"
+                                       placeholder="website"
+                                       autofocus>
+                                @if ($errors->has('website'))
+                                    <span class="help-block">
+                                        <strong>
+                                            {{ $errors->first('website') }}
+                                        </strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group{{ $errors->has('facebook') ? ' has-error' : '' }}">
+                                <label for="facebook" class="control-label">facebook </label>
+                                <input id="facebook"
+                                       type="text"
+                                       class="form-control"
+                                       name="facebook"
+                                       value="{{ old('facebook') }}"
+                                       placeholder="facebook"
+                                       autofocus>
+                                @if ($errors->has('facebook'))
+                                    <span class="help-block">
+                                        <strong>
+                                            {{ $errors->first('facebook') }}
+                                        </strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group{{ $errors->has('instagram') ? ' has-error' : '' }}">
+                                <label for="instagram" class="control-label">instagram </label>
+                                <input id="instagram"
+                                       type="text"
+                                       class="form-control"
+                                       name="instagram"
+                                       value="{{ old('instagram') }}"
+                                       placeholder="instagram"
+                                       autofocus>
+                                @if ($errors->has('instagram'))
+                                    <span class="help-block">
+                                        <strong>
+                                            {{ $errors->first('instagram') }}
+                                        </strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                    <div class="col-md-3">
+                            <div class="form-group{{ $errors->has('youtube') ? ' has-error' : '' }}">
+                                <label for="youtube" class="control-label">youtube </label>
+                                <input id="youtube"
+                                       type="text"
+                                       class="form-control"
+                                       name="youtube"
+                                       value="{{ old('youtube') }}"
+                                       placeholder="youtube"
+                                       autofocus>
+                                @if ($errors->has('youtube'))
+                                    <span class="help-block">
+                                        <strong>
+                                            {{ $errors->first('youtube') }}
+                                        </strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group{{ $errors->has('twitter') ? ' has-error' : '' }}">
+                                <label for="twitter" class="control-label">twitter </label>
+                                <input id="twitter"
+                                       type="text"
+                                       class="form-control"
+                                       name="twitter"
+                                       value="{{ old('twitter') }}"
+                                       placeholder="twitter"
+                                       autofocus>
+                                @if ($errors->has('twitter'))
+                                    <span class="help-block">
+                                        <strong>
+                                            {{ $errors->first('twitter') }}
+                                        </strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group{{ $errors->has('mobile') ? ' has-error' : '' }}">
+                                <label for="mobile" class="control-label">mobile </label>
+                                <input id="mobile"
+                                       type="text"
+                                       class="form-control"
+                                       name="mobile"
+                                       value="{{ old('mobile') }}"
+                                       placeholder="mobile"
+                                       autofocus>
+                                @if ($errors->has('mobile'))
+                                    <span class="help-block">
+                                        <strong>
+                                            {{ $errors->first('mobile') }}
+                                        </strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+                                <label for="phone" class="control-label">phone </label>
+                                <input id="phone"
+                                       type="text"
+                                       class="form-control"
+                                       name="phone"
+                                       value="{{ old('phone') }}"
+                                       placeholder="phone"
+                                       autofocus>
+                                @if ($errors->has('phone'))
+                                    <span class="help-block">
+                                        <strong>
+                                            {{ $errors->first('phone') }}
+                                        </strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                     <div class="row">
+                    <div class="col-md-3">
+                            <div class="form-group{{ $errors->has('fax') ? ' has-error' : '' }}">
+                                <label for="fax" class="control-label">fax </label>
+                                <input id="fax"
+                                       type="text"
+                                       class="form-control"
+                                       name="fax"
+                                       value="{{ old('fax') }}"
+                                       placeholder="fax"
+                                       autofocus>
+                                @if ($errors->has('fax'))
+                                    <span class="help-block">
+                                        <strong>
+                                            {{ $errors->first('fax') }}
+                                        </strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group{{ $errors->has('whatsapp') ? ' has-error' : '' }}">
+                                <label for="whatsapp" class="control-label">whatsapp </label>
+                                <input id="whatsapp"
+                                       type="text"
+                                       class="form-control"
+                                       name="whatsapp"
+                                       value="{{ old('whatsapp') }}"
+                                       placeholder="whatsapp"
+                                       autofocus>
+                                @if ($errors->has('whatsapp'))
+                                    <span class="help-block">
+                                        <strong>
+                                            {{ $errors->first('whatsapp') }}
+                                        </strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group{{ $errors->has('iphone') ? ' has-error' : '' }}">
+                                <label for="iphone" class="control-label">iphone </label>
+                                <input id="iphone"
+                                       type="text"
+                                       class="form-control"
+                                       name="iphone"
+                                       value="{{ old('iphone') }}"
+                                       placeholder="iphone"
+                                       autofocus>
+                                @if ($errors->has('iphone'))
+                                    <span class="help-block">
+                                        <strong>
+                                            {{ $errors->first('iphone') }}
+                                        </strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group{{ $errors->has('android') ? ' has-error' : '' }}">
+                                <label for="android" class="control-label">android </label>
+                                <input id="android"
+                                       type="text"
+                                       class="form-control"
+                                       name="android"
+                                       value="{{ old('android') }}"
+                                       placeholder="android"
+                                       autofocus>
+                                @if ($errors->has('android'))
+                                    <span class="help-block">
+                                        <strong>
+                                            {{ $errors->first('android') }}
+                                        </strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                    </div>
+
+                    
+
+
+                    
+                    
+
+
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label">{{ trans('general.role') }} </label>
+                                <select class="bs-select form-control" name="role_id" required autofocus>
+                                    <option value="">{{ trans('general.select_role') }}</option>
+                                    @foreach($roles as $role)
+                                        <option value="{{ $role->id }}" {{ request()->role == $role->name ? 'selected' : null  }}>{{ $role->name }}
+                                            - {{ $role->slug }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                    </div>
                     @include('backend.partials.forms._btn-group')
                 </div>
             </form>
