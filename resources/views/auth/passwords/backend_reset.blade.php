@@ -11,10 +11,10 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">{{ __('Reset Password') }}</div>
-                    <input type="hidden" name="role_id" value="{{ auth()->user()->role->id }}">
                     <div class="card-body">
                         <form method="POST" action="{{ route('backend.reset') }}">
                             @csrf
+                            <input type="hidden" name="role_id" value="{{ $user->role->id }}">
                             <div class="form-group row">
                                 <label for="email"
                                        class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>

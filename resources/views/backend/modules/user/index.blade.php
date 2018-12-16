@@ -78,8 +78,8 @@
                                                     <i class="fa fa-fw fa-edit"></i> Edit User</a>
                                             </li>
                                             <li>
-                                                <a href="{{ route('backend.admin.reset.password',['email' => $element->email]) }}">
-                                                    <i class="fa fa-fw fa-edit"></i> Reset Password</a>
+                                                <a href="{{ route('backend.reset.password',['email' => $element->email]) }}">
+                                                    <i class="fa fa-fw fa-edit"></i> {{ trans('general.reset_password') }}</a>
                                             </li>
                                             <li>
                                                 <a href="{{ route('backend.admin.activate',['model' => 'user','id' => $element->id]) }}">

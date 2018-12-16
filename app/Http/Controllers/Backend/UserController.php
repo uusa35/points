@@ -70,7 +70,8 @@ class UserController extends Controller
             return redirect()->back()->withErrors($validator);
         }
         $email = $request->email;
-        return view('auth.passwords.backend_reset', compact('email'));
+        $user = User::where('email', $request->email)->first();
+        return view('auth.passwords.backend_reset', compact('email', 'user'));
 
     }
 
