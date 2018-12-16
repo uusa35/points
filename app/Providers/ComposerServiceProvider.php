@@ -25,6 +25,11 @@ class ComposerServiceProvider extends ServiceProvider
         view()->composer([
             'backend.partials.nav',
             'welcome',
+            'auth.login',
+            'auth.register',
+            'auth.verify',
+            'auth.passwords.reset',
+            'auth.passwords.email',
         ],
             'App\Services\ViewComposers@getSettings');
 

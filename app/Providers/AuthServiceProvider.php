@@ -49,5 +49,13 @@ class AuthServiceProvider extends ServiceProvider
             return auth()->user()->role->is_designer;
         });
 
+        Gate::define('isClientOrAbove', function () {
+            return auth()->user()->isClientOrAbove;
+        });
+
+        Gate::define('isDesignerOrAbove', function () {
+            return auth()->user()->isAdminOrAbove;
+        });
+
     }
 }

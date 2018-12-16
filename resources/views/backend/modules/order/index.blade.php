@@ -25,8 +25,8 @@
                             <th>{{ trans('general.service_name') }}</th>
                             <th>{{ trans('general.category_name') }}</th>
                             <th>{{ trans('general.created_at') }}</th>
-                            <th>{{ trans('general.on_progress') }}</th>
-                            <th>{{ trans('general.is_complete') }}</th>
+                            {{--                            <th>{{ trans('general.on_progress') }}</th>--}}
+                            {{--<th>{{ trans('general.is_complete') }}</th>--}}
                             <th>{{ trans('general.is_paid') }}</th>
                             <th>{{ trans('general.Action') }}</th>
                         </tr>
@@ -40,8 +40,8 @@
                             <th>{{ trans('general.service_name') }}</th>
                             <th>{{ trans('general.category_name') }}</th>
                             <th>{{ trans('general.created_at') }}</th>
-                            <th>{{ trans('general.on_progress') }}</th>
-                            <th>{{ trans('general.is_complete') }}</th>
+                            {{--<th>{{ trans('general.on_progress') }}</th>--}}
+                            {{--<th>{{ trans('general.is_complete') }}</th>--}}
                             <th>{{ trans('general.is_paid') }}</th>
                             <th>{{ trans('general.Action') }}</th>
                         </tr>
@@ -56,14 +56,14 @@
                                 <td>{{ $element->service->name }}</td>
                                 <td>{{ $element->service->category->slug }}</td>
                                 <td>{{ $element->created_at->diffForHumans() }}</td>
-                                <td>
-                                    <span
-                                        class="label {{ activeLabel($element->onProgress) }}">{{ activeText($element->onProgress) }}</span>
-                                </td>
-                                <td>
-                                    <span
-                                        class="label {{ activeLabel($element->is_complete) }}">{{ activeText($element->is_complete) }}</span>
-                                </td>
+                                {{--<td>--}}
+                                {{--<span--}}
+                                {{--class="label {{ activeLabel($element->onProgress) }}">{{ activeText($element->onProgress) }}</span>--}}
+                                {{--</td>--}}
+                                {{--<td>--}}
+                                {{--<span--}}
+                                {{--class="label {{ activeLabel($element->is_complete) }}">{{ activeText($element->is_complete) }}</span>--}}
+                                {{--</td>--}}
                                 <td>
                                     <span
                                         class="label {{ activeLabel($element->is_paid) }}">{{ activeText($element->is_paid) }}</span>
@@ -81,6 +81,29 @@
                                                         <i class="fa fa-fw fa-edit"></i>{{ trans('general.view_details') }}
                                                     </a>
                                                 </li>
+                                                <li>
+                                                    <a data-toggle="modal" href="#" data-target="#basic"
+                                                       data-title="Delete"
+                                                       data-content="Are you sure you want to delete this order ? "
+                                                       data-form_id="delete-{{ $element->id }}"
+                                                    >
+                                                        <i class="fa fa-fw fa-recycle"></i> {{ trans('general.delete') }}
+                                                    </a>
+                                                    <form method="post" id="delete-{{ $element->id }}"
+                                                          action="{{ route('backend.admin.order.destroy',$element->id) }}">
+                                                        @csrf
+                                                        <input type="hidden" name="_method" value="delete"/>
+                                                        <button type="submit" class="btn btn-del hidden">
+                                                            <i class="fa fa-fw fa-times-circle"></i> {{ trans('general.delete') }}
+                                                        </button>
+                                                    </form>
+                                                </li>
+                                            @elsecan('onlyClient')
+                                                <li>
+                                                    <a href="{{ route('backend.order.edit',$element->id) }}">
+                                                        <i class="fa fa-fw fa-edit"></i>{{ trans('general.edit') }}
+                                                    </a>
+                                                </li>
                                             @else
                                                 <li>
                                                     <a href="{{ route('backend.order.show',$element->id) }}">
@@ -88,14 +111,7 @@
                                                     </a>
                                                 </li>
                                             @endcan
-                                            @can('isClient')
-                                                <li>
-                                                    <a href="{{ route('backend.order.edit',$element->id) }}">
-                                                        <i class="fa fa-fw fa-edit"></i>{{ trans('general.edit') }}
-                                                    </a>
-                                                </li>
-                                            @endcan
-                                            @if(auth()->user()->isClientOrAbove)
+                                            @can('isClientOrAbove')
                                                 @if(!$element->job)
                                                     <li>
                                                         <a href="{{ route('backend.job.create',$element) }}">
@@ -114,25 +130,6 @@
                                                         </a>
                                                     </li>
                                                 @endif
-                                            @endcan
-                                            @can('isAdmin')
-                                                <li>
-                                                    <a data-toggle="modal" href="#" data-target="#basic"
-                                                       data-title="Delete"
-                                                       data-content="Are you sure you want to delete this order ? "
-                                                       data-form_id="delete-{{ $element->id }}"
-                                                    >
-                                                        <i class="fa fa-fw fa-recycle"></i> {{ trans('general.delete') }}
-                                                    </a>
-                                                    <form method="post" id="delete-{{ $element->id }}"
-                                                          action="{{ route('backend.admin.order.destroy',$element->id) }}">
-                                                        @csrf
-                                                        <input type="hidden" name="_method" value="delete"/>
-                                                        <button type="submit" class="btn btn-del hidden">
-                                                            <i class="fa fa-fw fa-times-circle"></i> {{ trans('general.delete') }}
-                                                        </button>
-                                                    </form>
-                                                </li>
                                             @endcan
                                         </ul>
                                     </div>

@@ -3,6 +3,10 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
+        <div class="col-md-12 text-center">
+            <img style="margin: 5%" class="img-responsive" src="{{ asset(env('THUMBNAIL').$settings->logo) }}"
+                 alt="{{ $settings->name }}">
+        </div>
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Verify Your Email Address') }}</div>

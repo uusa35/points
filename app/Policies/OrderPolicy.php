@@ -2,8 +2,8 @@
 
 namespace App\Policies;
 
+use App\Models\Order;
 use App\Models\User;
-use App\Order;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class OrderPolicy
@@ -19,7 +19,7 @@ class OrderPolicy
      */
     public function view(User $user, Order $order)
     {
-        dd($order->designers()->get()->toArray());
+        dd($order->job()->first()->designers()->get());
         if(!$user->isAdminOrAbove) {
             dd($order->designers()->get()->toArray());
         }
