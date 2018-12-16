@@ -391,7 +391,8 @@
                             <img alt="" class="img-xs"
                                  src="{{ asset('storage/uploads/images/thumbnail/'. auth()->user()->logo) }}"/>
                             <span class="username username-hide-on-mobile"> {{ auth()->user()->role->name }} : </span>
-                            <span class="username username-hide-on-mobile"> {{ auth()->user()->name }}</span>
+                            <span class="username username-hide-on-mobile"> {{ auth()->user()->name }}</span><br>
+                            <span class="username username-hide-on-mobile"> {{ trans('general.balance') }} : {{ auth()->user()->balance->points}} {{ trans('general.points') }}</span>
                             <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-default">
