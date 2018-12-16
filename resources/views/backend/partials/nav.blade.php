@@ -26,20 +26,22 @@
                     <i class="fa fa-angle-down"></i>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                    @if(auth()->user()->isAdminOrAbove)
+                    @can('isAdmin')
                         <li>
                             <a href="{{ route('backend.admin.user.create') }}">
                                 <i class="icon-plus"></i> {{ trans('general.new_user') }}</a>
                         </li>
-
-                    @endif
-                    @if(auth()->user()->isSuper)
-                            <li>
-                                <a href="{{ route('backend.admin.plan.create') }}">
-                                    <i class="icon-plus"></i> {{ trans('general.create_new_payment_plan') }}</a>
-                            </li>
-                    @endif
+                        <li>
+                            <a href="{{ route('backend.admin.order.create') }}">
+                                <i class="icon-plus"></i> {{ trans('general.new_order') }}</a>
+                        </li>
+                    @elseif('onlySuper')
+                        <li>
+                            <a href="{{ route('backend.admin.plan.create') }}">
+                                <i class="icon-plus"></i> {{ trans('general.create_new_payment_plan') }}</a>
+                        </li>
                         <li class="divider"></li>
+                    @endcan
                     @can('onlyClient')
                         {{--change this later to onlyClient--}}
                         <li>
@@ -47,11 +49,6 @@
                                 <i class="icon-plus"></i> {{ trans('general.new_order') }}</a>
                         </li>
                         <li class="divider"></li>
-                    @elsecan('isAdmin')
-                        <li>
-                            <a href="{{ route('backend.admin.order.create') }}">
-                                <i class="icon-plus"></i> {{ trans('general.new_order') }}</a>
-                        </li>
                     @endcan
                 </ul>
             </div>

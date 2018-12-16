@@ -15,7 +15,7 @@ $factory->define(Role::class, function (Faker $faker) {
         'is_client' => $faker->boolean,
         'is_designer' => $faker->boolean,
         'is_visible' => $faker->boolean,
-        'active' => $faker->boolean,
+        'active' => $faker->boolean(true),
         'color' => $faker->colorName,
         'order' => $faker->numberBetween(1, 10),
     ];
