@@ -70,7 +70,7 @@ class OrderController extends Controller
     {
         $element = Order::create($request->request->all());
         if ($element) {
-            return view('backend.module.file.create', compact('element'));
+            return route('backend.file.create', compact('element'));
         }
         return redirect()->back()->with('error', trans('message.order_failure'));
     }
