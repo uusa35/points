@@ -21,10 +21,9 @@ class ComposerServiceProvider extends ServiceProvider
             'auth.register',
         ],
             'App\Services\ViewComposers@getRoles');
-
-        // backend.admin
+        
         view()->composer([
-            'backend.partials.nav',
+            'backend.layouts.app',
             'welcome',
             'auth.login',
             'auth.register',

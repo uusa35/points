@@ -14,7 +14,7 @@
     <meta content="" name="description"/>
     <meta content="" name="author"/>
     <link rel="shortcut icon" href="{{ asset('img/logo.ico') }}"/>
-    <link href="{{ asset('img/logo.png') }}" rel="shortcut icon" type="image/png">
+    <link href="{{ asset(env('THUMBNAIL').$settings->logo) }}" rel="shortcut icon" type="image/png">
     @section('styles')
         @include('backend.partials.styles')
     @show
