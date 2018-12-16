@@ -55,7 +55,7 @@ class OrderController extends Controller
      */
     public function create()
     {
-        session()->put('order_lang',request()->lang);
+        session()->put('order_lang', request()->lang);
         $this->authorize('order.create');
         return view('backend.modules.order.create');
     }
@@ -68,7 +68,11 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $element = Order::create($request->request->all());
+        if ($element) {
+            return view('backend.module.file.create', compact('element'));
+        }
+        return redirect()->back()->with('error', trans('message.order_failure'));
     }
 
     /**
@@ -80,7 +84,7 @@ class OrderController extends Controller
     public function show($id)
     {
         $element = Order::whereId($id)->first();
-        $this->authorize('order.view',$element);
+        $this->authorize('order.view', $element);
         return view('backend.modules.order.show', compact('element'));
     }
 
