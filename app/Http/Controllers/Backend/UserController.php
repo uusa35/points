@@ -22,6 +22,7 @@ class UserController extends Controller
     public function show($id)
     {
         $element = User::whereId($id)->with('role')->first();
+        $this->authorize('user.view', $element);
         return view('backend.modules.user.show', compact('element'));
     }
 
@@ -34,6 +35,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $element = User::whereId($id)->first();
+        $this->authorize('user.view', auth()->user(),$element);
         return view('backend.modules.user.edit', compact('element'));
     }
 

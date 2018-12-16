@@ -8,7 +8,7 @@
                 @csrf
                 <input type="hidden" name="_method" value="put">
                 <div class="form-body">
-                    <h3 class="form-section">{{ trans('general.create_user') }}</h3>
+                    <h3 class="form-section">{{ trans('general.edit_user') }}</h3>
                     {{--name arabic / name english --}}
                     <div class="row">
                         <div class="col-md-3">

@@ -163,7 +163,7 @@ Breadcrumbs::for('backend.user.create', function ($trail) {
 
 Breadcrumbs::for('backend.user.edit', function ($trail, $element) {
     $trail->parent('backend.home');
-    $trail->push('users', route('backend.user.index', ['role_id' => $element->role_id]));
+//    $trail->push('users', route('backend.user.index', ['role_id' => $element->role_id]));
     $trail->push(trans('general.edit_user'), route('backend.user.edit', $element->id));
 });
 
