@@ -23,8 +23,8 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::get('backup/db', ['as' => 'backup.db', 'uses' => 'HomeController@BackupDB']);
         Route::get('export/translations', ['as' => 'export.translation', 'uses' => 'HomeController@exportTranslations']);
         Route::get('activate', 'HomeController@toggleActivate')->name('activate');
-        Route::get('reset/password', 'UserController@getResetPassword')->name('reset.password');
-        Route::post('reset/password', 'UserController@postResetPassword')->name('reset');
+//        Route::get('reset/password', 'UserController@getResetPassword')->name('reset.password');
+//        Route::post('reset/password', 'UserController@postResetPassword')->name('reset');
         Route::resource('user', 'UserController');
         Route::resource('plan', 'PaymentPlanController');
         Route::resource('role', 'RoleController');

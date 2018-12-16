@@ -26,20 +26,22 @@
                     <i class="fa fa-angle-down"></i>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                    @if(auth()->user()->isAdminOrAbove)
+                    @can('isAdmin')
                         <li>
                             <a href="{{ route('backend.admin.user.create') }}">
                                 <i class="icon-plus"></i> {{ trans('general.new_user') }}</a>
                         </li>
-
-                    @endif
-                    @if(auth()->user()->isSuper)
-                            <li>
-                                <a href="{{ route('backend.admin.plan.create') }}">
-                                    <i class="icon-plus"></i> {{ trans('general.create_new_payment_plan') }}</a>
-                            </li>
-                    @endif
+                        <li>
+                            <a href="{{ route('backend.admin.order.create') }}">
+                                <i class="icon-plus"></i> {{ trans('general.new_order') }}</a>
+                        </li>
+                    @elsecan('onlySuper')
+                        <li>
+                            <a href="{{ route('backend.admin.plan.create') }}">
+                                <i class="icon-plus"></i> {{ trans('general.create_new_payment_plan') }}</a>
+                        </li>
                         <li class="divider"></li>
+                    @endcan
                     @can('onlyClient')
                         {{--change this later to onlyClient--}}
                         <li>
@@ -47,11 +49,6 @@
                                 <i class="icon-plus"></i> {{ trans('general.new_order') }}</a>
                         </li>
                         <li class="divider"></li>
-                    @elsecan('isAdmin')
-                        <li>
-                            <a href="{{ route('backend.admin.order.create') }}">
-                                <i class="icon-plus"></i> {{ trans('general.new_order') }}</a>
-                        </li>
                     @endcan
                 </ul>
             </div>
@@ -394,7 +391,8 @@
                             <img alt="" class="img-xs"
                                  src="{{ asset('storage/uploads/images/thumbnail/'. auth()->user()->logo) }}"/>
                             <span class="username username-hide-on-mobile"> {{ auth()->user()->role->name }} : </span>
-                            <span class="username username-hide-on-mobile"> {{ auth()->user()->name }}</span>
+                            <span class="username username-hide-on-mobile"> {{ auth()->user()->name }}</span><br>
+                            <span class="username username-hide-on-mobile"> {{ trans('general.balance') }} : {{ auth()->user()->balance->points}} {{ trans('general.points') }}</span>
                             <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-default">
@@ -427,7 +425,11 @@
                             @if(auth()->user())
                                 <li>
                                     <a href="{{ route('backend.reset.password',['email' => auth()->user()->email]) }}">
-                                        <i class="fa fa-fw fa-edit"></i> Reset Password</a>
+                                        <i class="fa fa-fw fa-edit"></i> {{ trans('general.reset_password') }}</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('backend.user.show',auth()->id()) }}">
+                                        <i class="fa fa-fw fa-user-circle"></i> {{ trans('general.my_profile') }}</a>
                                 </li>
                             @endif
                             <li class="divider"></li>

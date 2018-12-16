@@ -25,8 +25,8 @@
                             <th>{{ trans('general.service_name') }}</th>
                             <th>{{ trans('general.category_name') }}</th>
                             <th>{{ trans('general.created_at') }}</th>
-                            <th>{{ trans('general.on_progress') }}</th>
-                            <th>{{ trans('general.is_complete') }}</th>
+                            {{--                            <th>{{ trans('general.on_progress') }}</th>--}}
+                            {{--<th>{{ trans('general.is_complete') }}</th>--}}
                             <th>{{ trans('general.is_paid') }}</th>
                             <th>{{ trans('general.Action') }}</th>
                         </tr>
@@ -40,8 +40,8 @@
                             <th>{{ trans('general.service_name') }}</th>
                             <th>{{ trans('general.category_name') }}</th>
                             <th>{{ trans('general.created_at') }}</th>
-                            <th>{{ trans('general.on_progress') }}</th>
-                            <th>{{ trans('general.is_complete') }}</th>
+                            {{--<th>{{ trans('general.on_progress') }}</th>--}}
+                            {{--<th>{{ trans('general.is_complete') }}</th>--}}
                             <th>{{ trans('general.is_paid') }}</th>
                             <th>{{ trans('general.Action') }}</th>
                         </tr>
@@ -56,14 +56,14 @@
                                 <td>{{ $element->service->name }}</td>
                                 <td>{{ $element->service->category->slug }}</td>
                                 <td>{{ $element->created_at->diffForHumans() }}</td>
-                                <td>
-                                    <span
-                                        class="label {{ activeLabel($element->onProgress) }}">{{ activeText($element->onProgress) }}</span>
-                                </td>
-                                <td>
-                                    <span
-                                        class="label {{ activeLabel($element->is_complete) }}">{{ activeText($element->is_complete) }}</span>
-                                </td>
+                                {{--<td>--}}
+                                {{--<span--}}
+                                {{--class="label {{ activeLabel($element->onProgress) }}">{{ activeText($element->onProgress) }}</span>--}}
+                                {{--</td>--}}
+                                {{--<td>--}}
+                                {{--<span--}}
+                                {{--class="label {{ activeLabel($element->is_complete) }}">{{ activeText($element->is_complete) }}</span>--}}
+                                {{--</td>--}}
                                 <td>
                                     <span
                                         class="label {{ activeLabel($element->is_paid) }}">{{ activeText($element->is_paid) }}</span>
@@ -81,41 +81,6 @@
                                                         <i class="fa fa-fw fa-edit"></i>{{ trans('general.view_details') }}
                                                     </a>
                                                 </li>
-                                            @else
-                                                <li>
-                                                    <a href="{{ route('backend.order.show',$element->id) }}">
-                                                        <i class="fa fa-fw fa-edit"></i>{{ trans('general.view_details') }}
-                                                    </a>
-                                                </li>
-                                            @endcan
-                                            @can('isClient')
-                                                <li>
-                                                    <a href="{{ route('backend.order.edit',$element->id) }}">
-                                                        <i class="fa fa-fw fa-edit"></i>{{ trans('general.edit') }}
-                                                    </a>
-                                                </li>
-                                            @endcan
-                                            @if(auth()->user()->isClientOrAbove)
-                                                @if(!$element->job)
-                                                    <li>
-                                                        <a href="{{ route('backend.job.create',$element) }}">
-                                                            <i class="fa fa-fw fa-edit"></i>{{ trans('general.create_new_job_for_this_order') }}
-                                                        </a>
-                                                    </li>
-                                                @else
-                                                    <li>
-                                                        <a href="{{ route('backend.job.edit',$element->job->id) }}">
-                                                            <i class="fa fa-fw fa-edit"></i>{{ trans('general.edit_current_job') }}
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="{{ route('backend.job.show',$element->job->id) }}">
-                                                            <i class="fa fa-fw fa-eye-slash"></i>{{ trans('general.view_job') }}
-                                                        </a>
-                                                    </li>
-                                                @endif
-                                            @endcan
-                                            @can('isAdmin')
                                                 <li>
                                                     <a data-toggle="modal" href="#" data-target="#basic"
                                                        data-title="Delete"
@@ -133,7 +98,36 @@
                                                         </button>
                                                     </form>
                                                 </li>
+                                            @elsecan('onlyClient')
+                                                <li>
+                                                    <a href="{{ route('backend.order.edit',$element->id) }}">
+                                                        <i class="fa fa-fw fa-edit"></i>{{ trans('general.edit') }}
+                                                    </a>
+                                                </li>
                                             @endcan
+                                            <li>
+                                                <a href="{{ route('backend.order.show',$element->id) }}">
+                                                    <i class="fa fa-fw fa-edit"></i>{{ trans('general.view_details') }}
+                                                </a>
+                                            </li>
+                                            @if(!$element->job)
+                                                <li>
+                                                    <a href="{{ route('backend.job.create',$element) }}">
+                                                        <i class="fa fa-fw fa-edit"></i>{{ trans('general.create_new_job_for_this_order') }}
+                                                    </a>
+                                                </li>
+                                            @else
+                                                <li>
+                                                    <a href="{{ route('backend.job.edit',$element->job->id) }}">
+                                                        <i class="fa fa-fw fa-edit"></i>{{ trans('general.edit_current_job') }}
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ route('backend.job.show',$element->job->id) }}">
+                                                        <i class="fa fa-fw fa-eye-slash"></i>{{ trans('general.view_job') }}
+                                                    </a>
+                                                </li>
+                                            @endif
                                         </ul>
                                     </div>
                                 </td>

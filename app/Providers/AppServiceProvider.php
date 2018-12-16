@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
     {
         if (app()->environment('production')) {
             Order::observe(OrderObserver::class);
-            Balance::observe(BalanceObserver::class);
+//            Balance::observe(BalanceObserver::class);
             User::observe(UserObserver::class);
             Transaction::observe(TransactionObserver::class);
         }

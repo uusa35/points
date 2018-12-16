@@ -23,7 +23,12 @@ Breadcrumbs::for('backend.admin.user.index', function ($trail) {
 
 Breadcrumbs::for('backend.admin.user.create', function ($trail) {
     $trail->parent('backend.admin.user.index');
-    $trail->push(trans('create_user'), route('backend.admin.user.create'));
+    $trail->push(trans('general.create_user'), route('backend.admin.user.create'));
+});
+
+Breadcrumbs::for('backend.admin.user.edit', function ($trail, $element) {
+    $trail->parent('backend.admin.user.index');
+    $trail->push(trans('general.edit_user'), route('backend.admin.user.edit', $element->id));
 });
 
 Breadcrumbs::for('backend.admin.order.create', function ($trail) {
@@ -60,6 +65,16 @@ Breadcrumbs::for('backend.admin.category.index', function ($trail) {
 Breadcrumbs::for('backend.admin.plan.index', function ($trail) {
     $trail->parent('backend.home');
     $trail->push(trans('general.payment_plans'), route('backend.admin.plan.index'));
+});
+
+Breadcrumbs::for('backend.admin.setting.show', function ($trail, $element) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.settings'), route('backend.admin.setting.show', $element->id));
+});
+
+Breadcrumbs::for('backend.admin.setting.edit', function ($trail, $element) {
+    $trail->parent('backend.admin.setting.show', $element);
+    $trail->push(trans('general.settings'), route('backend.admin.setting.edit', $element->id));
 });
 
 
@@ -148,7 +163,7 @@ Breadcrumbs::for('backend.user.create', function ($trail) {
 
 Breadcrumbs::for('backend.user.edit', function ($trail, $element) {
     $trail->parent('backend.home');
-    $trail->push('users', route('backend.user.index', ['role_id' => $element->role_id]));
+//    $trail->push('users', route('backend.user.index', ['role_id' => $element->role_id]));
     $trail->push(trans('general.edit_user'), route('backend.user.edit', $element->id));
 });
 
@@ -222,6 +237,11 @@ Breadcrumbs::for('backend.setting.edit', function ($trail, $element) {
 });
 
 Breadcrumbs::for('backend.reset.password', function ($trail) {
+    $trail->parent('backend.home');
+    return $trail->push(trans('general.reset_password'), route('backend.reset.password'));
+});
+
+Breadcrumbs::for('password.reset', function ($trail) {
     $trail->parent('backend.home');
     return $trail->push(trans('general.reset_password'), route('backend.reset.password'));
 });

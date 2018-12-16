@@ -49,7 +49,8 @@ class SettingController extends Controller
      */
     public function show($id)
     {
-        //
+        $element = Setting::first();
+        return view('backend.modules.setting.show', compact('element'));
     }
 
     /**

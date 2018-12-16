@@ -22,6 +22,7 @@ class UserController extends Controller
     public function show($id)
     {
         $element = User::whereId($id)->with('role')->first();
+        $this->authorize('user.view', $element);
         return view('backend.modules.user.show', compact('element'));
     }
 
@@ -34,6 +35,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $element = User::whereId($id)->first();
+        $this->authorize('user.view', auth()->user(),$element);
         return view('backend.modules.user.edit', compact('element'));
     }
 
@@ -70,7 +72,8 @@ class UserController extends Controller
             return redirect()->back()->withErrors($validator);
         }
         $email = $request->email;
-        return view('auth.passwords.reset', compact('email'));
+        $user = User::where('email', $request->email)->first();
+        return view('auth.passwords.backend_reset', compact('email', 'user'));
 
     }
 
@@ -86,7 +89,7 @@ class UserController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect()->back()->withInputs()->withErrors($validator);;
+            return redirect()->back()->withInputs()->withErrors($validator);
         }
         $user = User::where('email', $request->email)->first();
         if ($user) {

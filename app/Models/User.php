@@ -36,7 +36,7 @@ class User extends Authenticatable
     // jobs that are created by designers only
     public function jobs()
     {
-        return $this->belongsToMany(Job::class);
+        return $this->belongsToMany(Job::class,'job_user');
     }
 
     // only clients have one balance record

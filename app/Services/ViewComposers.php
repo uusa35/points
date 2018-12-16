@@ -20,10 +20,12 @@ class ViewComposers
 {
     public function getRoles(View $view)
     {
-        if (auth()->user()->isSuper) {
+        if (auth()->check() && auth()->user()->isSuper) {
             $roles = Role::all();
-        } elseif (auth()->user()->isAdmin) {
+        } elseif (auth()->check() && auth()->user()->isAdmin) {
             $roles = Role::where('id', '!=', 1)->get();
+        } else {
+            $roles = Role::where(['is_visible' => true])->get();
         }
         return $view->with(compact('roles'));
     }

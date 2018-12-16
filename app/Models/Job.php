@@ -19,7 +19,7 @@ class Job extends PrimaryModel
 
     public function designers()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class,'job_user');
     }
 
     /**

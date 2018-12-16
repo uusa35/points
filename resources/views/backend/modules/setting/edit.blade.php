@@ -4,7 +4,7 @@
         @include('backend.partials.forms.form_title')
         <div class="portlet-body form">
             <!-- BEGIN FORM-->
-            <form method="post" action="{{ route('backend.setting.update', $element->id) }}" class="horizontal-form"  enctype="multipart/form-data">
+            <form method="post" action="{{ route('backend.admin.setting.update', $element->id) }}" class="horizontal-form"  enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="_method" value="patch">
                 <div class="form-body">

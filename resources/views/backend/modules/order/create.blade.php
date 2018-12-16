@@ -453,6 +453,7 @@
 
                     </div>
 
+<<<<<<< HEAD
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="col-md-3 control-label">unwanted_colors_3</label>
@@ -478,6 +479,17 @@
                             </label>
                         </div>
                     </div>
+=======
+                    @include('backend.modules.order._add_file')
+                    @include('backend.modules.order._add_image')
+                    <a data-toggle="modal" href="#" data-target="#order-image"
+                       data-title="{{ trans('general.image') }}"
+                    >{{ trans('general.add_image') }}</a>
+                    <a data-toggle="modal" href="#" data-target="#order-file"
+                       data-title="{{ trans('general.file') }}"
+                    >{{ trans('general.add_file') }}</a>
+                    @include('backend.partials.forms._btn-group')
+>>>>>>> 015e11f41267e5b8f30b8b125882ed2cd92f803b
                 </div>
 
                 @include('backend.modules.order._add_file')
