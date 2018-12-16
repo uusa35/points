@@ -226,5 +226,10 @@ Breadcrumbs::for('backend.reset.password', function ($trail) {
     return $trail->push(trans('general.reset_password'), route('backend.reset.password'));
 });
 
+Breadcrumbs::for('password.reset', function ($trail) {
+    $trail->parent('backend.home');
+    return $trail->push(trans('general.reset_password'), route('backend.reset.password'));
+});
+
 
 

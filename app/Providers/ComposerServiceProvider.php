@@ -18,6 +18,7 @@ class ComposerServiceProvider extends ServiceProvider
             'backend.partials.sidebar.sidebar',
             'backend.modules.user.create',
             'backend.modules.user.edit',
+            'auth.register',
         ],
             'App\Services\ViewComposers@getRoles');
 
@@ -28,7 +29,7 @@ class ComposerServiceProvider extends ServiceProvider
             'auth.login',
             'auth.register',
             'auth.verify',
-            'auth.passwords.reset',
+            'auth.passwords.backend_reset',
             'auth.passwords.email',
         ],
             'App\Services\ViewComposers@getSettings');
