@@ -23,7 +23,12 @@ Breadcrumbs::for('backend.admin.user.index', function ($trail) {
 
 Breadcrumbs::for('backend.admin.user.create', function ($trail) {
     $trail->parent('backend.admin.user.index');
-    $trail->push(trans('create_user'), route('backend.admin.user.create'));
+    $trail->push(trans('general.create_user'), route('backend.admin.user.create'));
+});
+
+Breadcrumbs::for('backend.admin.user.edit', function ($trail, $element) {
+    $trail->parent('backend.admin.user.index');
+    $trail->push(trans('general.edit_user'), route('backend.admin.user.edit', $element->id));
 });
 
 Breadcrumbs::for('backend.admin.order.create', function ($trail) {
