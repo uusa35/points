@@ -6,6 +6,30 @@
                 <h4 class="modal-title"></h4>
             </div>
             <div class="modal-body">
+           
+            <div class="row">
+
+
+<div class="col-md-6-3">
+                            <div class="form-group">
+                                <label for="form_control_1">{{ trans('general.image') }}</label>
+                                <input type="file" class="form-control" name="image" placeholder="image">
+                                <div class="help-block text-left">
+                                    W H - Best fit 250 x 250 pixels
+                                </div>
+                            </div>
+<div class="col-md-6">
+    <div class="form-group{{ $errors->has('phone_one') ? ' has-error' : '' }}">
+        <label for="phone_one" class="control-label">phone_one </label>
+        <input id="phone_one" type="text" class="form-control" name="phone_one" value="{{ old('phone_one') }}"
+            placeholder="phone_one" autofocus>
+        
+    </div>
+</div>
+
+
+</div>
+
             do the form here
                 mame
                 description

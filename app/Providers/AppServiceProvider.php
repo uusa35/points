@@ -11,6 +11,8 @@ use App\Observers\OrderObserver;
 use App\Observers\TransactionObserver;
 use App\Observers\UserObserver;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Schema;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,6 +29,7 @@ class AppServiceProvider extends ServiceProvider
             User::observe(UserObserver::class);
             Transaction::observe(TransactionObserver::class);
         }
+        Schema::defaultStringLength(191);
     }
 
     /**
