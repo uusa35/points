@@ -35,7 +35,7 @@
                             <a href="{{ route('backend.admin.order.create') }}">
                                 <i class="icon-plus"></i> {{ trans('general.new_order') }}</a>
                         </li>
-                    @elseif('onlySuper')
+                    @elsecan('onlySuper')
                         <li>
                             <a href="{{ route('backend.admin.plan.create') }}">
                                 <i class="icon-plus"></i> {{ trans('general.create_new_payment_plan') }}</a>
