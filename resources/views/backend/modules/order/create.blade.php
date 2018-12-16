@@ -276,6 +276,12 @@
 
                     @include('backend.modules.order._add_file')
                     @include('backend.modules.order._add_image')
+                    <a data-toggle="modal" href="#" data-target="#order-image"
+                       data-title="{{ trans('general.image') }}"
+                    >{{ trans('general.add_image') }}</a>
+                    <a data-toggle="modal" href="#" data-target="#order-file"
+                       data-title="{{ trans('general.file') }}"
+                    >{{ trans('general.add_file') }}</a>
                     @include('backend.partials.forms._btn-group')
                 </div>
             </form>

@@ -62,6 +62,16 @@ Breadcrumbs::for('backend.admin.plan.index', function ($trail) {
     $trail->push(trans('general.payment_plans'), route('backend.admin.plan.index'));
 });
 
+Breadcrumbs::for('backend.admin.setting.show', function ($trail, $element) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.settings'), route('backend.admin.setting.show', $element->id));
+});
+
+Breadcrumbs::for('backend.admin.setting.edit', function ($trail, $element) {
+    $trail->parent('backend.admin.setting.show', $element);
+    $trail->push(trans('general.settings'), route('backend.admin.setting.edit', $element->id));
+});
+
 
 // users
 
