@@ -9,7 +9,7 @@ class PaymentPlan extends PrimaryModel
 {
     use LocaleTrait;
     protected $guarded = [''];
-    protected $localeStrings = ['slug'];
+    protected $localeStrings = ['slug','description'];
 
     public function transactions() {
         return $this->hasMany(Transaction::class);

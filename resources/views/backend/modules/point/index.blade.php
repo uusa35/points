@@ -9,22 +9,27 @@
                         @foreach($paymentPlans as $plan)
                             <div class="col-md-4">
                                 <div class="price-column-container border-active">
-                                    <div class="price-table-head bg-green">
+                                    <div class="price-table-head" style="background-color: {{ $plan->color  }}">
                                         <h2 class="no-margin">{{ $plan->name }}</h2>
                                     </div>
-                                    <div class="arrow-down border-top-green"></div>
+                                    <div class="arrow-down border-top-black"></div>
                                     <div class="price-table-pricing">
                                         <h3>
-                                            <span class="price-sign">$</span>59</h3>
-                                        <p>per month</p>
-                                        <div class="price-ribbon">Popular</div>
+                                            <span class="price-sign">{{ trans('general.kwd') }}</span>{{ $plan->price }}
+                                        </h3>
+                                        <p>{{ $plan->slug }}</p>
+                                        @if($plan->apply_bonus)
+                                            <div class="price-ribbon">{{ trans('general.bonus') }} {{ $plan->bonus }}</div>
+                                        @endif
                                     </div>
                                     <div class="price-table-content">
                                         <div class="row mobile-padding">
                                             <div class="col-xs-3 text-right mobile-padding">
                                                 <i class="icon-user-follow"></i>
                                             </div>
-                                            <div class="col-xs-9 text-left mobile-padding">20 Members</div>
+                                            <div class="col-xs-9 text-left mobile-padding">
+                                                {{ $plan->description }}
+                                            </div>
                                         </div>
                                         <div class="row mobile-padding">
                                             <div class="col-xs-3 text-right mobile-padding">
@@ -56,7 +61,7 @@
                     </div>
                 </div>
             @endif
-                @include('backend.partials._transactions')
+            @include('backend.partials._transactions')
         </div>
     </div>
 @endsection
