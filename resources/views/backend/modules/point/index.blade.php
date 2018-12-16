@@ -19,7 +19,7 @@
                                         </h3>
                                         <p>{{ $plan->slug }}</p>
                                         @if($plan->apply_bonus)
-                                            <div class="price-ribbon">{{ trans('general.bonus') }} {{ $plan->bonus }}</div>
+                                            <div class="price-ribbon">{{ trans('general.bonus') }} {{ $plan->bonus }} {{ trans('general.points') }}</div>
                                         @endif
                                     </div>
                                     <div class="price-table-content">
