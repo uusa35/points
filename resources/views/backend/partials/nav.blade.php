@@ -425,7 +425,11 @@
                             @if(auth()->user())
                                 <li>
                                     <a href="{{ route('backend.reset.password',['email' => auth()->user()->email]) }}">
-                                        <i class="fa fa-fw fa-edit"></i> Reset Password</a>
+                                        <i class="fa fa-fw fa-edit"></i> {{ trans('general.reset_password') }}</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('backend.user.show',auth()->id()) }}">
+                                        <i class="fa fa-fw fa-user-circle"></i> {{ trans('general.my_profile') }}</a>
                                 </li>
                             @endif
                             <li class="divider"></li>
