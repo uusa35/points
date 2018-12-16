@@ -54,4 +54,5 @@ return array (
   'project_backend_instructions' => 'Important : please insert the end date of each project',
   'category_has_children_can_not_be_deleted' => 'لن يتم حذف التصنيف لوجود عناصر متعلقة ..',
   'notification_message' => 'new :type has been created. :type name is :name - :project_name',
+  'tab_1' => 'Messge For Tab One',
 );

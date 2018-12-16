@@ -429,36 +429,34 @@
 
                     </div>
 
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">unwanted_colors_1</label>
-                            <div class="col-md-6">
-                                <input type="text" id="hue-demo" name="unwanted_colors_1" class="form-control demo" data-control="hue" value="#ff6161">
-                            </div>
-                        </div>
-
-                    </div>
-
                 </div>
 
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="form-group">
-                            <label class="col-md-3 control-label">unwanted_colors_2</label>
+                            <label class="col-md-3 control-label">{{ trans('genera.unwanted_colors') }}</label>
                             <div class="col-md-6">
-                                <input type="text" id="hue-demo" name="unwanted_colors_2" class="form-control demo" data-control="hue" value="#ff6161">
+                                <input type="text" id="hue-demo-1" name="unwanted_colors_1" class="form-control demo" data-control="hue" value="#ff6161">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">{{ trans('general.unwanted_colors') }}</label>
+                            <div class="col-md-6">
+                                <input type="text" id="hue-demo-2" name="unwanted_colors_2" class="form-control demo" data-control="hue" value="#ff6161">
                             </div>
                         </div>
 
                     </div>
 
-<<<<<<< HEAD
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="form-group">
-                            <label class="col-md-3 control-label">unwanted_colors_3</label>
+                            <label class="col-md-3 control-label">{{ trans('genera.unwatched_colors') }}</label>
                             <div class="col-md-6">
-                                <input type="text" id="hue-demo" name="unwanted_colors_3" class="form-control demo" data-control="hue" value="#ff6161">
+                                <input type="text" id="hue-demo-3" name="unwanted_colors_3" class="form-control demo" data-control="hue" value="#ff6161">
                             </div>
                         </div>
 
@@ -479,19 +477,17 @@
                             </label>
                         </div>
                     </div>
-=======
-                    @include('backend.modules.order._add_file')
-                    @include('backend.modules.order._add_image')
-                    <a data-toggle="modal" href="#" data-target="#order-image"
-                       data-title="{{ trans('general.image') }}"
-                    >{{ trans('general.add_image') }}</a>
-                    <a data-toggle="modal" href="#" data-target="#order-file"
-                       data-title="{{ trans('general.file') }}"
-                    >{{ trans('general.add_file') }}</a>
-                    @include('backend.partials.forms._btn-group')
->>>>>>> 015e11f41267e5b8f30b8b125882ed2cd92f803b
                 </div>
-
+                <div class="row">
+                    <div class="col-lg-6">
+                        <a data-toggle="modal" href="#" data-target="#order-image"
+                           data-title="{{ trans('general.image') }}"
+                        >{{ trans('general.add_image') }}</a>
+                        <a data-toggle="modal" href="#" data-target="#order-file"
+                           data-title="{{ trans('general.file') }}"
+                        >{{ trans('general.add_file') }}</a>
+                    </div>
+                </div>
                 @include('backend.modules.order._add_file')
                 @include('backend.modules.order._add_image')
                 @include('backend.partials.forms._btn-group')

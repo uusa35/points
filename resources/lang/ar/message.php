@@ -53,4 +53,5 @@ return array (
   'auctions_comments_message' => 'المزايدة + رقم التلفون',
   'project_backend_instructions' => 'هام : يجب أن يتم وضع تاريخ الانتهاء من المشروع',
   'category_has_children_can_not_be_deleted' => 'لن يتم حذف التصنيف لوجود عناصر متعلقة ..',
+  'tab_1' => 'رسالة التاب وان',
 );
