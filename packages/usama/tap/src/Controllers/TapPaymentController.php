@@ -10,6 +10,7 @@ use App\Models\Deal;
 use App\Models\Order;
 use App\Models\OrderAttribute;
 use App\Models\Plan;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Mail\Markdown;
 use Illuminate\Support\Facades\Mail;
@@ -61,28 +62,28 @@ class TapPaymentController extends Controller
     public function makePayment(Request $request)
     {
         $className = config('tap.order');
-        $order = new $className();
-        $order = $order->whereId($request->id)->with('order_metas.product', 'order_metas.product_attribute')->first();
+        $class = new $className();
+        $element = $class->whereId($request->id)->first();
         $user = auth()->user();
         $finalArray = [
             'CustomerDC' => [
-                "Email" => $order->email,
-                "Floor" => $order->floor ? $order->floor : "0",
-                "Gender" => $order->gender ? $order->gender : "0",
+                "Email" => $user->email,
+                "Floor" => $element->floor ? $element->floor : "0",
+                "Gender" => $element->gender ? $element->gender : "0",
                 "ID" => $user ? $user->id : "0",
-                "Mobile" => $order->mobile,
+                "Mobile" => $element->mobile,
                 "Name" => $user->name,
-                "Nationality" => $order->nationality ? $order->nationality : "KWT",
-                "Street" => $order->address ? $order->address : $user->address,
-                "Area" => $order->area ? $order->area : $user->area_id,
-                "CivilID" => $order->mobile ? $order->mobile : "0",
-                "Building" => $user->address,
-                "Apartment" => $user->address,
+                "Nationality" => "KWT",
+                "Street" => $user->address,
+                "Area" => $user->address,
+                "CivilID" => $user->mobile,
+                "Building" => $user->address_ar,
+                "Apartment" => $user->address_en,
                 "DOB" => $user->created_at
             ],
-            'lstProductDC' => $this->getProducts($order),
+            'lstProductDC' => $this->getProducts($element),
             'lstGateWayDC' => [$this->getGateWay()],
-            'MerMastDC' => $this->getMerchant($order->net_price),
+            'MerMastDC' => $this->getMerchant($element->price),
         ];
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -118,34 +119,32 @@ class TapPaymentController extends Controller
              * store the payment and update it with the refrence
                 * */
                 // create the order here
-                $order->update(['reference_id' => $response->ReferenceID]);
-//                return $response->PaymentURL;
+                $user->transactions()->create(
+                    [
+                        'payment_plan_id' => $element->id,
+                        'reference_id' => $response->ReferenceID,
+                        'actual_amount' => $element->price
+                    ]
+                );
+//                $order->update(['reference_id' => $response->ReferenceID]);
                 return redirect()->to($response->PaymentURL);
             }
 
             return redirect()->back()->with('error', trans('message.payment_url_error'));
 //            return response()->json($response->ResponseMessage);
-
         }
     }
 
     public function result(Request $request)
     {
         // once the result is success .. get the deal from refrence then delete all other free deals related to such ad.
-        $order = Order::where(['reference_id' => $request->ref])->with('order_metas.product', 'user', 'order_metas.product_attribute.size', 'order_metas.product_attribute.color')->first();
-        $order->order_metas->each(function ($orderMeta) use ($order) {
-            $orderMeta->product->check_stock && $orderMeta->product_attribute->qty > 0 ? $orderMeta->product_attribute->decrement('qty', 1) : null;
-        });
-        $done = $order->update(['status' => 'success']);
-        $coupon = session('coupon');
-        if ($coupon && $done) {
-            $coupon->update(['consumed' => true]);
-        }
+        $transaction = Transaction::where(['reference_id' => $request->ref])->with('user','payment_plan')->first();
+        $transaction->update(['is_complete' => true]);
         $contactus = Setting::first();
-        Mail::to($order->email)->cc($contactus->email)->send(new OrderComplete($order, $order->user));
+//        Mail::to($transaction->user->email)->cc($contactus->email)->send(new OrderComplete($transaction, $transaction->user));
         $this->clearCart();
         $markdown = new Markdown(view(), config('mail.markdown'));
-        return $markdown->render('emails.order-complete', ['order' => $order, 'user' => $order->user]);
+        return $markdown->render('emails.transaction-complete', ['element' => $transaction, 'user' => $transaction->user]);
     }
 
     public function error(Request $request)
@@ -155,35 +154,20 @@ class TapPaymentController extends Controller
         return abort('404', 'Your payment process is unsuccessful .. your deal is not created please try again or contact us.');
     }
 
-    public function getProducts($order)
+    public function getProducts($element)
     {
         $productsList = [];
-        foreach ($order->order_metas as $orderMeta) {
-            array_push($productsList, [
-                'CurrencyCode' => env('TAP_CURRENCY_CODE'),
-                'ImgUrl' => asset(env('LARGE')) . $orderMeta->product->image,
-                'Quantity' => $orderMeta->qty,
-                'TotalPrice' => $orderMeta->product->on_sale ? $orderMeta->product->sale_price : $orderMeta->product->price,
-                'UnitID' => $orderMeta->product->id,
-                'UnitName' => $orderMeta->product->name_en,
-                'UnitPrice' => $orderMeta->product->price,
-                'UnitDesc' => $orderMeta->product->description,
-                'VndID' => '',
-            ]);
-        }
-        if ($order->shipping_cost > 0) {
-            array_push($productsList, [
-                'CurrencyCode' => env('TAP_CURRENCY_CODE'),
-                'ImgUrl' => asset(env('LARGE')) . Setting::first()->logo,
-                'Quantity' => 1,
-                'TotalPrice' => $order->shipping_cost,
-                'UnitID' => $order->id,
-                'UnitName' => 'Shipping Cost',
-                'UnitPrice' => $order->shipping_cost,
-                'UnitDesc' => 'Shipping Cost',
-                'VndID' => '',
-            ]);
-        }
+        array_push($productsList, [
+            'CurrencyCode' => env('TAP_CURRENCY_CODE'),
+            'ImgUrl' => asset(env('LARGE')) . $element->image,
+            'Quantity' => 1,
+            'TotalPrice' => $element->price,
+            'UnitID' => $element->id,
+            'UnitName' => $element->name .'-'. $element->slug,
+            'UnitPrice' => $element->price,
+            'UnitDesc' => $element->description,
+            'VndID' => '',
+        ]);
         return $productsList;
     }
 

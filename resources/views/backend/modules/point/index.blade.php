@@ -37,8 +37,12 @@
                                         </div>
                                         <div class="arrow-down arrow-grey"></div>
                                         <div class="price-table-footer">
-                                            <button type="button" class="btn green price-button sbold uppercase">Sign Up
-                                            </button>
+                                            <Form action="{{ route('web.payment.create') }}" method="post">
+                                                @csrf
+                                                <input type="hidden" name="id" value="{{ $plan->id }}">
+                                                <button type="submit" class="btn green price-button sbold uppercase">{{ trans('general.buy_now') }}
+                                                </button>
+                                            </Form>
                                         </div>
                                     </div>
                                 </div>
