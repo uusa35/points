@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e482aaea-7ea8-4e60-bb85-c7a119286766" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/RoleFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/RoleFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/order/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/order/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/plan/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/plan/index.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +50,7 @@
           <entry key="env" value="54" />
           <entry key="js" value="154" />
           <entry key="json" value="10" />
-          <entry key="php" value="38710" />
+          <entry key="php" value="38772" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -63,7 +59,7 @@
           <entry key="CSS" value="36" />
           <entry key="JSON" value="10" />
           <entry key="JavaScript" value="154" />
-          <entry key="PHP" value="23835" />
+          <entry key="PHP" value="23897" />
           <entry key="PLAIN_TEXT" value="59" />
         </counts>
       </usages-collector>
@@ -98,11 +94,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/OrderController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="142">
-                  <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
-                  <folding>
-                    <element signature="e#48#89#0#PHP" expanded="true" />
-                  </folding>
+                <state relative-caret-position="90">
+                  <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
                 </state>
               </provider>
             </entry>
@@ -680,12 +673,12 @@
       <workItem from="1544936685929" duration="15137000" />
       <workItem from="1545027030953" duration="8772000" />
       <workItem from="1545054425684" duration="1768000" />
-      <workItem from="1545057729921" duration="5421000" />
+      <workItem from="1545057729921" duration="5577000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134721000" />
+    <option name="totallyTimeSpent" value="134877000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="6" />
@@ -1084,11 +1077,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/OrderController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
-          <folding>
-            <element signature="e#48#89#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="90">
+          <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
         </state>
       </provider>
     </entry>

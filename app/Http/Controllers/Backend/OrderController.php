@@ -4,12 +4,8 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Requests\Backend\OrderStore;
 use App\Http\Requests\Backend\OrderUpdate;
-use App\Models\Job;
 use App\Models\Order;
-use App\Models\User;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Gate;
 
 class OrderController extends Controller
 {
@@ -42,12 +38,12 @@ class OrderController extends Controller
                         return $q->whereIn('id', [auth()->id()]);
                     });
                 })->with('job.versions','service.category')->orderBy('id', 'desc')->paginate(self::PAGINATE);
-            } else { // is_complaited
+            } else { // not complete and paid
                 $elements = Order::where(['is_complete' => false,'is_paid' => true])->whereHas('job', function ($q) {
                     return $q->designers()->whereIn('id', [auth()->id]);
                 })->with('job.versions','service.category')->orderBy('id', 'desc')->paginate(self::PAGINATE);
             }
-        } else {
+        } elseif(auth()->user()->isAdmin) {
             return redirect()->route('backend.admin.order.index');
         }
         return view('backend.modules.order.index', compact('elements'));
