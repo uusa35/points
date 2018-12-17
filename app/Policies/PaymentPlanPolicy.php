@@ -42,7 +42,6 @@ class PaymentPlanPolicy
      */
     public function update(User $user, PaymentPlan $paymentPlan)
     {
-        //
     }
 
     /**

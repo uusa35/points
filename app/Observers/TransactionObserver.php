@@ -29,6 +29,7 @@ class TransactionObserver
             $paymentPlan = $transaction->payment_plan;
             $points = $paymentPlan->apply_bouns ? $paymentPlan->priceWithBonus : $paymentPlan->price;
             $transaction->user()->balance()->update(['points' => $points]);
+            dd($transaction);
         }
     }
 
