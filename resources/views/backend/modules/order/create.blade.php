@@ -135,7 +135,7 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="form-group{{ $errors->has('facebook') ? ' has-error' : '' }}">
-                            <label for="facebook" class="control-label">facebook </label>
+                            <label for="facebook" class="control-label">{{ trans('general.facebook') }} </label>
                             <input id="facebook" type="text" class="form-control" name="facebook" value="{{ old('facebook') }}"
                                 placeholder="facebook" autofocus>
                             @if ($errors->has('facebook'))
@@ -150,7 +150,7 @@
 
                     <div class="col-md-3">
                         <div class="form-group{{ $errors->has('instagram') ? ' has-error' : '' }}">
-                            <label for="instagram" class="control-label">instagram </label>
+                            <label for="instagram" class="control-label">{{ trans('general.instagram') }} </label>
                             <input id="instagram" type="text" class="form-control" name="instagram" value="{{ old('instagram') }}"
                                 placeholder="instagram" autofocus>
                             @if ($errors->has('instagram'))
@@ -164,7 +164,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="form-group{{ $errors->has('youtube') ? ' has-error' : '' }}">
-                            <label for="youtube" class="control-label">youtube </label>
+                            <label for="youtube" class="control-label">{{ trans('general.youtube') }} </label>
                             <input id="youtube" type="text" class="form-control" name="youtube" value="{{ old('youtube') }}"
                                 placeholder="youtube" autofocus>
                             @if ($errors->has('youtube'))
@@ -178,7 +178,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="form-group{{ $errors->has('twitter') ? ' has-error' : '' }}">
-                            <label for="twitter" class="control-label">twitter </label>
+                            <label for="twitter" class="control-label">{{ trans('general.twitter') }} </label>
                             <input id="twitter" type="text" class="form-control" name="twitter" value="{{ old('twitter') }}"
                                 placeholder="twitter" autofocus>
                             @if ($errors->has('twitter'))
@@ -199,7 +199,7 @@
 
                     <div class="col-md-3">
                         <div class="form-group{{ $errors->has('mobile') ? ' has-error' : '' }}">
-                            <label for="mobile" class="control-label">mobile </label>
+                            <label for="mobile" class="control-label">{{ trans('general.mobile') }} </label>
                             <input id="mobile" type="text" class="form-control" name="mobile" value="{{ old('mobile') }}"
                                 placeholder="mobile" autofocus>
                             @if ($errors->has('mobile'))
@@ -213,7 +213,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="form-group{{ $errors->has('phone_one') ? ' has-error' : '' }}">
-                            <label for="phone_one" class="control-label">phone_one </label>
+                            <label for="phone_one" class="control-label">{{ trans('general.phone_one') }} </label>
                             <input id="phone_one" type="text" class="form-control" name="phone_one" value="{{ old('phone_one') }}"
                                 placeholder="phone_one" autofocus>
                             @if ($errors->has('phone_one'))
@@ -228,7 +228,7 @@
 
                     <div class="col-md-3">
                         <div class="form-group{{ $errors->has('phone_two') ? ' has-error' : '' }}">
-                            <label for="phone_two" class="control-label">phone_two </label>
+                            <label for="phone_two" class="control-label">{{ trans('general.phone_two') }} </label>
                             <input id="phone_two" type="text" class="form-control" name="phone_two" value="{{ old('phone_two') }}"
                                 placeholder="phone_two" autofocus>
                             @if ($errors->has('phone_two'))
@@ -243,7 +243,7 @@
 
                     <div class="col-md-3">
                         <div class="form-group{{ $errors->has('fax') ? ' has-error' : '' }}">
-                            <label for="fax" class="control-label">fax </label>
+                            <label for="fax" class="control-label">{{ trans('general.fax') }} </label>
                             <input id="fax" type="text" class="form-control" name="fax" value="{{ old('fax') }}"
                                 placeholder="fax" autofocus>
                             @if ($errors->has('fax'))
@@ -262,7 +262,7 @@
 
                     <div class="col-md-3">
                         <div class="form-group{{ $errors->has('whatsapp') ? ' has-error' : '' }}">
-                            <label for="whatsapp" class="control-label">whatsapp </label>
+                            <label for="whatsapp" class="control-label">{{ trans('general.whatsapp') }} </label>
                             <input id="whatsapp" type="text" class="form-control" name="whatsapp" value="{{ old('whatsapp') }}"
                                 placeholder="whatsapp" autofocus>
                             @if ($errors->has('whatsapp'))
@@ -276,7 +276,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="form-group{{ $errors->has('iphone') ? ' has-error' : '' }}">
-                            <label for="iphone" class="control-label">iphone </label>
+                            <label for="iphone" class="control-label">{{ trans('general.iphone') }} </label>
                             <input id="iphone" type="text" class="form-control" name="iphone" value="{{ old('iphone') }}"
                                 placeholder="iphone" autofocus>
                             @if ($errors->has('iphone'))
@@ -291,7 +291,7 @@
 
                     <div class="col-md-3">
                         <div class="form-group{{ $errors->has('android') ? ' has-error' : '' }}">
-                            <label for="android" class="control-label">android </label>
+                            <label for="android" class="control-label">{{ trans('general.android') }} </label>
                             <input id="android" type="text" class="form-control" name="android" value="{{ old('android') }}"
                                 placeholder="android" autofocus>
                             @if ($errors->has('android'))
@@ -306,7 +306,7 @@
 
                     <div class="col-md-3">
                         <div class="form-group{{ $errors->has('points') ? ' has-error' : '' }}">
-                            <label for="points" class="control-label">points </label>
+                            <label for="points" class="control-label">{{ trans('general.points') }} </label>
                             <input id="points" type="text" class="form-control" name="points" value="{{ old('points') }}"
                                 placeholder="points" autofocus>
                             @if ($errors->has('points'))
@@ -444,7 +444,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label class="control-label">{{ trans('genera.unwatched_colors') }}</label>
+                            <label class="control-label">{{ trans('general.unwatched_colors') }}</label>
                             <input type="text" id="hue-demo-3" name="unwanted_colors_3" class="form-control demo"
                                 data-control="hue" value="#ff6161">
                         </div>
@@ -455,7 +455,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label class="control-label sbold">active</label></br>
+                            <label class="control-label sbold">{{ trans('general.active') }}</label></br>
                             <label class="radio-inline">
                                 <input type="checkbox" class="make-switch" checked data-on-color="primary"
                                     data-off-color="info" value="1">
