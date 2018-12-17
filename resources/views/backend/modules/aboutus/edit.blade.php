@@ -3,7 +3,7 @@
     <div class="clearfix"></div>
     <div class="portlet-body form">
         <form role="form" method="post" action="{{ route('backend.aboutus.update',$element->id) }}">
-            {{ csrf_field() }}
+            @csrf
             <input type="hidden" name="_method" value="patch">
 
             <div class="form-body">

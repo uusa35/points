@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Requests\UserStore;
-use App\Http\Requests\UserUpdate;
+use App\Http\Requests\Backend\UserUpdate;
 use App\Models\User;
 use App\Services\Traits\ImageHelpers;
 use Illuminate\Http\Request;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Backend;
 
 use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
@@ -14,7 +14,7 @@ class UserUpdate extends FormRequest
      */
     public function authorize()
     {
-        return auth()->user()->isSuper;
+        return true;
     }
 
     /**
@@ -27,8 +27,9 @@ class UserUpdate extends FormRequest
         return [
             'name_ar' => 'required|max:55',
             'name_en' => 'required|max:55',
+            'name' => 'required|max:55|unique:users,name,' . request()->segment(4),
+            'email' => 'required|max:55|unique:users,email,' . request()->segment(4),
             'mobile' => 'required|max:55',
-            'email' => 'required|max:55',
             'role_id' => 'required|exists:roles,id',
             'mobile' => 'nullable|numeric',
             'whatsapp' => 'nullable|numeric',

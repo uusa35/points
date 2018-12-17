@@ -5,20 +5,20 @@
                 <div class="mt-element-step">
                     <br/>
                     <div class="row step-thin">
-                        <div class="col-md-4 bg-grey mt-step-col">
+                        <div class="col-md-4 bg-grey mt-step-col done">
                             <div class="mt-step-number bg-white font-grey">1</div>
-                            <div class="mt-step-title uppercase font-grey-cascade">Purchase</div>
-                            <div class="mt-step-content font-grey-cascade">Purchasing the item</div>
+                            <div class="mt-step-title uppercase font-grey-cascade">{{ trans("general.choose_your_language") }}</div>
+                            <div class="mt-step-content font-grey-cascade">{{ trans('message.choose_your_language') }}</div>
                         </div>
-                        <div class="col-md-4 bg-grey mt-step-col">
+                        <div class="col-md-4 bg-grey mt-step-col {{ activeItem('order') }}">
                             <div class="mt-step-number bg-white font-grey">2</div>
-                            <div class="mt-step-title uppercase font-grey-cascade">Payment</div>
-                            <div class="mt-step-content font-grey-cascade">Complete your payment</div>
+                            <div class="mt-step-title uppercase font-grey-cascade">{{ trans('general.create_your_order') }}</div>
+                            <div class="mt-step-content font-grey-cascade">{{ trans('message.create_your_order') }}</div>
                         </div>
-                        <div class="col-md-4 bg-grey done mt-step-col active">
+                        <div class="col-md-4 bg-grey mt-step-col {{ activeItem('file') }}">
                             <div class="mt-step-number bg-white font-grey">3</div>
-                            <div class="mt-step-title uppercase font-grey-cascade"><a href="{{ route('backend.file.create') }}">Deploy</a></div>
-                            <div class="mt-step-content font-grey-cascade">Receive item integration</div>
+                            <div class="mt-step-title uppercase font-grey-cascade">{{ trans('general.add_images_files_to_your_order') }}</div>
+                            <div class="mt-step-content font-grey-cascade">{{ trans("message.add_images_files_to_your_order") }}</div>
                         </div>
                     </div>
                     <br/>
