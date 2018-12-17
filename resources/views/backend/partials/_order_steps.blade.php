@@ -17,7 +17,7 @@
                         </div>
                         <div class="col-md-4 bg-grey done mt-step-col active">
                             <div class="mt-step-number bg-white font-grey">3</div>
-                            <div class="mt-step-title uppercase font-grey-cascade">Deploy</div>
+                            <div class="mt-step-title uppercase font-grey-cascade"><a href="{{ route('backend.file.create') }}">Deploy</a></div>
                             <div class="mt-step-content font-grey-cascade">Receive item integration</div>
                         </div>
                     </div>
