@@ -48,7 +48,7 @@ Breadcrumbs::for('backend.admin.order.index', function ($trail) {
 
 Breadcrumbs::for('backend.admin.role.index', function ($trail) {
     $trail->parent('backend.home');
-    $trail->push(trans('general.order_index'), route('backend.admin.role.index'));
+    $trail->push(trans('general.roles'), route('backend.admin.role.index'));
 });
 
 Breadcrumbs::for('backend.admin.role.edit', function ($trail, $element) {
@@ -65,6 +65,16 @@ Breadcrumbs::for('backend.admin.category.index', function ($trail) {
 Breadcrumbs::for('backend.admin.plan.index', function ($trail) {
     $trail->parent('backend.home');
     $trail->push(trans('general.payment_plans'), route('backend.admin.plan.index'));
+});
+
+Breadcrumbs::for('backend.admin.plan.create', function ($trail) {
+    $trail->parent('backend.admin.plan.index');
+    $trail->push(trans('general.create_plan'), route('backend.admin.plan.create'));
+});
+
+Breadcrumbs::for('backend.admin.plan.edit', function ($trail,$element) {
+    $trail->parent('backend.admin.plan.index');
+    $trail->push(trans('general.edit'), route('backend.admin.plan.edit',$element->id));
 });
 
 Breadcrumbs::for('backend.admin.setting.show', function ($trail, $element) {

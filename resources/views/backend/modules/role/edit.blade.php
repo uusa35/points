@@ -4,7 +4,7 @@
         @include('backend.partials.forms.form_title')
         <div class="portlet-body form">
             <!-- BEGIN FORM-->
-            <form method="post" action="{{ route('backend.role.update', $element->id) }}" class="horizontal-form">
+            <form method="post" action="{{ route('backend.admin.role.update', $element->id) }}" class="horizontal-form">
                 @csrf
                 <input type="hidden" name="_method" value="patch">
                 <div class="form-body">
@@ -47,308 +47,130 @@
                                 <span class="help-block"> {{ trans('message.role_must_be_unique') }} </span>
                             </div>
                         </div>
-                        {{--<div class="col-md-6">--}}
-                            {{--<div class="form-group">--}}
-                            {{--<label class="control-label">Icon</label>--}}
-                            {{--<select class="form-control" name="icon">--}}
-                            {{--@foreach($icons as $k => $v)--}}
-                            {{--<option value="{{ $v }}" {{ $element->icon == $v ? 'selected' : null }}>{{ $v }}</option>--}}
-                            {{--@endforeach--}}
-                            {{--</select>--}}
-                            {{--<span class="help-block"> <a target="_blank" href="https://fontawesome.com/cheatsheet"--}}
-                            {{--class="">Check Visual Icons </a></span>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        <!--/span-->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class=" control-label">color</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="hue-demo" name="color" class="form-control demo"
+                                           data-control="hue" value="{{ $element->color }}">
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                     <!--/row-->
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="control-label sbold">{{ trans('general.active') }}</label>
-                                    <div class="radio-list">
-                                        <label class="radio-inline">
-                                            <input type="radio" name="active" id="optionsRadios1"
-                                                   value="1" {{ $element->active ? 'checked' : null }}> {{ trans('active') }}
-                                        </label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="active" id="optionsRadios2"
-                                                   value="0" {{ $element->active  ? null : 'checked'}}> {{ trans('general.not_active') }}
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
                             <!--/span-->
                             @if(auth()->user()->isSuper)
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="control-label sbold">{{ trans('general.is_super_admin') }}</label>
-                                        <div class="radio-list">
-                                            <label class="radio-inline">
-                                                <input type="radio" name="is_super" id="optionsRadios3"
-                                                       value="1" {{ $element->is_super ? 'checked' : null }}> {{ trans('general.super_admin') }}
-                                                Attributes</label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="is_super" id="optionsRadios4"
-                                                       value="0" {{ $element->is_super  ? null : 'checked'}}> {{ trans('general.not_super_admin') }}
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="control-label sbold">{{ trans('admin') }}</label>
-                                        <div class="radio-list">
-                                            <label class="radio-inline">
-                                                <input type="radio" name="is_admin" id="optionsRadios3"
-                                                       value="1" {{ $element->is_admin ? 'checked' : null }}> {{ trans('general.admin') }}
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="is_admin" id="optionsRadios4"
-                                                       value="0" {{ $element->is_admin  ? null : 'checked'}}> {{ trans('general.not_admin') }}
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
                                     <div class="col-lg-12">
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
-                                                <h4>{{ trans('general.modules_visible_for_each_role') }}</h4>
+                                                <h4>{{ trans('general.controls') }}</h4>
                                             </div>
                                             <div class="panel-body">
                                                 <div class="col-md-4">
                                                     <div class="form-group">
-                                                        <label class="control-label sbold">{{ trans('general.drawings') }}</label>
+                                                        <label class="control-label sbold">{{ trans('general.active') }}</label>
                                                         <div class="radio-list">
                                                             <label class="radio-inline">
-                                                                <input type="radio" name="drawings" id="optionsRadios3"
-                                                                       value="1" {{ $element->drawings ? 'checked' : null }}>
-                                                                show drawings</label>
+                                                                <input type="radio" name="active" id="optionsRadios1"
+                                                                       value="1" {{ $element->active ? 'checked' : null }}> {{ trans('active') }}
+                                                            </label>
                                                             <label class="radio-inline">
-                                                                <input type="radio" name="drawings" id="optionsRadios4"
-                                                                       value="0" {{ $element->drawings  ? null : 'checked'}}>
-                                                                hide drawings
+                                                                <input type="radio" name="active" id="optionsRadios2"
+                                                                       value="0" {{ $element->active  ? null : 'checked'}}> {{ trans('general.not_active') }}
                                                             </label>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group">
-                                                        <label class="control-label sbold">{{ trans('general.documents') }}</label>
+                                                        <label class="control-label sbold">{{ trans('general.is_super_admin') }}</label>
                                                         <div class="radio-list">
                                                             <label class="radio-inline">
-                                                                <input type="radio" name="documents" id="optionsRadios3"
-                                                                       value="1" {{ $element->documents ? 'checked' : null }}>
-                                                                show documents</label>
+                                                                <input type="radio" name="is_super" id="optionsRadios3"
+                                                                       value="1" {{ $element->is_super ? 'checked' : null }}> {{ trans('general.super_admin') }}
+                                                                Attributes</label>
                                                             <label class="radio-inline">
-                                                                <input type="radio" name="documents" id="optionsRadios4"
-                                                                       value="0" {{ $element->documents  ? null : 'checked'}}>
-                                                                hide documents
+                                                                <input type="radio" name="is_super" id="optionsRadios4"
+                                                                       value="0" {{ $element->is_super  ? null : 'checked'}}> {{ trans('general.not_super_admin') }}
                                                             </label>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group">
-                                                        <label class="control-label sbold">{{ trans('general.phases') }}</label>
+                                                        <label class="control-label sbold">{{ trans('admin') }}</label>
                                                         <div class="radio-list">
                                                             <label class="radio-inline">
-                                                                <input type="radio" name="phases" id="optionsRadios3"
-                                                                       value="1" {{ $element->phases ? 'checked' : null }}> {{ trans("general.show_phases") }}
+                                                                <input type="radio" name="is_admin" id="optionsRadios3"
+                                                                       value="1" {{ $element->is_admin ? 'checked' : null }}> {{ trans('general.admin') }}
                                                             </label>
                                                             <label class="radio-inline">
-                                                                <input type="radio" name="phases" id="optionsRadios4"
-                                                                       value="0" {{ $element->phases  ? null : 'checked'}}> {{ trans('general.hide_phases') }}
+                                                                <input type="radio" name="is_admin" id="optionsRadios4"
+                                                                       value="0" {{ $element->is_admin  ? null : 'checked'}}> {{ trans('general.not_admin') }}
                                                             </label>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group">
-                                                        <label class="control-label sbold">{{ trans('general.payments') }}</label>
+                                                        <label class="control-label sbold">{{ trans('general.is_client') }}</label>
                                                         <div class="radio-list">
                                                             <label class="radio-inline">
-                                                                <input type="radio" name="payments" id="optionsRadios3"
-                                                                       value="1" {{ $element->payments ? 'checked' : null }}> {{ trans('general.show_payments') }}
-                                                                payments
-                                                            </label>
+                                                                <input type="radio" name="is_client" id="optionsRadios3"
+                                                                       value="1" {{ $element->is_client ? 'checked' : null }}>
+                                                                {{ trans('general.client') }}</label>
                                                             <label class="radio-inline">
-                                                                <input type="radio" name="payments" id="optionsRadios4"
-                                                                       value="0" {{ $element->payments  ? null : 'checked'}}> {{ trans('general.hide_payments') }}
-                                                            </label>
+                                                                <input type="radio" name="is_client" id="optionsRadios4"
+                                                                       value="0" {{ $element->is_client  ? null : 'checked'}}>
+                                                                {{ trans('general.not_client') }}</label>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group">
-                                                        <label class="control-label sbold">{{ trans('general.galleries') }}</label>
+                                                        <label class="control-label sbold">{{ trans('general.is_designer') }}</label>
                                                         <div class="radio-list">
                                                             <label class="radio-inline">
-                                                                <input type="radio" name="galleries" id="optionsRadios3"
-                                                                       value="1" {{ $element->galleries ? 'checked' : null }}> {{ trans('general.show_gallaires') }}
-                                                            </label>
+                                                                <input type="radio" name="is_designer" id="optionsRadios3"
+                                                                       value="1" {{ $element->is_designer ? 'checked' : null }}>
+                                                                {{ trans('general.designer') }}</label>
                                                             <label class="radio-inline">
-                                                                <input type="radio" name="galleries" id="optionsRadios4"
-                                                                       value="0" {{ $element->galleries  ? null : 'checked'}}> {{ trans('general.hide_galleries') }}
-                                                            </label>
+                                                                <input type="radio" name="is_designer" id="optionsRadios4"
+                                                                       value="0" {{ $element->is_designer  ? null : 'checked'}}>
+                                                                {{ trans('general.not_designer') }}</label>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group">
-                                                        <label class="control-label sbold">{{ trans('general.subcontractors') }}</label>
+                                                        <label class="control-label sbold">Is Visible</label>
                                                         <div class="radio-list">
                                                             <label class="radio-inline">
-                                                                <input type="radio" name="subcontractors"
-                                                                       id="optionsRadios3"
-                                                                       value="1" {{ $element->subcontractors ? 'checked' : null }}> {{ trans('general.show_subcontractors') }}
+                                                                <input type="radio" name="is_visible" id="optionsRadios5"
+                                                                       value="1" {{ $element->is_visible ? 'checked' : null }}>
+                                                                Visible
                                                             </label>
                                                             <label class="radio-inline">
-                                                                <input type="radio" name="subcontractors"
-                                                                       id="optionsRadios4"
-                                                                       value="0" {{ $element->subcontractors  ? null : 'checked'}}>{{ trans('general.hide_subcontractors') }}
-                                                            </label>
+                                                                <input type="radio" name="is_visible" id="optionsRadios6"
+                                                                       value="0" {{ $element->is_visible ? null : 'checked'}}>
+                                                                Not
+                                                                Visible</label>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="control-label sbold">{{ trans('general.timelines') }}</label>
-                                                        <div class="radio-list">
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="timelines" id="optionsRadios3"
-                                                                       value="1" {{ $element->timelines ? 'checked' : null }}>{{ trans('general.show_timelines') }}
-                                                            </label>
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="timelines" id="optionsRadios4"
-                                                                       value="0" {{ $element->timelines  ? null : 'checked'}}> {{ trans('general.hide_phases') }}
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="control-label sbold">{{ trans('general.reports') }}</label>
-                                                        <div class="radio-list">
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="reports" id="optionsRadios3"
-                                                                       value="1" {{ $element->reports ? 'checked' : null }}>
-                                                                {{ trans('general.show_reports') }}
-                                                            </label>
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="reports" id="optionsRadios4"
-                                                                       value="0" {{ $element->reports  ? null : 'checked'}}>
-                                                                {{ trans('general.hide_reports') }}
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="control-label sbold">{{ trans('general.consultants') }}</label>
-                                                        <div class="radio-list">
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="consultants"
-                                                                       id="optionsRadios3"
-                                                                       value="1" {{ $element->consultants ? 'checked' : null }}>
-                                                                {{ trans('general.show_consultants') }}
-                                                            </label>
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="consultants"
-                                                                       id="optionsRadios4"
-                                                                       value="0" {{ $element->consultants  ? null : 'checked'}}>
-                                                                {{ trans('general.hide_consultants') }}
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="control-label sbold">{{ trans('general.livecam') }}</label>
-                                                        <div class="radio-list">
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="livecam" id="optionsRadios3"
-                                                                       value="1" {{ $element->livecam ? 'checked' : null }}>
-                                                                {{ trans("general.show_livecam") }}
-                                                            </label>
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="livecam" id="optionsRadios4"
-                                                                       value="0" {{ $element->livecam  ? null : 'checked'}}>
-                                                                {{ trans("general.hide_livecam") }}
-                                                            </label>
-                                                        </div>
+                                                        <span class="help-block"> Visible Means that this role shall appear on Application (ex. admin is invisible)</span>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            @endif
-                            @if(auth()->user()->isAdmin)
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="control-label sbold">{{ trans('general.is_client') }}</label>
-                                        <div class="radio-list">
-                                            <label class="radio-inline">
-                                                <input type="radio" name="is_client" id="optionsRadios3"
-                                                       value="1" {{ $element->is_client ? 'checked' : null }}>
-                                                {{ trans('general.show_client') }}</label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="is_client" id="optionsRadios4"
-                                                       value="0" {{ $element->is_client  ? null : 'checked'}}>
-                                                {{ trans('general._hide_clients') }}</label>
-                                        </div>
-                                    </div>
-                                </div>
                             @endif
                         </div>
 
                         <!--/span-->
                     </div>
                     <!--/row-->
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="control-label sbold">Is Visible</label>
-                                    <div class="radio-list">
-                                        <label class="radio-inline">
-                                            <input type="radio" name="is_visible" id="optionsRadios5"
-                                                   value="1" {{ $element->visible ? 'checked' : null }}>
-                                            Visible
-                                        </label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="is_visible" id="optionsRadios6"
-                                                   value="0" {{ $element->is_visible ? null : 'checked'}}>
-                                            Not
-                                            Visible</label>
-                                    </div>
-                                    <span class="help-block"> Visible Means that this role shall appear on Application (ex. admin is invisible)</span>
-                                </div>
-                            </div>
-                            <!--/span-->
-                            <div class="col-md-6">
-                                {{--<div class="form-group">--}}
-                                {{--<label class="control-label sbold">Is Company</label>--}}
-                                {{--<div class="radio-list">--}}
-                                {{--<label class="radio-inline">--}}
-                                {{--<input type="radio" name="is_company" id="optionsRadios7"--}}
-                                {{--value="1" {{ $element->is_company ? 'checked' : null }}> Company--}}
-                                {{--Attributes</label>--}}
-                                {{--<label class="radio-inline">--}}
-                                {{--<input type="radio" name="is_company" id="optionsRadios8"--}}
-                                {{--value="0" {{ $element->is_company  ? null : 'checked'}}> No Company--}}
-                                {{--Attributes</label>--}}
-                                {{--</div>--}}
-                                {{--<span class="help-block"> Role that has companies attributes (ex. branches) </span>--}}
-                                {{--</div>--}}
-                            </div>
-                        </div>
-                        <!--/span-->
-                    </div>
                     <div class="row">
                         <div class="col-md-6 ">
                             <div class="form-group">

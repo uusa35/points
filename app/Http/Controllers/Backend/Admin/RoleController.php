@@ -74,7 +74,7 @@ class RoleController extends Controller
     {
         $element = Role::whereId($id)->first();
         $element->update($request->all());
-        return redirect()->route('backend.role.index')->with('success', 'role updated');
+        return redirect()->route('backend.admin.role.index')->with('success', 'role updated');
     }
 
     /**
