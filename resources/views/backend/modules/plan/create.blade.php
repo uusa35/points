@@ -99,26 +99,13 @@
 
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label class=" control-label">{{ trans('general.color}}</label>
+                            <label class=" control-label">{{ trans('general.color')}}</label>
                             <input type="text" id="hue-demo" name="color" class="form-control demo"
                                 data-control="hue" value="#ff6161">
                         </div>
 
                     </div>
-                    <div class="col-md-3">
-                        <div class="form-group{{ $errors->has('price') ? ' has-error' : '' }}">
-                            <label for="price" class="control-label">{{ trans('general.price')}} </label>
-                            <input id="price" type="text" class="form-control" name="price" value="{{ old('price') }}"
-                                placeholder="price" autofocus>
-                            @if ($errors->has('price'))
-                            <span class="help-block">
-                                <strong>
-                                    {{ $errors->first('price') }}
-                                </strong>
-                            </span>
-                            @endif
-                        </div>
-                    </div>
+                    
 
                 </div>
 
@@ -127,7 +114,7 @@
 
 
                     <div class="col-md-4">
-                        <div class="form-group{{ $errors->has('bonus') ? ' has-error' : '' }}">
+                        <div class="form-group">
                             <label for="bonus" class="control-label">{{ trans('general.bonus')}} </label>
                             <input id="bonus" type="text" class="form-control" name="bonus" value="{{ old('bonus') }}"
                                 placeholder="bonus" autofocus>
