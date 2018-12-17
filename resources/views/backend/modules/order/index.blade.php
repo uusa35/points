@@ -82,23 +82,24 @@
                                                             <i class="fa fa-fw fa-edit"></i>{{ trans('general.view_details') }}
                                                         </a>
                                                     </li>
-                                                    <li>
-                                                        <a data-toggle="modal" href="#" data-target="#basic"
-                                                           data-title="Delete"
-                                                           data-content="Are you sure you want to delete this order ? "
-                                                           data-form_id="delete-{{ $element->id }}"
-                                                        >
-                                                            <i class="fa fa-fw fa-recycle"></i> {{ trans('general.delete') }}
-                                                        </a>
-                                                        <form method="post" id="delete-{{ $element->id }}"
-                                                              action="{{ route('backend.admin.order.destroy',$element->id) }}">
-                                                            @csrf
-                                                            <input type="hidden" name="_method" value="delete"/>
-                                                            <button type="submit" class="btn btn-del hidden">
-                                                                <i class="fa fa-fw fa-times-circle"></i> {{ trans('general.delete') }}
-                                                            </button>
-                                                        </form>
-                                                    </li>
+
+                                                        <li>
+                                                            <a data-toggle="modal" href="#" data-target="#basic"
+                                                               data-title="Delete"
+                                                               data-content="Are you sure you want to delete this order ? "
+                                                               data-form_id="delete-{{ $element->id }}"
+                                                            >
+                                                                <i class="fa fa-fw fa-recycle"></i> {{ trans('general.delete') }}
+                                                            </a>
+                                                            <form method="post" id="delete-{{ $element->id }}"
+                                                                  action="{{ route('backend.admin.order.destroy',$element->id) }}">
+                                                                @csrf
+                                                                <input type="hidden" name="_method" value="delete"/>
+                                                                <button type="submit" class="btn btn-del hidden">
+                                                                    <i class="fa fa-fw fa-times-circle"></i> {{ trans('general.delete') }}
+                                                                </button>
+                                                            </form>
+                                                        </li>
                                                 @elsecan('onlyClient')
                                                     <li>
                                                         <a href="{{ route('backend.order.edit',$element->id) }}">

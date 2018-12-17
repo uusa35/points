@@ -5,10 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Requests\Backend\OrderStore;
 use App\Http\Requests\Backend\OrderUpdate;
 use App\Models\Order;
-use App\Models\User;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Gate;
 
 class OrderController extends Controller
 {
@@ -35,11 +32,19 @@ class OrderController extends Controller
                 $elements = Order::where(['user_id' => auth()->id(), 'is_paid' => true])->active()->with('job.versions', 'client', 'service.category')->orderBy('id', 'desc')->paginate(self::PAGINATE);
             }
         } elseif (auth()->user()->onlyDesigner) {
-            if (request()->has('is_complete')) {
-                $elements = auth()->user()->jobs()->where(['is_complete' => request()->is_complete])->with('job.versions', 'service.category')->orderBy('id', 'desc')->get();
-            } else {
-                $elements = auth()->user()->jobs()->with('job.versions', 'service.category')->orderBy('id', 'desc')->get();
+            if (request()->has('is_complete')) { // is_complete and paid
+                $elements = Order::where(['is_complete' => true, 'is_paid' => true])->whereHas('job', function ($q) {
+                    return $q->whereHas('designers', function ($q) {
+                        return $q->whereIn('id', [auth()->id()]);
+                    });
+                })->with('job.versions','service.category')->orderBy('id', 'desc')->paginate(self::PAGINATE);
+            } else { // not complete and paid
+                $elements = Order::where(['is_complete' => false,'is_paid' => true])->whereHas('job', function ($q) {
+                    return $q->designers()->whereIn('id', [auth()->id]);
+                })->with('job.versions','service.category')->orderBy('id', 'desc')->paginate(self::PAGINATE);
             }
+        } elseif(auth()->user()->isAdmin) {
+            return redirect()->route('backend.admin.order.index');
         }
         return view('backend.modules.order.index', compact('elements'));
     }
