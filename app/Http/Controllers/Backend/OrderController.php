@@ -24,7 +24,7 @@ class OrderController extends Controller
                     ->orderBy('id', 'desc'
                     )->paginate(self::PAGINATE);
             } elseif (request()->has('is_paid')) {
-                $elements = Order::where(['user_id' => auth()->id(), 'is_complete' => false, 'is_paid' => true])
+                $elements = Order::where(['user_id' => auth()->id(), 'is_complete' => false, 'is_paid' => request('is_paid')])
                     ->active()
                     ->with('job.versions', 'service.category', 'client')
                     ->orderBy('id', 'desc')

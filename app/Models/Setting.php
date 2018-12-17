@@ -13,4 +13,8 @@ class Setting extends PrimaryModel
         return $this->morphMany(Gallery::class, 'galleryable');
     }
 
+    public function getEmailAttribute() {
+        return $this->info_email;
+    }
+
 }

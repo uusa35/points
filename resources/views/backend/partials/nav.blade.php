@@ -33,20 +33,22 @@
                         </li>
                         <li>
                             <a href="{{ route('backend.admin.order.create') }}">
-                                <i class="icon-plus"></i> {{ trans('general.new_order') }}</a>
+                                <i class="icon-plus"></i> {{ trans('general.admin_new_order') }}</a>
                         </li>
-                    @elsecan('onlySuper')
+                    @endcan
+                    @can('onlySuper')
                         <li>
                             <a href="{{ route('backend.admin.plan.create') }}">
                                 <i class="icon-plus"></i> {{ trans('general.create_new_payment_plan') }}</a>
                         </li>
+
                         <li class="divider"></li>
                     @endcan
                     @can('onlyClient')
                         {{--change this later to onlyClient--}}
                         <li>
                             <a href="{{ route('backend.order.choose.lang') }}">
-                                <i class="icon-plus"></i> {{ trans('general.new_order') }}</a>
+                                <i class="icon-plus"></i> {{ trans('general.client_new_order') }}</a>
                         </li>
                         <li class="divider"></li>
                     @endcan
@@ -392,7 +394,8 @@
                                  src="{{ asset('storage/uploads/images/thumbnail/'. auth()->user()->logo) }}"/>
                             <span class="username username-hide-on-mobile"> {{ auth()->user()->role->name }} : </span>
                             <span class="username username-hide-on-mobile"> {{ auth()->user()->name }}</span><br>
-                            <span class="username username-hide-on-mobile"> {{ trans('general.balance') }} : {{ auth()->user()->balance->points}} {{ trans('general.points') }}</span>
+                            <span class="username username-hide-on-mobile"> {{ trans('general.balance') }}
+                                : {{ auth()->user()->balance->points}} {{ trans('general.points') }}</span>
                             <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-default">
