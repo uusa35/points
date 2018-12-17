@@ -16,6 +16,7 @@ class OrderController extends Controller
      */
     public function index()
     {
+
         if (auth()->user()->onlyClient) {
             if (request()->has('is_complete')) {
                 $elements = Order::where(['user_id' => auth()->id(), 'is_complete' => request()->is_complete, 'is_paid' => true])
@@ -43,7 +44,7 @@ class OrderController extends Controller
                     return $q->designers()->whereIn('id', [auth()->id]);
                 })->with('job.versions','service.category')->orderBy('id', 'desc')->paginate(self::PAGINATE);
             }
-        } elseif(auth()->user()->isAdmin) {
+        } elseif(auth()->user()->isAdminOrAbove) {
             return redirect()->route('backend.admin.order.index');
         }
         return view('backend.modules.order.index', compact('elements'));
