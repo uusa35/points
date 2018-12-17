@@ -3,7 +3,7 @@
 
 <div class="portlet box blue">
     @include('backend.partials.forms.form_title')
-    @include('backend.partials._order_steps')
+  
     <div class="portlet-body form">
         <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.admin.plan.store') }}"
             enctype="multipart/form-data">
@@ -74,22 +74,7 @@
 
                 </div>
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="description" class="control-label">{{ trans('general.description_ar') }}</label>
-                            <textarea type="text" class="form-control" id="description_ar" name="description_ar"
-                                aria-multiline="true" maxlength="500">{{ old('description_ar') }}</textarea>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="description" class="control-label">{{ trans('general.descirption_en') }}</label>
-                            <textarea type="text" class="form-control" id="description_en" name="description_en"
-                                aria-multiline="true" maxlength="500">{{ old('description_en') }}</textarea>
-                        </div>
-                    </div>
-                </div>
+                
 
 
                 <div class="row">
@@ -103,19 +88,19 @@
                         </div>
                     </div>
 
-<div class="col-lg-3">
+                    <div class="col-lg-3">
                         <div class="form-group">
                             <label for="form_control_1">{{ trans('general.path') }}</label>
                             <input type="file" class="form-control" name="path" placeholder="path">
-                            
+
                         </div>
                     </div>
 
 
-                   <div class="col-md-3">
+                    <div class="col-md-3">
                         <div class="form-group">
-                            <label class=" control-label">{{ trans('general.preffered_colors')}}</label>
-                            <input type="text" id="hue-demo" name="preffered_colors_1" class="form-control demo"
+                            <label class=" control-label">{{ trans('general.color}}</label>
+                            <input type="text" id="hue-demo" name="color" class="form-control demo"
                                 data-control="hue" value="#ff6161">
                         </div>
 
@@ -134,16 +119,16 @@
                             @endif
                         </div>
                     </div>
-                  
+
                 </div>
 
 
                 <div class="row">
 
 
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="form-group{{ $errors->has('bonus') ? ' has-error' : '' }}">
-                            <label for="bonus" class="control-label">bonus </label>
+                            <label for="bonus" class="control-label">{{ trans('general.bonus')}} </label>
                             <input id="bonus" type="text" class="form-control" name="bonus" value="{{ old('bonus') }}"
                                 placeholder="bonus" autofocus>
                             @if ($errors->has('bonus'))
@@ -155,20 +140,43 @@
                             @endif
                         </div>
                     </div>
-</div>
 
+                    <div class="col-md-4">
+                        <label for="bonus" class="control-label">{{ trans('general.apply_bonus')}} </label>
+                        <div class="form-group{{ $errors->has('apply_bonus') ? ' has-error' : '' }}">
 
+                            <input type="radio" name="apply_bonus" id="optionsRadios1" value="1">
+                           
 
+                        </div>
+                        
+                    </div>
+
+                     <div class="col-md-4">
+                        <label for="active" class="control-label">{{ trans('general.active')}} </label>
+                        <div class="form-group{{ $errors->has('active') ? ' has-error' : '' }}">
+
+                            <input type="radio" name="active" id="optionsRadios1" value="1">
+                            
+
+                        </div>
+                    </div>
+                </div>
 
 
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label class="control-label sbold">active</label></br>
-                            <label class="radio-inline">
-                                <input type="checkbox" class="make-switch" checked data-on-color="primary"
-                                    data-off-color="info" value="1">
-                            </label>
+                            <label for="description" class="control-label">{{ trans('general.description_ar') }}</label>
+                            <textarea type="text" class="form-control" id="description_ar" name="description_ar"
+                                aria-multiline="true" maxlength="500">{{ old('description_ar') }}</textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="description" class="control-label">{{ trans('general.descirption_en') }}</label>
+                            <textarea type="text" class="form-control" id="description_en" name="description_en"
+                                aria-multiline="true" maxlength="500">{{ old('description_en') }}</textarea>
                         </div>
                     </div>
                 </div>
