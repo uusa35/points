@@ -398,6 +398,21 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="col-md-3">
+                            <div class="form-group{{ $errors->has('balance') ? ' has-error' : '' }}">
+                                <label for="balance" class="control-label">{{ trans('general.balance') }} </label>
+                                <input id="balance" type="text" class="form-control" name="balance"
+                                       value="{{ $element->balance->points }}"
+                                       placeholder="balance" autofocus>
+                                @if ($errors->has('balance'))
+                                    <span class="help-block">
+                                <strong>
+                                    {{ $errors->first('balance') }}
+                                </strong>
+                            </span>
+                                @endif
+                            </div>
+                        </div>
 
                     </div>
                     @include('backend.partials.forms._btn-group')

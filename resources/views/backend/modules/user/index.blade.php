@@ -26,7 +26,7 @@
                             <th>{{ trans('general.logo') }}</th>
                             <th>{{ trans('general.email') }}</th>
                             <th>{{ trans('general.role') }}</th>
-                            <th>{{ trans('general.device_player_id') }}</th>
+                            <th>{{ trans('general.balance') }}</th>
                             <th>{{ trans('general.active') }}</th>
                             <th>{{ trans('general.created_at') }}</th>
                             <th>{{ trans('general.action') }}</th>
@@ -39,7 +39,7 @@
                             <th>{{ trans('general.logo') }}</th>
                             <th>{{ trans('general.email') }}</th>
                             <th>{{ trans('general.role') }}</th>
-                            <th>{{ trans('general.device_player_id') }}</th>
+                            <th>{{ trans('general.balance') }}</th>
                             <th>{{ trans('general.active') }}</th>
                             <th>{{ trans('general.created_at') }}</th>
                             <th>{{ trans('general.action') }}</th>
@@ -57,13 +57,17 @@
                                     {{ $element->email }}
                                 </td>
                                 <td>
-                                    <span class="label {{ activeLabel($element->active) }}" style="background-color: {{ $element->role->color }}">{{ activeText($element->active,$element->role->name ) }}</span>
+                                    <span class="label {{ activeLabel($element->active) }}"
+                                          style="background-color: {{ $element->role->color }}">{{ activeText($element->active,$element->role->name ) }}</span>
                                 </td>
                                 <td>
-                                    {{ $element->device_id }}
+                                    <span class="label label-primary">
+                                    {{ $element->balance->points }} {{ trans('general.points') }}
+                                    </span>
                                 </td>
                                 <td>
-                                    <span class="label {{ activeLabel($element->active) }}">{{ activeText($element->active) }}</span>
+                                    <span
+                                        class="label {{ activeLabel($element->active) }}">{{ activeText($element->active) }}</span>
                                 </td>
                                 <td>{{ $element->created_at->diffForHumans() }}</td>
                                 <td>
@@ -79,7 +83,8 @@
                                             </li>
                                             <li>
                                                 <a href="{{ route('backend.reset.password',['email' => $element->email]) }}">
-                                                    <i class="fa fa-fw fa-edit"></i> {{ trans('general.reset_password') }}</a>
+                                                    <i class="fa fa-fw fa-edit"></i> {{ trans('general.reset_password') }}
+                                                </a>
                                             </li>
                                             <li>
                                                 <a href="{{ route('backend.admin.activate',['model' => 'user','id' => $element->id]) }}">

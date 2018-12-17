@@ -21,9 +21,9 @@ class UserController extends Controller
     public function index()
     {
         if(request()->has('role_id')) {
-            $elements = User::where('role_id', request('role_id'))->with('role')->paginate(self::PAGINATE);
+            $elements = User::where('role_id', request('role_id'))->with('role','balance')->paginate(self::PAGINATE);
         } else {
-            $elements = User::with('role')->paginate(self::PAGINATE);
+            $elements = User::with('role','balance')->paginate(self::PAGINATE);
         }
 
         return view('backend.modules.user.index', compact('elements'));
@@ -80,7 +80,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $element = User::whereId($id)->first();
+        $element = User::whereId($id)->with('balance')->first();
         return view('backend.modules.user.edit', compact('element'));
     }
 
@@ -94,8 +94,9 @@ class UserController extends Controller
     public function update(UserUpdate $request, $id)
     {
         $element = User::whereId($id)->first();
-        $updated = $element->update($request->except(['logo', 'gallery', 'governate_id', 'area_id', 'user_id']));
+        $updated = $element->update($request->except(['logo', 'gallery', 'governate_id', 'area_id', 'user_id','balance']));
         if ($updated) {
+            $element->balance()->update(['points' => $request->balance]);
             if ($request->hasFile('logo')) {
                 $this->saveMimes($element, $request, ['logo'], ['250', '250'], false);
             }
