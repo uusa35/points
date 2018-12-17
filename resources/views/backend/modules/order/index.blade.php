@@ -114,7 +114,7 @@
                                                 </li>
                                                 @if(!$element->job)
                                                     <li>
-                                                        <a href="{{ route('backend.job.create',$element) }}">
+                                                        <a href="{{ route('backend.job.create',['order_id' => $element->id]) }}">
                                                             <i class="fa fa-fw fa-edit"></i>{{ trans('general.create_new_job_for_this_order') }}
                                                         </a>
                                                     </li>

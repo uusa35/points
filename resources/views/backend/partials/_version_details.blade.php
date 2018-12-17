@@ -4,7 +4,7 @@
             <i class="fa fa-cogs"></i>{{ trans('general.job_versions') }}
         </div>
         <div class="actions">
-            @if(auth()->user()->isDesigner)
+            @if(auth()->user()->isDesignerOrAbove)
                 <a href="{{ route('backend.version.create') }}"
                    class="btn btn-default btn-sm">
                     <i class="fa fa-pencil"></i> {{ trans('general.add_new_version') }} </a>
@@ -52,7 +52,7 @@
                                             <i class="fa fa-fw fa-eye"></i>{{ trans('general.show') }}
                                         </a>
                                     </li>
-                                    @if(auth()->user()->isDesigner)
+                                    @if(auth()->user()->isDesignerOrAbove)
                                         <li>
                                             <a href="{{ route('backend.version.edit',$element->id) }}">
                                                 <i class="fa fa-fw fa-user"></i>{{ trans('general.edit') }}

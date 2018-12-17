@@ -156,6 +156,25 @@ Breadcrumbs::for('backend.job.edit', function ($trail, $element) {
     $trail->push(trans('general.edit_job'), route('backend.job.edit', $element->id));
 });
 
+Breadcrumbs::for('backend.version.index', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.versions'), route('backend.version.index'));
+});
+Breadcrumbs::for('backend.version.create', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.create_new_version'), route('backend.version.create'));
+});
+
+Breadcrumbs::for('backend.version.show', function ($trail, $element) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.show_version'), route('backend.version.show', $element->id));
+});
+
+Breadcrumbs::for('backend.version.edit', function ($trail, $element) {
+    $trail->parent('backend.job.index',['order_id' => $element->job->order_id]);
+    $trail->push(trans('general.edit_version'), route('backend.version.edit', $element->id));
+});
+
 Breadcrumbs::for('backend.user.create', function ($trail) {
     $trail->parent('backend.home');
     $trail->push(trans('general.create_user'), route('backend.user.create'));

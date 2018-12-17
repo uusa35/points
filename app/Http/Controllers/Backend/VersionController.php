@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Models\Version;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -24,7 +25,7 @@ class VersionController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.modules.version.create');
     }
 
     /**
@@ -46,7 +47,8 @@ class VersionController extends Controller
      */
     public function show($id)
     {
-        //
+        $element = Version::whereId($id)->first();
+        return view('backend.modules.version.show', compact('element'));
     }
 
     /**
@@ -57,7 +59,8 @@ class VersionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $element = Version::whereId($id)->first();
+        return view('backend.modules.version.edit', compact('element'));
     }
 
     /**

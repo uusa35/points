@@ -4,9 +4,8 @@
         @include('backend.partials.forms.form_title')
         <div class="portlet-body form">
             <form class="horizontal-form" role="form" method="POST"
-                  action="{{ route('backend.job.store') }}" enctype="multipart/form-data">
+                  action="{{ route('backend.version.store') }}" enctype="multipart/form-data">
                 @csrf
-                <input type="hidden" name="order_id" value="{{ $element->id }}">
                 <div class="form-body">
                     <div class="row">
                         <div class="col-md-4">
@@ -139,6 +138,15 @@
                                         </strong>
                                     </span>
                                 @endif
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="form_control_1">Main Image</label>
+                                <input type="file" class="form-control" name="image" placeholder="image" required>
+                                <div class="help-block text-left">
+                                    W * H - Best fit 1024 x 800 pixels
+                                </div>
                             </div>
                         </div>
                     </div>

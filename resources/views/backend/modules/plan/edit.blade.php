@@ -4,11 +4,11 @@
         @include('backend.partials.forms.form_title')
         <div class="portlet-body form">
             <!-- BEGIN FORM-->
-            <form method="post" action="{{ route('backend.role.update', $element->id) }}" class="horizontal-form">
+            <form method="post" action="{{ route('backend.admin.plan.update', $element->id) }}" class="horizontal-form">
                 @csrf
                 <input type="hidden" name="_method" value="patch">
                 <div class="form-body">
-                    <h3 class="form-section">{{ $element->name }} {{ trans('general.role_name') }}</h3>
+                    <h3 class="form-section">{{ $element->name }}</h3>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
