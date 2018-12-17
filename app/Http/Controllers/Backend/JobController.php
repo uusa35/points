@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Http\Requests\Backend\JobStore;
+use App\Http\Requests\Backend\JobUpdate;
 use App\Models\Job;
 use App\Models\Order;
 use Illuminate\Http\Request;
@@ -42,7 +44,7 @@ class JobController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(JobStore $request)
     {
         //
     }
@@ -78,7 +80,7 @@ class JobController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(JobUpdate $request, $id)
     {
         //
     }

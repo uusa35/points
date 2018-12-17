@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Backend\Admin;
 
+use App\Http\Requests\Backend\PaymentPlanStore;
+use App\Http\Requests\Backend\PaymentPlanUpdate;
 use App\Models\PaymentPlan;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -35,7 +37,7 @@ class PaymentPlanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PaymentPlanStore $request)
     {
         //
     }
@@ -69,7 +71,7 @@ class PaymentPlanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PaymentPlanUpdate $request, $id)
     {
         //
     }

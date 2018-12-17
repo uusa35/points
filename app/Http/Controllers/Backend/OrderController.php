@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Http\Requests\Backend\OrderStore;
+use App\Http\Requests\Backend\OrderUpdate;
 use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -66,7 +68,7 @@ class OrderController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(OrderStore $request)
     {
         $element = Order::create($request->request->all());
         if ($element) {
@@ -96,7 +98,8 @@ class OrderController extends Controller
      */
     public function edit($id)
     {
-        //
+        $element = Order::whereId($id)->first();
+        return view('backend.modules.order.edit', compact('element'));
     }
 
     /**
@@ -106,7 +109,7 @@ class OrderController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(OrderUpdate $request, $id)
     {
         //
     }

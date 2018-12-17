@@ -53,59 +53,21 @@
                             @endif
                         </div>
                     </div>
-
-                </div>
-
-                {{-- password + confirm password --}}
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="control-label">{{ trans('general.password') }} </label>
-                            <input id="password" type="password" class="form-control" name="password" placeholder="password"
-                                required autofocus>
-                            @if ($errors->has('password'))
-                            <span class="help-block">
-                                <strong>
-                                    {{ $errors->first('password') }}
-                                </strong>
-                            </span>
-                            @endif
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                            <label for="password_confirmation" class="control-label">{{
-                                trans('general.password_confirmation') }} </label>
-                            <input id="password_confirmation" type="password" class="form-control" name="password_confirmation"
-                                placeholder="password_confirmation" required autofocus>
-                            @if ($errors->has('password_confirmation'))
-                            <span class="help-block">
-                                <strong>
-                                    {{ $errors->first('password_confirmation') }}
-                                </strong>
-                            </span>
-                            @endif
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-3">
                         <div class="form-group">
                             <label class="control-label">{{ trans('general.role') }} </label>
                             <select class="bs-select form-control" name="role_id" required autofocus>
                                 <option value="">{{ trans('general.select_role') }}</option>
                                 @foreach($roles as $role)
-                                <option value="{{ $role->id }}"
-                                    {{ request()->role == $role->name ? 'selected' : null  }}>{{ $role->name }}
-                                    - {{ $role->slug }}</option>
+                                    <option value="{{ $role->id }}"
+                                        {{ $role->id === $element->role_id ? 'selected' : null  }}>{{ $role->name }}
+                                        - {{ $role->slug }}</option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
-                </div>
 
+                </div>
 
 
                 <div class="row">
@@ -146,14 +108,14 @@
                         <div class="form-group">
                             <label for="description" class="control-label">{{ trans('general.description_ar') }}</label>
                             <textarea type="text" class="form-control" id="description_ar" name="description_ar"
-                                aria-multiline="true" value="{{$element->description_ar}}" maxlength="500">{{ old('description_ar') }}</textarea>
+                                aria-multiline="true" maxlength="500">{{ $element->description_ar }}</textarea>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="description" class="control-label">{{ trans('general.descirption_en') }}</label>
                             <textarea type="text" class="form-control" id="description_en" name="description_en"
-                                aria-multiline="true" value="{{$element->description_en}}" maxlength="500">{{ old('description_en') }}</textarea>
+                                aria-multiline="true" maxlength="500">{{ $element->description_en }}</textarea>
                         </div>
                     </div>
                 </div>
