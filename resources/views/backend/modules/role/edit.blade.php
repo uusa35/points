@@ -10,7 +10,7 @@
                 <div class="form-body">
                     <h3 class="form-section">{{ $element->name }} {{ trans('general.role_name') }}</h3>
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label class="control-label">{{ trans('general.role_name') }}</label>
                                 <input type="text" id="name" name="name" class="form-control" placeholder="{{ trans('general.role_name') }}"
@@ -19,7 +19,7 @@
                             </div>
                         </div>
                         <!--/span-->
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label class="control-label">{{ trans('general.slug_arabic') }}</label>
                                 <input type="text" id="slug_ar" name="slug_ar" class="form-control"
@@ -27,11 +27,7 @@
                                 {{--<span class="help-block"> This field has error. </span>--}}
                             </div>
                         </div>
-                        <!--/span-->
-                    </div>
-                    <!--/row-->
-                    <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label class="control-label">{{ trans("general.slug_english") }}</label>
                                 <input type="text" id="slug_ar" name="slug_en" class="form-control"
@@ -39,7 +35,12 @@
                                 {{--<span class="help-block"> This field has error. </span>--}}
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <!--/span-->
+                    </div>
+                    <!--/row-->
+                    <div class="row">
+
+                        <div class="col-md-2">
                             <div class="form-group">
                                 <label class="control-label">{{ trans('general.order') }}</label>
                                 <input type="text" id="order" name="order" class="form-control" placeholder="{{ trans('general.order') }}"
@@ -47,15 +48,26 @@
                                 <span class="help-block"> {{ trans('message.role_must_be_unique') }} </span>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-2">
                             <div class="form-group">
                                 <label class=" control-label">color</label>
-                                <div class="col-md-6">
                                     <input type="text" id="hue-demo" name="color" class="form-control demo"
                                            data-control="hue" value="{{ $element->color }}">
-                                </div>
                             </div>
-
+                        </div>
+                        <div class="col-md-4 ">
+                            <div class="form-group">
+                                <label>Caption ar</label>
+                                <input type="text" name="caption_ar" class="form-control"
+                                       value="{{ $element->caption_ar }}">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Caption en </label>
+                                <input type="text" name="caption_en" class="form-control"
+                                       value="{{ $element->caption_en }}">
+                            </div>
                         </div>
                     </div>
                     <!--/row-->
@@ -171,27 +183,6 @@
                         <!--/span-->
                     </div>
                     <!--/row-->
-                    <div class="row">
-                        <div class="col-md-6 ">
-                            <div class="form-group">
-                                <label>Caption ar</label>
-                                <input type="text" name="caption_ar" class="form-control"
-                                       value="{{ $element->caption_ar }}">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Caption en </label>
-                                <input type="text" name="caption_en" class="form-control"
-                                       value="{{ $element->caption_en }}">
-                            </div>
-                        </div>
-                        {{--<div class="form-group">--}}
-                        {{--<label class="control-label">Hue (default)</label>--}}
-                        {{--<div class="col-md-3">--}}
-                        {{--<input type="text" name="color" id="hue-demo" class="form-control demo" data-control="hue" value="{{ $element->color }}">--}}
-                        {{--</div>--}}
-                    </div>
                 </div>
                 {{--<div class="form-actions right">--}}
                 {{--<button type="button" class="btn default" href="{{ redirect()->back() }}">Cancel</button>--}}
