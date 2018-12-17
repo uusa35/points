@@ -149,8 +149,8 @@ class TapPaymentController extends Controller
 
     public function error(Request $request)
     {
-        $order = Order::withoutGlobalScopes()->where(['reference_id' => $request->ref])->first();
-        $order->update(['status' => 'failed']);
+        $transaction = Transaction::where(['reference_id' => $request->ref])->first();
+        $transaction->update(['is_complete' => false]);
         return abort('404', 'Your payment process is unsuccessful .. your deal is not created please try again or contact us.');
     }
 

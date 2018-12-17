@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e482aaea-7ea8-4e60-bb85-c7a119286766" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Mail/OrderComplete.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/emails/transaction-complete.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Setting.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Setting.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/usama/tap/src/Controllers/TapPaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/tap/src/Controllers/TapPaymentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/point/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/point/index.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +50,7 @@
           <entry key="env" value="54" />
           <entry key="js" value="154" />
           <entry key="json" value="10" />
-          <entry key="php" value="36552" />
+          <entry key="php" value="36557" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -65,7 +59,7 @@
           <entry key="CSS" value="36" />
           <entry key="JSON" value="10" />
           <entry key="JavaScript" value="154" />
-          <entry key="PHP" value="22267" />
+          <entry key="PHP" value="22272" />
           <entry key="PLAIN_TEXT" value="59" />
         </counts>
       </usages-collector>
@@ -76,7 +70,7 @@
           <entry key="html" value="14" />
           <entry key="js" value="20" />
           <entry key="json" value="5" />
-          <entry key="php" value="849" />
+          <entry key="php" value="850" />
           <entry key="ttf" value="1" />
         </counts>
       </usages-collector>
@@ -87,7 +81,7 @@
           <entry key="HTML" value="14" />
           <entry key="JSON" value="5" />
           <entry key="JavaScript" value="20" />
-          <entry key="PHP" value="602" />
+          <entry key="PHP" value="603" />
           <entry key="PLAIN_TEXT" value="9" />
         </counts>
       </usages-collector>
@@ -191,11 +185,6 @@
       <split-second>
         <leaf>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/resources/views/vendor/mail/markdown/promotion.blade.php">
-              <provider selected="true" editor-type-id="text-editor" />
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/resources/views/vendor/mail/markdown/message.blade.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="486">
@@ -240,11 +229,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/resources/views/emails/transaction-complete.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="288">
-                  <caret line="16" column="124" selection-start-line="16" selection-start-column="124" selection-end-line="16" selection-end-column="124" />
+                <state relative-caret-position="468">
+                  <caret line="26" column="80" lean-forward="true" selection-start-line="26" selection-start-column="80" selection-end-line="26" selection-end-column="80" />
                   <folding>
                     <element signature="e#37#58#0#HTML" expanded="true" />
                     <element signature="e#37#62#0#HTML" expanded="true" />
@@ -278,6 +267,15 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="379">
                   <caret line="135" column="14" selection-start-line="135" selection-start-column="14" selection-end-line="135" selection-end-column="14" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/packages/usama/tap/src/Controllers/TapPaymentController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="567">
+                  <caret line="152" column="55" lean-forward="true" selection-start-line="152" selection-start-column="55" selection-end-line="152" selection-end-column="55" />
                 </state>
               </provider>
             </entry>
@@ -378,12 +376,12 @@
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/app/Models/Setting.php" />
         <option value="$PROJECT_DIR$/app/Mail/OrderComplete.php" />
-        <option value="$PROJECT_DIR$/packages/usama/tap/src/Controllers/TapPaymentController.php" />
         <option value="$PROJECT_DIR$/resources/views/vendor/mail/html/panel.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/vendor/mail/html/layout.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/vendor/mail/html/message.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/vendor/mail/html/themes/default.css" />
         <option value="$PROJECT_DIR$/resources/views/emails/transaction-complete.blade.php" />
+        <option value="$PROJECT_DIR$/packages/usama/tap/src/Controllers/TapPaymentController.php" />
       </list>
     </option>
   </component>
@@ -688,7 +686,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="trans&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/emails/transaction-complete.blade.php&#10;mail.php&#9;FILE&#9;file:///Users/mac/Sites/points/config/mail.php&#10;Payment&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/PaymentPlan.php&#10;Setting.php&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Setting.php&#10;settings_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2017_04_24_160036_create_settings_table.php&#10;.env&#9;FILE&#9;file:///Users/mac/Sites/points/.env&#10;Tap&#9;FILE&#9;file:///Users/mac/Sites/points/packages/usama/tap/src/Controllers/TapPaymentController.php&#10;Trans&#9;null&#9;null&#10;transactions_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2018_12_04_150511_create_transactions_table.php&#10;PaymentPl&#9;null&#9;null&#10;payment_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2018_12_04_145650_create_payment_plans_table.php&#10;users_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2014_10_12_000000_create_users_table.php&#10;composer.js&#9;FILE&#9;file:///Users/mac/Sites/points/composer.json&#10;app&#9;FILE&#9;file:///Users/mac/Sites/points/config/app.php&#10;tap.php&#9;FILE&#9;file:///Users/mac/Sites/points/packages/usama/tap/src/config/tap.php&#10;routes&#9;FILE&#9;file:///Users/mac/Sites/points/packages/usama/tap/src/routes.php&#10;app.php&#9;FILE&#9;file:///Users/mac/Sites/points/config/app.php&#10;AppSer&#9;FILE&#9;file:///Users/mac/Sites/points/app/Providers/AppServiceProvider.php&#10;index&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/point/index.blade.php&#10;TapPay&#9;null&#9;null&#10;index.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/point/index.blade.php&#10;AuthSer&#9;FILE&#9;file:///Users/mac/Sites/points/app/Providers/AuthServiceProvider.php&#10;nav.blade&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/nav.blade.php&#10;RoleCon&#9;null&#9;null&#10;create.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/order/create.blade.php&#10;breadc&#9;FILE&#9;file:///Users/mac/Sites/points/routes/breadcrumbs.php&#10;roles_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2014_02_01_041517_create_roles_table.php&#10;edit.blade&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/role/edit.blade.php&#10;OrderCon&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/OrderController.php&#10;lang&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/order/choose_lang.blade.php&#10;OrderCo&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/OrderController.php&#10;create.&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/order/create.blade.php&#10;create.b&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/order/create.blade.php&#10;AdminA&#9;null&#9;null&#10;RolesTab&#9;FILE&#9;file:///Users/mac/Sites/points/database/seeds/RolesTableSeeder.php&#10;nav.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/nav.blade.php&#10;web&#9;FILE&#9;file:///Users/mac/Sites/points/routes/web.php&#10;create.blade&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/order/create.blade.php&#10;ComposerSer&#9;FILE&#9;file:///Users/mac/Sites/points/app/Providers/ComposerServiceProvider.php&#10;app.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/layouts/app.blade.php&#10;UserPo&#9;FILE&#9;file:///Users/mac/Sites/points/app/Policies/UserPolicy.php&#10;UserCon&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/UserController.php&#10;OrderPo&#9;FILE&#9;file:///Users/mac/Sites/points/app/Policies/OrderPolicy.php&#10;edit.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/user/edit.blade.php&#10;bread&#9;FILE&#9;file:///Users/mac/Sites/points/routes/breadcrumbs.php&#10;Setting&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/Admin/SettingController.php&#10;SettingCon&#9;null&#9;null&#10;Usercon&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/UserController.php&#10;index.bl&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/point/index.blade.php&#10;User.php&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/User.php" />
+    <property name="SearchEverywhereHistoryKey" value="TapPa&#9;FILE&#9;file:///Users/mac/Sites/points/packages/usama/tap/src/Controllers/TapPaymentController.php&#10;trans&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/emails/transaction-complete.blade.php&#10;mail.php&#9;FILE&#9;file:///Users/mac/Sites/points/config/mail.php&#10;Payment&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/PaymentPlan.php&#10;Setting.php&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Setting.php&#10;settings_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2017_04_24_160036_create_settings_table.php&#10;.env&#9;FILE&#9;file:///Users/mac/Sites/points/.env&#10;Tap&#9;FILE&#9;file:///Users/mac/Sites/points/packages/usama/tap/src/Controllers/TapPaymentController.php&#10;Trans&#9;null&#9;null&#10;transactions_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2018_12_04_150511_create_transactions_table.php&#10;PaymentPl&#9;null&#9;null&#10;payment_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2018_12_04_145650_create_payment_plans_table.php&#10;users_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2014_10_12_000000_create_users_table.php&#10;composer.js&#9;FILE&#9;file:///Users/mac/Sites/points/composer.json&#10;app&#9;FILE&#9;file:///Users/mac/Sites/points/config/app.php&#10;tap.php&#9;FILE&#9;file:///Users/mac/Sites/points/packages/usama/tap/src/config/tap.php&#10;routes&#9;FILE&#9;file:///Users/mac/Sites/points/packages/usama/tap/src/routes.php&#10;app.php&#9;FILE&#9;file:///Users/mac/Sites/points/config/app.php&#10;AppSer&#9;FILE&#9;file:///Users/mac/Sites/points/app/Providers/AppServiceProvider.php&#10;index&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/point/index.blade.php&#10;TapPay&#9;null&#9;null&#10;index.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/point/index.blade.php&#10;AuthSer&#9;FILE&#9;file:///Users/mac/Sites/points/app/Providers/AuthServiceProvider.php&#10;nav.blade&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/nav.blade.php&#10;RoleCon&#9;null&#9;null&#10;create.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/order/create.blade.php&#10;breadc&#9;FILE&#9;file:///Users/mac/Sites/points/routes/breadcrumbs.php&#10;roles_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2014_02_01_041517_create_roles_table.php&#10;edit.blade&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/role/edit.blade.php&#10;OrderCon&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/OrderController.php&#10;lang&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/order/choose_lang.blade.php&#10;OrderCo&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/OrderController.php&#10;create.&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/order/create.blade.php&#10;create.b&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/order/create.blade.php&#10;AdminA&#9;null&#9;null&#10;RolesTab&#9;FILE&#9;file:///Users/mac/Sites/points/database/seeds/RolesTableSeeder.php&#10;nav.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/nav.blade.php&#10;web&#9;FILE&#9;file:///Users/mac/Sites/points/routes/web.php&#10;create.blade&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/order/create.blade.php&#10;ComposerSer&#9;FILE&#9;file:///Users/mac/Sites/points/app/Providers/ComposerServiceProvider.php&#10;app.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/layouts/app.blade.php&#10;UserPo&#9;FILE&#9;file:///Users/mac/Sites/points/app/Policies/UserPolicy.php&#10;UserCon&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/UserController.php&#10;OrderPo&#9;FILE&#9;file:///Users/mac/Sites/points/app/Policies/OrderPolicy.php&#10;edit.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/user/edit.blade.php&#10;bread&#9;FILE&#9;file:///Users/mac/Sites/points/routes/breadcrumbs.php&#10;Setting&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/Admin/SettingController.php&#10;SettingCon&#9;null&#9;null&#10;Usercon&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/UserController.php&#10;index.bl&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/point/index.blade.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="" />
@@ -754,12 +752,12 @@
       <workItem from="1544680702285" duration="21460000" />
       <workItem from="1544868904198" duration="9197000" />
       <workItem from="1544936685929" duration="15137000" />
-      <workItem from="1545027030953" duration="7363000" />
+      <workItem from="1545027030953" duration="7515000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126123000" />
+    <option name="totallyTimeSpent" value="126275000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
@@ -1030,13 +1028,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/usama/tap/src/Controllers/TapPaymentController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="146" column="61" selection-start-line="146" selection-start-column="61" selection-end-line="146" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/vendor/mail/markdown/button.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1127,8 +1118,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/emails/transaction-complete.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="124" selection-start-line="16" selection-start-column="124" selection-end-line="16" selection-end-column="124" />
+        <state relative-caret-position="468">
+          <caret line="26" column="80" lean-forward="true" selection-start-line="26" selection-start-column="80" selection-end-line="26" selection-end-column="80" />
           <folding>
             <element signature="e#37#58#0#HTML" expanded="true" />
             <element signature="e#37#62#0#HTML" expanded="true" />
@@ -1139,6 +1130,13 @@
             <element signature="e#2237#2308#0#HTML" expanded="true" />
             <element signature="e#2494#2568#0#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/usama/tap/src/Controllers/TapPaymentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="152" column="55" lean-forward="true" selection-start-line="152" selection-start-column="55" selection-end-line="152" selection-end-column="55" />
         </state>
       </provider>
     </entry>
