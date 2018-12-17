@@ -5,7 +5,7 @@
         <div class="portlet-body">
             @if($paymentPlans->isNotEmpty())
                 <div class="pricing-content-1">
-                    <div class="row" style="border: 1px solid red; padding: 10px;">
+                    <div class="row">
                         <div class="col-lg-10 col-lg-push-1">
                             @foreach($paymentPlans as $plan)
                                 <div class="col-md-4">
