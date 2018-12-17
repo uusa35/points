@@ -9,7 +9,7 @@
             @csrf
             <div class="form-body">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="form-group {{ $errors->has('title') ? ' has-error' : '' }}">
                             <label for="title" class="control-label">{{ trans('general.order_title') }}</label>
                             <input id="title" type="text" class="form-control" name="title" value="{{ old('title') }}"
@@ -24,7 +24,7 @@
                         </div>
                     </div>
                     @if(session()->get('order_lang')=='ar')
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="form-group {{ $errors->has('name_ar') ? ' has-error' : '' }}">
                             <label for="name_ar" class="control-label">{{ trans('general.name_ar') }}</label>
                             <input id="name_ar" type="text" class="form-control" name="name_ar" value="{{ old('name_ar') }}"
@@ -40,7 +40,7 @@
                     </div>
 
                     @elseif(session()->get('order_lang')=='en')
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="form-group {{ $errors->has('name_en') ? ' has-error' : '' }}">
                             <label for="name_en" class="control-label">{{ trans('general.name_en') }}</label>
                             <input id="name_en" type="text" class="form-control" name="name_en" value="{{ old('name_en') }}"
@@ -56,7 +56,7 @@
                     </div>
 
                     @else
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="form-group {{ $errors->has('name_en') ? ' has-error' : '' }}">
                             <label for="name_en" class="control-label">{{ trans('general.name_en') }}</label>
                             <input id="name_en" type="text" class="form-control" name="name_en" value="{{ old('name_en') }}"
@@ -70,7 +70,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="form-group {{ $errors->has('name_ar') ? ' has-error' : '' }}">
                             <label for="name_ar" class="control-label">{{ trans('general.name_ar') }}</label>
                             <input id="name_ar" type="text" class="form-control" name="name_ar" value="{{ old('name_ar') }}"
@@ -87,7 +87,7 @@
                     @endif
 
 
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="form-group {{ $errors->has('slogan') ? ' has-error' : '' }}">
                             <label for="slogan" class="control-label">{{ trans('general.slogan') }}</label>
                             <input id="slogan" type="text" class="form-control" name="slogan" value="{{ old('slogan') }}"
@@ -106,14 +106,14 @@
 
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="form-group{{ $errors->has('ip_cam_url') ? ' has-error' : '' }}">
-                            <label for="ip_cam_url" class="control-label">{{ trans('general.website') }}</label>
-                            <input id="ip_cam_url" type="text" class="form-control" name="ip_cam_url" placeholder="website --> http://google.com"
-                                value="{{ old('ip_cam_url') }}" autofocus>
-                            @if ($errors->has('ip_cam_url'))
+                        <div class="form-group{{ $errors->has('website') ? ' has-error' : '' }}">
+                            <label for="website" class="control-label">{{ trans('general.website') }}</label>
+                            <input id="website" type="text" class="form-control" name="website" placeholder="website --> http://google.com"
+                                value="{{ old('website') }}" autofocus>
+                            @if ($errors->has('website'))
                             <span class="help-block">
                                 <strong>
-                                    {{ $errors->first('ip_cam_url') }}
+                                    {{ $errors->first('website') }}
                                 </strong>
                             </span>
                             @endif

@@ -11,7 +11,21 @@
                 <h3 class="form-section">{{ trans('general.create_user') }}</h3>
                 {{--name arabic / name english --}}
                 <div class="row">
-                    <div class="col-md-3">
+                <div class="col-md-4">
+                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                            <label for="name" class="control-label">{{ trans('general.name') }}</label>
+                            <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"
+                                placeholder="name in arabic" autofocus>
+                            @if ($errors->has('name'))
+                            <span class="help-block">
+                                <strong>
+                                    {{ $errors->first('name') }}
+                                </strong>
+                            </span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="col-md-4">
                         <div class="form-group{{ $errors->has('name_ar') ? ' has-error' : '' }}">
                             <label for="name_ar" class="control-label">{{ trans('general.name_ar') }}</label>
                             <input id="name_ar" type="text" class="form-control" name="name_ar" value="{{ old('name_ar') }}"
@@ -25,7 +39,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="form-group{{ $errors->has('name_en') ? ' has-error' : '' }}">
                             <label for="name_en" class="control-label">{{ trans('general.name_en') }}</label>
                             <input id="name_en" type="text" class="form-control" name="name_en" value="{{ old('name_en') }}"
@@ -39,7 +53,13 @@
                             @endif
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    
+
+                </div>
+
+             
+                <div class="row">
+                <div class="col-md-4">
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="control-label">email </label>
                             <input id="email" type="text" class="form-control" name="email" value="{{ old('email') }}"
@@ -53,12 +73,8 @@
                             @endif
                         </div>
                     </div>
-
-                </div>
-
-                {{-- password + confirm password --}}
-                <div class="row">
-                    <div class="col-md-6">
+                    {{-- password + confirm password --}}
+                    <div class="col-md-4">
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="control-label">{{ trans('general.password') }} </label>
                             <input id="password" type="password" class="form-control" name="password" placeholder="password"
@@ -72,7 +88,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
                             <label for="password_confirmation" class="control-label">{{
                                 trans('general.password_confirmation') }} </label>
