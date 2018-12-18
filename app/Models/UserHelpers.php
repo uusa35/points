@@ -50,7 +50,7 @@ trait UserHelpers
     public function scopeOnlyDesigners($q)
     {
         $q->whereHas('role', function ($q) {
-            return $q->where('is_client', true);
+            return $q->where('is_designer', true);
         });
     }
 

@@ -16,6 +16,10 @@
 //    Route::get('/home', 'HomeController@index')->name('home');
 //    Route::get('language/{locale}', 'HomeController@changeLanguage')->name('language.change');
 //});
+use App\Models\Role;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+
 Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.', 'middleware' => ['auth', 'onlyActiveUsers']], function () {
 
     // only designers & admins
@@ -42,9 +46,9 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     Route::get('language/{locale}', 'HomeController@changeLanguage')->name('language.change');
     Route::get('reset/password', 'UserController@getResetPassword')->name('reset.password');
     Route::post('reset/password', 'UserController@postResetPassword')->name('reset');
-    Route::resource('user', 'UserController')->only(['edit','update','show']);
+    Route::resource('user', 'UserController')->only(['edit', 'update', 'show']);
     Route::resource('order', 'OrderController')->except(['destroy']);
-    Route::get('/make/order/lang','OrderController@chooseOrderLang')->name('order.choose.lang');
+    Route::get('/make/order/lang', 'OrderController@chooseOrderLang')->name('order.choose.lang');
     Route::resource('file', 'FileController');
     Route::resource('job', 'JobController');
     Route::resource('version', 'VersionController');
@@ -55,6 +59,19 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
 if ((app()->environment('production') || app()->environment('local')) && Schema::hasTable('users')) {
     Route::get('/logwith/{id}', function ($id) {
         Auth::loginUsingId($id);
+        return redirect()->route('backend.home');
+    });
+    Route::get('/logas/{role}', function ($role) {
+        if ($role === 'designer') {
+            $element = User::whereHas('role', function ($q) use ($role) {
+                return $q->where(['name' => $role]);
+            })->has('jobs', '>', 1)->first();
+        } elseif ($role === 'client') {
+            $element = User::whereHas('role', function ($q) use ($role) {
+                return $q->where('name', $role);
+            })->has('orders', '>', 1)->first();
+        }
+        Auth::loginUsingId($element->id);
         return redirect()->route('backend.home');
     });
 }

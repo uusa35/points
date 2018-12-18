@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Policies\OrderPolicy;
 use App\Policies\PaymentPlanPolicy;
 use App\Policies\UserPolicy;
+use App\Policies\VersionPolicy;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -31,6 +32,7 @@ class AuthServiceProvider extends ServiceProvider
         Gate::resource('order', OrderPolicy::class);
         Gate::resource('user', UserPolicy::class);
         Gate::resource('plan', PaymentPlanPolicy::class);
+        Gate::resource('version', VersionPolicy::class);
 
         Gate::define('isAdmin', function () {
             return auth()->user()->isAdminOrAbove; // means if isSupern then go ahead

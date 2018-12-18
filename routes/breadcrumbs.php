@@ -161,7 +161,8 @@ Breadcrumbs::for('backend.job.show', function ($trail, $element) {
 });
 
 Breadcrumbs::for('backend.job.edit', function ($trail, $element) {
-    $trail->parent('backend.job.index',$element->order_id);
+    $trail->parent('backend.order.index');
+    $trail->push(trans('general.order'), route('backend.order.show', $element->order_id));
     $trail->push(trans('general.edit_job'), route('backend.job.edit', $element->id));
 });
 

@@ -1,14 +1,19 @@
 <div class="portlet yellow-crusta box">
     <div class="portlet-title">
         <div class="caption">
-            <i class="fa fa-cogs"></i>{{ trans('general.order_details') }}
+            <i class="fa fa-cogs"></i>{{ trans('general.job_details') }}
         </div>
         <div class="actions">
-            @if(!$element)
-                @can('client')
-                    <a href="{{ route('backend.client.job.edit') }}" class="btn btn-default btn-sm">
+            @if($element)
+                @can('onlyDesigner')
+                    <a href="{{ route('backend.job.edit',$element->id) }}" class="btn btn-default btn-sm">
                         <i class="fa fa-pencil"></i> {{ trans('general.edit') }}</a>
                 @endcan
+                {{--@can('version.create')--}}
+                    <a href="{{ route('backend.version.create',['job_id' => $element->id]) }}"
+                       class="btn btn-default btn-sm">
+                        <i class="fa fa-pencil"></i> {{ trans('general.create_new_version') }}</a>
+                {{--@endcan--}}
             @endif
         </div>
     </div>
