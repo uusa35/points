@@ -26,15 +26,15 @@
                     <i class="fa fa-angle-down"></i>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                    @can('isAdmin')
+                    @can('onlySuper')
                         <li>
                             <a href="{{ route('backend.admin.user.create') }}">
                                 <i class="icon-plus"></i> {{ trans('general.new_user') }}</a>
                         </li>
-                        <li>
-                            <a href="{{ route('backend.admin.order.create') }}">
-                                <i class="icon-plus"></i> {{ trans('general.admin_new_order') }}</a>
-                        </li>
+                        {{--<li>--}}
+                            {{--<a href="{{ route('backend.admin.order.create') }}">--}}
+                                {{--<i class="icon-plus"></i> {{ trans('general.admin_new_order') }}</a>--}}
+                        {{--</li>--}}
                     @endcan
                     @can('onlySuper')
                         <li>

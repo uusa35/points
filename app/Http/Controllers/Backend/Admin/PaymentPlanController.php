@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Backend\Admin;
 use App\Http\Requests\Backend\PaymentPlanStore;
 use App\Http\Requests\Backend\PaymentPlanUpdate;
 use App\Models\PaymentPlan;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class PaymentPlanController extends Controller
@@ -28,6 +27,7 @@ class PaymentPlanController extends Controller
      */
     public function create()
     {
+        $this->authorize('plan.create');
         return view('backend.modules.plan.create');
     }
 
@@ -62,6 +62,7 @@ class PaymentPlanController extends Controller
     public function show($id)
     {
         $element = PaymentPlan::whereId($id)->first();
+        $this->authorize('plan.update',$element);
         return view('backend.modules.plan.show', compact('element'));
     }
 
@@ -74,6 +75,7 @@ class PaymentPlanController extends Controller
     public function edit($id)
     {
         $element = PaymentPlan::whereId($id)->first();
+        $this->authorize('plan.update',$element);
         return view('backend.modules.plan.edit', compact('element'));
     }
 

@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\PaymentPlan;
+use App\Models\PaymentPlan;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class PaymentPlanPolicy
@@ -19,7 +19,7 @@ class PaymentPlanPolicy
      */
     public function view(User $user, PaymentPlan $paymentPlan)
     {
-        //
+        return $user->isSuper;
     }
 
     /**
@@ -30,7 +30,7 @@ class PaymentPlanPolicy
      */
     public function create(User $user)
     {
-        return $this->onlySuper;
+        return $user->isSuper;
     }
 
     /**
@@ -42,6 +42,7 @@ class PaymentPlanPolicy
      */
     public function update(User $user, PaymentPlan $paymentPlan)
     {
+        return $user->isSuper;
     }
 
     /**
