@@ -145,11 +145,11 @@ Breadcrumbs::for('backend.order.show', function ($trail, $element) {
 Breadcrumbs::for('backend.job.index', function ($trail) {
     if(request()->has("order_id")) {
         $trail->parent('backend.order.index',['order_id' => request()->order_id]);
-        $trail->push(trans('general.jobs'), route('backend.job.index',['order_id' => request()->order_id]));
+        $trail->push(trans('general.job'), route('backend.job.index',['order_id' => request()->order_id]));
     }
 });
 Breadcrumbs::for('backend.job.create', function ($trail) {
-//    $trail->parent('backend.order.index');
+    $trail->parent('backend.order.index');
     $trail->push(trans('general.create_new_job'), route('backend.job.create'));
 });
 
