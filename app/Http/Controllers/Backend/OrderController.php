@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Requests\Backend\OrderStore;
 use App\Http\Requests\Backend\OrderUpdate;
+use App\Models\Category;
 use App\Models\Order;
 use App\Http\Controllers\Controller;
+use App\Models\Service;
 
 class OrderController extends Controller
 {
@@ -38,24 +40,18 @@ class OrderController extends Controller
                     return $q->whereHas('designers', function ($q) {
                         return $q->whereIn('id', [auth()->id()]);
                     });
-                })->with('job.versions','service.category')->orderBy('id', 'desc')->paginate(self::PAGINATE);
+                })->with('job.versions', 'service.category')->orderBy('id', 'desc')->paginate(self::PAGINATE);
             } else { // not complete and paid
                 $elements = Order::active()->active()->where(['is_complete' => false, 'is_paid' => true])->whereHas('job', function ($q) {
                     return $q->whereHas('designers', function ($q) {
                         return $q->whereIn('id', [auth()->id()]);
                     });
-                })->with('job.versions','service.category')->orderBy('id', 'desc')->paginate(self::PAGINATE);
+                })->with('job.versions', 'service.category')->orderBy('id', 'desc')->paginate(self::PAGINATE);
             }
-        } elseif(auth()->user()->isAdminOrAbove) {
+        } elseif (auth()->user()->isAdminOrAbove) {
             return redirect()->route('backend.admin.order.index');
         }
         return view('backend.modules.order.index', compact('elements'));
-    }
-
-
-    public function chooseOrderLang()
-    {
-        return view('backend.modules.order.choose_lang');
     }
 
     /**
@@ -132,5 +128,39 @@ class OrderController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function chooseOrderLang()
+    {
+        $validate = validator(request()->all(),
+            [
+                'service_id' => 'numeric|exists:services,id'
+            ]);
+        if ($validate->fails()) {
+            return redirect()->back()->with($validate->errors());
+        }
+        session()->put('service_id', request()->service_id);
+        return view('backend.modules.order.choose_lang');
+    }
+
+    public function chooseOrderCategory()
+    {
+        $elements = Category::active()->whereHas('services', function ($q) {
+            return $q->active();
+        }, '>', 0)->orderBy('order', 'desc')->get();
+        return view('backend.modules.order.choose_category', compact('elements'));
+    }
+
+    public function chooseOrderService()
+    {
+        $validate = validator(request()->all(),
+            [
+                'category_id' => 'numeric|exists:categories,id'
+            ]);
+        if ($validate->fails()) {
+            return redirect()->back()->with($validate->errors());
+        }
+        $elements = Service::active()->where('category_id', request()->category_id)->orderBy('order', 'desc')->get();
+        return view('backend.modules.order.choose_service', compact('elements'));
     }
 }

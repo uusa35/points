@@ -25,7 +25,7 @@ class CreateOrdersTable extends Migration
             $table->string('twitter')->nullable();
             $table->string('mobile')->nullable();
             $table->string('phone_one')->nullable();
-            $table->string('phone_tow')->nullable();
+            $table->string('phone_two')->nullable();
             $table->string('fax')->nullable();
             $table->string('whatsapp')->nullable();
             $table->string('snapchat')->nullable();

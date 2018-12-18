@@ -27,7 +27,7 @@ class TransactionObserver
     {
         if ($transaction->is_complete) {
             $paymentPlan = $transaction->payment_plan;
-            $points = $paymentPlan->apply_bouns ? $paymentPlan->priceWithBonus : $paymentPlan->price;
+            $points = $paymentPlan->apply_bonus ? $paymentPlan->priceWithBonus : $paymentPlan->price;
             $currentBalance = $transaction->user()->first()->balance()->first();
             $currentBalance->update(['points' => $points + $currentBalance->points]);
         }

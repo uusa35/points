@@ -131,6 +131,16 @@ Breadcrumbs::for('backend.order.choose.lang', function ($trail) {
     $trail->push(trans('general.choose_order_lang'), route('backend.order.choose.lang'));
 });
 
+Breadcrumbs::for('backend.order.choose.category', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.choose_order_category'), route('backend.order.choose.category'));
+});
+
+Breadcrumbs::for('backend.order.choose.service', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.choose_order_service'), route('backend.order.choose.service'));
+});
+
 Breadcrumbs::for('backend.order.create', function ($trail) {
     $trail->parent('backend.order.index');
     $trail->push(trans('general.order'), route('backend.order.create'));

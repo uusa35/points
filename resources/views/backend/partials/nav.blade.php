@@ -47,7 +47,7 @@
                     @can('onlyClient')
                         {{--change this later to onlyClient--}}
                         <li>
-                            <a href="{{ route('backend.order.choose.lang') }}">
+                            <a href="{{ route('backend.order.choose.category') }}">
                                 <i class="icon-plus"></i> {{ trans('general.client_new_order') }}</a>
                         </li>
                         <li class="divider"></li>

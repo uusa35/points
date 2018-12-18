@@ -396,8 +396,8 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label class=" control-label">{{ trans('general.preffered_colors')}}</label>
-                            <input type="text" id="hue-demo" name="preffered_colors_1" class="form-control demo"
-                                data-control="hue" value="#ff6161">
+                            <input type="text" id="hue-demo" name="preferred_colors_1" class="form-control demo"
+                                data-control="hue" value="{{ old('preferred_colors_1') }}">
                         </div>
 
                     </div>
@@ -405,8 +405,8 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label class=" control-label">{{ trans('general.preffered_colors')}}</label>
-                            <input type="text" id="hue-demo" name="preffered_colors_2" class="form-control demo"
-                                data-control="hue" value="#ff6161">
+                            <input type="text" id="hue-demo" name="preferred_colors_2" class="form-control demo"
+                                data-control="hue" value="{{ old('preferred_colors_2') }}">
                         </div>
 
                     </div>
@@ -414,8 +414,8 @@
                         <div class="form-group">
                             <label class=" control-label">{{ trans('general.preffered_colors')}}</label>
 
-                            <input type="text" id="hue-demo" name="preffered_colors_3" class="form-control demo"
-                                data-control="hue" value="#ff6161">
+                            <input type="text" id="hue-demo" name="preferred_colors_3" class="form-control demo"
+                                data-control="hue" value="{{ old('preferred_colors_3') }}">
                         </div>
 
                     </div>
@@ -429,7 +429,7 @@
                         <div class="form-group">
                             <label class=" control-label">{{ trans('general.unwanted_colors') }}</label>
                             <input type="text" id="hue-demo-1" name="unwanted_colors_1" class="form-control demo"
-                                data-control="hue" value="#ff6161">
+                                data-control="hue" value="{{ old('unwanted_colors_1') }}">
                         </div>
 
                     </div>
@@ -438,7 +438,7 @@
                             <label class=" control-label">{{ trans('general.unwanted_colors') }}</label>
 
                             <input type="text" id="hue-demo-2" name="unwanted_colors_2" class="form-control demo"
-                                data-control="hue" value="#ff6161">
+                                data-control="hue" value="{{ old('unwanted_colors_2') }}">
                         </div>
 
                     </div>
@@ -446,7 +446,7 @@
                         <div class="form-group">
                             <label class="control-label">{{ trans('general.unwatched_colors') }}</label>
                             <input type="text" id="hue-demo-3" name="unwanted_colors_3" class="form-control demo"
-                                data-control="hue" value="#ff6161">
+                                data-control="hue" value="{{ old('unwanted_colors_3') }}">
                         </div>
                     </div>
                 </div>
