@@ -4,6 +4,8 @@ namespace App\Services;
 
 use App\Models\Category;
 use App\Models\Color;
+use App\Models\Job;
+use App\Models\Order;
 use App\Models\Project;
 use App\Models\Setting;
 use App\Models\Country;
@@ -14,6 +16,7 @@ use App\Models\Post;
 use App\Models\Role;
 use App\Models\Size;
 use App\Models\User;
+use App\Models\Version;
 use Illuminate\View\View;
 
 class ViewComposers
@@ -30,9 +33,38 @@ class ViewComposers
         return $view->with(compact('roles'));
     }
 
-    public function getSettings(View $view) {
+    public function getSettings(View $view)
+    {
         $settings = Setting::first();
         return $view->with(compact('settings'));
+    }
+
+    public function getTotalClientActiveOrders(View $view)
+    {
+        $totalClientActiveOrders = Order::active()->where(['is_paid' => true, 'user_id' => auth()->id()])->count();
+        return $view->with(compact('totalClientActiveOrders'));
+    }
+
+    public function getTotalClientOnProgressOrders(View $view)
+    {
+        $totalClientOnProgressOrders = Order::active()->where(['is_paid' => true, 'is_complete' => false, 'user_id' => auth()->id()])->count();
+        return $view->with(compact('totalClientOnProgressOrders'));
+    }
+
+    public function getTotalClientCompletedOrders(View $view)
+    {
+        $totalClientCompletedOrders = Order::active()->where(['is_paid' => true, 'is_complete' => true, 'user_id' => auth()->id()])->count();
+        return $view->with(compact('totalClientCompletedOrders'));
+    }
+
+    public function getTotalLastVersionFiles(View $view)
+    {
+        $totalLastVersionFiles =  Version::whereHas('job', function ($q) {
+            return $q->where(['is_complete' => true])->whereHas('order', function ($q) {
+                return $q->where(['is_paid' => true, 'is_complete' => true, 'user_id' => auth()->id()]);
+            });
+        })->with('images', 'files')->get();
+        return $view->with(compact('totalLastVersionFiles'));
     }
 }
 

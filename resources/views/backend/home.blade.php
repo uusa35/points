@@ -2,59 +2,6 @@
 
 @section('content')
     <div class="row">
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-            <a class="dashboard-stat dashboard-stat-v2 blue" href="#">
-                <div class="visual">
-                    <i class="fa fa-money"></i>
-                </div>
-                <div class="details">
-                    <div class="number">
-                        <span data-counter="counterup" data-value="10">10000</span>
-                    </div>
-                    <div class="desc ">{{ trans('total_active_projects') }}</div>
-                </div>
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-            <a class="dashboard-stat dashboard-stat-v2 green" href="#">
-                <div class="visual">
-                    <i class="fa fa-user-circle"></i>
-                </div>
-                <div class="details">
-                    <div class="number">
-                        <span data-counter="counterup" data-value="10">10000</span>
-                    </div>
-                    <div class="desc">{{ trans('general.total_active_clients') }}</div>
-                </div>
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-            <a class="dashboard-stat dashboard-stat-v2 red" href="#">
-                <div class="visual">
-                    <i class="fa fa-bar-chart-o"></i>
-                </div>
-                <div class="details">
-                    <div class="number">
-                        <span data-counter="counterup" data-value="10">10000</span></div>
-                    <div class="desc">{{ trans('general.total_active_subcontractors') }}</div>
-                </div>
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-            <a class="dashboard-stat dashboard-stat-v2 purple" href="#">
-                <div class="visual">
-                    <i class="fa fa-globe"></i>
-                </div>
-                <div class="details">
-                    <div class="number">
-                        <span data-counter="counterup" data-value="10">10000</span>
-                    </div>
-                    <div class="desc">{{ trans('general.total_active_consultants') }}</div>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="row">
         <div class="col-md-12">
             <div class="portlet box red">
                 <div class="portlet-title">

@@ -33,6 +33,27 @@ class ComposerServiceProvider extends ServiceProvider
         ],
             'App\Services\ViewComposers@getSettings');
 
+        // client statistics
+        view()->composer([
+            'backend.partials._order_statistics',
+        ],
+            'App\Services\ViewComposers@getTotalClientActiveOrders');
+
+        view()->composer([
+            'backend.partials._order_statistics',
+        ],
+            'App\Services\ViewComposers@getTotalClientOnProgressOrders');
+
+        view()->composer([
+            'backend.partials._order_statistics',
+        ],
+            'App\Services\ViewComposers@getTotalClientCompletedOrders');
+
+        view()->composer([
+            'backend.partials._order_statistics',
+        ],
+            'App\Services\ViewComposers@getTotalLastVersionFiles');
+
     }
 
     /**

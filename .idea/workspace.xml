@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e482aaea-7ea8-4e60-bb85-c7a119286766" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/partials/_order_statistics.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Observers/BalanceObserver.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Observers/BalanceObserver.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/OrderController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Observers/OrderObserver.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Observers/OrderObserver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Observers/TransactionObserver.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Observers/TransactionObserver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/ComposerServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/ComposerServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/ViewComposers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/ViewComposers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/order/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/order/index.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,16 +57,16 @@
           <entry key="env" value="65" />
           <entry key="js" value="154" />
           <entry key="json" value="10" />
-          <entry key="php" value="43022" />
+          <entry key="php" value="45001" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="16302" />
+          <entry key="Blade" value="16951" />
           <entry key="CSS" value="36" />
           <entry key="JSON" value="10" />
           <entry key="JavaScript" value="154" />
-          <entry key="PHP" value="26720" />
+          <entry key="PHP" value="28050" />
           <entry key="PLAIN_TEXT" value="70" />
         </counts>
       </usages-collector>
@@ -74,107 +77,134 @@
           <entry key="html" value="14" />
           <entry key="js" value="20" />
           <entry key="json" value="5" />
-          <entry key="php" value="1032" />
+          <entry key="php" value="1047" />
           <entry key="ttf" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Blade" value="328" />
+          <entry key="Blade" value="332" />
           <entry key="CSS" value="4" />
           <entry key="HTML" value="14" />
           <entry key="JSON" value="5" />
           <entry key="JavaScript" value="20" />
-          <entry key="PHP" value="704" />
+          <entry key="PHP" value="715" />
           <entry key="PLAIN_TEXT" value="10" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Observers/TransactionObserver.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="702">
-              <caret line="39" column="19" lean-forward="true" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Policies/PaymentPlanPolicy.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="774">
-              <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
-              <folding>
-                <element signature="e#32#52#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/packages/usama/tap/src/Controllers/TapPaymentController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="140" column="115" lean-forward="true" selection-start-line="140" selection-start-column="115" selection-end-line="140" selection-end-column="115" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="31" column="40" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Policies/OrderPolicy.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-              <folding>
-                <element signature="e#32#53#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Policies/UserPolicy.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-              <folding>
-                <element signature="e#32#52#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Observers/BalanceObserver.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="23" lean-forward="true" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.env">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.4432699">
+      <split-first>
+        <splitter split-orientation="vertical" split-proportion="0.5">
+          <split-first>
+            <leaf>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/OrderController.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="671">
+                      <caret line="40" column="90" selection-start-line="40" selection-start-column="90" selection-end-line="40" selection-end-column="90" />
+                      <folding>
+                        <element signature="e#48#89#0#PHP" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/app/Observers/TransactionObserver.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="294">
+                      <caret line="30" column="80" lean-forward="true" selection-start-line="30" selection-start-column="80" selection-end-line="30" selection-end-column="80" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/app/Policies/PaymentPlanPolicy.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="774">
+                      <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+                      <folding>
+                        <element signature="e#32#52#0#PHP" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/packages/usama/tap/src/Controllers/TapPaymentController.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="705">
+                      <caret line="164" column="37" selection-start-line="164" selection-start-column="37" selection-end-line="164" selection-end-column="37" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/resources/views/backend/home.blade.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="684">
+                      <caret line="38" column="35" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/resources/views/backend/modules/order/index.blade.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="432">
+                      <caret line="146" column="18" lean-forward="true" selection-start-line="146" selection-start-column="18" selection-end-line="146" selection-end-column="18" />
+                      <folding>
+                        <element signature="e#721#9830#0#HTML" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/resources/views/backend/partials/_order_statistics.blade.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="481">
+                      <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
+                      <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+                      <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-first>
+          <split-second>
+            <leaf>
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/app/Providers/ComposerServiceProvider.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="180">
+                      <caret line="41" column="26" lean-forward="true" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-second>
+        </splitter>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/Services/ViewComposers.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="900">
+                  <caret line="65" column="43" selection-start-line="65" selection-start-column="43" selection-end-line="65" selection-end-column="43" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -223,12 +253,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/backend/modules/order/_add_file.blade.php" />
-        <option value="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/OrderController.php" />
-        <option value="$PROJECT_DIR$/resources/views/backend/partials/nav.blade.php" />
-        <option value="$PROJECT_DIR$/app/Policies/PaymentPlanPolicy.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/Backend/PaymentPlanUpdate.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/Backend/PaymentPlanStore.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/Backend/UserUpdate.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/Backend/JobStore.php" />
@@ -245,7 +269,6 @@
         <option value="$PROJECT_DIR$/resources/views/backend/modules/file/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/modules/file/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/modules/job/create.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/backend/modules/order/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/modules/order/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/modules/order/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/modules/order/choose_lang.blade.php" />
@@ -271,9 +294,16 @@
         <option value="$PROJECT_DIR$/resources/views/backend/modules/order/show.blade.php" />
         <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/Observers/BalanceObserver.php" />
-        <option value="$PROJECT_DIR$/app/Observers/OrderObserver.php" />
         <option value="$PROJECT_DIR$/app/Observers/TransactionObserver.php" />
         <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/resources/views/backend/home.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/OrderController.php" />
+        <option value="$PROJECT_DIR$/resources/views/backend/modules/order/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Observers/JobObserver.php" />
+        <option value="$PROJECT_DIR$/app/Providers/ComposerServiceProvider.php" />
+        <option value="$PROJECT_DIR$/app/Observers/OrderObserver.php" />
+        <option value="$PROJECT_DIR$/app/Services/ViewComposers.php" />
+        <option value="$PROJECT_DIR$/resources/views/backend/partials/_order_statistics.blade.php" />
       </list>
     </option>
   </component>
@@ -571,7 +601,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="SearchEverywhereHistoryKey" value=".env&#9;FILE&#9;file:///Users/mac/Sites/points/.env&#10;User.php&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/User.php&#10;AppSer&#9;null&#9;null&#10;TapC&#9;null&#9;null&#10;TransactionOB&#9;null&#9;null&#10;show.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/order/show.blade.php&#10;bread&#9;FILE&#9;file:///Users/mac/Sites/points/routes/breadcrumbs.php&#10;app.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/layouts/app.blade.php&#10;JobCon&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/JobController.php&#10;VersionCon&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/VersionController.php&#10;show.blade&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/version/show.blade.php&#10;index.blade&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/job/index.blade.php&#10;breadc&#9;FILE&#9;file:///Users/mac/Sites/points/routes/breadcrumbs.php&#10;create.blade&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/file/create.blade.php&#10;FileCon&#9;null&#9;null&#10;jobs_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2018_12_04_130556_create_jobs_table.php&#10;Pla&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/Admin/PaymentPlanController.php&#10;edit.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/plan/edit.blade.php&#10;Plan&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/Admin/PaymentPlanController.php&#10;PaymentC&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/Admin/PaymentPlanController.php&#10;AuthSer&#9;FILE&#9;file:///Users/mac/Sites/points/app/Providers/AuthServiceProvider.php&#10;PaymentP&#9;FILE&#9;file:///Users/mac/Sites/points/app/Policies/PaymentPlanPolicy.php&#10;nav.blade&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/nav.blade.php&#10;sidebar&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/sidebar/sidebar.blade.php&#10;OrderCon&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/OrderController.php&#10;UserHel&#9;null&#9;null&#10;OrderPo&#9;null&#9;null&#10;PaymentPla&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/Admin/PaymentPlanController.php&#10;Polic&#9;FILE&#9;file:///Users/mac/Sites/points/app/Policies/PaymentPlanPolicy.php&#10;sideba&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/sidebar/sidebar.blade.php&#10;side&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/sidebar/sidebar.blade.php&#10;sidebar.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/sidebar/sidebar.blade.php&#10;PlanCon&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/Admin/PaymentPlanController.php&#10;create.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/job/create.blade.php&#10;Setting&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/Admin/SettingController.php&#10;Jobcon&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/JobController.php&#10;index.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/order/index.blade.php&#10;UserS&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Requests/Backend/UserStore.php&#10;versions_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2018_12_04_135005_create_versions_table.php&#10;breadcru&#9;FILE&#9;file:///Users/mac/Sites/points/routes/breadcrumbs.php&#10;VersionController&#9;null&#9;null&#10;edit.blade&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/plan/edit.blade.php&#10;Ordercon&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/OrderController.php&#10;Settingcon&#9;null&#9;null&#10;payment_p&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2018_12_04_145650_create_payment_plans_table.php&#10;UserCon&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/Admin/UserController.php&#10;balances_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2018_12_04_150611_create_balances_table.php&#10;edit.bl&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/user/edit.blade.php&#10;footer.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/footer.blade.php&#10;RoleF&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/RoleFactory.php" />
+    <property name="SearchEverywhereHistoryKey" value="orders_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2018_12_04_130012_create_orders_table.php&#10;_order&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/_order_statistics.blade.php&#10;jobs_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2018_12_04_130556_create_jobs_table.php&#10;Composer&#9;FILE&#9;file:///Users/mac/Sites/points/app/Providers/ComposerServiceProvider.php&#10;ComposerSer&#9;null&#9;null&#10;OrderCon&#9;null&#9;null&#10;ViewComposer&#9;null&#9;null&#10;index.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/order/index.blade.php&#10;home.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/home.blade.php&#10;.env&#9;FILE&#9;file:///Users/mac/Sites/points/.env&#10;User.php&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/User.php&#10;AppSer&#9;null&#9;null&#10;TapC&#9;null&#9;null&#10;TransactionOB&#9;null&#9;null&#10;show.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/order/show.blade.php&#10;bread&#9;FILE&#9;file:///Users/mac/Sites/points/routes/breadcrumbs.php&#10;app.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/layouts/app.blade.php&#10;JobCon&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/JobController.php&#10;VersionCon&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/VersionController.php&#10;show.blade&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/version/show.blade.php&#10;index.blade&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/job/index.blade.php&#10;breadc&#9;FILE&#9;file:///Users/mac/Sites/points/routes/breadcrumbs.php&#10;create.blade&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/file/create.blade.php&#10;FileCon&#9;null&#9;null&#10;Pla&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/Admin/PaymentPlanController.php&#10;edit.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/plan/edit.blade.php&#10;Plan&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/Admin/PaymentPlanController.php&#10;PaymentC&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/Admin/PaymentPlanController.php&#10;AuthSer&#9;FILE&#9;file:///Users/mac/Sites/points/app/Providers/AuthServiceProvider.php&#10;PaymentP&#9;FILE&#9;file:///Users/mac/Sites/points/app/Policies/PaymentPlanPolicy.php&#10;nav.blade&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/nav.blade.php&#10;sidebar&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/sidebar/sidebar.blade.php&#10;UserHel&#9;null&#9;null&#10;OrderPo&#9;null&#9;null&#10;PaymentPla&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/Admin/PaymentPlanController.php&#10;Polic&#9;FILE&#9;file:///Users/mac/Sites/points/app/Policies/PaymentPlanPolicy.php&#10;sideba&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/sidebar/sidebar.blade.php&#10;side&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/sidebar/sidebar.blade.php&#10;sidebar.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/sidebar/sidebar.blade.php&#10;PlanCon&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/Admin/PaymentPlanController.php&#10;create.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/job/create.blade.php&#10;Setting&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/Admin/SettingController.php&#10;Jobcon&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/JobController.php&#10;UserS&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Requests/Backend/UserStore.php&#10;versions_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2018_12_04_135005_create_versions_table.php&#10;breadcru&#9;FILE&#9;file:///Users/mac/Sites/points/routes/breadcrumbs.php&#10;VersionController&#9;null&#9;null&#10;edit.blade&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/plan/edit.blade.php&#10;Ordercon&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/OrderController.php&#10;Settingcon&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="" />
@@ -639,18 +669,18 @@
       <workItem from="1544936685929" duration="15137000" />
       <workItem from="1545027030953" duration="8772000" />
       <workItem from="1545054425684" duration="1768000" />
-      <workItem from="1545057729921" duration="14798000" />
+      <workItem from="1545057729921" duration="17627000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144098000" />
+    <option name="totallyTimeSpent" value="146927000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24440895" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.24440895" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -680,65 +710,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Backend/PaymentPlanStore.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Backend/OrderUpdate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Backend/OrderStore.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Backend/JobUpdate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/FileController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="784">
-          <caret line="49" column="7" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_04_130556_create_jobs_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="27" column="72" selection-start-line="27" selection-start-column="72" selection-end-line="27" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/PaymentPlanController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="614">
-          <caret line="92" column="62" selection-start-line="92" selection-start-column="62" selection-end-line="92" selection-end-column="62" />
-          <folding>
-            <element signature="e#54#101#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/backend/partials/_comments.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/VersionController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
@@ -763,13 +734,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="666">
           <caret line="37" column="31" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/backend/modules/order/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -974,44 +938,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/usama/tap/src/Controllers/TapPaymentController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="140" column="115" lean-forward="true" selection-start-line="140" selection-start-column="115" selection-end-line="140" selection-end-column="115" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="31" column="40" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Policies/OrderPolicy.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-          <folding>
-            <element signature="e#32#53#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Policies/PaymentPlanPolicy.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="774">
           <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
-          <folding>
-            <element signature="e#32#52#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Policies/UserPolicy.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
           <folding>
             <element signature="e#32#52#0#PHP" expanded="true" />
           </folding>
@@ -1032,31 +962,136 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Observers/OrderObserver.php">
+    <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
-          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Observers/BalanceObserver.php">
+    <entry file="file://$PROJECT_DIR$/app/Policies/UserPolicy.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
-          <caret line="4" column="23" lean-forward="true" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <folding>
+            <element signature="e#32#52#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Policies/OrderPolicy.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <folding>
+            <element signature="e#32#53#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="31" column="40" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/usama/tap/src/Controllers/TapPaymentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="164" column="37" selection-start-line="164" selection-start-column="37" selection-end-line="164" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/backend/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="38" column="35" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/OrderController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="671">
+          <caret line="40" column="90" selection-start-line="40" selection-start-column="90" selection-end-line="40" selection-end-column="90" />
+          <folding>
+            <element signature="e#48#89#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Observers/JobObserver.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="28" lean-forward="true" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/backend/modules/order/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="146" column="18" lean-forward="true" selection-start-line="146" selection-start-column="18" selection-end-line="146" selection-end-column="18" />
+          <folding>
+            <element signature="e#721#9830#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_04_130556_create_jobs_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="37" column="7" lean-forward="true" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Observers/TransactionObserver.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="39" column="19" lean-forward="true" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
+        <state relative-caret-position="294">
+          <caret line="30" column="80" lean-forward="true" selection-start-line="30" selection-start-column="80" selection-end-line="30" selection-end-column="80" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
+    <entry file="file://$PROJECT_DIR$/app/Providers/ComposerServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+        <state relative-caret-position="180">
+          <caret line="41" column="26" lean-forward="true" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Observers/OrderObserver.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_04_130012_create_orders_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Observers/BalanceObserver.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="32" column="6" lean-forward="true" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/ViewComposers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="65" column="43" selection-start-line="65" selection-start-column="43" selection-end-line="65" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/backend/partials/_order_statistics.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
+          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+          <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
         </state>
       </provider>
     </entry>

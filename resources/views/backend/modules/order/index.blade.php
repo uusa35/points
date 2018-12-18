@@ -1,20 +1,23 @@
 @extends('backend.layouts.app')
 
 @section('content')
-    @include('backend.partials.breadcrumbs')
-    <div class="row">
-        <div class="col-md-12">
+    @if($elements->isNotEmpty())
+        @include('backend.partials.breadcrumbs')
+        <div class="row">
+            <div class="col-md-12">
+            @can('onlyClient')
+                @include('backend.partials._order_statistics')
+            @endcan
             <!-- BEGIN EXAMPLE TABLE PORTLET-->
-            <div class="portlet light ">
-                @include('backend.partials.forms.form_title')
-                <div class="portlet-body">
-                    <div class="m-heading-1 border-green m-bordered">
-                        <h3>{{ trans('general.instructions') }}</h3>
-                        <p>
-                            {{ trans('message.backend_order_index_message') }}
-                        </p>
-                    </div>
-                    @if($elements->isNotEmpty())
+                <div class="portlet light ">
+                    @include('backend.partials.forms.form_title')
+                    <div class="portlet-body">
+                        <div class="m-heading-1 border-green m-bordered">
+                            <h3>{{ trans('general.instructions') }}</h3>
+                            <p>
+                                {{ trans('message.backend_order_index_message') }}
+                            </p>
+                        </div>
                         <table id="dataTable" class="table table-striped table-bordered table-hover" cellspacing="0"
                                width="100%">
                             {{--<table class="table table-striped table-bordered table-hover order-column" id="dataTable">--}}
@@ -84,23 +87,23 @@
                                                         </a>
                                                     </li>
 
-                                                        <li>
-                                                            <a data-toggle="modal" href="#" data-target="#basic"
-                                                               data-title="Delete"
-                                                               data-content="Are you sure you want to delete this order ? "
-                                                               data-form_id="delete-{{ $element->id }}"
-                                                            >
-                                                                <i class="fa fa-fw fa-recycle"></i> {{ trans('general.delete') }}
-                                                            </a>
-                                                            <form method="post" id="delete-{{ $element->id }}"
-                                                                  action="{{ route('backend.admin.order.destroy',$element->id) }}">
-                                                                @csrf
-                                                                <input type="hidden" name="_method" value="delete"/>
-                                                                <button type="submit" class="btn btn-del hidden">
-                                                                    <i class="fa fa-fw fa-times-circle"></i> {{ trans('general.delete') }}
-                                                                </button>
-                                                            </form>
-                                                        </li>
+                                                    <li>
+                                                        <a data-toggle="modal" href="#" data-target="#basic"
+                                                           data-title="Delete"
+                                                           data-content="Are you sure you want to delete this order ? "
+                                                           data-form_id="delete-{{ $element->id }}"
+                                                        >
+                                                            <i class="fa fa-fw fa-recycle"></i> {{ trans('general.delete') }}
+                                                        </a>
+                                                        <form method="post" id="delete-{{ $element->id }}"
+                                                              action="{{ route('backend.admin.order.destroy',$element->id) }}">
+                                                            @csrf
+                                                            <input type="hidden" name="_method" value="delete"/>
+                                                            <button type="submit" class="btn btn-del hidden">
+                                                                <i class="fa fa-fw fa-times-circle"></i> {{ trans('general.delete') }}
+                                                            </button>
+                                                        </form>
+                                                    </li>
                                                 @elsecan('onlyClient')
                                                     <li>
                                                         <a href="{{ route('backend.order.edit',$element->id) }}">
@@ -139,11 +142,11 @@
                             </tbody>
                         </table>
                         {{ $elements->render() }}
-                    @else
-                        <div class="alert alert-warning">{{ trans('general.no_orders') }}</div>
-                    @endif
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    @else
+        <div class="alert alert-danger">{{ trans('message.no_orders') }}</div>
+    @endif
 @endsection

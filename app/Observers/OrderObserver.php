@@ -14,10 +14,17 @@ class OrderObserver
      */
     public function created(Order $order)
     {
-        if ($order->is_paid) {
-            $amount = $order->service->on_sale ? $order->service->sale_points : $order->service->sale_point;
-            $points = $amount > $order->user->balance->points ? $amount : 0;
-            $order->user()->balance()->update(['points' => $points]);
+        // get the service points cost
+        $amount = $order->service->on_sale ? $order->service->sale_points : $order->service->sale_point;
+        // check if the current balance > service points cost
+        if (request()->user()->balance()->first()->points > $amount) {
+            if ($order->is_paid) {
+                $amount = $order->service->on_sale ? $order->service->sale_points : $order->service->sale_point;
+                $points = $amount > $order->user->balance->points ? $amount : 0;
+                $order->user()->balance()->update(['points' => $points]);
+            }
+        } else {
+            $order->update(['is_paid' => false, 'active' => false]);
         }
     }
 

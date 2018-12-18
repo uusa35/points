@@ -40,8 +40,10 @@ class OrderController extends Controller
                     });
                 })->with('job.versions','service.category')->orderBy('id', 'desc')->paginate(self::PAGINATE);
             } else { // not complete and paid
-                $elements = Order::where(['is_complete' => false,'is_paid' => true])->whereHas('job', function ($q) {
-                    return $q->designers()->whereIn('id', [auth()->id]);
+                $elements = Order::where(['is_complete' => false, 'is_paid' => true])->whereHas('job', function ($q) {
+                    return $q->whereHas('designers', function ($q) {
+                        return $q->whereIn('id', [auth()->id()]);
+                    });
                 })->with('job.versions','service.category')->orderBy('id', 'desc')->paginate(self::PAGINATE);
             }
         } elseif(auth()->user()->isAdminOrAbove) {
