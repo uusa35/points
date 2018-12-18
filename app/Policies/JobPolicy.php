@@ -49,10 +49,10 @@ class JobPolicy
      */
     public function update(User $user, Job $job)
     {
-        if ($user->onlyClient) {
-            return $user->id === $job->order->user_id;
-        } elseif ($user->onlyDesigner) {
-            return in_array($user->id(), $job->designers()->pluck('id')->toArray(), true);
+        if (auth()->user()->onlyClient) {
+            return auth()->id() === $job->order->user_id;
+        } elseif (auth()->user()->onlyDesigner) {
+            return in_array(auth()->id(), $job->designers()->pluck('id')->toArray(), true);
         }
     }
 

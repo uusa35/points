@@ -127,18 +127,20 @@
                                                         </a>
                                                     </li>
                                                 @endcan
-                                                @can('job.update', $element->job)
-                                                    <li>
-                                                        <a href="{{ route('backend.job.edit',$element->job->id) }}">
-                                                            <i class="fa fa-fw fa-edit"></i>{{ trans('general.edit_current_job') }}
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="{{ route('backend.job.show',$element->job->id) }}">
-                                                            <i class="fa fa-fw fa-eye-slash"></i>{{ trans('general.view_job') }}
-                                                        </a>
-                                                    </li>
-                                                @endcan
+                                                @if($element->job)
+                                                    @can('job.update', $element->job)
+                                                        <li>
+                                                            <a href="{{ route('backend.job.edit',$element->job->id) }}">
+                                                                <i class="fa fa-fw fa-edit"></i>{{ trans('general.edit_current_job') }}
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="{{ route('backend.job.show',$element->job->id) }}">
+                                                                <i class="fa fa-fw fa-eye-slash"></i>{{ trans('general.view_job') }}
+                                                            </a>
+                                                        </li>
+                                                    @endcan
+                                                @endif
                                             </ul>
                                         </div>
                                     </td>

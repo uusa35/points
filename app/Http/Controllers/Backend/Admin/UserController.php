@@ -20,10 +20,11 @@ class UserController extends Controller
      */
     public function index()
     {
-        if(request()->has('role_id')) {
-            $elements = User::where('role_id', request('role_id'))->with('role','balance')->paginate(self::PAGINATE);
+        $this->authorize('user.view', auth()->user());
+        if (request()->has('role_id')) {
+            $elements = User::where('role_id', request('role_id'))->with('role', 'balance')->paginate(self::PAGINATE);
         } else {
-            $elements = User::with('role','balance')->paginate(self::PAGINATE);
+            $elements = User::with('role', 'balance')->paginate(self::PAGINATE);
         }
 
         return view('backend.modules.user.index', compact('elements'));
@@ -69,6 +70,7 @@ class UserController extends Controller
     public function show($id)
     {
         $element = User::active()->whereId($id)->with('role', 'projects')->first();
+        $this->authorize('user.view',$element);
         return response()->json($element, 200);
     }
 
@@ -81,6 +83,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $element = User::whereId($id)->with('balance')->first();
+        $this->authorize('user.view',$element);
         return view('backend.modules.user.edit', compact('element'));
     }
 
@@ -94,7 +97,7 @@ class UserController extends Controller
     public function update(UserUpdate $request, $id)
     {
         $element = User::whereId($id)->first();
-        $updated = $element->update($request->except(['logo', 'gallery', 'governate_id', 'area_id', 'user_id','balance']));
+        $updated = $element->update($request->except(['logo', 'gallery', 'governate_id', 'area_id', 'user_id', 'balance']));
         if ($updated) {
             $element->balance()->update(['points' => $request->balance]);
             if ($request->hasFile('logo')) {
@@ -170,8 +173,8 @@ class UserController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect()->back()-withErrors($validator)->withInputs();
+            return redirect()->back() - withErrors($validator)->withInputs();
         }
-        $this->notify(request('title'),request('message'),request('ids'));
+        $this->notify(request('title'), request('message'), request('ids'));
     }
 }

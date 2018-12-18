@@ -70,6 +70,10 @@ if ((app()->environment('production') || app()->environment('local')) && Schema:
             $element = User::whereHas('role', function ($q) use ($role) {
                 return $q->where('name', $role);
             })->has('orders', '>', 1)->first();
+        } else {
+            $element = User::whereHas('role', function ($q) use ($role) {
+                return $q->where('name', $role);
+            })->first();
         }
         Auth::loginUsingId($element->id);
         return redirect()->route('backend.home');
