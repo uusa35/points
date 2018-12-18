@@ -19,7 +19,7 @@ $factory->define(Order::class, function (Faker $faker) {
         'twitter' => $faker->url,
         'mobile' => $faker->phoneNumber,
         'phone_one' => $faker->phoneNumber,
-        'phone_tow' => $faker->phoneNumber,
+        'phone_two' => $faker->phoneNumber,
         'fax' => $faker->phoneNumber,
         'whatsapp' => $faker->phoneNumber,
         'snapchat' => $faker->url,

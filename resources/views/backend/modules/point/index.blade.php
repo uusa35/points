@@ -32,7 +32,9 @@
                                                     <i class="icon-user-follow"></i>
                                                 </div>
                                                 <div class="col-xs-9 text-left mobile-padding">
-                                                    {{ $plan->description }}
+                                                    <p style="min-height: 150px;">
+                                                        {{ $plan->description }}
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
@@ -41,7 +43,7 @@
                                             <Form action="{{ route('web.payment.create') }}" method="post">
                                                 @csrf
                                                 <input type="hidden" name="id" value="{{ $plan->id }}">
-                                                <button type="submit" class="btn green price-button sbold uppercase">{{ trans('general.buy_now') }}
+                                                <button type="submit" class="btn price-button sbold uppercase" style="background-color : {{ $plan->color }}">{{ trans('general.buy_now') }}
                                                 </button>
                                             </Form>
                                         </div>

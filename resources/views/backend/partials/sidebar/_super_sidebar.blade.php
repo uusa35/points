@@ -7,13 +7,23 @@
     </a>
     <ul class="sub-menu">
         @foreach($roles as $r)
-            <li class="nav-item start ">
-                <a href="{{ route('backend.admin.user.index', ['role_id' => $r->id]) }}"
-                   class="nav-link ">
-                    <i class="icon-user-following"></i>
-                    <span class="title">{{ $r->name }}</span>
-                </a>
-            </li>
+            @if($r->is_super && auth()->user()->isSuper)
+                <li class="nav-item start ">
+                    <a href="{{ route('backend.admin.user.index', ['role_id' => $r->id]) }}"
+                       class="nav-link ">
+                        <i class="icon-user-following"></i>
+                        <span class="title">{{ $r->name }}</span>
+                    </a>
+                </li>
+            @elseif(!$r->is_super)
+                <li class="nav-item start ">
+                    <a href="{{ route('backend.admin.user.index', ['role_id' => $r->id]) }}"
+                       class="nav-link ">
+                        <i class="icon-user-following"></i>
+                        <span class="title">{{ $r->name }}</span>
+                    </a>
+                </li>
+            @endif
         @endforeach
     </ul>
 </li>
@@ -80,7 +90,6 @@
         <span class="arrow open"></span>
     </a>
 </li>
-
 <li class="nav-item {{ activeItem('setting') }}">
     <a href="{{ route('backend.admin.setting.show', auth()->user()->id) }}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-gears"></i>

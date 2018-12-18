@@ -48,6 +48,8 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     Route::post('reset/password', 'UserController@postResetPassword')->name('reset');
     Route::resource('user', 'UserController')->only(['edit', 'update', 'show']);
     Route::resource('order', 'OrderController')->except(['destroy']);
+    Route::get('/make/order/category', 'OrderController@chooseOrderCategory')->name('order.choose.category');
+    Route::get('/make/order/service', 'OrderController@chooseOrderService')->name('order.choose.service');
     Route::get('/make/order/lang', 'OrderController@chooseOrderLang')->name('order.choose.lang');
     Route::resource('file', 'FileController');
     Route::resource('job', 'JobController');
@@ -70,6 +72,10 @@ if ((app()->environment('production') || app()->environment('local')) && Schema:
             $element = User::whereHas('role', function ($q) use ($role) {
                 return $q->where('name', $role);
             })->has('orders', '>', 1)->first();
+        } else {
+            $element = User::whereHas('role', function ($q) use ($role) {
+                return $q->where('name', $role);
+            })->first();
         }
         Auth::loginUsingId($element->id);
         return redirect()->route('backend.home');

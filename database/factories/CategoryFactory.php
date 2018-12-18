@@ -18,5 +18,6 @@ $factory->define(Category::class, function (Faker $faker) {
         'order' => $faker->numberBetween(1,10),
         'active' => $faker->boolean(true),
         'path' => '1.pdf',
+        'image' => $faker->numberBetween(1, 10) . '.jpeg',
     ];
 });
