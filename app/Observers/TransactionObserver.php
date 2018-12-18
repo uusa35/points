@@ -2,7 +2,7 @@
 
 namespace App\Observers;
 
-use App\Transaction;
+use App\Models\Transaction;
 
 class TransactionObserver
 {
@@ -28,8 +28,8 @@ class TransactionObserver
         if ($transaction->is_complete) {
             $paymentPlan = $transaction->payment_plan;
             $points = $paymentPlan->apply_bouns ? $paymentPlan->priceWithBonus : $paymentPlan->price;
-            $transaction->user()->balance()->update(['points' => $points]);
-            dd($transaction);
+            $currentBalance = $transaction->user()->first()->balance()->first();
+            $currentBalance->update(['points' => $points + $currentBalance->points]);
         }
     }
 

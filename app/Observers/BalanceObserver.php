@@ -2,7 +2,7 @@
 
 namespace App\Observers;
 
-use App\Balance;
+use App\Models\Balance;
 
 class BalanceObserver
 {
