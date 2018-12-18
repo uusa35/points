@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 @section('content')
-
+    @include('backend.partials.breadcrumbs')
     <div class="tabbable-line">
         <ul class="nav nav-tabs nav-tabs-lg">
             <li class="active">
@@ -8,7 +8,7 @@
             </li>
             <li>
                 <a href="#tab_2" data-toggle="tab"> {{ trans('general.uploaded_files') }}
-                    <span class="badge badge-success">{{ $element->files->count() }}</span>
+                    <span class="badge badge-success">{{ $element->files->isNotEmpty() ? $element->files->count() : null  }}</span>
                 </a>
             </li>
             <li>
@@ -212,7 +212,7 @@
                         </div>
                     </div>
                 </div>
-                @if($element->job->versions->isNotEmpty())
+                @if($element->job && $element->job->versions->isNotEmpty())
                     <div class="row">
                         <div class="col-md-12 col-sm-12">
                             @include('backend.partials._version_details',['elements' => $element->job->versions])
@@ -223,5 +223,6 @@
             </div>
 
         </div>
+        @include('backend.partials._comments')
     </div>
 @endsection

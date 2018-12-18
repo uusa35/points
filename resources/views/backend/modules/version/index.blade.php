@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 @section('content')
-
+    @include('backend.partials.breadcrumbs')
     <div class="tabbable-line">
         <ul class="nav nav-tabs nav-tabs-lg">
             <li class="active">

@@ -1,6 +1,7 @@
 @extends('backend.layouts.app')
 @section('content')
-
+    @if($element)
+        @include('backend.partials.breadcrumbs')
     <div class="tabbable-line">
         <ul class="nav nav-tabs nav-tabs-lg">
             <li class="active">
@@ -199,5 +200,9 @@
             </div>
 
         </div>
+        @include('backend.partials._comments')
     </div>
+    @else
+        <div class="alert alert-danger">{{ trans('message.this_job_does_not_exist') }}</div>
+    @endif
 @endsection

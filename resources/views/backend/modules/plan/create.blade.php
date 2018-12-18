@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 @section('content')
-
+    @include('backend.partials.breadcrumbs')
 <div class="portlet box blue">
     @include('backend.partials.forms.form_title')
 

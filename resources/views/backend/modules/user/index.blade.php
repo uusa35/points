@@ -1,6 +1,7 @@
 @extends('backend.layouts.app')
 
 @section('content')
+    @include('backend.partials.breadcrumbs')
     <div class="row">
         <div class="col-md-12">
             <!-- BEGIN EXAMPLE TABLE PORTLET-->
