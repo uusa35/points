@@ -26,7 +26,14 @@ class FileController extends Controller
      */
     public function create()
     {
-        //
+        $validate = validator(request()->all(), [
+            'type' => 'required|alpha',
+            'id' => 'required|numeric'
+        ]);
+        if ($validate->fails()) {
+            return redirect()->back()->withErrors($validate->errors());
+        }
+        return view('backend.modules.file.create');
     }
 
     /**

@@ -35,8 +35,8 @@ class JobController extends Controller
      */
     public function create()
     {
-        $validate = validator(request()->all(),['order_id' => 'required||exists:orders,id']);
-        if($validate->fails()) {
+        $validate = validator(request()->all(), ['order_id' => 'required||exists:orders,id']);
+        if ($validate->fails()) {
             return redirect()->route('backend.home')->withErrors($validate->errors());
         }
         $element = Order::whereId(request()->order_id)->first();
@@ -52,20 +52,10 @@ class JobController extends Controller
     public function store(JobStore $request)
     {
         $element = Job::create($request->request->all());
-        if($element) {
-            if ($request->hasFile('logo')) {
-                $this->saveMimes($setting, $request, ['logo'], ['500', '500'], true);
-            }
-            if ($request->hasFile('zapper')) {
-                $this->saveMimes($setting, $request, ['zapper'], ['500', '500'], true);
-            }
-            if ($request->hasFile('path')) {
-                $path = $request->file('path')->store('public/uploads/files');
-                $path = str_replace('public/uploads/files/', '', $path);
-                $setting->update(['path' => $path]);
-            }
-            return redirect()->route('backend.setting.index')->with('success', 'setting updated');
+        if ($element) {
+            return redirect()->route('backend.setting.index')->with('success', trans('message.success_job_store'));
         }
+        return redirect()->route('backend.setting.index')->with('error', trans('message.error_job_store'));
     }
 
     /**

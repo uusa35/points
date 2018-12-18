@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 @section('content')
-
+    @if($element)
     <div class="tabbable-line">
         <ul class="nav nav-tabs nav-tabs-lg">
             <li class="active">
@@ -8,7 +8,7 @@
             </li>
             <li>
                 <a href="#tab_2" data-toggle="tab"> {{ trans('general.uploaded_files') }}
-                    <span class="badge badge-success">{{ $element->files->count() }}</span>
+                    <span class="badge badge-success">{{ $element->files->isNotEmpty() ? $element->files->count() : null  }}</span>
                 </a>
             </li>
             <li>
@@ -200,4 +200,7 @@
 
         </div>
     </div>
+    @else
+        <div class="alert alert-danger">{{ trans('message.error_no_such_job_exists') }}</div>
+    @endif
 @endsection

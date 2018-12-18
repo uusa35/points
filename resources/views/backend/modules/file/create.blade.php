@@ -1,11 +1,5 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: usama
- * Date: 12/16/18
- * Time: 6:39 PM
- */
 @extends('backend.layouts.app')
+
 @section('content')
     <div class="portlet box blue">
         @include('backend.partials.forms.form_title')
