@@ -30,11 +30,11 @@
         <div class="row static-info">
             <div class="col-md-5 name"> {{ trans('general.order_status') }}:</div>
             <div class="col-md-7 value">
-                <span class="label label-warning"> {{ trans('general.'.$element->status) }}</span>
+                <span class="label label-success"> {{ trans('general.'.$element->status) }}</span>
             </div>
         </div>
         <div class="row static-info">
-            <div class="col-md-5 name"> {{ trans('general.grand_total') }}</div>
+            <div class="col-md-5 name"> {{ trans('general.total_cost') }}</div>
             <div class="col-md-7 value"> {{ trans('general.points') }} {{ $element->points }}</div>
         </div>
         <div class="row static-info">
@@ -44,6 +44,21 @@
         <div class="row static-info">
             <div class="col-md-5 name"> {{ trans('general.service_caption') }}:</div>
             <div class="col-md-7 value"> {{ $element->service->caption }}</div>
+        </div>
+
+        <div class="row static-info">
+            <div class="col-md-5 name"> {{ trans('general.job_order') }}:</div>
+            @if($element->job)
+                <div class="col-md-7 value">
+                    <a href="{{ route("backend.job.show", $element->job->id) }}"
+                       class="btn btn-info">{{ trans("general.view_job") }}
+                    </a>
+                </div>
+            @else
+                <div class="col-md-7 value">
+                    <div class="alert alert-info">{{ trans('general.no_job_created') }}</div>
+                </div>
+            @endif
         </div>
     </div>
 </div>

@@ -8,7 +8,6 @@ $factory->define(Job::class, function (Faker $faker) {
     return [
         'description' => $faker->paragraph,
         'notes' => $faker->paragraph,
-        'path' => '1.pdf',
         'active' => $faker->boolean,
         'is_complete' => $faker->boolean,
         'is_client_viewed' => $faker->boolean,

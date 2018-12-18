@@ -21,10 +21,10 @@
         <div class="tab-content">
             <div class="tab-pane active" id="tab_1">
                 <div class="row">
-                    <div class="col-md-6 col-sm-12">
+                    <div class="col-md-8 col-sm-12">
                         @include('backend.partials._order_details')
                     </div>
-                    <div class="col-md-6 col-sm-12">
+                    <div class="col-md-4 col-sm-12">
                         @include('backend.partials._client_information',['element' => $element->client])
                     </div>
                 </div>
@@ -33,199 +33,60 @@
                     <div class="col-md-6">
                         <div class="well">
                             <div class="row static-info align-reverse">
-                                <div class="col-md-8 name"> {{ trans('general.total') }}:</div>
+                                <div class="col-md-8 name"> {{ trans('general.total_cost') }}:</div>
                                 <div class="col-md-3 value"> {{ $element->points }} {{ trans('general.points') }}</div>
                             </div>
                         </div>
                     </div>
                 </div>
-                @if($element->images->isNotEmpty())
-                    @include('backend.partials.gallery',['elements' => $element->images])
+                @if(!$element->is_complete)
+                    @if($element->images->isNotEmpty())
+                        @include('backend.partials.gallery',['elements' => $element->images])
+                    @else
+                        <div class="alert alert-info">
+                            {{ trans('message.no_images_yet_added_to_your_order') }}
+                            <a href="{{ route('backend.file.create',['type' => 'order', 'id' => $element->id]) }}"
+                               class="btn">{{ trans('general.add_images_files_to_your_order') }}</a>
+                        </div>
+                    @endif
+                @else
+                    <div class="alert alert-info">
+                        {{ trans('message.this_order_is_complete_please_check_my_files_page_in_order_to_view_your_files') }}
+                    </div>
                 @endif
             </div>
 
             <div class="tab-pane" id="tab_2">
-                @if($element->files->isNotEmpty())
-                    @include('backend.partials.files',['elements' => $element->files])
-                @else
-                    <div class="alert">{{ trans('general.no_files') }}</div>
-                @endif
-            </div>
-            <div class="tab-pane" id="tab_3">
-                @if($element->job)
-                    <div class="row">
-                        <div class="col-md-6 col-sm-12">
-                            <div class="portlet yellow-crusta box">
-                                <div class="portlet-title">
-                                    <div class="caption">
-                                        <i class="fa fa-cogs"></i>{{ trans('general.order_details') }}
-                                    </div>
-                                    <div class="actions">
-                                        @if(!$element->job)
-                                            @if(auth()->user()->isClient)
-                                                <a href="{{ route('backend.client.order.edit') }}"
-                                                   class="btn btn-default btn-sm">
-                                                    <i class="fa fa-pencil"></i> {{ trans('general.edit') }}</a>
-                                            @endif
-                                        @endif
-                                    </div>
-                                </div>
-                                <div class="portlet-body">
-                                    <div class="row static-info">
-                                        <div class="col-md-5 name"> Order #:</div>
-                                        <div class="col-md-7 value"> 12313232
-                                            <span class="label label-info label-sm"> Email confirmation was sent </span>
-                                        </div>
-                                    </div>
-                                    <div class="row static-info">
-                                        <div class="col-md-5 name"> Order Date & Time:</div>
-                                        <div class="col-md-7 value"> Dec 27, 2013 7:16:25 PM</div>
-                                    </div>
-                                    <div class="row static-info">
-                                        <div class="col-md-5 name"> Order Status:</div>
-                                        <div class="col-md-7 value">
-                                            <span class="label label-success"> Closed </span>
-                                        </div>
-                                    </div>
-                                    <div class="row static-info">
-                                        <div class="col-md-5 name"> Grand Total:</div>
-                                        <div class="col-md-7 value"> $175.25</div>
-                                    </div>
-                                    <div class="row static-info">
-                                        <div class="col-md-5 name"> Payment Information:</div>
-                                        <div class="col-md-7 value"> Credit Card</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-12">
-                            <div class="portlet blue-hoki box">
-                                <div class="portlet-title">
-                                    <div class="caption">
-                                        <i class="fa fa-cogs"></i>Customer Information
-                                    </div>
-                                    <div class="actions">
-                                        <a href="javascript:;" class="btn btn-default btn-sm">
-                                            <i class="fa fa-pencil"></i> Edit </a>
-                                    </div>
-                                </div>
-                                <div class="portlet-body">
-                                    <div class="row static-info">
-                                        <div class="col-md-5 name"> Customer Name:</div>
-                                        <div class="col-md-7 value"> Jhon Doe</div>
-                                    </div>
-                                    <div class="row static-info">
-                                        <div class="col-md-5 name"> Email:</div>
-                                        <div class="col-md-7 value"> jhon@doe.com</div>
-                                    </div>
-                                    <div class="row static-info">
-                                        <div class="col-md-5 name"> State:</div>
-                                        <div class="col-md-7 value"> New York</div>
-                                    </div>
-                                    <div class="row static-info">
-                                        <div class="col-md-5 name"> Phone Number:</div>
-                                        <div class="col-md-7 value"> 12234389</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 col-sm-12">
-                            <div class="portlet green-meadow box">
-                                <div class="portlet-title">
-                                    <div class="caption">
-                                        <i class="fa fa-cogs"></i>Billing Address
-                                    </div>
-                                    <div class="actions">
-                                        <a href="javascript:;" class="btn btn-default btn-sm">
-                                            <i class="fa fa-pencil"></i> Edit </a>
-                                    </div>
-                                </div>
-                                <div class="portlet-body">
-                                    <div class="row static-info">
-                                        <div class="col-md-12 value"> Jhon Done
-                                            <br> #24 Park Avenue Str
-                                            <br> New York
-                                            <br> Connecticut, 23456 New York
-                                            <br> United States
-                                            <br> T: 123123232
-                                            <br> F: 231231232
-                                            <br></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-12">
-                            <div class="portlet red-sunglo box">
-                                <div class="portlet-title">
-                                    <div class="caption">
-                                        <i class="fa fa-cogs"></i>Shipping Address
-                                    </div>
-                                    <div class="actions">
-                                        <a href="javascript:;" class="btn btn-default btn-sm">
-                                            <i class="fa fa-pencil"></i> Edit </a>
-                                    </div>
-                                </div>
-                                <div class="portlet-body">
-                                    <div class="row static-info">
-                                        <div class="col-md-12 value"> Jhon Done
-                                            <br> #24 Park Avenue Str
-                                            <br> New York
-                                            <br> Connecticut, 23456 New York
-                                            <br> United States
-                                            <br> T: 123123232
-                                            <br> F: 231231232
-                                            <br></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6"></div>
-                        <div class="col-md-6">
-                            <div class="well">
-                                <div class="row static-info align-reverse">
-                                    <div class="col-md-8 name"> Sub Total:</div>
-                                    <div class="col-md-3 value"> $1,124.50</div>
-                                </div>
-                                <div class="row static-info align-reverse">
-                                    <div class="col-md-8 name"> Shipping:</div>
-                                    <div class="col-md-3 value"> $40.50</div>
-                                </div>
-                                <div class="row static-info align-reverse">
-                                    <div class="col-md-8 name"> Grand Total:</div>
-                                    <div class="col-md-3 value"> $1,260.00</div>
-                                </div>
-                                <div class="row static-info align-reverse">
-                                    <div class="col-md-8 name"> Total Paid:</div>
-                                    <div class="col-md-3 value"> $1,260.00</div>
-                                </div>
-                                <div class="row static-info align-reverse">
-                                    <div class="col-md-8 name"> Total Refunded:</div>
-                                    <div class="col-md-3 value"> $0.00</div>
-                                </div>
-                                <div class="row static-info align-reverse">
-                                    <div class="col-md-8 name"> Total Due:</div>
-                                    <div class="col-md-3 value"> $1,124.50</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @if($element->job && $element->job->versions->isNotEmpty())
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12">
-                                @include('backend.partials._version_details',['elements' => $element->job->versions])
-                            </div>
-                        </div>
+                @if(!$element->is_complete)
+                    @if($element->files->isNotEmpty())
+                        @include('backend.partials.files',['elements' => $element->files])
+                    @else
+                        <div class="alert">{{ trans('general.no_files') }}</div>
                     @endif
                 @else
-                    <div class="alert alert-danger">{{ trans('message.this_job_does_not_exist') }}</div>
+                    <div class="alert alert-info">
+                        {{ trans('message.this_order_is_complete_please_check_my_files_page_in_order_to_view_your_files') }}
+                    </div>
                 @endif
             </div>
-
+            <zdiv class="tab-pane" id="tab_3">
+                @if(!$element->is_complete)
+                    @if($element->job)
+                        @include('backend.partials._job_details',['element' => $element->job])
+                        @if($element->job->versions->isNotEmpty())
+                            @include('backend.partials._version_details',['elements' => $element->job->versions])
+                        @endif
+                    @else
+                        <div class="alert alert-info">{{ trans('message.this_job_does_not_exist') }}</div>
+                    @endif
+                @else
+                    <div class="alert alert-info">
+                        {{ trans('message.this_order_is_complete_please_check_my_files_page_in_order_to_view_your_files') }}
+                    </div>
+            @endif
         </div>
-        @include('backend.partials._comments')
+
+    </div>
+    @include('backend.partials._comments')
     </div>
 @endsection

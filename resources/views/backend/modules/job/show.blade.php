@@ -20,6 +20,14 @@
         </ul>
         <div class="tab-content">
             <div class="tab-pane active" id="tab_1">
+                <div class="row">
+                    <div class="col-md-8 col-sm-12">
+                        @include('backend.partials._job_details')
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        @include('backend.partials._order_details',['element' => $element->order])
+                    </div>
+                </div>
                 @if($element->versions->isNotEmpty())
                     <div class="row">
                         <div class="col-md-12 col-sm-12">

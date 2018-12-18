@@ -1,0 +1,46 @@
+<div class="portlet yellow-crusta box">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-cogs"></i>{{ trans('general.order_details') }}
+        </div>
+        <div class="actions">
+            @if(!$element)
+                @can('client')
+                    <a href="{{ route('backend.client.job.edit') }}" class="btn btn-default btn-sm">
+                        <i class="fa fa-pencil"></i> {{ trans('general.edit') }}</a>
+                @endcan
+            @endif
+        </div>
+    </div>
+    <div class="portlet-body">
+        <div class="row static-info">
+            <div class="col-md-5 name"> {{ trans('general.job_id') }} #:</div>
+            <div class="col-md-7 value"> {{ $element->id }}
+                <span class="label label-info label-sm"> {{ trans('general.email_confirmation_was_sent') }}</span>
+            </div>
+        </div>
+        <div class="row static-info">
+            <div class="col-md-5 name"> {{ trans('general.job_order_number') }}:</div>
+            <div class="col-md-7 value"> {{ $element->order_id }}</div>
+        </div>
+        <div class="row static-info">
+            <div class="col-md-5 name"> {{ trans('general.description') }}:</div>
+            <div class="col-md-7 value"> {{ $element->description }}</div>
+        </div>
+        <div class="row static-info">
+            <div class="col-md-5 name"> {{ trans('general.notes') }}:</div>
+            <div class="col-md-7 value"> {{ $element->notes }}</div>
+        </div>
+        <div class="row static-info">
+            <div class="col-md-5 name"> {{ trans('general.created_at') }}:</div>
+            <div class="col-md-7 value"> {{ $element->created_at->diffForHumans() }}</div>
+        </div>
+        <div class="row static-info">
+            <div class="col-md-5 name"> {{ trans('general.job_status') }}:</div>
+            <div class="col-md-7 value">
+                <span
+                    class="label label-{{ $element->is_complete ? 'success' : 'warning'  }}"> {{ activeText($element->is_complete,'Complete') }}</span>
+            </div>
+        </div>
+    </div>
+</div>
