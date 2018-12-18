@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Policies\JobPolicy;
 use App\Policies\OrderPolicy;
 use App\Policies\PaymentPlanPolicy;
 use App\Policies\UserPolicy;
@@ -32,6 +33,7 @@ class AuthServiceProvider extends ServiceProvider
         Gate::resource('order', OrderPolicy::class);
         Gate::resource('user', UserPolicy::class);
         Gate::resource('plan', PaymentPlanPolicy::class);
+        Gate::resource('job', JobPolicy::class);
         Gate::resource('version', VersionPolicy::class);
 
         Gate::define('isAdmin', function () {

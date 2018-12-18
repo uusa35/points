@@ -19,10 +19,10 @@ class OrderPolicy
      */
     public function view(User $user, Order $order)
     {
-        if(!$user->isAdminOrAbove) {
-            if($user->onlyClient) {
+        if (!$user->isAdminOrAbove) {
+            if ($user->onlyClient) {
                 return $user->id === $order->user_id;
-            } elseif($user->onlyDesigner) {
+            } elseif ($user->onlyDesigner) {
                 return in_array($user->id, $order->job()->first()->designers()->pluck('id')->toArray(), true);
             }
         }
@@ -47,9 +47,13 @@ class OrderPolicy
      * @param  \App\Order $order
      * @return mixed
      */
-    public function update(User $user, Order $order)
+    public function update(?User $user, Order $order)
     {
-        return $user->isAdmin ? $user->isAdmin : $user->isClient;
+        if(!$order->job) {
+            return $user->isSuper ? $user->isSuper : $user->onlyClient;
+        }
+        return false;
+
     }
 
     /**

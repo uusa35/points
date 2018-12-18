@@ -6,8 +6,8 @@ $(document).ready(function() {
     $('#dataTable').DataTable({
         "order": [[0, "desc"]],
         "bPaginate": true,
-        // "scrollY":        "500px",
-        // "scrollCollapse": false,
+        "scrollY":        "500px",
+        "scrollCollapse": false,
         "paging":         true,
         "bLengthChange": true,
         "bFilter": true,
@@ -18,8 +18,8 @@ $(document).ready(function() {
     $('table[id^="differentDataTable-"]').DataTable({
         "order": [[0, "desc"]],
         "bPaginate": true,
-        // "scrollY":        "500px",
-        // "scrollCollapse": false,
+        "scrollY":        "250px",
+        "scrollCollapse": false,
         "paging":         true,
         "bLengthChange": true,
         "bFilter": true,

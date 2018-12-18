@@ -136,6 +136,11 @@ Breadcrumbs::for('backend.order.create', function ($trail) {
     $trail->push(trans('general.order'), route('backend.order.create'));
 });
 
+Breadcrumbs::for('backend.order.edit', function ($trail,$element) {
+    $trail->parent('backend.order.index');
+    $trail->push(trans('general.order'), route('backend.order.edit', $element->id));
+});
+
 Breadcrumbs::for('backend.order.show', function ($trail, $element) {
     $trail->parent('backend.order.index');
     $trail->push(trans('general.order'), route('backend.order.show', $element->id));
@@ -172,6 +177,9 @@ Breadcrumbs::for('backend.version.index', function ($trail) {
 });
 Breadcrumbs::for('backend.version.create', function ($trail) {
     $trail->parent('backend.home');
+    if(request()->has('job_id')) {
+        $trail->push(trans('general.job'), route('backend.job.show', request()->job_id));
+    }
     $trail->push(trans('general.create_new_version'), route('backend.version.create'));
 });
 

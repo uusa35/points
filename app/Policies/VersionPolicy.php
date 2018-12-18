@@ -29,11 +29,10 @@ class VersionPolicy
      * @param  \App\Models\User $user
      * @return mixed
      */
-    public function create(User $user, Job $job)
+    public function create(?User $user, Job $job)
     {
-
         // if the designer is included within the job designers array
-        return $user->isSuper ? $user->isSuper : in_array($user->id, $job->designers()->pluck('id')->toArray(), true);
+        return auth()->user()->isSuper ? auth()->user()->isSuper : in_array(auth()->id(), $job->designers()->pluck('id')->toArray(), true);
     }
 
     /**

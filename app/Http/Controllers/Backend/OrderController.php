@@ -19,28 +19,28 @@ class OrderController extends Controller
 
         if (auth()->user()->onlyClient) {
             if (request()->has('is_complete')) {
-                $elements = Order::where(['user_id' => auth()->id(), 'is_complete' => request()->is_complete, 'is_paid' => true])
+                $elements = Order::active()->where(['user_id' => auth()->id(), 'is_complete' => request()->is_complete, 'is_paid' => true])
                     ->active()->with('job.versions', 'service.category', 'client')
                     ->orderBy('id', 'desc'
                     )->paginate(self::PAGINATE);
             } elseif (request()->has('is_paid')) {
-                $elements = Order::where(['user_id' => auth()->id(), 'is_complete' => false, 'is_paid' => request('is_paid')])
+                $elements = Order::active()->where(['user_id' => auth()->id(), 'is_complete' => false, 'is_paid' => request('is_paid')])
                     ->active()
                     ->with('job.versions', 'service.category', 'client')
                     ->orderBy('id', 'desc')
                     ->paginate(self::PAGINATE);
             } else {
-                $elements = Order::where(['user_id' => auth()->id(), 'is_paid' => true])->active()->with('job.versions', 'client', 'service.category')->orderBy('id', 'desc')->paginate(self::PAGINATE);
+                $elements = Order::active()->where(['user_id' => auth()->id(), 'is_paid' => true])->active()->with('job.versions', 'client', 'service.category')->orderBy('id', 'desc')->paginate(self::PAGINATE);
             }
         } elseif (auth()->user()->onlyDesigner) {
             if (request()->has('is_complete')) { // is_complete and paid
-                $elements = Order::where(['is_complete' => true, 'is_paid' => true])->whereHas('job', function ($q) {
+                $elements = Order::active()->where(['is_complete' => request()->is_complete, 'is_paid' => true])->whereHas('job', function ($q) {
                     return $q->whereHas('designers', function ($q) {
                         return $q->whereIn('id', [auth()->id()]);
                     });
                 })->with('job.versions','service.category')->orderBy('id', 'desc')->paginate(self::PAGINATE);
             } else { // not complete and paid
-                $elements = Order::where(['is_complete' => false, 'is_paid' => true])->whereHas('job', function ($q) {
+                $elements = Order::active()->active()->where(['is_complete' => false, 'is_paid' => true])->whereHas('job', function ($q) {
                     return $q->whereHas('designers', function ($q) {
                         return $q->whereIn('id', [auth()->id()]);
                     });
@@ -78,7 +78,7 @@ class OrderController extends Controller
      */
     public function store(OrderStore $request)
     {
-        $element = Order::create($request->request->all());
+        $element = Order::active()->create($request->request->all());
         if ($element) {
             return route('backend.file.create', compact('element'));
         }
@@ -93,7 +93,7 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        $element = Order::whereId($id)->first();
+        $element = Order::active()->whereId($id)->first();
         $this->authorize('order.view', $element);
         return view('backend.modules.order.show', compact('element'));
     }
@@ -106,7 +106,8 @@ class OrderController extends Controller
      */
     public function edit($id)
     {
-        $element = Order::whereId($id)->first();
+        $element = Order::active()->whereId($id)->first();
+        $this->authorize('order.update', $element);
         return view('backend.modules.order.edit', compact('element'));
     }
 

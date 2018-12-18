@@ -9,11 +9,11 @@
                     <a href="{{ route('backend.job.edit',$element->id) }}" class="btn btn-default btn-sm">
                         <i class="fa fa-pencil"></i> {{ trans('general.edit') }}</a>
                 @endcan
-                {{--@can('version.create')--}}
+                @can('version.create',$element)
                     <a href="{{ route('backend.version.create',['job_id' => $element->id]) }}"
                        class="btn btn-default btn-sm">
                         <i class="fa fa-pencil"></i> {{ trans('general.create_new_version') }}</a>
-                {{--@endcan--}}
+                @endcan
             @endif
         </div>
     </div>

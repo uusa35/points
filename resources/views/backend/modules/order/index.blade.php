@@ -104,7 +104,7 @@
                                                             </button>
                                                         </form>
                                                     </li>
-                                                @elsecan('onlyClient')
+                                                @elsecan('order.update', $element)
                                                     @if(!$element->is_complete)
                                                         <li>
                                                             <a href="{{ route('backend.order.edit',$element->id) }}">
@@ -113,18 +113,21 @@
                                                         </li>
                                                     @endif
                                                 @endcan
-                                                <li>
-                                                    <a href="{{ route('backend.order.show',$element->id) }}">
-                                                        <i class="fa fa-fw fa-edit"></i>{{ trans('general.view_details') }}
-                                                    </a>
-                                                </li>
-                                                @if(!$element->job && !$element->is_complete)
+                                                @can('order.view',$element)
+                                                    <li>
+                                                        <a href="{{ route('backend.order.show',$element->id) }}">
+                                                            <i class="fa fa-fw fa-edit"></i>{{ trans('general.view_details') }}
+                                                        </a>
+                                                    </li>
+                                                @endcan
+                                                @can('job.create',$element)
                                                     <li>
                                                         <a href="{{ route('backend.job.create',['order_id' => $element->id]) }}">
                                                             <i class="fa fa-fw fa-edit"></i>{{ trans('general.create_new_job_for_this_order') }}
                                                         </a>
                                                     </li>
-                                                @elseif($element->job && $element->is_paid)
+                                                @endcan
+                                                @can('job.update', $element->job)
                                                     <li>
                                                         <a href="{{ route('backend.job.edit',$element->job->id) }}">
                                                             <i class="fa fa-fw fa-edit"></i>{{ trans('general.edit_current_job') }}
@@ -135,7 +138,7 @@
                                                             <i class="fa fa-fw fa-eye-slash"></i>{{ trans('general.view_job') }}
                                                         </a>
                                                     </li>
-                                                @endif
+                                                @endcan
                                             </ul>
                                         </div>
                                     </td>
