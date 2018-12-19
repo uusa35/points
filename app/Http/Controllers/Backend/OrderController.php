@@ -147,7 +147,7 @@ class OrderController extends Controller
     {
         $elements = Category::active()->whereHas('services', function ($q) {
             return $q->active();
-        }, '>', 0)->orderBy('order', 'desc')->get();
+        }, '>', 0)->with('services')->orderBy('order', 'desc')->get();
         return view('backend.modules.order.choose_category', compact('elements'));
     }
 

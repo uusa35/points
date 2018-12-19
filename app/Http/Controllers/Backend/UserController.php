@@ -21,7 +21,7 @@ class UserController extends Controller
     public function show($id)
     {
         $element = User::whereId($id)->with('role')->first();
-        $this->authorize('user.view', auth()->user(),element);
+        $this->authorize('user.view', $element);
         return view('backend.modules.user.show', compact('element'));
     }
 
