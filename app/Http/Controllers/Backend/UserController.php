@@ -82,7 +82,6 @@ class UserController extends Controller
      */
     public function postResetPassword(Request $request)
     {
-        dd('here');
         $validator = validator(request()->all(), [
             'email' => 'required|email|exists:users,email',
             'password' => 'required|string|min:6|confirmed',

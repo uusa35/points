@@ -4,7 +4,7 @@
     <div class="portlet box blue">
         @include('backend.partials.forms.form_title',['title' => trans('general.reset_your_password')])
         <div class="portlet-body form">
-            <form class="horizontal-form" role="form" action="{{ route('backend.reset') }}">
+            <form class="horizontal-form" role="form" method="post" action="{{ route('backend.reset') }}">
                 @csrf
                 <div class="form-body">
                     <input type="hidden" name="role_id" value="{{ $user->role->id }}">
