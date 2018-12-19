@@ -33,7 +33,10 @@ class FileController extends Controller
         if ($validate->fails()) {
             return redirect()->back()->withErrors($validate->errors());
         }
-        return view('backend.modules.file.create');
+        $className = '\App\Models\\' . title_case(request()->type);
+        $element = new $className();
+        $element = $element->withoutGlobalScopes()->whereId(request()->id)->first();
+        return view('backend.modules.file.create', compact('element'));
     }
 
     /**
@@ -44,7 +47,23 @@ class FileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = validator(request()->all(), [
+            'type' => 'required|alpha',
+            'id' => 'required|numeric'
+        ]);
+        if ($validate->fails()) {
+            return redirect()->back()->withErrors($validate->errors());
+        }
+        $className = '\App\Models\\' . title_case(request()->type);
+        $element = new $className();
+        $element = $element->withoutGlobalScopes()->whereId(request()->id)->first();
+        if($request->has('image')) {
+
+        }
+        if($request->has('file')) {
+
+        }
+        return view('backend.modules.file.create', compact('element'));
     }
 
     /**
