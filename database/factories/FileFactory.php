@@ -2,6 +2,7 @@
 
 use App\Models\File;
 use App\Models\Order;
+use App\Models\User;
 use Faker\Generator as Faker;
 
 $factory->define(File::class, function (Faker $faker) {
@@ -16,6 +17,8 @@ $factory->define(File::class, function (Faker $faker) {
         },
         'name_ar' => $faker->name,
         'name_en' => $faker->name,
+        'notes' => $faker->sentence,
         'order' => $faker->numberBetween(1, 10),
+        'user_id' => User::all()->random()->id,
     ];
 });

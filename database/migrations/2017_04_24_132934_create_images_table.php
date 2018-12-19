@@ -14,15 +14,18 @@ class CreateImagesTable extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('path')->nullable();
+            $table->string('image')->nullable();
             $table->string('tag')->nullable();
             $table->string('name_ar')->nullable();
             $table->string('name_en')->nullable();
             $table->string('caption_ar')->nullable();
             $table->string('caption_en')->nullable();
+            $table->string('notes')->nullable();
             $table->integer('order')->nullable();
             $table->morphs('imagable');
             $table->boolean('active')->default(1);
+            $table->integer('user_id')->unsigned()->index();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
             $table->softDeletes();
         });

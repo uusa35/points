@@ -12,11 +12,11 @@
             <div class="cbp-item">
                 <div class="cbp-caption">
                     <div class="cbp-caption-defaultWrap">
-                        <img src="{{ asset(env('THUMBNAIL').$img->path) }}" alt=""></div>
+                        <img src="{{ asset(env('THUMBNAIL').$img->image) }}" alt=""></div>
                     <div class="cbp-caption-activeWrap">
                         <div class="cbp-l-caption-alignCenter">
                             <div class="cbp-l-caption-body">
-                                <a href="{{ asset(env('LARGE').$img->path) }}"
+                                <a href="{{ asset(env('LARGE').$img->image) }}"
                                    class="cbp-lightbox cbp-l-caption-buttonRight btn red uppercase btn red uppercase"
                                    data-title="Dashboard<br>by Paul Flavius Nechita">{{ trans('general.view_larger') }}</a>
                             </div>

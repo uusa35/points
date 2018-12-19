@@ -24,6 +24,9 @@ class CreateFilesTable extends Migration
             $table->integer('order')->nullable();
             $table->morphs('filable');
             $table->boolean('active')->default(1);
+
+            $table->integer('user_id')->unsigned()->index()->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

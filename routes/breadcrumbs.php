@@ -121,6 +121,11 @@ Breadcrumbs::for('backend.file.create', function ($trail) {
     $trail->push(trans('general.file_create'), route('backend.file.create'));
 });
 
+Breadcrumbs::for('backend.file.edit', function ($trail, $element) {
+    $trail->parent('backend.' .request()->type .'.index',request()->id);
+    $trail->push(trans('general.file_edit'), route('backend.file.edit', $element->id));
+});
+
 Breadcrumbs::for('backend.order.index', function ($trail) {
     $trail->parent('backend.home');
     $trail->push(trans('general.orders'), route('backend.order.index',['is_complete' => 0]));

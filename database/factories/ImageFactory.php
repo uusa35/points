@@ -2,13 +2,14 @@
 
 use App\Models\Category;
 use App\Models\Image;
+use App\Models\User;
 use Faker\Generator as Faker;
 
 $factory->define(Image::class, function (Faker $faker) {
     return [
         'imagable_id' => Category::all()->random()->id,
         'imagable_type' => 'App\Backend\Category',
-        'path' => $faker->numberBetween(1, 10) . '.jpeg',
+        'image' => $faker->numberBetween(1, 10) . '.jpeg',
         'caption_en' => $faker->sentence,
         'caption_ar' => $faker->sentence,
         'tag' => function($array) {
@@ -18,5 +19,6 @@ $factory->define(Image::class, function (Faker $faker) {
         'name_en' => $faker->name,
         'notes' => $faker->sentence,
         'order' => $faker->numberBetween(1, 10),
+        'user_id' => User::all()->random()->id,
     ];
 });

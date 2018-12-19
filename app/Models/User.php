@@ -27,7 +27,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-    protected $localeStrings =  ['name','caption','description','service','address'];
+    protected $localeStrings = ['name', 'caption', 'description', 'service', 'address'];
 
     public function orders()
     {
@@ -37,7 +37,7 @@ class User extends Authenticatable
     // jobs that are created by designers only
     public function jobs()
     {
-        return $this->belongsToMany(Job::class,'job_user');
+        return $this->belongsToMany(Job::class, 'job_user');
     }
 
     // only clients have one balance record
@@ -46,13 +46,24 @@ class User extends Authenticatable
         return $this->hasOne(Balance::class);
     }
 
-    public function role() {
+    public function role()
+    {
         return $this->belongsTo(Role::class);
     }
 
-    public function transactions() {
+    public function transactions()
+    {
         return $this->hasMany(Transaction::class);
     }
 
+    public function images()
+    {
+        return $this->hasMany(Image::class);
+    }
+
+    public function files()
+    {
+        return $this->hasMany(File::class);
+    }
 
 }

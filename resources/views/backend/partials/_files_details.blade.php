@@ -3,14 +3,14 @@
         <div class="portlet grey-cascade box">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="fa fa-cogs"></i>{{ trans('general.job_versions') }}
+                    <i class="fa fa-cogs"></i>{{ trans('general.files') }}
                 </div>
                 <div class="actions">
-                    @if(auth()->user()->isDesignerOrAbove)
-                        <a href="{{ route('backend.version.create') }}"
+                    @can('file.create', $element->user)
+                        <a href="{{ route('backend.file.create') }}"
                            class="btn btn-default btn-sm">
-                            <i class="fa fa-pencil"></i> {{ trans('general.add_new_version') }} </a>
-                    @endif
+                            <i class="fa fa-pencil"></i> {{ trans('general.add_new_file') }} </a>
+                    @endcan
                 </div>
             </div>
             <div class="portlet-body">
@@ -20,13 +20,12 @@
                         <thead>
                         <tr>
                             <th>{{ trans('general.id') }}</th>
+                            <th>{{ trans('general.file') }}</th>
                             <th>{{ trans('general.notes') }}</th>
-                            <th>{{ trans('general.description') }}</th>
-                            <th>{{ trans('general.active') }}</th>
-                            <th>{{ trans('general.is_complete') }}</th>
-                            {{--<th>{{ trans('general.is_client_viewed') }}</th>--}}
-                            {{--<th>{{ trans('general.is_designer_viewed') }}</th>--}}
-                            <th>{{ trans('general.job_id') }}</th>
+                            <th>{{ trans('general.name') }}</th>
+                            <th>{{ trans('general.caption') }}</th>
+                            <th>{{ trans('general.type') }}</th>
+                            <th>{{ trans('general.user') }}</th>
                             <th>{{ trans('general.Action') }}</th>
                         </tr>
                         </thead>
@@ -34,13 +33,14 @@
                         @foreach($elements as $element)
                             <tr>
                                 <td>{{ $element->id }}</td>
+                                <td>
+                                    <a class="btn btn-info" href="{{ asset(env('FILES').$element->path) }}">{{ trans('general.view') }}</a>
+                                </td>
                                 <td>{{ $element->notes }}</td>
-                                <td>{{ $element->description }}</td>
-                                <td>{{ $element->active }}</td>
-                                <td>{{ $element->is_complete }}</td>
-                                {{--<td>{{ $element->is_client_viewed }}</td>--}}
-                                {{--<td>{{ $element->is_designer_viewed }}</td>--}}
-                                <td>{{ $element->job->order->name }}</td>
+                                <td>{{ $element->name }}</td>
+                                <td>{{ $element->caption }}</td>
+                                <td>{{ $element->imagable_type }}</td>
+                                <td>{{ $element->user->name }}</td>
                                 <td>
                                     <div class="btn-group pull-right">
                                         <button type="button"
@@ -49,24 +49,14 @@
                                             <i class="fa fa-angle-down"></i>
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
-                                            <li>
-                                                <a href="{{ route('backend.version.show',$element->id) }}">
-                                                    <i class="fa fa-fw fa-eye"></i>{{ trans('general.show') }}
-                                                </a>
-                                            </li>
-                                            @if(auth()->user()->isDesignerOrAbove)
+                                            @can('onlySuper')
                                                 <li>
-                                                    <a href="{{ route('backend.version.edit',$element->id) }}">
-                                                        <i class="fa fa-fw fa-user"></i>{{ trans('general.edit') }}
-                                                    </a>
-                                                </li>
-                                            @endcan
-                                            @if(auth()->user()->isAdmin)
-                                                <li>
-                                                    <a href="{{ route('backend.admin.activate',['model' => 'version','id' => $element->id]) }}">
+                                                    <a href="{{ route('backend.admin.activate',['model' => 'file','id' => $element->id]) }}">
                                                         <i class="fa fa-fw fa-check-circle"></i> {{ trans('general.toggle_active') }}
                                                     </a>
                                                 </li>
+                                            @endcan
+                                            @can('file.delete', $element)
                                                 <li>
                                                     <form method="post"
                                                           action="{{ route('backend.version.destroy',$element->id) }}">

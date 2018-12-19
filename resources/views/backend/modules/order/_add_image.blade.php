@@ -9,7 +9,8 @@
                 <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.file.store') }}"
                       enctype="multipart/form-data">
                     @csrf
-                    <input type="hidden" name="service_id" value="{{ session()->get('service_id')}}">
+                    <input type="hidden" name="type" value="{{ request()->type }}">
+                    <input type="hidden" name="id" value="{{ request()->id}}">
                     <input type="hidden" name="user_id" value="{{ auth()->id() }}">
                     <div class="row">
                         <div class="col-md-6">
@@ -61,6 +62,14 @@
                                 <input id="caption_en" type="text" class="form-control" name="caption_en"
                                        value="{{ old('caption_en') }}"
                                        placeholder="{{ trans('general.caption_en') }}">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group {{ $errors->has('order') ? ' has-error' : '' }}">
+                                <label for="order" class="control-label">{{ trans('general.order') }}</label>
+                                <input id="order" type="text" class="form-control" name="order"
+                                       value="{{ old('order') }}"
+                                       placeholder="{{ trans('general.order') }}">
                             </div>
                         </div>
                     </div>

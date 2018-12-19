@@ -36,7 +36,7 @@ class FileController extends Controller
         $className = '\App\Models\\' . title_case(request()->type);
         $element = new $className();
         $element = $element->withoutGlobalScopes()->whereId(request()->id)->first();
-        return view('backend.modules.file.create', compact('element'));
+        return view('backend.modules.file.create', compact('element'))->with(['type' => request()->type, 'id' => request()->id]);
     }
 
     /**
@@ -49,7 +49,9 @@ class FileController extends Controller
     {
         $validate = validator(request()->all(), [
             'type' => 'required|alpha',
-            'id' => 'required|numeric'
+            'id' => 'required|numeric',
+            'path' => 'mimes:pdf|nullable|max:50000',
+            'image' => 'mimes:image|nullable|max:5000',
         ]);
         if ($validate->fails()) {
             return redirect()->back()->withErrors($validate->errors());
@@ -57,13 +59,33 @@ class FileController extends Controller
         $className = '\App\Models\\' . title_case(request()->type);
         $element = new $className();
         $element = $element->withoutGlobalScopes()->whereId(request()->id)->first();
-        if($request->has('image')) {
-
+        if ($request->hasFile('image')) {
+            $file = $element->images()->create([
+                'user_id' => auth()->id(),
+                'notes' => request('notes'),
+                'name_ar' => request('name_ar'),
+                'name_en' => request('name_en'),
+                'caption_ar' => request('caption_ar'),
+                'caption_en' => request('caption_en'),
+                'order' => request('order'),
+            ]);
+            $this->saveMimes($file, $request, ['image'], ['250', '250'], true);
         }
-        if($request->has('file')) {
-
+        if ($request->hasFile('path')) {
+            $file = $element->files()->create([
+                'user_id' => auth()->id(),
+                'notes' => request('notes'),
+                'name_ar' => request('name_ar'),
+                'name_en' => request('name_en'),
+                'caption_ar' => request('caption_ar'),
+                'caption_en' => request('caption_en'),
+                'order' => request('order'),
+            ]);
+            $this->saveMimes($file, $request, ['path'], ['750', '1334'], true);
         }
-        return view('backend.modules.file.create', compact('element'));
+        return redirect()->route('backend.file.create', ['type' => request()->type, 'id' => request()->id ]);
+//        return redirect()->route('backend.file.create', compact('element'))
+//            ->with(['success' => trans('message.file_or_image_saved_successfully'), 'type' => request()->type, 'id' => request()->id]);
     }
 
     /**

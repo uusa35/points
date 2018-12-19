@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Policies\FilePolicy;
+use App\Policies\ImagePolicy;
 use App\Policies\JobPolicy;
 use App\Policies\OrderPolicy;
 use App\Policies\PaymentPlanPolicy;
@@ -35,6 +37,8 @@ class AuthServiceProvider extends ServiceProvider
         Gate::resource('plan', PaymentPlanPolicy::class);
         Gate::resource('job', JobPolicy::class);
         Gate::resource('version', VersionPolicy::class);
+        Gate::resource('file', FilePolicy::class);
+        Gate::resource('image', ImagePolicy::class);
 
         Gate::define('isAdmin', function () {
             return auth()->user()->isAdminOrAbove; // means if isSupern then go ahead

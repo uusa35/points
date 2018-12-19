@@ -12,5 +12,8 @@ class Image extends PrimaryModel
         return $this->morphTo();
     }
 
-
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
