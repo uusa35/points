@@ -6,9 +6,24 @@
                 <h4 class="modal-title"></h4>
             </div>
             <div class="modal-body">
-            do the form here
-                image name
-                mage descipriont
+                <form>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_control_1">{{ trans('general.image') }}</label>
+                                <input type="file" class="form-control" name="image" placeholder="image" multiple>
+                                <div class="help-block text-left">
+                                    W H - Best fit 250 x 250 pixels
+                                </div>
+                            </div>
+                        </div>
+
+                        do the form here
+                        mame
+                        description
+
+                    </div>
+                </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn dark btn-outline" data-dismiss="modal">Close</button>

@@ -76,7 +76,7 @@ class OrderController extends Controller
     {
         $element = Order::active()->create($request->request->all());
         if ($element) {
-            return route('backend.file.create', compact('element'));
+            return redirect()->route('backend.file.create', ['element' => $element , 'type' => 'order', 'id' => $element->id]);
         }
         return redirect()->back()->with('error', trans('message.order_failure'));
     }

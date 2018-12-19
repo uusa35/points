@@ -20,6 +20,7 @@ class CreateFilesTable extends Migration
             $table->string('name_en')->nullable();
             $table->string('caption_ar')->nullable();
             $table->string('caption_en')->nullable();
+            $table->string('notes')->nullable();
             $table->integer('order')->nullable();
             $table->morphs('filable');
             $table->boolean('active')->default(1);

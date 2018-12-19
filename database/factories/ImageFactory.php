@@ -16,6 +16,7 @@ $factory->define(Image::class, function (Faker $faker) {
         },
         'name_ar' => $faker->name,
         'name_en' => $faker->name,
+        'notes' => $faker->sentence,
         'order' => $faker->numberBetween(1, 10),
     ];
 });

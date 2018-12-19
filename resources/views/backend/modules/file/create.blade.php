@@ -4,6 +4,7 @@
     @include('backend.partials.breadcrumbs')
     <div class="portlet box blue">
         @include('backend.partials.forms.form_title')
+        @include('backend.partials._order_steps')
         <div class="portlet-body form">
             <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.order.store') }}"
                   enctype="multipart/form-data">

@@ -7,6 +7,8 @@
     <div class="portlet-body form">
         <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.order.store') }}" enctype="multipart/form-data">
             @csrf
+            <input type="hidden" name="service_id" value="{{ session()->get('service_id')}}">
+            <input type="hidden" name="user_id" value="{{ auth()->id() }}">
             <div class="form-body">
                 <div class="row">
                     <div class="col-md-6">

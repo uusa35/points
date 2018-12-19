@@ -19,21 +19,24 @@
                 </div>
                 <div class="row">
                     @foreach($elements as $element)
-                        <div class="col-sm-4" style="height: 400px;">
+                        <div class="col-sm-4">
                             <div class="blog-post-sm bordered blog-container">
                                 <div class="blog-img-thumb">
                                     <a href="{{ route('backend.order.choose.lang', ['service_id' => $element->id]) }}">
                                         <img src="{{ asset(env('LARGE').$element->image) }}"/>
                                     </a>
                                 </div>
-                                <div class="blog-post-content">
+                                <div class="blog-post-content" style="height : 300px;">
                                     <h2 class="blog-title blog-post-title">
                                         <a href="{{ route('backend.order.choose.lang', ['service_id' => $element->id]) }}">{{ $element->slug }}</a>
                                     </h2>
-                                    <p class="blog-post-desc"> {{ $element->description  }}</p>
+                                    <p class="blog-post-desc">
+                                    {{ $element->description  }}
                                     <p class="text-center">
                                         {{ $element->caption }}
                                     </p>
+                                    </p>
+
                                     <h4 class="text-center">
                                         {{ $element->apply_bonus ? $element->sale_points : $element->points }} {{ trans('general.points') }}
                                     </h4>
