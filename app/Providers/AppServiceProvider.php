@@ -30,6 +30,7 @@ class AppServiceProvider extends ServiceProvider
 
         } elseif(app()->environment('local')) {
             Transaction::observe(TransactionObserver::class);
+            User::observe(UserObserver::class);
         }
         Schema::defaultStringLength(191);
     }

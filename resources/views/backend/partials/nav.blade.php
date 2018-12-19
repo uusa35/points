@@ -32,8 +32,8 @@
                                 <i class="icon-plus"></i> {{ trans('general.new_user') }}</a>
                         </li>
                         {{--<li>--}}
-                            {{--<a href="{{ route('backend.admin.order.create') }}">--}}
-                                {{--<i class="icon-plus"></i> {{ trans('general.admin_new_order') }}</a>--}}
+                        {{--<a href="{{ route('backend.admin.order.create') }}">--}}
+                        {{--<i class="icon-plus"></i> {{ trans('general.admin_new_order') }}</a>--}}
                         {{--</li>--}}
                     @endcan
                     @can('onlySuper')
@@ -394,8 +394,10 @@
                                  src="{{ asset('storage/uploads/images/thumbnail/'. auth()->user()->logo) }}"/>
                             <span class="username username-hide-on-mobile"> {{ auth()->user()->role->name }} : </span>
                             <span class="username username-hide-on-mobile"> {{ auth()->user()->name }}</span><br>
-                            <span class="username username-hide-on-mobile"> {{ trans('general.balance') }}
-                                : {{ auth()->user()->balance->points}} {{ trans('general.points') }}</span>
+                            @if(auth()->user()->balance)
+                                <span class="username username-hide-on-mobile"> {{ trans('general.balance') }}
+                                    : {{ auth()->user()->balance->points}} {{ trans('general.points') }}</span>
+                            @endif
                             <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-default">

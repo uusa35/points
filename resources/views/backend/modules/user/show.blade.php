@@ -11,12 +11,13 @@
                     <div class="profile-userpic text-center">
                         <img src="{{ asset('storage/uploads/images/thumbnail/'.$element->logo) }}"
                              class="img-responsive img-thumbnail"
-                             alt=""></div>
+                             alt="{{ $element->name }}"></div>
                     <!-- END SIDEBAR USERPIC -->
                     <!-- SIDEBAR USER TITLE -->
                     <hr>
                     <div class="profile-usertitle">
                         <div class="profile-usertitle-name text-center"> {{ $element->name }}</div>
+                        <div class="profile-usertitle-name text-center"> {{ $element->email }}</div>
                         <div class="profile-usertitle-job text-center"> {{ $element->caption }}</div>
                     </div>
                     <hr>
