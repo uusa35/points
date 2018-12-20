@@ -2,14 +2,14 @@
 
 @section('content')
     @include('backend.partials._order_statistics')
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <h4>{{ trans('general.designers') }}</h4>
-                </div>
-                <div class="panel-body">
-                    @can('onlyAdmin')
+    @can('onlyAdmin')
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h4>{{ trans('general.designers') }}</h4>
+                    </div>
+                    <div class="panel-body">
                         @foreach($designers as $element)
                             <div class="col-lg-3"
                                  style="width: 24% !important; height : 400px; border: 1px solid lightgrey; margin: 5px;">
@@ -50,12 +50,11 @@
                                 </div>
                             </div>
                         </div>
-                    @endcan
+                    </div>
                 </div>
             </div>
         </div>
-
-    </div>
+    @endcan
     <div class="row">
         <div class="col-md-12">
             <div class="portlet box red">
@@ -89,7 +88,8 @@
                             </div>
                         </div>
                         <div class="tab-pane" id="portlet_tab_2">
-                            <div class="scroller" style="height:200px" data-rail-visible="1" data-rail-color="yellow"
+                            <div class="scroller" style="height:200px" data-rail-visible="1"
+                                 data-rail-color="yellow"
                                  data-handle-color="#a1b2bd">
                                 <p>
                                     {{ trans('message.tab_2') }}
@@ -140,7 +140,8 @@
                             </div>
                         </div>
                         <div class="tab-pane" id="portlet_tab_5">
-                            <div class="scroller" style="height:200px" data-rail-visible="1" data-rail-color="yellow"
+                            <div class="scroller" style="height:200px" data-rail-visible="1"
+                                 data-rail-color="yellow"
                                  data-handle-color="#a1b2bd">
                                 <p>
                                     {{ trans('message.tab_5') }}
