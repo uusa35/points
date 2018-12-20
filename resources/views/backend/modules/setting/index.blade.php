@@ -74,14 +74,32 @@
                                     <td>{{ trans('general.on_home_speech_e') }}</td>
                                     <td>{{ $element->on_home_speech_en}}</td>
                                 </tr>
+                                <tr>
+                                    <td>{{ trans('general.path') }}</td>
+                                    <td><a class="btn btn-info" href="{{ asset(env('FILES').$element->path) }}">View Path</a></td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>
                         <div class="col-lg-4">
                             <h5>logo</h5>
                             <img src="{{ asset('storage/uploads/images/medium/'.$element->logo) }}"
-                                 alt="" class="img-responsive img-thumbnail">
+                                 alt="" class="img-sm img-thumbnail">
                         </div>
+                        @if($element->qr)
+                            <div class="col-lg-4">
+                                <h5>qr</h5>
+                                <img src="{{ asset('storage/uploads/images/medium/'.$element->qr) }}"
+                                     alt="" class="img-sm img-thumbnail">
+                            </div>
+                        @endif
+                        @if($element->zapper)
+                            <div class="col-lg-4">
+                                <h5>qr</h5>
+                                <img src="{{ asset('storage/uploads/images/medium/'.$element->zapper) }}"
+                                     alt="" class="img-sm img-thumbnail">
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>

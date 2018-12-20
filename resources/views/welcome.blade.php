@@ -86,6 +86,9 @@
         <div class="title m-b-md">
             <img src="{{ asset(env('THUMBNAIL').$settings->logo) }}" alt="{{ $settings->name }}">
         </div>
+        <p class="text-center">
+            {{ $settings->on_home_speech }}
+        </p>
 
         <div class="links">
             @auth

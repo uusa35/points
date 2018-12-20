@@ -82,9 +82,14 @@ Breadcrumbs::for('backend.admin.setting.show', function ($trail, $element) {
     $trail->push(trans('general.settings'), route('backend.admin.setting.show', $element->id));
 });
 
+Breadcrumbs::for('backend.admin.setting.index', function ($trail, $element) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.settings'), route('backend.admin.setting.index', $element->id));
+});
+
 Breadcrumbs::for('backend.admin.setting.edit', function ($trail, $element) {
     $trail->parent('backend.admin.setting.show', $element);
-    $trail->push(trans('general.settings'), route('backend.admin.setting.edit', $element->id));
+    return $trail->push(trans('general.edit_setting'), route('backend.admin.setting.edit', $element->id));
 });
 
 
@@ -253,11 +258,6 @@ Breadcrumbs::for('backend.admin.service.edit', function ($trail, $element) {
 Breadcrumbs::for('backend.image.edit', function ($trail, $element) {
     $trail->parent('backend.gallery.edit', $element->gallery);
     return $trail->push(trans('edit image'), route('backend.image.edit', $element->id));
-});
-
-Breadcrumbs::for('backend.setting.edit', function ($trail, $element) {
-    $trail->parent('backend.setting.index');
-    return $trail->push(trans('general.edit_setting'), route('backend.image.edit', $element->id));
 });
 
 Breadcrumbs::for('backend.reset.password', function ($trail) {
