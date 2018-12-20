@@ -54,14 +54,14 @@
                                                     <i class="fa fa-fw fa-eye"></i>{{ trans('general.show') }}
                                                 </a>
                                             </li>
-                                            @if(auth()->user()->isDesignerOrAbove)
+                                            @can('isDesigner')
                                                 <li>
                                                     <a href="{{ route('backend.version.edit',$element->id) }}">
                                                         <i class="fa fa-fw fa-user"></i>{{ trans('general.edit') }}
                                                     </a>
                                                 </li>
                                             @endcan
-                                            @if(auth()->user()->isAdmin)
+                                            @can('onlyAdmin')
                                                 <li>
                                                     <a href="{{ route('backend.admin.activate',['model' => 'version','id' => $element->id]) }}">
                                                         <i class="fa fa-fw fa-check-circle"></i> {{ trans('general.toggle_active') }}

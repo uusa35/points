@@ -85,69 +85,73 @@
                     <!-- BEGIN NOTIFICATION DROPDOWN -->
                     <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
                     {{--<li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">--}}
-                        {{--<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"--}}
-                           {{--data-close-others="true">--}}
-                            {{--<i class="icon-bell"></i>--}}
-                            {{--<span class="badge badge-default"> {{ $totalActiveClientOnProgressOrders->count() }} </span>--}}
-                        {{--</a>--}}
-                        {{--<ul class="dropdown-menu">--}}
-                            {{--<li class="external">--}}
-                                {{--<h3>--}}
-                                    {{--<a href="{{ route('backend.admin.order.index',['is_complete' => false]) }}">{{ trans('general.active_paid_on_progress_orders') }}</a>--}}
-                                {{--</h3>--}}
-                            {{--</li>--}}
-                            {{--<li>--}}
-                                {{--<ul class="dropdown-menu-list scroller" style="height: 250px;"--}}
-                                    {{--data-handle-color="#637283">--}}
-                                    {{--@foreach($totalActiveClientOnProgressOrders as $element)--}}
-                                        {{--<li>--}}
-                                            {{--<a href="{{ route('backend.order.show', $element->id) }}">--}}
-                                                {{--<span class="time">{{ $element->created_at->diffForHumans() }}</span>--}}
-                                                {{--<span class="details">--}}
-                                                {{--<span class="label label-sm label-icon label-success">--}}
-                                                {{--</span> {{ $element->title }} </span>--}}
-                                            {{--</a>--}}
-                                        {{--</li>--}}
-                                    {{--@endforeach--}}
-                                {{--</ul>--}}
-                            {{--</li>--}}
-                        {{--</ul>--}}
+                    {{--<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"--}}
+                    {{--data-close-others="true">--}}
+                    {{--<i class="icon-bell"></i>--}}
+                    {{--<span class="badge badge-default"> {{ $totalActiveClientOnProgressOrders->count() }} </span>--}}
+                    {{--</a>--}}
+                    {{--<ul class="dropdown-menu">--}}
+                    {{--<li class="external">--}}
+                    {{--<h3>--}}
+                    {{--<a href="{{ route('backend.admin.order.index',['is_complete' => false]) }}">{{ trans('general.active_paid_on_progress_orders') }}</a>--}}
+                    {{--</h3>--}}
+                    {{--</li>--}}
+                    {{--<li>--}}
+                    {{--<ul class="dropdown-menu-list scroller" style="height: 250px;"--}}
+                    {{--data-handle-color="#637283">--}}
+                    {{--@foreach($totalActiveClientOnProgressOrders as $element)--}}
+                    {{--<li>--}}
+                    {{--<a href="{{ route('backend.order.show', $element->id) }}">--}}
+                    {{--<span class="time">{{ $element->created_at->diffForHumans() }}</span>--}}
+                    {{--<span class="details">--}}
+                    {{--<span class="label label-sm label-icon label-success">--}}
+                    {{--</span> {{ $element->title }} </span>--}}
+                    {{--</a>--}}
+                    {{--</li>--}}
+                    {{--@endforeach--}}
+                    {{--</ul>--}}
+                    {{--</li>--}}
+                    {{--</ul>--}}
                     {{--</li>--}}
                     {{--<!-- END NOTIFICATION DROPDOWN -->--}}
                     {{--<!-- BEGIN INBOX DROPDOWN -->--}}
                     {{--<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->--}}
-                    <li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
-                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
-                           data-close-others="true">
-                            <i class="icon-bell"></i>
-                            <span class="badge badge-default"> {{ $totalActiveClientOnProgressOrders->count() }} </span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="external">
-                                <a href="{{ route('backend.admin.order.index',['is_complete' => false]) }}">{{ trans('general.active_paid_on_progress_orders') }}</a>
-                            </li>
-                            <li>
-                                <ul class="dropdown-menu-list scroller" style="height: 275px;"
-                                    data-handle-color="#637283">
-                                    @foreach($totalActiveClientOnProgressOrders as $element)
-                                        <li>
-                                            <a href="{{ route('backend.order.show',$element->id) }}">
+                    @can('onlyAdmin')
+                        <li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                               data-close-others="true">
+                                <i class="icon-bell"></i>
+                                <span
+                                    class="badge badge-default"> {{ $totalActiveClientOnProgressOrders->count() }} </span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="external">
+                                    <a href="{{ route('backend.admin.order.index',['is_complete' => false]) }}">{{ trans('general.active_paid_on_progress_orders') }}</a>
+                                </li>
+                                <li>
+                                    <ul class="dropdown-menu-list scroller" style="height: 275px;"
+                                        data-handle-color="#637283">
+                                        @foreach($totalActiveClientOnProgressOrders as $element)
+                                            <li>
+                                                <a href="{{ route('backend.order.show',$element->id) }}">
                                                     <span class="photo">
-                                                    <img src="{{ asset(env('THUMBNAIL').$element->images->first()->image) }}"
-                                                         class="img-circle" alt=""> </span>
+                                                    <img
+                                                        src="{{ asset(env('THUMBNAIL').$element->images->first()->image) }}"
+                                                        class="img-circle" alt=""> </span>
                                                     <span class="subject">
                                                         <span class="from"> {{ $element->title }} </span>
                                                         <span
                                                             class="time">{{ $element->created_at->diffForHumans() }} </span>
                                                     </span>
                                                     <span class="message"> {{ $element->name }} </span>
-                                            </a>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
+                                                </a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                @endcan
                 {{--<!-- END INBOX DROPDOWN -->--}}
                 {{--<!-- BEGIN TODO DROPDOWN -->--}}
                 {{--<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->--}}

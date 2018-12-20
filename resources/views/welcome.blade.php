@@ -11,7 +11,8 @@
     @section('title')
         <title>{{ config('app.name') .' '. $settings->name_ar .' '. $settings->name_en }}</title>
     @show
-    <meta name="description" content="{{ trans('general.meta_description') . $settings->name_ar . $settings->name_en . trans('general.app_keywords')}}">
+    <meta name="description"
+          content="{{ trans('general.meta_description') . $settings->name_ar . $settings->name_en . trans('general.app_keywords')}}">
     <meta name="keywords" content="{{ trans('general.app_keywords') }}"/>
     <meta name="author" content="{{ trans('general.app_author') }}">
     <meta name="country" content="{{ $settings->country }}">
@@ -22,7 +23,7 @@
     <meta name="address" content="{{ $settings->address }}">
     <meta name="name" content="{{ $settings->company }}">
     <meta name="lang" content="{{ app()->getLocale() }}">
-    <meta name="google-site-verification" content="hk7_iuTCtc_EiXLSBSoMzQs-K7-Ru-MuIB9DYHVlnbk" />
+    <meta name="google-site-verification" content="hk7_iuTCtc_EiXLSBSoMzQs-K7-Ru-MuIB9DYHVlnbk"/>
     <!-- favicon -->
     <link rel="shortcut icon" href="{{ asset('images/logo.ico') }}"/>
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset(env('THUMBNAIL').$settings->logo) }}">
@@ -104,7 +105,8 @@
 
     <div class="content">
         <div class="title m-b-md">
-            <img style="max-width: 120px;" src="{{ asset(env('THUMBNAIL').$settings->logo) }}" alt="{{ $settings->name }}">
+            <img style="max-width: 120px;" src="{{ asset(env('THUMBNAIL').$settings->logo) }}"
+                 alt="{{ $settings->name }}">
         </div>
         <p class="text-center">
             {{ $settings->on_home_speech }}
@@ -112,13 +114,19 @@
 
         <div class="links">
             @auth
-                @if(auth()->user()->isAdminOrAbove)
+                @can('isAdmin')
                     <a href="{{ route('backend.admin.order.index') }}">Orders</a>
-                @elseif(auth()->user()->onlyDesigner)
+                    <a href="{{ route('backend.admin.setting.index') }}">Settings</a>
+                    <a href="{{ route('backend.admin.category.index') }}">Categories</a>
+                    <a href="{{ route('backend.admin.service.index') }}">Services</a>
+                @elsecan('onlyDesigner')
                     <a href="{{ route('backend.order.index') }}">Orders & Jobs</a>
-                @elseif(auth()->user()->onlyClient)
+                    <a href="{{ route('backend.user.show', auth()->id()) }}">My Profile</a>
+                @elsecan('onlyClient')
                     <a href="{{ route('backend.order.index') }}">My Orders</a>
-                    <a href="">My Files</a>
+                    <a href="{{ route('backend.point.index') }}">Recharge</a>
+                    <a href="{{ route('backend.user.show', auth()->id()) }}">My Profile</a>
+                    <a href="{{ route('backend.file.show', auth()->id()) }}">My Files</a>
                 @endif
             @endauth
         </div>

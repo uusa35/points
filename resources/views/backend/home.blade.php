@@ -55,6 +55,8 @@
             </div>
         </div>
     @endcan
+    @can('onlyClient')
+    @endif
     <div class="row">
         <div class="col-md-12">
             <div class="portlet box red">
