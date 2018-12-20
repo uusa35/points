@@ -38,7 +38,7 @@
                                     </p>
 
                                     <h4 class="text-center">
-                                        {{ $element->apply_bonus ? $element->sale_points : $element->points }} {{ trans('general.points') }}
+                                        {{ $element->on_sale ? $element->sale_points : $element->points }} {{ trans('general.points') }}
                                     </h4>
                                     <div class="blog-post-foot">
                                         {{--<div class="blog-post-meta">--}}
