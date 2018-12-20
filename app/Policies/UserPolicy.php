@@ -18,7 +18,7 @@ class UserPolicy
      */
     public function view(User $user, User $model)
     {
-        return $user->isAdminOrAbove ? $user->isAdminOrAbove : auth()->id() === $model->id;
+        return $user->isAdminOrAbove ? $user->isAdminOrAbove : $user->id() === $model->id;
     }
 
     /**
@@ -40,7 +40,7 @@ class UserPolicy
      */
     public function update(User $user, User $model)
     {
-        return $user->isSuper ? $user->isSuper : $user->id() === $model->id;
+        return $user->isSuper ? $user->isSuper : $user->id === $model->id;
     }
 
     /**

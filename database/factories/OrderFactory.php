@@ -8,7 +8,7 @@ use Faker\Generator as Faker;
 $factory->define(Order::class, function (Faker $faker) {
     return [
         'title' => $faker->sentence,
-        'lang' => $faker->randomElement(['ar','lang','both']),
+        'lang' => $faker->randomElement(['ar', 'lang', 'both']),
         'name_ar' => $faker->name,
         'name_en' => $faker->name,
         'slogan' => $faker->name,
@@ -30,6 +30,8 @@ $factory->define(Order::class, function (Faker $faker) {
         'description_en' => $faker->sentence,
         'notes_ar' => $faker->sentence,
         'notes_en' => $faker->sentence,
+        'address_ar' => $faker->address,
+        'address_en' => $faker->address,
         'is_paid' => $faker->boolean,
         'is_complete' => $faker->boolean,
         'service_id' => Service::all()->random()->id,

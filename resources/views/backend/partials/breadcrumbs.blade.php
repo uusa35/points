@@ -25,6 +25,12 @@
                     <a href="{{ route('backend.home') }}">
                         <i class="icon-home"></i> {{ trans('general.home') }}</a>
                 </li>
+                @auth
+                    <li>
+                        <a href="{{ route('backend.user.edit', auth()->id()) }}">
+                            <i class="icon-home"></i> {{ trans('general.edit_my_profile') }}</a>
+                    </li>
+                @endauth
                 <li class="divider"></li>
                 <li>
                     <a href="{{ route('backend.admin.setting.index') }}">

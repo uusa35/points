@@ -21,7 +21,7 @@
 </head>
 
 {{--<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white page-md">--}}
-<body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-md">
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-md" onload="initialize()">
 {{--<body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-sidebar-closed">--}}
 {{--<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">--}}
 @auth
@@ -41,7 +41,6 @@
     </div>
     @include('backend.partials.footer')
 </div>
-
 @section('scripts')
     @include('backend.partials.scripts')
 @show

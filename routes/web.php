@@ -47,10 +47,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     Route::get('reset/password', 'UserController@getResetPassword')->name('reset.password');
     Route::post('reset/password', 'UserController@postResetPassword')->name('reset');
     Route::resource('user', 'UserController')->only(['edit', 'update', 'show']);
-    Route::resource('order', 'OrderController')->except(['destroy','create']);
-    Route::group(['scheme' => 'https'], function () {
-        Route::resource('order', 'OrderController')->only(['create']);
-    });
+    Route::resource('order', 'OrderController')->except(['destroy']);
     Route::get('/make/order/category', 'OrderController@chooseOrderCategory')->name('order.choose.category');
     Route::get('/make/order/service', 'OrderController@chooseOrderService')->name('order.choose.service');
     Route::get('/make/order/lang', 'OrderController@chooseOrderLang')->name('order.choose.lang');

@@ -180,40 +180,6 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group{{ $errors->has('address_ar') ? ' has-error' : '' }}">
-                                <label for="address_ar" class="control-label">{{ trans('general.address_ar') }}</label>
-                                <input id="address_ar" type="text" class="form-control" name="address_ar"
-                                       value="{{ $element->address_ar }}"
-                                       placeholder="address_ar arabic" autofocus>
-                                @if ($errors->has('address_ar'))
-                                    <span class="help-block">
-                                <strong>
-                                    {{ $errors->first('address_ar') }}
-                                </strong>
-                            </span>
-                                @endif
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group{{ $errors->has('address_en') ? ' has-error' : '' }}">
-                                <label for="address_en" class="control-label">{{ trans('general.address_en') }}</label>
-                                <input id="address_en" type="text" class="form-control" name="address_en"
-                                       value="{{ $element->address_en }}"
-                                       placeholder="address_en arabic" autofocus>
-                                @if ($errors->has('address_en'))
-                                    <span class="help-block">
-                                <strong>
-                                    {{ $errors->first('address_en') }}
-                                </strong>
-                            </span>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="row">
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label for="form_control_1">{{ trans('general.logo') }}</label>
@@ -368,22 +334,25 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <div class="form-group{{ $errors->has('iphone') ? ' has-error' : '' }}">
-                                <label for="iphone" class="control-label">{{ trans('general.iphone') }} </label>
-                                <input id="iphone" type="text" class="form-control" name="iphone"
-                                       value="{{ $element->iphone }}"
-                                       placeholder="iphone" autofocus>
-                                @if ($errors->has('iphone'))
-                                    <span class="help-block">
+
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group{{ $errors->has('iphone') ? ' has-error' : '' }}">
+                                    <label for="iphone" class="control-label">{{ trans('general.iphone') }} </label>
+                                    <input id="iphone" type="text" class="form-control" name="iphone"
+                                           value="{{ $element->iphone }}"
+                                           placeholder="iphone" autofocus>
+                                    @if ($errors->has('iphone'))
+                                        <span class="help-block">
                                 <strong>
                                     {{ $errors->first('iphone') }}
                                 </strong>
                             </span>
-                                @endif
+                                    @endif
+                                </div>
                             </div>
                         </div>
-
                         <div class="col-md-3">
                             <div class="form-group{{ $errors->has('android') ? ' has-error' : '' }}">
                                 <label for="android" class="control-label">{{ trans('general.android') }} </label>
@@ -414,6 +383,52 @@
                                 @endif
                             </div>
                         </div>
+
+                        <div class="row">
+                            <div class="col-lg-12" style="padding: 20px;">
+                                <div id="map" style="width : 100%; min-height: 250px;"></div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="control-label">{{ trans('general.address_ar') }}</label>
+                                    <input id="address" name="address_ar" type="textbox" value="{{ old("address_ar") }}"
+                                           class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="control-label">{{ trans('general.address_en') }}</label>
+                                    <input id="address" name="address_en" type="textbox" value="Sydney, NSW"
+                                           class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-1">
+                                <div class="form-group">
+                                    <label class="control-label"></label>
+                                    <input type="button" class="btn btn-info form-control"
+                                           value="{{ trans('general.get_location_by_address') }}"
+                                           onclick="codeAddress()">
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="longitude"
+                                           class="control-label">{{ trans('general.longitude') }}</label>
+                                    <input id="longitude" type="text" class="form-control" name="longitude"
+                                           value="{{ old('longitude') ? old('longitude') : auth()->user()->longitude}}"
+                                           placeholder="longitude" autofocus>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="latitude" class="control-label">{{ trans('general.latitude') }}</label>
+                                    <input id="latitude" type="text" class="form-control" name="latitude"
+                                           value="{{ old('latitude') ? old('latitude') : auth()->user()->latitude }}"
+                                           placeholder="latitude" autofocus>
+                                </div>
+                            </div>
+                        </div>
+
 
                     </div>
                     @include('backend.partials.forms._btn-group')
