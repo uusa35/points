@@ -35,6 +35,7 @@ class CreateSettingsTable extends Migration
             $table->string('support_email')->nullable();
             $table->string('admin_email')->nullable();
             $table->string('sales_email')->nullable();
+            $table->string('country')->nullable();
             $table->text('address_ar')->nullable();
             $table->text('address_en')->nullable();
             $table->string('logo')->nullable();
