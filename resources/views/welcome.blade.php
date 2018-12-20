@@ -84,7 +84,7 @@
 
     <div class="content">
         <div class="title m-b-md">
-            <img src="{{ asset(env('THUMBNAIL').$settings->logo) }}" alt="{{ $settings->name }}">
+            <img style="max-width: 120px;" src="{{ asset(env('THUMBNAIL').$settings->logo) }}" alt="{{ $settings->name }}">
         </div>
         <p class="text-center">
             {{ $settings->on_home_speech }}
