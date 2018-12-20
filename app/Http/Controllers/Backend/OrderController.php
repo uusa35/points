@@ -42,7 +42,7 @@ class OrderController extends Controller
                     });
                 })->with('job.versions', 'service.category')->orderBy('id', 'desc')->paginate(self::PAGINATE);
             } else { // not complete and paid
-                $elements = Order::active()->active()->where(['is_complete' => false, 'is_paid' => true])->whereHas('job', function ($q) {
+                $elements = Order::active()->where(['is_complete' => false, 'is_paid' => true])->whereHas('job', function ($q) {
                     return $q->whereHas('designers', function ($q) {
                         return $q->whereIn('id', [auth()->id()]);
                     });

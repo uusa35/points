@@ -98,12 +98,19 @@
                                 <div class="tab-content">
                                     <!-- PERSONAL INFO TAB -->
                                     <div class="tab-pane active" id="tab_1_1">
-                                        // list of user orders will go here
+                                        {{--@can('onlyDesigner')--}}
+                                            @include('backend.modules.order._index_table_index',['elements' => $element->orders])
+                                        {{--@elsecan('onlyClient')--}}
+{{--                                            @include('backend.module.order.backend.modules.order._index_table_index',['elements' => $element->orders])--}}
+                                        {{--@else--}}
+                                            {{--@include('backend.module.order.backend.modules.order._index_table_index',['elements' => $element->orders])--}}
+                                        {{--@endcan--}}
+
                                     </div>
                                     <!-- END PERSONAL INFO TAB -->
                                     <!-- CHANGE AVATAR TAB -->
                                     <div class="tab-pane" id="tab_1_2">
-{{--                                        @include('backend.modules.order._abstracted_table', ['elements' => $element->documents])--}}
+                                        {{--                                        @include('backend.modules.order._abstracted_table', ['elements' => $element->documents])--}}
                                     </div>
                                     <!-- END CHANGE AVATAR TAB -->
                                     <!-- CHANGE PASSWORD TAB -->

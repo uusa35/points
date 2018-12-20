@@ -20,7 +20,15 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $element = User::whereId($id)->with('role')->first();
+        $element = User::whereId($id)->with(['orders' => function ($q) {
+            if (auth()->user()->onlyDesigner) {
+                return $q->active()->where(['is_paid' => true])->whereHas('designers', function ($q) {
+                    return $q->whereIn('id', [auth()->id()]);
+                });
+            } else {
+                return $q->active()->where(['is_paid' => true]);
+            }
+        }])->first();
         $this->authorize('user.view', $element);
         return view('backend.modules.user.show', compact('element'));
     }
@@ -34,7 +42,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $element = User::whereId($id)->first();
-        $this->authorize('user.update',$element);
+        $this->authorize('user.update', $element);
         return view('backend.modules.user.edit', compact('element'));
     }
 
@@ -48,7 +56,7 @@ class UserController extends Controller
     public function update(UserUpdate $request, $id)
     {
         $element = User::whereId($id)->first();
-        $updated = $element->update($request->except(['logo', 'user_id','bg','balance']));
+        $updated = $element->update($request->except(['logo', 'user_id', 'bg', 'balance']));
         if ($updated) {
             if ($request->hasFile('logo')) {
                 $this->saveMimes($element, $request, ['logo'], ['250', '250'], false);
@@ -57,7 +65,7 @@ class UserController extends Controller
                 $this->saveMimes($element, $request, ['bg'], ['750', '1334'], false);
             }
             auth()->user()->isSuper ? $element->balance()->update(['points' => request('balance')]) : null;
-            return redirect()->route('backend.user.show',$element->id)->with('success', 'saved success');
+            return redirect()->route('backend.user.show', $element->id)->with('success', 'saved success');
         }
         return redirect()->back()->with('error', 'failure');
     }
@@ -108,8 +116,8 @@ class UserController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect()->back()-withErrors($validator)->withInputs();
+            return redirect()->back() - withErrors($validator)->withInputs();
         }
-        $this->notify(request('title'),request('message'),request('ids'));
+        $this->notify(request('title'), request('message'), request('ids'));
     }
 }
