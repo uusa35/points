@@ -12,7 +12,7 @@
                     @can('onlyAdmin')
                         @foreach($designers as $element)
                             <div class="col-lg-3"
-                                 style="width: 24% !important; height : 350px; border: 1px solid lightgrey; margin: 5px;">
+                                 style="width: 24% !important; height : 400px; border: 1px solid lightgrey; margin: 5px;">
                                 <div class="portlet light profile-sidebar-portlet ">
                                     <!-- SIDEBAR USERPIC -->
                                     <div class=" text-center">
