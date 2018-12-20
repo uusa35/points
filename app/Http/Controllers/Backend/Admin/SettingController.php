@@ -82,14 +82,17 @@ class SettingController extends Controller
             if ($request->hasFile('zapper')) {
                 $this->saveMimes($setting, $request, ['zapper'], ['500', '500'], true);
             }
+            if ($request->hasFile('qr')) {
+                $this->saveMimes($setting, $request, ['qr'], ['500', '500'], true);
+            }
             if ($request->hasFile('path')) {
                 $path = $request->file('path')->store('public/uploads/files');
                 $path = str_replace('public/uploads/files/', '', $path);
                 $setting->update(['path' => $path]);
             }
-            return redirect()->route('backend.setting.index')->with('success', 'setting updated');
+            return redirect()->route('backend.admin.setting.index')->with('success', 'setting updated');
         }
-        return redirect()->route('backend.setting.index')->with('error', 'setting error');
+        return redirect()->route('backend.admin.setting.index')->with('error', 'setting error');
     }
 
     /**

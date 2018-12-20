@@ -36,15 +36,6 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="control-label">phone</label>
-                                <input type="text" id="phone" name="phone" class="form-control" placeholder="phone"
-                                       value="{{ $element->phone }}">
-                                <span class="help-block"> phone </span>
-                            </div>
-                        </div>
-                        <!--/span-->
-                        <div class="col-md-6">
-                            <div class="form-group">
                                 <label class="control-label">info_email</label>
                                 <input type="text" id="info_email" name="info_email" class="form-control" placeholder="info_email"
                                        value="{{ $element->info_email }}">
@@ -71,6 +62,14 @@
                     </div>
 
                     <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="control-label">phone</label>
+                                <input type="text" id="phone" name="phone" class="form-control" placeholder="phone"
+                                       value="{{ $element->phone }}">
+                                <span class="help-block"> phone </span>
+                            </div>
+                        </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label class="control-label">mobile</label>
@@ -172,59 +171,59 @@
                         </div>
                         <div class="col-md-2">
                             <div class="form-group">
-                                <label class="control-label">facebook_url</label>
-                                <input type="text" id="facebook_url" name="facebook_url" class="form-control"
-                                       placeholder="facebook_url"
-                                       value="{{ $element->facebook_url }}">
+                                <label class="control-label">facebook</label>
+                                <input type="text" id="facebook" name="facebook" class="form-control"
+                                       placeholder="facebook"
+                                       value="{{ $element->facebook }}">
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="form-group">
-                                <label class="control-label">twitter_url</label>
-                                <input type="text" id="twitter_url" name="twitter_url" class="form-control"
-                                       placeholder="twitter_url"
-                                       value="{{ $element->twitter_url }}">
+                                <label class="control-label">twitter</label>
+                                <input type="text" id="twitter" name="twitter" class="form-control"
+                                       placeholder="twitter"
+                                       value="{{ $element->twitter }}">
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="form-group">
-                                <label class="control-label">instagram_url</label>
-                                <input type="text" id="instagram_url" name="instagram_url" class="form-control"
-                                       placeholder="instagram_url"
-                                       value="{{ $element->instagram_url }}">
+                                <label class="control-label">instagram</label>
+                                <input type="text" id="instagram" name="instagram" class="form-control"
+                                       placeholder="instagram"
+                                       value="{{ $element->instagram }}">
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="form-group">
-                                <label class="control-label">google_url</label>
-                                <input type="text" id="google_url" name="google_url" class="form-control"
-                                       placeholder="google_url"
-                                       value="{{ $element->google_url }}">
-                                <span class="help-block"> google_url </span>
+                                <label class="control-label">google</label>
+                                <input type="text" id="google" name="google" class="form-control"
+                                       placeholder="google"
+                                       value="{{ $element->google }}">
+                                <span class="help-block"> google </span>
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="form-group">
-                                <label class="control-label">youtube_url</label>
-                                <input type="text" id="youtube_url" name="youtube_url" class="form-control"
-                                       placeholder="youtube_url"
-                                       value="{{ $element->youtube_url }}">
+                                <label class="control-label">youtube</label>
+                                <input type="text" id="youtube" name="youtube" class="form-control"
+                                       placeholder="youtube"
+                                       value="{{ $element->youtube }}">
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="form-group">
-                                <label class="control-label">linkin_url</label>
-                                <input type="text" id="linkin_url" name="linkin_url" class="form-control"
-                                       placeholder="linkin_url"
-                                       value="{{ $element->linkin_url }}">
+                                <label class="control-label">linkin</label>
+                                <input type="text" id="linkin" name="linkin" class="form-control"
+                                       placeholder="linkin"
+                                       value="{{ $element->linkin }}">
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="form-group">
-                                <label class="control-label">site_url</label>
-                                <input type="text" id="site_url" name="site_url" class="form-control"
-                                       placeholder="site_url"
-                                       value="{{ $element->site_url }}">
+                                <label class="control-label">website</label>
+                                <input type="text" id="website" name="website" class="form-control"
+                                       placeholder="website"
+                                       value="{{ $element->website }}">
                             </div>
                         </div>
                         <!--/span-->
@@ -270,6 +269,18 @@
                                         W * H - Best fit 500 x 500 pixels
                                     </div>
                                     <img src="{{ asset('storage/uploads/images/thumbnail/'.$element->zapper) }}" alt=""
+                                         class="img-sm">
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="file" class="form-control" name="qr" placeholder="qr">
+                                    <label for="form_control_1">qr Image - ['500', '500']</label>
+                                    <div class="help-block text-left">
+                                        W * H - Best fit 500 x 500 pixels
+                                    </div>
+                                    <img src="{{ asset('storage/uploads/images/thumbnail/'.$element->qr) }}" alt=""
                                          class="img-sm">
                                 </div>
                             </div>
