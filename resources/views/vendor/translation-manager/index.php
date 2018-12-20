@@ -112,6 +112,10 @@
     <div class="alert alert-success success-publish-all" style="display:none;">
         <p>Done publishing the translations for all group!</p>
     </div>
+<a class="btn btn-info pull-right" href="<?php echo route('backend.home')?>">
+        <span class="glyphicon glyphicon-arrow-left"></span>
+         Back To Dashboard
+    </a>
     <?php if(Session::has('successPublish')) : ?>
         <div class="alert alert-info">
             <?php echo Session::get('successPublish'); ?>
