@@ -70,7 +70,7 @@ class UserController extends Controller
     public function show($id)
     {
         $element = User::active()->whereId($id)->with('role', 'projects')->first();
-        $this->authorize('user.view',$element);
+        $this->authorize('user.view', $element);
         return response()->json($element, 200);
     }
 
@@ -83,7 +83,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $element = User::whereId($id)->with('balance')->first();
-        $this->authorize('user.view',$element);
+        $this->authorize('user.view', $element);
         return view('backend.modules.user.edit', compact('element'));
     }
 
@@ -96,8 +96,9 @@ class UserController extends Controller
      */
     public function update(UserUpdate $request, $id)
     {
+        dd($request->all());
         $element = User::whereId($id)->first();
-        $updated = $element->update($request->except(['logo', 'gallery', 'governate_id', 'area_id', 'user_id', 'balance']));
+        $updated = $element->update($request->except(['logo', 'bg', 'balance','user_id']));
         if ($updated) {
             $element->balance()->update(['points' => $request->balance]);
             if ($request->hasFile('logo')) {
@@ -106,6 +107,7 @@ class UserController extends Controller
             if ($request->hasFile('bg')) {
                 $this->saveMimes($element, $request, ['bg'], ['750', '1334'], false);
             }
+            auth()->user()->isSuper ? $element->update(['balance' => request('balance')]) : null;
             return redirect()->route('backend.admin.user.index', ['role_id' => $element->role_id])->with('success', 'saved success');
         }
         return redirect()->back()->with('error', 'failure');

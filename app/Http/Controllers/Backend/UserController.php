@@ -48,7 +48,7 @@ class UserController extends Controller
     public function update(UserUpdate $request, $id)
     {
         $element = User::whereId($id)->first();
-        $updated = $element->update($request->except(['logo', 'gallery', 'governate_id', 'area_id', 'user_id']));
+        $updated = $element->update($request->except(['logo', 'user_id','bg','balance']));
         if ($updated) {
             if ($request->hasFile('logo')) {
                 $this->saveMimes($element, $request, ['logo'], ['250', '250'], false);
@@ -56,6 +56,7 @@ class UserController extends Controller
             if ($request->hasFile('bg')) {
                 $this->saveMimes($element, $request, ['bg'], ['750', '1334'], false);
             }
+            auth()->user()->isSuper ? $element->balance()->update(['points' => request('balance')]) : null;
             return redirect()->route('backend.user.show',$element->id)->with('success', 'saved success');
         }
         return redirect()->back()->with('error', 'failure');

@@ -1,9 +1,9 @@
 @extends('backend.layouts.app')
 @section('content')
     @include('backend.partials.breadcrumbs')
+    @include('backend.partials._order_steps')
     <div class="portlet box blue">
         @include('backend.partials.forms.form_title')
-        @include('backend.partials._order_steps')
         <div class="portlet-body form">
             <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.order.store') }}"
                   enctype="multipart/form-data">
@@ -93,8 +93,6 @@
                                 </div>
                             </div>
                         @endif
-
-
                         <div class="col-md-6">
                             <div class="form-group {{ $errors->has('slogan') ? ' has-error' : '' }}">
                                 <label for="slogan" class="control-label">{{ trans('general.slogan') }}</label>
@@ -110,10 +108,6 @@
                                 @endif
                             </div>
                         </div>
-
-                    </div>
-
-                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group{{ $errors->has('website') ? ' has-error' : '' }}">
                                 <label for="website" class="control-label">{{ trans('general.website') }}</label>
@@ -139,10 +133,7 @@
                         {{--</select>--}}
                         {{--</div>--}}
                         {{--</div>--}}
-                    </div>
 
-
-                    <div class="row">
                         <div class="col-md-3">
                             <div class="form-group{{ $errors->has('facebook') ? ' has-error' : '' }}">
                                 <label for="facebook" class="control-label">{{ trans('general.facebook') }} </label>
@@ -161,7 +152,8 @@
 
                         <div class="col-md-3">
                             <div class="form-group{{ $errors->has('instagram') ? ' has-error' : '' }}">
-                                <label for="instagram" class="control-label">{{ trans('general.instagram') }} </label>
+                                <label for="instagram"
+                                       class="control-label">{{ trans('general.instagram') }} </label>
                                 <input id="instagram" type="text" class="form-control" name="instagram"
                                        value="{{ old('instagram') }}"
                                        placeholder="instagram" autofocus>
@@ -228,7 +220,8 @@
                         </div>
                         <div class="col-md-3">
                             <div class="form-group{{ $errors->has('phone_one') ? ' has-error' : '' }}">
-                                <label for="phone_one" class="control-label">{{ trans('general.phone_one') }} </label>
+                                <label for="phone_one"
+                                       class="control-label">{{ trans('general.phone_one') }} </label>
                                 <input id="phone_one" type="text" class="form-control" name="phone_one"
                                        value="{{ old('phone_one') }}"
                                        placeholder="phone_one" autofocus>
@@ -244,7 +237,8 @@
 
                         <div class="col-md-3">
                             <div class="form-group{{ $errors->has('phone_two') ? ' has-error' : '' }}">
-                                <label for="phone_two" class="control-label">{{ trans('general.phone_two') }} </label>
+                                <label for="phone_two"
+                                       class="control-label">{{ trans('general.phone_two') }} </label>
                                 <input id="phone_two" type="text" class="form-control" name="phone_two"
                                        value="{{ old('phone_two') }}"
                                        placeholder="phone_two" autofocus>
@@ -351,7 +345,8 @@
                                 <div class="form-group">
                                     <label for="description"
                                            class="control-label">{{ trans('general.description')}}</label>
-                                    <textarea type="text" class="form-control" id="description_ar" name="description_ar"
+                                    <textarea type="text" class="form-control" id="description_ar"
+                                              name="description_ar"
                                               aria-multiline="true"
                                               maxlength="500">{{ old('description_ar') }}</textarea>
                                 </div>
@@ -371,7 +366,8 @@
                                 <div class="form-group">
                                     <label for="description"
                                            class="control-label">{{ trans('general.description')}}</label>
-                                    <textarea type="text" class="form-control" id="description_en" name="description_en"
+                                    <textarea type="text" class="form-control" id="description_en"
+                                              name="description_en"
                                               aria-multiline="true"
                                               maxlength="500">{{ old('description_en') }}</textarea>
                                 </div>
@@ -391,7 +387,8 @@
                                 <div class="form-group">
                                     <label for="description"
                                            class="control-label">{{ trans('general.description')}}</label>
-                                    <textarea type="text" class="form-control" id="description_ar" name="description_ar"
+                                    <textarea type="text" class="form-control" id="description_ar"
+                                              name="description_ar"
                                               aria-multiline="true"
                                               maxlength="500">{{ old('description_ar') }}</textarea>
                                 </div>
@@ -410,7 +407,8 @@
                                 <div class="form-group">
                                     <label for="description"
                                            class="control-label">{{ trans('general.description')}}</label>
-                                    <textarea type="text" class="form-control" id="description_en" name="description_en"
+                                    <textarea type="text" class="form-control" id="description_en"
+                                              name="description_en"
                                               aria-multiline="true"
                                               maxlength="500">{{ old('description_en') }}</textarea>
                                 </div>
@@ -460,7 +458,8 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label class=" control-label">{{ trans('general.unwanted_colors') }}</label>
-                                <input type="text" id="hue-demo-1" name="unwanted_colors_1" class="form-control demo"
+                                <input type="text" id="hue-demo-1" name="unwanted_colors_1"
+                                       class="form-control demo"
                                        data-control="hue" value="{{ old('unwanted_colors_1') }}">
                             </div>
 
@@ -469,7 +468,8 @@
                             <div class="form-group">
                                 <label class=" control-label">{{ trans('general.unwanted_colors') }}</label>
 
-                                <input type="text" id="hue-demo-2" name="unwanted_colors_2" class="form-control demo"
+                                <input type="text" id="hue-demo-2" name="unwanted_colors_2"
+                                       class="form-control demo"
                                        data-control="hue" value="{{ old('unwanted_colors_2') }}">
                             </div>
 
@@ -477,7 +477,8 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label class="control-label">{{ trans('general.unwatched_colors') }}</label>
-                                <input type="text" id="hue-demo-3" name="unwanted_colors_3" class="form-control demo"
+                                <input type="text" id="hue-demo-3" name="unwanted_colors_3"
+                                       class="form-control demo"
                                        data-control="hue" value="{{ old('unwanted_colors_3') }}">
                             </div>
                         </div>
@@ -509,22 +510,23 @@
                                        onclick="codeAddress()">
                             </div>
                         </div>
-                        <div class="col-md-2">
-                            <div class="form-group">
-                                <label for="longitude" class="control-label">{{ trans('general.longitude') }}</label>
-                                <input id="longitude" type="text" class="form-control" name="longitude"
-                                       value="{{ old('longitude') }}"
-                                       placeholder="longitude" autofocus>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="form-group">
-                                <label for="latitude" class="control-label">{{ trans('general.latitude') }}</label>
-                                <input id="latitude" type="text" class="form-control" name="latitude"
-                                       value="{{ old('latitude') }}"
-                                       placeholder="latitude" autofocus>
-                            </div>
-                        </div>
+                        {{--<div class="col-md-2">--}}
+                            {{--<div class="form-group">--}}
+                                {{--<label for="longitude"--}}
+                                       {{--class="control-label">{{ trans('general.longitude') }}</label>--}}
+                                {{--<input id="longitude" type="text" class="form-control" name="longitude"--}}
+                                       {{--value="{{ old('longitude') }}"--}}
+                                       {{--placeholder="longitude" autofocus>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="col-md-2">--}}
+                            {{--<div class="form-group">--}}
+                                {{--<label for="latitude" class="control-label">{{ trans('general.latitude') }}</label>--}}
+                                {{--<input id="latitude" type="text" class="form-control" name="latitude"--}}
+                                       {{--value="{{ old('latitude') }}"--}}
+                                       {{--placeholder="latitude" autofocus>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
 
                         <div class="col-lg-12">
                             <iframe
@@ -540,10 +542,6 @@
                                        placeholder="google_map_url" autofocus>
                             </div>
                         </div>
-                    </div>
-
-
-                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="control-label sbold">{{ trans('general.active') }}</label></br>
@@ -554,7 +552,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
                 @include('backend.partials.forms._btn-group')
             </form>
