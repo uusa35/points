@@ -525,6 +525,21 @@
                                        placeholder="latitude" autofocus>
                             </div>
                         </div>
+
+                        <div class="col-lg-12">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d129277.816522649!2d47.89305411946607!3d29.218744454083627!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2skw!4v1545291408070"
+                                width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="longitude"
+                                       class="control-label">{{ trans('general.google_map_url') }}</label>
+                                <input id="google_map_url" type="text" class="form-control" name="google_map_url"
+                                       value="{{ old('google_map_url') }}"
+                                       placeholder="google_map_url" autofocus>
+                            </div>
+                        </div>
                     </div>
 
 

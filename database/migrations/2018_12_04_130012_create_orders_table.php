@@ -58,6 +58,8 @@ class CreateOrdersTable extends Migration
             $table->string('unwanted_colors_1')->nullable();
             $table->string('unwanted_colors_2')->nullable();
             $table->string('unwanted_colors_3')->nullable();
+            $table->string('google_map_url')->nullable();
+
             $table->boolean('active')->default(1);
 
             $table->timestamps();

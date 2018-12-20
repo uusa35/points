@@ -77,8 +77,11 @@ if ((app()->environment('production') || app()->environment('local')) && Schema:
                 return $q->where('name', $role);
             })->first();
         }
-        Auth::loginUsingId($element->id);
-        return redirect()->route('backend.home');
+        if($element) {
+            Auth::loginUsingId($element->id);
+            return redirect()->route('backend.home');
+        }
+        return redirect()->route('backend.home')->with('error','no users');
     });
 }
 

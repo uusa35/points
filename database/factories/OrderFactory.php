@@ -42,5 +42,6 @@ $factory->define(Order::class, function (Faker $faker) {
         'unwanted_colors_1' => $faker->colorName,
         'unwanted_colors_2' => $faker->colorName,
         'unwanted_colors_3' => $faker->colorName,
+        'google_map_url' => $faker->colorName,
     ];
 });
