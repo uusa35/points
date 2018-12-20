@@ -11,13 +11,14 @@
                 <div class="panel-body">
                     @can('onlyAdmin')
                         @foreach($designers as $element)
-                            <div class="col-lg-3" style="height : 450px; border: 1px solid lightgrey; margin: 5px;">
+                            <div class="col-lg-3"
+                                 style="width: 24% !important; height : 350px; border: 1px solid lightgrey; margin: 5px;">
                                 <div class="portlet light profile-sidebar-portlet ">
                                     <!-- SIDEBAR USERPIC -->
-                                    <div class="profile-userpic text-center">
+                                    <div class=" text-center">
                                         <img src="{{ asset(env('THUMBNAIL').$element->logo) }}"
-                                             style="width: 200px; height : auto;"
-                                             class="img-responsive img-thumbnail"
+                                             style="width: 100px; height : auto;"
+                                             class="img-rounded img-sm img-thumbnail"
                                              alt="{{ $element->name }}"></div>
                                     <!-- END SIDEBAR USERPIC -->
                                     <!-- SIDEBAR USER TITLE -->
@@ -29,13 +30,12 @@
                                     </div>
                                     <hr>
                                     <!-- END SIDEBAR USER TITLE -->
-                                    <!-- END SIDEBAR BUTTONS -->
                                     <!-- SIDEBAR MENU -->
                                     <div class="profile-usermenu">
                                         <ul class="nav">
                                             <li>
-                                                <a href="{{ route('backend.order.index',['user_id' => $element->id]) }}">
-                                                    <i class="icon-user"></i> {{ trans('general.client_projects') }}</a>
+                                                <a href="{{ route('backend.user.show',$element->id) }}">
+                                                    <i class="icon-user"></i> {{ trans('general.profile') }}</a>
                                             </li>
                                         </ul>
                                     </div>
