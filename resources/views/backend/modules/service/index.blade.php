@@ -88,7 +88,7 @@
                                             <li>
                                                 <a data-toggle="modal" href="#" data-target="#basic"
                                                    data-title="Delete"
-                                                   data-content="Are you sure you want to delete this order ? "
+                                                   data-content="Are you sure you want to delete this service ? "
                                                    data-form_id="delete-{{ $element->id }}"
                                                 >
                                                     <i class="fa fa-fw fa-recycle"></i> {{ trans('general.delete') }}

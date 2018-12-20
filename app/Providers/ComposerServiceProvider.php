@@ -61,6 +61,7 @@ class ComposerServiceProvider extends ServiceProvider
 
         view()->composer([
             'backend.partials._order_statistics',
+            'backend.partials.nav',
         ],
             'App\Services\ViewComposers@getTotalActivePaidOnProgressOrders');
         view()->composer([

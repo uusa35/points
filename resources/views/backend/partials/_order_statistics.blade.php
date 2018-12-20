@@ -25,7 +25,7 @@
                     <div class="details">
                         <div class="number">
                             <span data-counter="counterup"
-                                  data-value="10">{{ $totalActiveClientOnProgressOrders }}</span>
+                                  data-value="10">{{ $totalActiveClientOnProgressOrders->count() }}</span>
                         </div>
                         <div class="desc ">{{ trans('general.total_active_paid_on_progress_orders') }}</div>
                     </div>
