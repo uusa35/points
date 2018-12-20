@@ -3,47 +3,58 @@
 @section('content')
     @include('backend.partials._order_statistics')
     <div class="row">
-        @can('onlyAdmin')
-            @foreach($designers as $element)
-                <div class="col-lg-3" style="height : 450px;">
-                    <div class="portlet light profile-sidebar-portlet ">
-                        <!-- SIDEBAR USERPIC -->
-                        <div class="profile-userpic text-center">
-                            <img src="{{ asset('storage/uploads/images/thumbnail/'.$element->logo) }}"
-                                 class="img-responsive img-thumbnail"
-                                 alt="{{ $element->name }}"></div>
-                        <!-- END SIDEBAR USERPIC -->
-                        <!-- SIDEBAR USER TITLE -->
-                        <hr>
-                        <div class="profile-usertitle">
-                            <div class="profile-usertitle-name text-center"> {{ $element->name }}</div>
-                            <div class="profile-usertitle-name text-center"> {{ $element->email }}</div>
-                            <div class="profile-usertitle-job text-center"> {{ $element->caption }}</div>
-                        </div>
-                        <hr>
-                        <!-- END SIDEBAR USER TITLE -->
-                        <!-- END SIDEBAR BUTTONS -->
-                        <!-- SIDEBAR MENU -->
-                        <div class="profile-usermenu">
-                            <ul class="nav">
-                                <li>
-                                    <a href="{{ route('backend.order.index',['user_id' => $element->id]) }}">
-                                        <i class="icon-user"></i> {{ trans('general.client_projects') }}</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- END MENU -->
-                    </div>
+        <div class="col-lg-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h4>{{ trans('general.designers') }}</h4>
                 </div>
-            @endforeach
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="col-lg-4 pull-right">
-                        {{ $designers->render() }}
-                    </div>
+                <div class="panel-body">
+                    @can('onlyAdmin')
+                        @foreach($designers as $element)
+                            <div class="col-lg-3" style="height : 450px; border: 1px solid lightgrey; margin: 5px;">
+                                <div class="portlet light profile-sidebar-portlet ">
+                                    <!-- SIDEBAR USERPIC -->
+                                    <div class="profile-userpic text-center">
+                                        <img src="{{ asset(env('THUMBNAIL').$element->logo) }}"
+                                             style="width: 200px; height : auto;"
+                                             class="img-responsive img-thumbnail"
+                                             alt="{{ $element->name }}"></div>
+                                    <!-- END SIDEBAR USERPIC -->
+                                    <!-- SIDEBAR USER TITLE -->
+                                    <hr>
+                                    <div class="profile-usertitle">
+                                        <div class="profile-usertitle-name text-center"> {{ $element->name }}</div>
+                                        <div class="profile-usertitle-name text-center"> {{ $element->email }}</div>
+                                        <div class="profile-usertitle-job text-center"> {{ $element->caption }}</div>
+                                    </div>
+                                    <hr>
+                                    <!-- END SIDEBAR USER TITLE -->
+                                    <!-- END SIDEBAR BUTTONS -->
+                                    <!-- SIDEBAR MENU -->
+                                    <div class="profile-usermenu">
+                                        <ul class="nav">
+                                            <li>
+                                                <a href="{{ route('backend.order.index',['user_id' => $element->id]) }}">
+                                                    <i class="icon-user"></i> {{ trans('general.client_projects') }}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- END MENU -->
+                                </div>
+                            </div>
+                        @endforeach
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="col-lg-4 pull-right">
+                                    {{ $designers->render() }}
+                                </div>
+                            </div>
+                        </div>
+                    @endcan
                 </div>
             </div>
-        @endcan
+        </div>
+
     </div>
     <div class="row">
         <div class="col-md-12">

@@ -66,7 +66,7 @@ class ViewComposers
 
     public function getTotalActivePaidOnProgressOrders(View $view)
     {
-        $totalActiveClientOnProgressOrders = Order::active()->where(['is_paid' => true, 'is_complete' => false])->get();
+        $totalActiveClientOnProgressOrders = Order::active()->where(['is_paid' => true, 'is_complete' => false])->with('images')->get();
         return $view->with(compact('totalActiveClientOnProgressOrders'));
     }
 
