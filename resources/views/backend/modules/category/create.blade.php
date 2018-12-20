@@ -5,9 +5,9 @@
         @include('backend.partials.forms.form_title')
         <div class="portlet-body form">
             <form class="horizontal-form" role="form" method="POST"
-                  action="{{ route('backend.category.store') }}" enctype="multipart/form-data">
+                  action="{{ route('backend.admin.category.store') }}" enctype="multipart/form-data">
                 @csrf
-                <input type="hidden" name="parent_id" value="{{ request()->parent_id }}">
+                <input type="hidden" name="parent_id" value="0">
                 <div class="form-body">
                     <h3 class="form-section">{{ trans('general.create_category') }}</h3>
                     {{--name arabic / name english --}}

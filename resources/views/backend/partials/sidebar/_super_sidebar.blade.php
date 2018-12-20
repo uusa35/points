@@ -90,6 +90,22 @@
         <span class="arrow open"></span>
     </a>
 </li>
+<li class="nav-item {{ activeItem('category') }}">
+    <a href="{{ route('backend.admin.category.index') }}" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-sort"></i>
+        <span class="title">{{ trans('general.categories') }}</span>
+        <span class="selected"></span>
+        <span class="arrow open"></span>
+    </a>
+</li>
+<li class="nav-item {{ activeItem('service') }}">
+    <a href="{{ route('backend.admin.service.index') }}" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-product-hunt"></i>
+        <span class="title">{{ trans('general.services') }}</span>
+        <span class="selected"></span>
+        <span class="arrow open"></span>
+    </a>
+</li>
 <li class="nav-item {{ activeItem('setting') }}">
     <a href="{{ route('backend.admin.setting.show', auth()->user()->id) }}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-gears"></i>

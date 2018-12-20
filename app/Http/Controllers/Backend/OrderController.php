@@ -61,6 +61,9 @@ class OrderController extends Controller
      */
     public function create()
     {
+        if (!session()->has('service_id')) {
+            return redirect()->back()->with('error', trans('message.no_service_selected'));
+        }
         session()->put('order_lang', request()->lang);
         $this->authorize('order.create');
         return view('backend.modules.order.create');

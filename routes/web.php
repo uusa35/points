@@ -33,6 +33,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::resource('plan', 'PaymentPlanController');
         Route::resource('role', 'RoleController');
         Route::resource('category', 'CategoryController');
+        Route::resource('service', 'ServiceController');
         Route::resource('slider', 'SliderController');
         Route::resource('order', 'OrderController');
         Route::resource('job', 'JobController');

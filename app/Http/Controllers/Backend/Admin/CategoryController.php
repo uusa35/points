@@ -21,7 +21,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $elements = Category::onlyParent()->with('children.children')->get();
+        $elements = Category::onlyParent()->get();
         return view('backend.modules.category.index', compact('elements'));
     }
 
@@ -32,10 +32,6 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $validate = validator(request()->all(), ['parent_id' => 'required|integer']);
-        if ($validate->fails()) {
-            return redirect()->back()->with('error', 'missing Parent ID !!');
-        }
         return view('backend.modules.category.create');
     }
 
@@ -52,9 +48,9 @@ class CategoryController extends Controller
             if ($request->hasFile('image')) {
                 $this->saveMimes($element, $request, ['image'], ['1000', '1000'], false);
             }
-            return redirect()->route('backend.category.index')->with('success', 'category created.');
+            return redirect()->route('backend.admin.category.index')->with('success', 'category created.');
         }
-        return redirect()->route('backend.category.index')->with('error', 'category error.');
+        return redirect()->route('backend.admin.category.index')->with('error', 'category error.');
     }
 
     /**
@@ -84,9 +80,9 @@ class CategoryController extends Controller
             if ($request->hasFile('image')) {
                 $this->saveMimes($element, $request, ['image'], ['1000', '1000'], false);
             }
-            return redirect()->route('backend.category.index')->with('success', 'category created.');
+            return redirect()->route('backend.admin.category.index')->with('success', 'category created.');
         }
-        return redirect()->route('backend.category.index')->with('error', 'category error.');
+        return redirect()->route('backend.admin.category.index')->with('error', 'category error.');
     }
 
     /**
@@ -100,7 +96,7 @@ class CategoryController extends Controller
         $element = Category::whereId($id)->with('projects')->first();
         if ($element->projects->isEmpty()) {
             $element->delete();
-            return redirect()->route('backend.category.index')->with('success', trans('message.category_deleted_successfully'));
+            return redirect()->route('backend.admin.category.index')->with('success', trans('message.category_deleted_successfully'));
         }
         return redirect()->back()->with('error', trans('message.category_has_children_can_not_be_deleted'));
     }
