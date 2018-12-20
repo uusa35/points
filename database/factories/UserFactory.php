@@ -50,4 +50,5 @@ $factory->define(User::class, function (Faker $faker) {
         'twitter' => $faker->url,
         'longitude' => $faker->longitude,
         'latitude' => $faker->latitude
+        ];
 });

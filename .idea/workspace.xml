@@ -50,7 +50,7 @@
           <entry key="env" value="65" />
           <entry key="js" value="166" />
           <entry key="json" value="10" />
-          <entry key="php" value="56595" />
+          <entry key="php" value="56598" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -59,7 +59,7 @@
           <entry key="CSS" value="36" />
           <entry key="JSON" value="10" />
           <entry key="JavaScript" value="166" />
-          <entry key="PHP" value="34254" />
+          <entry key="PHP" value="34257" />
           <entry key="PLAIN_TEXT" value="70" />
         </counts>
       </usages-collector>
@@ -196,8 +196,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/database/factories/UserFactory.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="882">
-                  <caret line="51" column="38" lean-forward="true" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
+                <state relative-caret-position="900">
+                  <caret line="52" column="10" selection-start-line="52" selection-start-column="10" selection-end-line="52" selection-end-column="10" />
                 </state>
               </provider>
             </entry>
@@ -672,12 +672,12 @@
       <workItem from="1545027030953" duration="8772000" />
       <workItem from="1545054425684" duration="1768000" />
       <workItem from="1545057729921" duration="34967000" />
-      <workItem from="1545231640980" duration="1788000" />
+      <workItem from="1545231640980" duration="1854000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="178559000" />
+    <option name="totallyTimeSpent" value="178625000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
@@ -1069,8 +1069,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database/factories/UserFactory.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="882">
-          <caret line="51" column="38" lean-forward="true" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
+        <state relative-caret-position="900">
+          <caret line="52" column="10" selection-start-line="52" selection-start-column="10" selection-end-line="52" selection-end-column="10" />
         </state>
       </provider>
     </entry>
