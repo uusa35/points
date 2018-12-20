@@ -451,6 +451,20 @@
                                 data-control="hue" value="{{ old('unwanted_colors_3') }}">
                         </div>
                     </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="control-label">{{ trans('general.longitude') }}</label>
+                            <input type="hidden" id="longitude" name="longitude" class="form-control demo"
+                                   value="">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="control-label">{{ trans('general.latitude') }}</label>
+                            <input type="hidden" id="latitude" name="latitude" class="form-control demo"
+                                value="">
+                        </div>
+                    </div>
                 </div>
 
 
@@ -472,3 +486,26 @@
     </div>
 </div>
 @endsection
+
+
+@section('scripts')
+    @parent
+    <script type="text/javascript">
+        var long = document.getElementById("long");
+        var lat = document.getElementById("lat");
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                console.log("Geolocation is not supported by this browser.");
+            }
+        }
+
+        function showPosition(position) {
+            long.value = position.coords.longitude;
+            lat.value = position.coords.latitude;
+        }
+        getLocation();
+    </script>
+    @endsection

@@ -45,10 +45,26 @@
                         <!--/span-->
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="control-label">email</label>
-                                <input type="text" id="email" name="email" class="form-control" placeholder="email"
-                                       value="{{ $element->email }}">
-                                <span class="help-block"> email </span>
+                                <label class="control-label">info_email</label>
+                                <input type="text" id="info_email" name="info_email" class="form-control" placeholder="info_email"
+                                       value="{{ $element->info_email }}">
+                                <span class="help-block"> info_email </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label">support_email</label>
+                                <input type="text" id="support_email" name="support_email" class="form-control" placeholder="support_email"
+                                       value="{{ $element->support_email }}">
+                                <span class="help-block"> support_email </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label">admin_email</label>
+                                <input type="text" id="admin_email" name="admin_email" class="form-control" placeholder="admin_email"
+                                       value="{{ $element->admin_email }}">
+                                <span class="help-block"> admin_email </span>
                             </div>
                         </div>
                         <!--/span-->

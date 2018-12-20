@@ -48,5 +48,6 @@ $factory->define(User::class, function (Faker $faker) {
         'instagram' => $faker->url,
         'youtube' => $faker->url,
         'twitter' => $faker->url,
-    ];
+        'longitude' => $faker->longitude,
+        'latitude' => $faker->latitude;
 });

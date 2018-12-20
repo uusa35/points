@@ -12,7 +12,7 @@
             <div class="cbp-item">
                 <div class="cbp-caption">
                     <div class="cbp-caption-defaultWrap">
-                        <img src="{{ asset(env('THUMBNAIL').$img->image) }}" alt=""></div>
+                        <img src="{{ asset(env('LARGE').$img->image) }}" alt=""></div>
                     <div class="cbp-caption-activeWrap">
                         <div class="cbp-l-caption-alignCenter">
                             <div class="cbp-l-caption-body">

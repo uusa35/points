@@ -42,10 +42,14 @@ class CreateUsersTable extends Migration
             $table->string('whatsapp')->nullable();
             $table->string('iphone')->nullable();
             $table->string('android')->nullable();
+            $table->string('longitude')->nullable();
+            $table->string('latitude')->nullable();
 
             $table->string('device_id')->nullable();
             $table->string('api_token', 100)->nullable();
             $table->boolean('active')->default(1);
+
+
 
             $table->integer('role_id')->unsigned()->index();
             $table->foreign('role_id')->references('id')->on('roles');

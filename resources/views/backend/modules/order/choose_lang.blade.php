@@ -13,7 +13,8 @@
                         <br/></div>
                     <div class="col-md-4 bg-grey-steel mt-step-col">
                         <div class="mt-step-title uppercase font-grey-cascade">
-                            <a href="{{ route('backend.order.create',['lang' => 'ar']) }}" class="btn btn-info">
+                            <a href="{{  secure_url(route('backend.order.create')) }}" class="btn btn-info">
+{{--                            <a href="{{ secure_url('backend/order/create',['lang' => 'ar'], false) }}" class="btn btn-info">--}}
                                 {{ trans('general.arabic_only') }}
                             </a>
                         </div>
