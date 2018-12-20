@@ -15,6 +15,7 @@ use App\Models\Menu;
 use App\Models\Post;
 use App\Models\Role;
 use App\Models\Size;
+use App\Models\Transaction;
 use App\Models\User;
 use App\Models\Version;
 use Illuminate\View\View;
@@ -55,6 +56,24 @@ class ViewComposers
     {
         $totalClientCompletedOrders = Order::active()->where(['is_paid' => true, 'is_complete' => true, 'user_id' => auth()->id()])->count();
         return $view->with(compact('totalClientCompletedOrders'));
+    }
+
+    public function getTotalActivePaidCompletedOrders(View $view)
+    {
+        $totalActiveClientCompletedOrders = Order::active()->where(['is_paid' => true, 'is_complete' => true])->count();
+        return $view->with(compact('totalActiveClientCompletedOrders'));
+    }
+
+    public function getTotalActivePaidOnProgressOrders(View $view)
+    {
+        $totalActiveClientOnProgressOrders = Order::active()->where(['is_paid' => true, 'is_complete' => false])->count();
+        return $view->with(compact('totalActiveClientOnProgressOrders'));
+    }
+
+    public function getTotalSuccessfulTransactions(View $view)
+    {
+        $totalSuccessfulTransactions = Transaction::where(['is_complete' => false])->count();
+        return $view->with(compact('totalSuccessfulTransactions'));
     }
 
     public function getTotalLastVersionFiles(View $view)

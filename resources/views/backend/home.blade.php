@@ -1,6 +1,50 @@
 @extends('backend.layouts.app')
 
 @section('content')
+    @include('backend.partials._order_statistics')
+    <div class="row">
+        @can('onlyAdmin')
+            @foreach($designers as $element)
+                <div class="col-lg-3" style="height : 450px;">
+                    <div class="portlet light profile-sidebar-portlet ">
+                        <!-- SIDEBAR USERPIC -->
+                        <div class="profile-userpic text-center">
+                            <img src="{{ asset('storage/uploads/images/thumbnail/'.$element->logo) }}"
+                                 class="img-responsive img-thumbnail"
+                                 alt="{{ $element->name }}"></div>
+                        <!-- END SIDEBAR USERPIC -->
+                        <!-- SIDEBAR USER TITLE -->
+                        <hr>
+                        <div class="profile-usertitle">
+                            <div class="profile-usertitle-name text-center"> {{ $element->name }}</div>
+                            <div class="profile-usertitle-name text-center"> {{ $element->email }}</div>
+                            <div class="profile-usertitle-job text-center"> {{ $element->caption }}</div>
+                        </div>
+                        <hr>
+                        <!-- END SIDEBAR USER TITLE -->
+                        <!-- END SIDEBAR BUTTONS -->
+                        <!-- SIDEBAR MENU -->
+                        <div class="profile-usermenu">
+                            <ul class="nav">
+                                <li>
+                                    <a href="{{ route('backend.order.index',['user_id' => $element->id]) }}">
+                                        <i class="icon-user"></i> {{ trans('general.client_projects') }}</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- END MENU -->
+                    </div>
+                </div>
+            @endforeach
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="col-lg-4 pull-right">
+                        {{ $designers->render() }}
+                    </div>
+                </div>
+            </div>
+        @endcan
+    </div>
     <div class="row">
         <div class="col-md-12">
             <div class="portlet box red">

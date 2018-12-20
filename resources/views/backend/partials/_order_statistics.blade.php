@@ -1,4 +1,54 @@
 <div class="row">
+    @can('onlyAdmin')
+        @if($totalActiveClientCompletedOrders)
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <a class="dashboard-stat dashboard-stat-v2 yellow-casablanca" href="#">
+                    <div class="visual">
+                        <i class="fa fa-money"></i>
+                    </div>
+                    <div class="details">
+                        <div class="number">
+                            <span data-counter="counterup"
+                                  data-value="10">{{ $totalActiveClientCompletedOrders }}</span>
+                        </div>
+                        <div class="desc ">{{ trans('general.total_active_completed_orders') }}</div>
+                    </div>
+                </a>
+            </div>
+        @endif
+        @if($totalActiveClientOnProgressOrders)
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <a class="dashboard-stat dashboard-stat-v2 purple-intense" href="#">
+                    <div class="visual">
+                        <i class="fa fa-money"></i>
+                    </div>
+                    <div class="details">
+                        <div class="number">
+                            <span data-counter="counterup"
+                                  data-value="10">{{ $totalActiveClientOnProgressOrders }}</span>
+                        </div>
+                        <div class="desc ">{{ trans('general.total_active_paid_on_progress_orders') }}</div>
+                    </div>
+                </a>
+            </div>
+        @endif
+            @if($totalSuccessfulTransactions)
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <a class="dashboard-stat dashboard-stat-v2 green-dark" href="#">
+                    <div class="visual">
+                        <i class="fa fa-money"></i>
+                    </div>
+                    <div class="details">
+                        <div class="number">
+                            <span data-counter="counterup"
+                                  data-value="10">{{ $totalSuccessfulTransactions }}</span>
+                        </div>
+                        <div class="desc ">{{ trans('general.total_active_paid_on_progress_orders') }}</div>
+                    </div>
+                </a>
+            </div>
+        @endif
+    @endcan
     @if($totalClientActiveOrders)
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
             <a class="dashboard-stat dashboard-stat-v2 blue" href="#">

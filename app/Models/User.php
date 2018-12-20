@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable, UserHelpers, LocaleTrait;
+    use Notifiable, UserHelpers, LocaleTrait, ModelHelpers;
 
     /**
      * The attributes that are mass assignable.

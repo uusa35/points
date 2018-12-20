@@ -120,18 +120,42 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="control-label">description_ar</label>
-                                <input type="text" id="description_ar" name="description_ar" class="form-control"
-                                       placeholder="description_ar"
-                                       value="{{ $element->description_ar }}">
+                                <label for="description"
+                                       class="control-label">{{ trans('general.description')}}</label>
+                                <textarea type="text" class="form-control" id="description_ar"
+                                          name="description_ar"
+                                          aria-multiline="true"
+                                          maxlength="500">{{ $element->description_ar }}</textarea>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="control-label">description_en</label>
-                                <input type="text" id="description_en" name="description_en" class="form-control"
-                                       placeholder="description_en"
-                                       value="{{ $element->description_en }}">
+                                <label for="description"
+                                       class="control-label">{{ trans('general.description')}}</label>
+                                <textarea type="text" class="form-control" id="description_en"
+                                          name="description_en"
+                                          aria-multiline="true"
+                                          maxlength="500">{{ $element->description_en }}</textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="on_home_speech"
+                                       class="control-label">{{ trans('general.on_home_speech')}}</label>
+                                <textarea type="text" class="form-control" id="on_home_speech_ar"
+                                          name="on_home_speech_ar"
+                                          aria-multiline="true"
+                                          maxlength="500">{{ $element->on_home_speech_ar }}</textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="on_home_speech"
+                                       class="control-label">{{ trans('general.on_home_speech')}}</label>
+                                <textarea type="text" class="form-control" id="on_home_speech_en"
+                                          name="on_home_speech_en"
+                                          aria-multiline="true"
+                                          maxlength="500">{{ $element->on_home_speech_en }}</textarea>
                             </div>
                         </div>
                         <!--/span-->
@@ -257,7 +281,7 @@
                                         W * H - Best fit 500 x 500 pixels
                                     </div>
                                     <img src="{{ asset('storage/uploads/images/thumbnail/'.$element->logo) }}" alt=""
-                                         class="img-sm">
+                                         class="img-xs">
                                 </div>
                             </div>
 
@@ -269,7 +293,7 @@
                                         W * H - Best fit 500 x 500 pixels
                                     </div>
                                     <img src="{{ asset('storage/uploads/images/thumbnail/'.$element->zapper) }}" alt=""
-                                         class="img-sm">
+                                         class="img-xs">
                                 </div>
                             </div>
 
@@ -281,7 +305,7 @@
                                         W * H - Best fit 500 x 500 pixels
                                     </div>
                                     <img src="{{ asset('storage/uploads/images/thumbnail/'.$element->qr) }}" alt=""
-                                         class="img-sm">
+                                         class="img-xs">
                                 </div>
                             </div>
 
@@ -292,8 +316,6 @@
                                     <div class="help-block text-left">
                                         pdf Only
                                     </div>
-                                    <img src="{{ asset('storage/uploads/images/thumbnail/'.$element->path) }}" alt=""
-                                         class="img-sm">
                                 </div>
                             </div>
                         </div>

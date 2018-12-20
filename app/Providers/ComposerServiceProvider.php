@@ -54,6 +54,20 @@ class ComposerServiceProvider extends ServiceProvider
         ],
             'App\Services\ViewComposers@getTotalLastVersionFiles');
 
+        view()->composer([
+            'backend.partials._order_statistics',
+        ],
+            'App\Services\ViewComposers@getTotalActivePaidCompletedOrders');
+
+        view()->composer([
+            'backend.partials._order_statistics',
+        ],
+            'App\Services\ViewComposers@getTotalActivePaidOnProgressOrders');
+        view()->composer([
+            'backend.partials._order_statistics',
+        ],
+            'App\Services\ViewComposers@getTotalSuccessfulTransactions');
+
     }
 
     /**

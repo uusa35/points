@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 
@@ -15,7 +16,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('backend.home');
+        $designers = User::active()->onlyDesigners()->paginate(5);
+        return view('backend.home', compact('designers'));
     }
 
     public function changeLanguage()
