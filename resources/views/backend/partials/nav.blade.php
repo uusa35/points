@@ -41,6 +41,14 @@
                             <a href="{{ route('backend.admin.plan.create') }}">
                                 <i class="icon-plus"></i> {{ trans('general.create_new_payment_plan') }}</a>
                         </li>
+                        <li>
+                            <a href="{{ route('backend.admin.service.create') }}">
+                                <i class="icon-plus"></i> {{ trans('general.create_service') }}</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('backend.admin.category.create') }}">
+                                <i class="icon-plus"></i> {{ trans('general.create_category') }}</a>
+                        </li>
 
                         <li class="divider"></li>
                     @endcan

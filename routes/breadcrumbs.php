@@ -225,26 +225,30 @@ Breadcrumbs::for('backend.user.show', function ($trail, $element) {
 });
 
 
-Breadcrumbs::for('backend.category.create', function ($trail) {
+Breadcrumbs::for('backend.admin.category.create', function ($trail) {
     $trail->parent('backend.category.index');
-    $trail->push(trans('create category'), route('backend.category.create'));
+    $trail->push(trans('general.create_category'), route('backend.category.create'));
 });
 
-Breadcrumbs::for('backend.category.edit', function ($trail, $element) {
+Breadcrumbs::for('backend.admin.category.edit', function ($trail, $element) {
     $trail->parent('backend.category.index');
-    $trail->push(trans('edit category'), route('backend.category.edit', $element->id));
+    $trail->push(trans('general.edit_category'), route('backend.category.edit', $element->id));
 });
 
-Breadcrumbs::for('backend.slider.create', function ($trail) {
-    $trail->parent('backend.slider.index');
-    $trail->push(trans('create slider'), route('backend.slider.create'));
+Breadcrumbs::for('backend.admin.service.index', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.service_index'), route('backend.admin.service.index'));
 });
 
-Breadcrumbs::for('backend.slider.edit', function ($trail, $element) {
-    $trail->parent('backend.slider.index');
-    return $trail->push(trans('edit slider'), route('backend.slider.edit', $element->id));
+Breadcrumbs::for('backend.admin.service.create', function ($trail) {
+    $trail->parent('backend.admin.service.index');
+    $trail->push(trans('general.create_service'), route('backend.admin.service.create'));
 });
 
+Breadcrumbs::for('backend.admin.service.edit', function ($trail, $element) {
+    $trail->parent('backend.admin.service.index');
+    $trail->push(trans('edit service'), route('backend.admin.service.edit', $element->id));
+});
 
 Breadcrumbs::for('backend.image.edit', function ($trail, $element) {
     $trail->parent('backend.gallery.edit', $element->gallery);

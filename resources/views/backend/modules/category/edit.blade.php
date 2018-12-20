@@ -5,11 +5,10 @@
         @include('backend.partials.forms.form_title')
         <div class="portlet-body form">
             <form class="horizontal-form" role="form" method="POST"
-                  action="{{ route('backend.category.update', $element->id) }}" enctype="multipart/form-data">
+                  action="{{ route('backend.admin.category.update', $element->id) }}" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="_method" value="put">
-                <input type="hidden" name="parent_id" value="{{ $element->parent_id }}">
-                <input type="hidden" name="id" value="{{ $element->id }}">
+                <input type="hidden" name="parent_id" value="0">
                 <div class="form-body">
                     <h3 class="form-section">{{ trans('general.edit_category') }}</h3>
                     {{--name arabic / name english --}}
