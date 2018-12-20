@@ -5,24 +5,25 @@
         @include('backend.partials.forms.form_title')
         <div class="portlet-body form">
             <form class="horizontal-form" role="form" method="post"
-                  action="{{ route('backend.admin.user.update', $element->id) }}" enctype="multipart/form-data">
+                  action="{{ route('backend.user.update', $element->id) }}" enctype="multipart/form-data">
                 @csrf
-                <input type="hidden" name="api_token" value="{{ str_random(rand(10,99)) }}">
+                {{--<input type="hidden" name="api_token" value="{{ str_random(rand(10,99)) }}">--}}
+                <input type="hidden" name="user_id" value="{{ $element->id }}">
                 <input type="hidden" name="_method" value="patch">
                 <div class="form-body">
                     <h3 class="form-section">{{ trans('general.edit_user') }}</h3>
                     {{--name arabic / name english --}}
                     <div class="row">
                         <div class="col-md-3">
-                            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                <label for="name" class="control-label">{{ trans('general.name') }}</label>
-                                <input id="name" type="text" class="form-control" name="name"
-                                       value="{{ $element->name }}"
-                                       placeholder="name in arabic" autofocus>
-                                @if ($errors->has('name'))
+                            <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
+                                <label for="username" class="control-label">{{ trans('general.username') }}</label>
+                                <input id="username" type="text" class="form-control" name="username"
+                                       value="{{ $element->username }}"
+                                       placeholder="username in arabic" autofocus>
+                                @if ($errors->has('username'))
                                     <span class="help-block">
                                 <strong>
-                                    {{ $errors->first('name') }}
+                                    {{ $errors->first('username') }}
                                 </strong>
                             </span>
                                 @endif
@@ -368,21 +369,23 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <div class="form-group{{ $errors->has('balance') ? ' has-error' : '' }}">
-                                <label for="balance" class="control-label">{{ trans('general.balance') }} </label>
-                                <input id="balance" type="text" class="form-control" name="balance"
-                                       value="{{ $element->balance->points }}"
-                                       placeholder="balance" autofocus>
-                                @if ($errors->has('balance'))
-                                    <span class="help-block">
+                        @can('onlySuper')
+                            <div class="col-md-3">
+                                <div class="form-group{{ $errors->has('balance') ? ' has-error' : '' }}">
+                                    <label for="balance" class="control-label">{{ trans('general.balance') }} </label>
+                                    <input id="balance" type="text" class="form-control" name="balance"
+                                           value="{{ $element->balance->points }}"
+                                           placeholder="balance" autofocus>
+                                    @if ($errors->has('balance'))
+                                        <span class="help-block">
                                 <strong>
                                     {{ $errors->first('balance') }}
                                 </strong>
                             </span>
-                                @endif
+                                    @endif
+                                </div>
                             </div>
-                        </div>
+                        @endcan
 
                         <div class="row">
                             <div class="col-lg-12" style="padding: 20px;">

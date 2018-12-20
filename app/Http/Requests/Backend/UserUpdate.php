@@ -4,6 +4,7 @@ namespace App\Http\Requests\Backend;
 
 use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Gate;
 
 class UserUpdate extends FormRequest
 {
@@ -25,10 +26,10 @@ class UserUpdate extends FormRequest
     public function rules()
     {
         return [
+            'username' => 'required|unique:users,username,' . request('user_id'),
             'name_ar' => 'required|max:55',
             'name_en' => 'required|max:55',
-            'name' => 'required|max:55|unique:users,name,' . request()->segment(4),
-            'email' => 'required|max:55|unique:users,email,' . request()->segment(4),
+            'email' => 'required|unique:users,email,' . request('user_id'),
             'mobile' => 'required|max:55',
             'role_id' => 'required|exists:roles,id',
             'mobile' => 'nullable|numeric',

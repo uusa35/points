@@ -76,7 +76,9 @@ class OrderController extends Controller
     {
         $element = Order::active()->create($request->request->all());
         if ($element) {
-            return redirect()->route('backend.file.create', ['element' => $element , 'type' => 'order', 'id' => $element->id]);
+            return redirect()
+                ->route('backend.file.create', ['element' => $element, 'type' => 'order', 'id' => $element->id])
+                ->with('success', trans('message.order_has_been_successfully_created_points_deducted_from_your_balance'));
         }
         return redirect()->back()->with('error', trans('message.order_failure'));
     }

@@ -25,7 +25,7 @@ class BalanceObserver
      */
     public function updated(Balance $balance)
     {
-        //
+        dd('stop here');
     }
 
     /**
