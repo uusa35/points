@@ -2,13 +2,9 @@
     <div class="col-md-12">
         <!-- BEGIN EXAMPLE TABLE PORTLET-->
         <div class="portlet light ">
-            @include('backend.partials.forms.form_title')
             <div class="portlet-body">
                 <div class="m-heading-1 border-green m-bordered">
-                    <h3>{{ trans('general.instructions') }}</h3>
-                    <p>
-                        {{ trans('message.backend_order_index_message') }}
-                    </p>
+                    <h3>{{ trans('general.orders') }}</h3>
                 </div>
                 <table id="dataTable" class="table table-striped table-bordered table-hover" cellspacing="0"
                        width="100%">
