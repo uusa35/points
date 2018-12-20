@@ -37,6 +37,7 @@ $factory->define(Setting::class, function (Faker\Generator $faker) {
         'admin_email' => $faker->email,
         'address_ar' => $faker->address,
         'address_en' => $faker->address,
+        'country' => $faker->country,
         'logo' => $faker->numberBetween(1, 10) . '.jpeg',
         'bg' => $faker->numberBetween(1, 10) . '.jpeg',
         'on_home_speech_ar' => $faker->paragraph(2),
