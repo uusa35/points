@@ -113,6 +113,20 @@
                             @endif
                         </div>
                     </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="points" class="control-label">{{ trans('general.points')}} </label>
+                            <input id="points" type="text" class="form-control" name="points" value="{{ old('points') }}"
+                                placeholder="points" autofocus>
+                            @if ($errors->has('points'))
+                            <span class="help-block">
+                                <strong>
+                                    {{ $errors->first('points') }}
+                                </strong>
+                            </span>
+                            @endif
+                        </div>
+                    </div>
 
                     <div class="col-md-4">
                         <div class="form-group">
