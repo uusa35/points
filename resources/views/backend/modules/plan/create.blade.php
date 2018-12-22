@@ -115,13 +115,13 @@
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="points" class="control-label">{{ trans('general.points')}} </label>
-                            <input id="points" type="text" class="form-control" name="points" value="{{ old('points') }}"
-                                placeholder="points" autofocus>
-                            @if ($errors->has('points'))
+                            <label for="price" class="control-label">{{ trans('general.price')}} </label>
+                            <input id="price" type="text" class="form-control" name="price" value="{{ old('price') }}"
+                                placeholder="price" autofocus>
+                            @if ($errors->has('price'))
                             <span class="help-block">
                                 <strong>
-                                    {{ $errors->first('points') }}
+                                    {{ $errors->first('price') }}
                                 </strong>
                             </span>
                             @endif
