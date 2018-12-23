@@ -36,6 +36,9 @@
                     @endforeach
                     </tbody>
                 </table>
+                @if($elements->render())
+                    {{ $elements->render() }}
+                @endif
             @else
                 <div class="alert alert-info">{{ trans('general.no_transactions') }}</div>
             @endif

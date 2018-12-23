@@ -7,6 +7,7 @@
             <div class="col-lg-12">
                 <div class="panel panel-info">
                     <div class="panel-body">
+                        @include('backend.partials._transactions',['elements' => $transactions, 'title' => 'List of Complete Transactions'])
                         @include('backend.partials._user_details',['elements' => $clients, 'title' => 'List of Clients'])
                         @include('backend.partials._user_details',['elements' => $designers, 'title' => 'List of Designers'])
                         {{--@foreach($designers as $element)--}}
