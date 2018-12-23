@@ -54,7 +54,7 @@
                     </div>
                 </div>
             @endif
-            @include('backend.partials._transactions')
+            @include('backend.partials._transactions',['elements' => $transactions])
         </div>
     </div>
 @endsection

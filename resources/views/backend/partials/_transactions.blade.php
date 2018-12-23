@@ -15,7 +15,7 @@
                         <th>{{ trans('general.id') }}</th>
                         <th>{{ trans('general.reference_id') }}</th>
                         <th>{{ trans('general.is_complete') }}</th>
-                        <th>{{ trans('general.action_amount') }}</th>
+                        <th>{{ trans('general.actual_amount') }}</th>
                         <th>{{ trans('general.payment_plan') }}</th>
                         <th>{{ trans('general.user_id') }}</th>
                     </tr>
