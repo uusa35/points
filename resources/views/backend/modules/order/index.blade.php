@@ -114,11 +114,13 @@
                                                     @endif
                                                 @endcan
                                                 @can('order.view',$element)
-                                                    <li>
-                                                        <a href="{{ route('backend.order.show',$element->id) }}">
-                                                            <i class="fa fa-fw fa-edit"></i>{{ trans('general.view_details') }}
-                                                        </a>
-                                                    </li>
+                                                    @if(!auth()->user()->isSuper)
+                                                        <li>
+                                                            <a href="{{ route('backend.order.show',$element->id) }}">
+                                                                <i class="fa fa-fw fa-edit"></i>{{ trans('general.view_details') }}
+                                                            </a>
+                                                        </li>
+                                                    @endif
                                                 @endcan
                                                 @can('job.create',$element)
                                                     <li>
