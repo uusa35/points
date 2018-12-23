@@ -92,6 +92,31 @@ Breadcrumbs::for('backend.admin.setting.edit', function ($trail, $element) {
     return $trail->push(trans('general.edit_setting'), route('backend.admin.setting.edit', $element->id));
 });
 
+Breadcrumbs::for('backend.admin.category.create', function ($trail) {
+    $trail->parent('backend.category.index');
+    $trail->push(trans('general.create_category'), route('backend.category.create'));
+});
+
+Breadcrumbs::for('backend.admin.category.edit', function ($trail, $element) {
+    $trail->parent('backend.category.index');
+    $trail->push(trans('general.edit_category'), route('backend.category.edit', $element->id));
+});
+
+Breadcrumbs::for('backend.admin.service.index', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.service_index'), route('backend.admin.service.index'));
+});
+
+Breadcrumbs::for('backend.admin.service.create', function ($trail) {
+    $trail->parent('backend.admin.service.index');
+    $trail->push(trans('general.create_service'), route('backend.admin.service.create'));
+});
+
+Breadcrumbs::for('backend.admin.service.edit', function ($trail, $element) {
+    $trail->parent('backend.admin.service.index');
+    $trail->push(trans('edit service'), route('backend.admin.service.edit', $element->id));
+});
+
 
 // users
 
@@ -229,31 +254,6 @@ Breadcrumbs::for('backend.user.show', function ($trail, $element) {
     $trail->push(trans('general.my_profile'), route('backend.user.show', $element->id));
 });
 
-
-Breadcrumbs::for('backend.admin.category.create', function ($trail) {
-    $trail->parent('backend.category.index');
-    $trail->push(trans('general.create_category'), route('backend.category.create'));
-});
-
-Breadcrumbs::for('backend.admin.category.edit', function ($trail, $element) {
-    $trail->parent('backend.category.index');
-    $trail->push(trans('general.edit_category'), route('backend.category.edit', $element->id));
-});
-
-Breadcrumbs::for('backend.admin.service.index', function ($trail) {
-    $trail->parent('backend.home');
-    $trail->push(trans('general.service_index'), route('backend.admin.service.index'));
-});
-
-Breadcrumbs::for('backend.admin.service.create', function ($trail) {
-    $trail->parent('backend.admin.service.index');
-    $trail->push(trans('general.create_service'), route('backend.admin.service.create'));
-});
-
-Breadcrumbs::for('backend.admin.service.edit', function ($trail, $element) {
-    $trail->parent('backend.admin.service.index');
-    $trail->push(trans('edit service'), route('backend.admin.service.edit', $element->id));
-});
 
 Breadcrumbs::for('backend.image.edit', function ($trail, $element) {
     $trail->parent('backend.gallery.edit', $element->gallery);

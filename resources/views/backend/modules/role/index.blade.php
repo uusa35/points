@@ -3,6 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col-md-12">
+        @include('backend.partials.breadcrumbs')
             <!-- BEGIN EXAMPLE TABLE PORTLET-->
             <div class="portlet light ">
                 @include('backend.partials.forms.form_title')
