@@ -84,10 +84,10 @@
                                                         <i class="fa fa-fw fa-edit"></i> Edit User</a>
                                                 </li>
                                             @endcan
-                                                <li>
-                                                    <a href="{{ route('backend.user.show',$element->id) }}">
-                                                        <i class="fa fa-fw fa-eye"></i> View User Profile</a>
-                                                </li>
+                                            <li>
+                                                <a href="{{ route('backend.user.show',$element->id) }}">
+                                                    <i class="fa fa-fw fa-eye"></i> View User Profile</a>
+                                            </li>
                                             <li>
                                                 <a href="{{ route('backend.reset.password',['email' => $element->email]) }}">
                                                     <i class="fa fa-fw fa-edit"></i> {{ trans('general.reset_password') }}
@@ -105,7 +105,9 @@
                         </tbody>
                     </table>
                 </div>
-                {{ $elements->render() }}
+                @if($elements->render())
+                    {{ $elements->render() }}
+                @endif
             </div>
         </div>
     </div>
