@@ -62,11 +62,11 @@
                                                 </li>
                                             @endcan
                                             @can('onlyAdmin')
-                                                <li>
-                                                    <a href="{{ route('backend.admin.activate',['model' => 'version','id' => $element->id]) }}">
-                                                        <i class="fa fa-fw fa-check-circle"></i> {{ trans('general.toggle_active') }}
-                                                    </a>
-                                                </li>
+                                                {{--<li>--}}
+                                                    {{--<a href="{{ route('backend.admin.activate',['model' => 'version','id' => $element->id]) }}">--}}
+                                                        {{--<i class="fa fa-fw fa-check-circle"></i> {{ trans('general.toggle_active') }}--}}
+                                                    {{--</a>--}}
+                                                {{--</li>--}}
                                                 <li>
                                                     <form method="post"
                                                           action="{{ route('backend.version.destroy',$element->id) }}">
