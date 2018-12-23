@@ -115,6 +115,7 @@
         <div class="links">
             @auth
                 @can('isAdmin')
+                    <a href="{{ route('backend.home') }}">DashBoard</a>
                     <a href="{{ route('backend.admin.order.index') }}">Orders</a>
                     <a href="{{ route('backend.admin.setting.index') }}">Settings</a>
                     <a href="{{ route('backend.admin.category.index') }}">Categories</a>

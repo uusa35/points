@@ -40,6 +40,7 @@
                             </div>
                         </div>
 
+
                         <div class="col-md-6">
                             <div class="form-group {{ $errors->has('slug_en') ? ' has-error' : '' }}">
                                 <label for="slug_en" class="control-label">{{ trans('general.slug_en') }}</label>
@@ -119,7 +120,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="control-label">Client *</label>
-                                <select class="bs-select form-control" name="user_id" required>
+                                <select class="bs-select form-control" name="category_id" required>
                                     @foreach($categories as $category)
                                         <option value="{{ $category->id }}">{{ $category->slug }}</option>
                                     @endforeach

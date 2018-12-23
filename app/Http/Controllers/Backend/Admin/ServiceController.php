@@ -28,6 +28,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
+        $this->authorize('service.create');
         $categories = Category::active()->get();
         return view('backend.modules.service.create', compact('categories'));
     }

@@ -10,7 +10,7 @@
                     <div class="m-heading-1 border-green m-bordered">
                         <h3>{{ trans('general.instructions') }}</h3>
                         <p>
-                            {{ trans('message.backend_role_index_message') }}
+                            {{ trans('message.service_index_message') }}
                         </p>
                     </div>
                     <table id="dataTable" class="table table-striped table-bordered table-hover" cellspacing="0"

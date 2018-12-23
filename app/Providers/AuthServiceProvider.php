@@ -7,6 +7,7 @@ use App\Policies\ImagePolicy;
 use App\Policies\JobPolicy;
 use App\Policies\OrderPolicy;
 use App\Policies\PaymentPlanPolicy;
+use App\Policies\ServicePolicy;
 use App\Policies\UserPolicy;
 use App\Policies\VersionPolicy;
 use Illuminate\Support\Facades\Gate;
@@ -39,6 +40,7 @@ class AuthServiceProvider extends ServiceProvider
         Gate::resource('version', VersionPolicy::class);
         Gate::resource('file', FilePolicy::class);
         Gate::resource('image', ImagePolicy::class);
+        Gate::resource('service', ServicePolicy::class);
 
         Gate::define('isAdmin', function () {
             return auth()->user()->isAdminOrAbove; // means if isSupern then go ahead

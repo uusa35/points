@@ -3,7 +3,6 @@
     @include('backend.partials.breadcrumbs')
 <div class="portlet box blue">
     @include('backend.partials.forms.form_title')
-
     <div class="portlet-body form">
         <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.admin.plan.store') }}"
             enctype="multipart/form-data">
