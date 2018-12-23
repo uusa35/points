@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Order;
 use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -20,7 +21,8 @@ class HomeController extends Controller
         $designers = User::active()->with('role')->onlyDesigners()->paginate(50, ['*'], 'designers');
         $clients = User::active()->with('role')->onlyClients()->paginate(50, ['*'], 'clients');
         $transactions = Transaction::where(['is_complete' => true])->with('user','payment_plan')->orderBy('created_at', 'desc')->paginate(50, ['*'], 'transactions');
-        return view('backend.home', compact('designers', 'clients', 'transactions'));
+        $orders = Order::where(['user_id' => auth()->id(),'is_paid' => true])->active()->with('service','client')->orderBy('created_at', 'desc')->paginate(50, ['*'], 'orders');
+        return view('backend.home', compact('designers', 'clients', 'transactions','orders'));
     }
 
     public function changeLanguage()

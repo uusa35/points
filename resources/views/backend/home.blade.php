@@ -56,6 +56,7 @@
         </div>
     @endcan
     @can('onlyClient')
+        @include('backend.partials._orders',['elements' => $orders])
     @endif
     <div class="row">
         <div class="col-md-12">
