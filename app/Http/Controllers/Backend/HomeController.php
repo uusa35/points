@@ -16,8 +16,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $designers = User::active()->onlyDesigners()->paginate(5);
-        return view('backend.home', compact('designers'));
+        $designers = User::active()->with('role')->onlyDesigners()->paginate(50, ['*'], 'designers');
+        $clients = User::active()->with('role')->onlyClients()->paginate(50, ['*'], 'clients');
+        return view('backend.home', compact('designers','clients'));
     }
 
     public function changeLanguage()

@@ -6,50 +6,49 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-info">
-                    <div class="panel-heading">
-                        <h4>{{ trans('general.designers') }}</h4>
-                    </div>
                     <div class="panel-body">
-                        @foreach($designers as $element)
-                            <div class="col-lg-3"
-                                 style="width: 24% !important; height : 400px; border: 1px solid lightgrey; margin: 5px;">
-                                <div class="portlet light profile-sidebar-portlet ">
-                                    <!-- SIDEBAR USERPIC -->
-                                    <div class=" text-center">
-                                        <img src="{{ asset(env('THUMBNAIL').$element->logo) }}"
-                                             style="width: 100px; height : auto;"
-                                             class="img-rounded img-sm img-thumbnail"
-                                             alt="{{ $element->name }}"></div>
-                                    <!-- END SIDEBAR USERPIC -->
-                                    <!-- SIDEBAR USER TITLE -->
-                                    <hr>
-                                    <div class="profile-usertitle">
-                                        <div class="profile-usertitle-name text-center"> {{ $element->name }}</div>
-                                        <div class="profile-usertitle-name text-center"> {{ $element->email }}</div>
-                                        <div class="profile-usertitle-job text-center"> {{ $element->caption }}</div>
-                                    </div>
-                                    <hr>
-                                    <!-- END SIDEBAR USER TITLE -->
-                                    <!-- SIDEBAR MENU -->
-                                    <div class="profile-usermenu">
-                                        <ul class="nav">
-                                            <li>
-                                                <a href="{{ route('backend.user.show',$element->id) }}">
-                                                    <i class="icon-user"></i> {{ trans('general.profile') }}</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- END MENU -->
-                                </div>
-                            </div>
-                        @endforeach
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="col-lg-4 pull-right">
-                                    {{ $designers->render() }}
-                                </div>
-                            </div>
-                        </div>
+                        @include('backend.partials._user_details',['elements' => $clients, 'title' => 'List of Clients'])
+                        @include('backend.partials._user_details',['elements' => $designers, 'title' => 'List of Designers'])
+                        {{--@foreach($designers as $element)--}}
+                            {{--<div class="col-lg-3"--}}
+                                 {{--style="width: 24% !important; height : 400px; border: 1px solid lightgrey; margin: 5px;">--}}
+                                {{--<div class="portlet light profile-sidebar-portlet ">--}}
+                                    {{--<!-- SIDEBAR USERPIC -->--}}
+                                    {{--<div class=" text-center">--}}
+                                        {{--<img src="{{ asset(env('THUMBNAIL').$element->logo) }}"--}}
+                                             {{--style="width: 100px; height : auto;"--}}
+                                             {{--class="img-rounded img-sm img-thumbnail"--}}
+                                             {{--alt="{{ $element->name }}"></div>--}}
+                                    {{--<!-- END SIDEBAR USERPIC -->--}}
+                                    {{--<!-- SIDEBAR USER TITLE -->--}}
+                                    {{--<hr>--}}
+                                    {{--<div class="profile-usertitle">--}}
+                                        {{--<div class="profile-usertitle-name text-center"> {{ $element->name }}</div>--}}
+                                        {{--<div class="profile-usertitle-name text-center"> {{ $element->email }}</div>--}}
+                                        {{--<div class="profile-usertitle-job text-center"> {{ $element->caption }}</div>--}}
+                                    {{--</div>--}}
+                                    {{--<hr>--}}
+                                    {{--<!-- END SIDEBAR USER TITLE -->--}}
+                                    {{--<!-- SIDEBAR MENU -->--}}
+                                    {{--<div class="profile-usermenu">--}}
+                                        {{--<ul class="nav">--}}
+                                            {{--<li>--}}
+                                                {{--<a href="{{ route('backend.user.show',$element->id) }}">--}}
+                                                    {{--<i class="icon-user"></i> {{ trans('general.profile') }}</a>--}}
+                                            {{--</li>--}}
+                                        {{--</ul>--}}
+                                    {{--</div>--}}
+                                    {{--<!-- END MENU -->--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--@endforeach--}}
+                        {{--<div class="row">--}}
+                            {{--<div class="col-lg-12">--}}
+                                {{--<div class="col-lg-4 pull-right">--}}
+                                    {{--{{ $designers->render() }}--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                     </div>
                 </div>
             </div>
