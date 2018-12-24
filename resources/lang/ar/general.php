@@ -184,4 +184,6 @@ return array (
   'buy_now' => 'اشتري الآن',
   'arabic_only' => 'فقط اللغة العربية',
   'arabic_name' => 'الاسم بالعربية',
+  'total_active_paid_on_progress_orders' => 'إجمالي طلبات العمل المدفوعة وجاري العمل بها',
+  'total_active_completed_orders' => 'إجمالي طلبات العمل المدفوعة والفعالة وتم الانتهاء منه',
 );
