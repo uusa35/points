@@ -39,24 +39,25 @@
                     @can('onlySuper')
                         <li>
                             <a href="{{ route('backend.admin.plan.create') }}">
-                                <i class="icon-plus"></i> {{ trans('general.create_new_payment_plan') }}</a>
+                                <i class="icon-calculator"></i> {{ trans('general.create_new_payment_plan') }}</a>
                         </li>
+                        <li class="divider"></li>
                         <li>
                             <a href="{{ route('backend.admin.service.create') }}">
-                                <i class="icon-plus"></i> {{ trans('general.create_service') }}</a>
+                                <i class="icon-handbag"></i> {{ trans('general.create_service') }}</a>
                         </li>
+                        <li class="divider"></li>
                         <li>
                             <a href="{{ route('backend.admin.category.create') }}">
-                                <i class="icon-plus"></i> {{ trans('general.create_category') }}</a>
+                                <i class="icon-layers"></i> {{ trans('general.create_category') }}</a>
                         </li>
-
                         <li class="divider"></li>
                     @endcan
                     @can('onlyClient')
                         {{--change this later to onlyClient--}}
                         <li>
                             <a href="{{ route('backend.order.choose.category') }}">
-                                <i class="icon-plus"></i> {{ trans('general.client_new_order') }}</a>
+                                <i class="icon-action-redo"></i> {{ trans('general.client_new_order') }}</a>
                         </li>
                         <li class="divider"></li>
                     @endcan
@@ -121,7 +122,7 @@
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                            data-close-others="true">
                             <img alt="" src="{{ asset('img/flags/'.app()->getLocale().'.png') }}">
-                            <span class="langname"> {{ app()->getLocale() }} </span>
+                            <span class="langname">&nbsp; {{ app()->getLocale() }} </span>
                             <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="dropdown-menu">
@@ -308,15 +309,28 @@
                            data-close-others="true">
                             <img alt="" class="img-xs"
                                  src="{{ asset('storage/uploads/images/thumbnail/'. auth()->user()->logo) }}"/>
-                            <span class="username username-hide-on-mobile"> {{ auth()->user()->role->name }} : </span>
-                            <span class="username username-hide-on-mobile"> {{ auth()->user()->name }}</span><br>
-                            @if(auth()->user()->balance)
-                                <span class="username username-hide-on-mobile"> {{ trans('general.balance') }}
-                                    : {{ auth()->user()->balance->points}} {{ trans('general.points') }}</span>
-                            @endif
                             <i class="fa fa-angle-down"></i>
+                            <span class="username username-hide-on-mobile"> {{ auth()->user()->name }}</span><br>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-default">
+                            <li>
+                                <a href="#">
+                                    <span class="username username-hide-on-mobile"><i
+                                            class="fa fa-fw fa-university"></i>{{ trans('general.role') }}
+                                        : {{ auth()->user()->role->name }} : </span>
+                                    <span
+                                        class="username username-hide-on-mobile"> {{ auth()->user()->name }}</span><br>
+                                </a>
+                            </li>
+                            @if(auth()->user()->balance)
+                                <li>
+                                    <a href="#">
+                                        <span class="username username-hide-on-mobile"> <i
+                                                class="fa fa-fw fa-list-ol"></i>{{ trans('general.balance') }}
+                                            : {{ auth()->user()->balance->points}} {{ trans('general.points') }}</span>
+                                    </a>
+                                </li>
+                            @endif
                             <li>
                                 <a href="{{ route('home') }}">
                                     <i class="icon-home"></i>{{ trans('general.home') }}</a>
