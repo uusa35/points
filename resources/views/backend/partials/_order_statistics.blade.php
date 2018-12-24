@@ -151,7 +151,7 @@
                             <span data-counter="counterup"
                                   data-value="10">{{ $totalSuccessfulTransactions }}</span>
                         </div>
-                        <div class="desc ">{{ trans('general.total_active_paid_on_progress_orders') }}</div>
+                        <div class="desc ">{{ trans('general.total_successful_transactions') }}</div>
                     </div>
                 </a>
             </div>
