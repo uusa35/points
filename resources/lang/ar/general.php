@@ -186,4 +186,5 @@ return array (
   'arabic_name' => 'الاسم بالعربية',
   'total_active_paid_on_progress_orders' => 'إجمالي طلبات العمل المدفوعة وجاري العمل بها',
   'total_active_completed_orders' => 'إجمالي طلبات العمل المدفوعة والفعالة وتم الانتهاء منه',
+  'total_successful_transactions' => 'إجمالي عمليات الدفع الصحيحة',
 );
