@@ -47,5 +47,11 @@
                     class="label label-{{ $element->is_complete ? 'success' : 'warning'  }}"> {{ activeText($element->is_complete,'Complete') }}</span>
             </div>
         </div>
+        <div class="row static-info">
+            <div class="col-md-5 name"> {{ trans('general.add_images_or_files') }}:</div>
+            <div class="col-md-7 value">
+                <a class="btn btn-success" href="{{ route('backend.file.create', ['type' => 'job', 'id' => $element->id]) }}">Add Files / Images</a>
+            </div>
+        </div>
     </div>
 </div>

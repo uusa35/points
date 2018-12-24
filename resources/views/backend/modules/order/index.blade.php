@@ -45,8 +45,6 @@
                                 <th>{{ trans('general.service_name') }}</th>
                                 <th>{{ trans('general.category_name') }}</th>
                                 <th>{{ trans('general.created_at') }}</th>
-                                {{--<th>{{ trans('general.on_progress') }}</th>--}}
-                                {{--<th>{{ trans('general.is_complete') }}</th>--}}
                                 <th>{{ trans('general.is_complete') }}</th>
                                 <th>{{ trans('general.Action') }}</th>
                             </tr>
@@ -61,14 +59,6 @@
                                     <td>{{ $element->service->name }}</td>
                                     <td>{{ $element->service->category->slug }}</td>
                                     <td>{{ $element->created_at->diffForHumans() }}</td>
-                                    {{--<td>--}}
-                                    {{--<span--}}
-                                    {{--class="label {{ activeLabel($element->onProgress) }}">{{ activeText($element->onProgress) }}</span>--}}
-                                    {{--</td>--}}
-                                    {{--<td>--}}
-                                    {{--<span--}}
-                                    {{--class="label {{ activeLabel($element->is_complete) }}">{{ activeText($element->is_complete) }}</span>--}}
-                                    {{--</td>--}}
                                     <td>
                                     <span
                                         class="label {{ activeLabel($element->is_complete) }}">{{ activeText($element->is_complete) }}</span>

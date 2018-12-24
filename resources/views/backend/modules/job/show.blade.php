@@ -13,7 +13,7 @@
                 </a>
             </li>
             <li>
-                <a href="#tab_3" data-toggle="tab"> {{ trans('general.job_related') }}
+                <a href="#tab_3" data-toggle="tab"> {{ trans('general.versions') }}
                     <span class="badge badge-success"></span>
                 </a>
             </li>

@@ -2,7 +2,9 @@
 
 @section('content')
     @include('backend.partials.breadcrumbs')
+    @if(request()->type === 'order')
     @include('backend.partials._order_steps')
+    @endif
     <div class="portlet box blue">
         @include('backend.partials.forms.form_title')
         <div class="portlet-body form">
