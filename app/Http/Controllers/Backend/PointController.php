@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Models\PaymentPlan;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -17,8 +18,12 @@ class PointController extends Controller
     {
         $paymentPlans = PaymentPlan::active()->get();
         $element = auth()->user()->balance()->get();
-        $transactions = auth()->user()->transactions()->with('payment_plan','user')->orderBy('created_at','desc')->paginate(50);
-        return view('backend.modules.point.index', compact('element','transactions','paymentPlans'));
+        if (auth()->user()->isAdmin) {
+            $transactions = Transaction::with('payment_plan', 'user')->paginate(self::PAGINATE);
+        } else {
+            $transactions = auth()->user()->transactions()->with('payment_plan', 'user')->orderBy('created_at', 'desc')->paginate(self::PAGINATE);
+        }
+        return view('backend.modules.point.index', compact('element', 'transactions', 'paymentPlans'));
     }
 
     /**
