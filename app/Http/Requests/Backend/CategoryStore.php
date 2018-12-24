@@ -24,7 +24,19 @@ class CategoryStore extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|unique:users,name',
+            'path' => 'nullable',
+            'image' => 'required|image',
+            'slug_ar' => 'required',
+            'slug_en' => 'required',
+            'caption_ar' => 'nullable',
+            'caption_en' => 'nullable',
+            'description_ar' => 'nullable',
+            'description_en' => 'nullable',
+            'duration' => 'nullable',
+            'parent_id' => 'nullable',
+            'order' => 'nullable|numeric',
+            'active' => 'nullable|boolean',
         ];
     }
 }

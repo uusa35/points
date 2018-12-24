@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Requests\Backend;
 
 use Illuminate\Foundation\Http\FormRequest;
@@ -23,7 +24,15 @@ class JobStore extends FormRequest
     public function rules()
     {
         return [
-            //
+            'notes' => 'required',
+            'description' => 'nullable',
+            'active' => 'nullable|boolean',
+            'is_complete' => 'nullable|boolean',
+            'is_client_viewed' => 'nullable|boolean',
+            'is_designer_viewed' => 'nullable|boolean',
+            'priority' => 'nullable|numeric',
+            'is_urgent' => 'nullable|boolean',
+            'order_id' => 'required|exists:orders,id',
         ];
     }
 }

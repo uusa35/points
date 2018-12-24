@@ -24,7 +24,19 @@ class PaymentPlanStore extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|unique:payment_plans:name',
+            'slug_ar' => 'required',
+            'slug_en' => 'required',
+            'description_ar' => 'nullable',
+            'description_en' => 'nullable',
+            'image' => 'image|nullable',
+            'path' => 'mimes:pdf|nullable',
+            'color' => 'nullable',
+            'price' => 'required|numeric',
+            'bonus' => 'required|numeric',
+            'apply_bonus' => 'required|boolean',
+            'order' => 'required|numeric',
+            'active' => 'nullable|boolean',
         ];
     }
 }

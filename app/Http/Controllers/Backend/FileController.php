@@ -51,7 +51,7 @@ class FileController extends Controller
             'type' => 'required|alpha',
             'id' => 'required|numeric',
             'path' => 'mimes:pdf|nullable|max:50000',
-            'image' => 'mimes:image|nullable|max:5000',
+            'image' => 'image',
         ]);
         if ($validate->fails()) {
             return redirect()->back()->withErrors($validate->errors());

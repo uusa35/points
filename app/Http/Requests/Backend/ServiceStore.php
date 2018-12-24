@@ -13,7 +13,7 @@ class ServiceStore extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return auth()->user()->isSuper;
     }
 
     /**
@@ -24,7 +24,22 @@ class ServiceStore extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|unique:services,name',
+            'slug_ar' => 'required',
+            'slug_en' => 'required',
+            'description_en' => 'nullable',
+            'description_ar' => 'nullable',
+            'caption_ar' => 'nullable',
+            'caption_en' => 'nullable',
+            'duration' => 'required|numeric',
+            'image' => 'image|nullable',
+            'path' => 'mimes:pdf|nullable',
+            'order' => 'required|nullable',
+            'on_sale' => 'required|boolean',
+            'points' => 'required|numeric',
+            'sale_points' => 'required|numeric',
+            'active' => 'nullable|boolean',
+            'category_id' => 'required|exists:categories,id',
         ];
     }
 }
