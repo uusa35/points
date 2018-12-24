@@ -21,7 +21,7 @@
                             <th>{{ trans('general.name') }}</th>
                             <th>{{ trans('general.role') }}</th>
                             <th>{{ trans('general.active') }}</th>
-                            <th>{{ trans('general.email') }}</th>
+                            <th>{{ trans('general.action') }}</th>
                         </tr>
                         </thead>
                         <tbody>
