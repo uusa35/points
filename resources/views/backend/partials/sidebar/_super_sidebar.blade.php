@@ -59,6 +59,13 @@
             </a>
         </li>
         <li class="nav-item start ">
+            <a href="{{ route('backend.admin.order.index',['jobs' => false]) }}"
+               class="nav-link ">
+                <i class="icon-plus"></i>
+                <span class="title">{{ trans('general.paid_orders_that_do_not_yet_have_jobs') }}</span>
+            </a>
+        </li>
+        <li class="nav-item start ">
             <a href="{{ route('backend.admin.order.index',['is_complete' => true]) }}"
                class="nav-link ">
                 <i class="icon-plus"></i>

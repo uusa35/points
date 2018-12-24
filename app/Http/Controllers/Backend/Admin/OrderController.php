@@ -15,12 +15,14 @@ class OrderController extends Controller
      */
     public function index()
     {
-        if(request()->has('is_complete')) {
-            $elements = Order::where(['is_complete' => request()->is_complete])->with('job.versions','service.category','client')->orderBy('id','desc')->paginate(self::PAGINATE);
-        } elseif(request()->has('is_paid')) {
-            $elements = Order::where(['is_paid' => request()->is_paid])->with('job.versions','service.category','client')->orderBy('id','desc')->paginate(self::PAGINATE);
-        }else {
-            $elements = Order::with('job.versions','client','service.category')->orderBy('id','desc')->paginate(self::PAGINATE);
+        if (request()->has('is_complete')) {
+            $elements = Order::where(['is_complete' => request()->is_complete, 'is_paid' => true])->with('job', 'service.category', 'client')->orderBy('id', 'desc')->paginate(self::PAGINATE);
+        } elseif (request()->has('is_paid')) {
+            $elements = Order::where(['is_paid' => request()->is_paid])->with('job', 'service.category', 'client')->orderBy('id', 'desc')->paginate(self::PAGINATE);
+        } elseif (request()->has('jobs')) {
+            $elements = Order::where(['is_paid' => true, 'is_complete' => false])->doesntHave('job')->with('service.category', 'client')->orderBy('id', 'desc')->paginate(self::PAGINATE);
+        } else {
+            $elements = Order::with('job.versions', 'client', 'service.category')->orderBy('id', 'desc')->paginate(self::PAGINATE);
         }
         return view('backend.modules.order.index', compact('elements'));
     }
@@ -38,7 +40,7 @@ class OrderController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -49,7 +51,7 @@ class OrderController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -61,7 +63,7 @@ class OrderController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -72,8 +74,8 @@ class OrderController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -84,7 +86,7 @@ class OrderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

@@ -27,6 +27,8 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::resource('service', 'ServiceController');
         Route::resource('slider', 'SliderController');
         Route::resource('order', 'OrderController');
+//        Route::get('assign/order/{id}', 'OrderController@getAssign');
+//        Route::post('assign/order', 'OrderController@postAssign');
         Route::resource('job', 'JobController');
         Route::resource('version', 'VersionController');
         Route::resource('image', 'ImageController');

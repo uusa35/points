@@ -37,7 +37,7 @@ class JobPolicy
      */
     public function create(User $user, Order $order)
     {
-        !$order->job ? $user->onlyDesigner : false;
+        return !$order->job ? $user->isSuper ? $user->isSuper : $user->onlyDesigner : false;
     }
 
     /**
@@ -53,6 +53,8 @@ class JobPolicy
             return auth()->id() === $job->order->user_id;
         } elseif (auth()->user()->onlyDesigner) {
             return in_array(auth()->id(), $job->designers()->pluck('id')->toArray(), true);
+        } else {
+            return $user->isSuper;
         }
     }
 

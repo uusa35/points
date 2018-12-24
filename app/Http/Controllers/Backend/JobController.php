@@ -53,9 +53,9 @@ class JobController extends Controller
     {
         $element = Job::create($request->request->all());
         if ($element) {
-            return redirect()->route('backend.setting.index')->with('success', trans('message.success_job_store'));
+            return redirect()->route('backend.job.show',$element->id)->with('success', trans('message.success_job_store'));
         }
-        return redirect()->route('backend.setting.index')->with('error', trans('message.error_job_store'));
+        return redirect()->back()->with('error', trans('message.error_job_store'));
     }
 
     /**

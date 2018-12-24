@@ -32,7 +32,7 @@
                                 <th>{{ trans('general.created_at') }}</th>
                                 {{--                            <th>{{ trans('general.on_progress') }}</th>--}}
                                 {{--<th>{{ trans('general.is_complete') }}</th>--}}
-                                <th>{{ trans('general.is_paid') }}</th>
+                                <th>{{ trans('general.is_complete') }}</th>
                                 <th>{{ trans('general.Action') }}</th>
                             </tr>
                             </thead>
@@ -47,7 +47,7 @@
                                 <th>{{ trans('general.created_at') }}</th>
                                 {{--<th>{{ trans('general.on_progress') }}</th>--}}
                                 {{--<th>{{ trans('general.is_complete') }}</th>--}}
-                                <th>{{ trans('general.is_paid') }}</th>
+                                <th>{{ trans('general.is_complete') }}</th>
                                 <th>{{ trans('general.Action') }}</th>
                             </tr>
                             </tfoot>
@@ -71,7 +71,7 @@
                                     {{--</td>--}}
                                     <td>
                                     <span
-                                        class="label {{ activeLabel($element->is_paid) }}">{{ activeText($element->is_paid) }}</span>
+                                        class="label {{ activeLabel($element->is_complete) }}">{{ activeText($element->is_complete) }}</span>
                                     </td>
                                     <td>
                                         <div class="btn-group pull-right">
@@ -86,7 +86,6 @@
                                                             <i class="fa fa-fw fa-edit"></i>{{ trans('general.view_details') }}
                                                         </a>
                                                     </li>
-
                                                     <li>
                                                         <a data-toggle="modal" href="#" data-target="#basic"
                                                            data-title="Delete"
@@ -139,6 +138,13 @@
                                                         <li>
                                                             <a href="{{ route('backend.job.show',$element->job->id) }}">
                                                                 <i class="fa fa-fw fa-eye-slash"></i>{{ trans('general.view_job') }}
+                                                            </a>
+                                                        </li>
+                                                    @endcan
+                                                    @can('job.view', $element->job)
+                                                        <li>
+                                                            <a href="{{ route('backend.job.show',$element->job->id) }}">
+                                                                <i class="fa fa-fw fa-eye"></i>{{ trans('general.view_job') }}
                                                             </a>
                                                         </li>
                                                     @endcan
