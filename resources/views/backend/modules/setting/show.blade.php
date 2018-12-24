@@ -77,9 +77,9 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-lg-3">
                             <h5>logo</h5>
-                            <img src="{{ asset('storage/uploads/images/medium/'.$element->logo) }}"
+                            <img src="{{ asset('storage/uploads/images/thumbnail/'.$element->logo) }}"
                                  alt="" class="img-responsive img-thumbnail">
                         </div>
                     </div>
