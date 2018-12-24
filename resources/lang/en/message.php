@@ -1,6 +1,9 @@
 <?php
 
 return array (
+  'tab_1' => 'Messge For Tab One',
+  'category_has_children_can_not_be_deleted' => 'لن يتم حذف التصنيف لوجود عناصر متعلقة ..',
+  'delete_success' => 'Delete Success',
   'choose_main_category' => 'Choose Main Category',
   'no_preview' => 'There are no items to display',
   'max_price_field' => 'Highest Price',
@@ -12,7 +15,6 @@ return array (
   'merchants_message_page' => 'Merchants , Companies Grouped according to different Categories & fields. kindly visit our page contact us for more information.',
   'brand_id_hints' => 'Brand',
   'list_of_all_menus' => 'List of Menus',
-  'delete_success' => 'Delete Success',
   'delete_failure' => 'Delete Failed',
   'ad_republished_successfully' => 'Ad Republished Successfully',
   'image_success' => 'Image Succseded',
@@ -52,7 +54,5 @@ return array (
   'reselect_cat' => 'Editing your add must be followed with re-assigning your parent / sub category.',
   'auctions_comments_message' => 'Auction + No.',
   'project_backend_instructions' => 'Important : please insert the end date of each project',
-  'category_has_children_can_not_be_deleted' => 'لن يتم حذف التصنيف لوجود عناصر متعلقة ..',
   'notification_message' => 'new :type has been created. :type name is :name - :project_name',
-  'tab_1' => 'Messge For Tab One',
 );
