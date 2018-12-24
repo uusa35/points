@@ -138,6 +138,7 @@ mix.copyDirectory('../metronic_v4.5.6/theme/assets/global/plugins/simple-line-ic
 mix.copyDirectory('./../metronic_v4.5.6/theme/assets/global/plugins/datatables/images', 'public/plugins/datatables/images');
 mix.copyDirectory('./../metronic_v4.5.6/theme/assets/global/plugins/cubeportfolio/img', 'public/img');
 mix.copyDirectory('./../metronic_v4.5.6/theme/assets/layouts/layout2/img', 'public/img');
+mix.copyDirectory('./../metronic_v4.5.6/theme//assets/global/img/flags/', 'public/img/flags');
 mix.copyDirectory('./node_modules/font-awesome/fonts', 'public/fonts');
 mix.copyDirectory('./node_modules/tinymce/plugins', 'public/js/plugins');
 mix.copyDirectory('./node_modules/tinymce/skins', 'public/js/skins');
