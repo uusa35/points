@@ -15,7 +15,7 @@
                         <div class="col-lg-6 col-lg-push-3">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h5>Company</h5>
+                                    <h5>{{ trans('general.order_information') }}</h5>
                                 </div>
                                 <div class="panel-body">
                                     <div class="col-md-12">
@@ -124,7 +124,7 @@
 
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h5>Phones</h5>
+                                    <h5>{{ trans('general.social_media') }}</h5>
                                 </div>
                                 <div class="panel-body">
                                     <div class="col-md-12">
@@ -204,9 +204,6 @@
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="col-lg-12">
-                                        <hr>
-                                    </div>
                                 </div>
                             </div>
 
@@ -223,86 +220,197 @@
 
 
 
-                            <div class="col-md-12">
-                                <div class="form-group{{ $errors->has('mobile') ? ' has-error' : '' }}">
-                                    <label for="mobile" class="control-label">{{ trans('general.mobile') }} </label>
-                                    <input id="mobile" type="text" class="form-control" name="mobile"
-                                           value="{{ old('mobile') }}"
-                                           placeholder="mobile" autofocus>
-                                    @if ($errors->has('mobile'))
-                                        <span class="help-block">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    {{ trans('general.phones') }}
+                                </div>
+                                <div class="panel-body">
+                                    <div class="col-md-12">
+                                        <div class="form-group{{ $errors->has('mobile') ? ' has-error' : '' }}">
+                                            <label for="mobile" class="control-label">{{ trans('general.mobile') }} </label>
+                                            <input id="mobile" type="text" class="form-control" name="mobile"
+                                                   value="{{ old('mobile') }}"
+                                                   placeholder="mobile" autofocus>
+                                            @if ($errors->has('mobile'))
+                                                <span class="help-block">
                                         <strong>
                                             {{ $errors->first('mobile') }}
                                         </strong>
                                     </span>
-                                    @endif
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group{{ $errors->has('phone_one') ? ' has-error' : '' }}">
-                                    <label for="phone_one"
-                                           class="control-label">{{ trans('general.phone_one') }} </label>
-                                    <input id="phone_one" type="text" class="form-control" name="phone_one"
-                                           value="{{ old('phone_one') }}"
-                                           placeholder="phone_one" autofocus>
-                                    @if ($errors->has('phone_one'))
-                                        <span class="help-block">
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group{{ $errors->has('phone_one') ? ' has-error' : '' }}">
+                                            <label for="phone_one"
+                                                   class="control-label">{{ trans('general.phone_one') }} </label>
+                                            <input id="phone_one" type="text" class="form-control" name="phone_one"
+                                                   value="{{ old('phone_one') }}"
+                                                   placeholder="phone_one" autofocus>
+                                            @if ($errors->has('phone_one'))
+                                                <span class="help-block">
                                 <strong>
                                     {{ $errors->first('phone_one') }}
                                 </strong>
                             </span>
-                                    @endif
-                                </div>
-                            </div>
+                                            @endif
+                                        </div>
+                                    </div>
 
-                            <div class="col-md-12">
-                                <div class="form-group{{ $errors->has('phone_two') ? ' has-error' : '' }}">
-                                    <label for="phone_two"
-                                           class="control-label">{{ trans('general.phone_two') }} </label>
-                                    <input id="phone_two" type="text" class="form-control" name="phone_two"
-                                           value="{{ old('phone_two') }}"
-                                           placeholder="phone_two" autofocus>
-                                    @if ($errors->has('phone_two'))
-                                        <span class="help-block">
+                                    <div class="col-md-12">
+                                        <div class="form-group{{ $errors->has('phone_two') ? ' has-error' : '' }}">
+                                            <label for="phone_two"
+                                                   class="control-label">{{ trans('general.phone_two') }} </label>
+                                            <input id="phone_two" type="text" class="form-control" name="phone_two"
+                                                   value="{{ old('phone_two') }}"
+                                                   placeholder="phone_two" autofocus>
+                                            @if ($errors->has('phone_two'))
+                                                <span class="help-block">
                                 <strong>
                                     {{ $errors->first('phone_two') }}
                                 </strong>
                             </span>
-                                    @endif
-                                </div>
-                            </div>
+                                            @endif
+                                        </div>
+                                    </div>
 
-                            <div class="col-md-12">
-                                <div class="form-group{{ $errors->has('fax') ? ' has-error' : '' }}">
-                                    <label for="fax" class="control-label">{{ trans('general.fax') }} </label>
-                                    <input id="fax" type="text" class="form-control" name="fax" value="{{ old('fax') }}"
-                                           placeholder="fax" autofocus>
-                                    @if ($errors->has('fax'))
-                                        <span class="help-block">
+                                    <div class="col-md-12">
+                                        <div class="form-group{{ $errors->has('fax') ? ' has-error' : '' }}">
+                                            <label for="fax" class="control-label">{{ trans('general.fax') }} </label>
+                                            <input id="fax" type="text" class="form-control" name="fax" value="{{ old('fax') }}"
+                                                   placeholder="fax" autofocus>
+                                            @if ($errors->has('fax'))
+                                                <span class="help-block">
                                 <strong>
                                     {{ $errors->first('fax') }}
                                 </strong>
                             </span>
-                                    @endif
-                                </div>
-                            </div>
+                                            @endif
+                                        </div>
+                                    </div>
 
 
-                            <div class="col-md-12">
-                                <div class="form-group{{ $errors->has('whatsapp') ? ' has-error' : '' }}">
-                                    <label for="whatsapp" class="control-label">{{ trans('general.whatsapp') }} </label>
-                                    <input id="whatsapp" type="text" class="form-control" name="whatsapp"
-                                           value="{{ old('whatsapp') }}"
-                                           placeholder="whatsapp" autofocus>
-                                    @if ($errors->has('whatsapp'))
-                                        <span class="help-block">
+                                    <div class="col-md-12">
+                                        <div class="form-group{{ $errors->has('whatsapp') ? ' has-error' : '' }}">
+                                            <label for="whatsapp" class="control-label">{{ trans('general.whatsapp') }} </label>
+                                            <input id="whatsapp" type="text" class="form-control" name="whatsapp"
+                                                   value="{{ old('whatsapp') }}"
+                                                   placeholder="whatsapp" autofocus>
+                                            @if ($errors->has('whatsapp'))
+                                                <span class="help-block">
                                 <strong>
                                     {{ $errors->first('whatsapp') }}
                                 </strong>
                             </span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    {{ trans('general.order_notes') }}
+                                </div>
+                                <div class="panel-body">
+                                    @if(session()->get('order_lang') =='ar')
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="description"
+                                                       class="control-label">{{ trans('general.description')}}</label>
+                                                <textarea type="text" class="form-control" id="description_ar"
+                                                          name="description_ar"
+                                                          aria-multiline="true"
+                                                          maxlength="500">{{ old('description_ar') }}</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="notes_ar" class="control-label">{{ trans('general.notes')}}</label>
+                                                <textarea type="notes_ar" class="form-control" id="notes_ar" name="notes_ar"
+                                                          aria-multiline="true"
+                                                          maxlength="500">{{ old('notes_ar') }}</textarea>
+                                            </div>
+                                        </div>
+                                    @elseif(session()->get('order_lang')=='en')
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="description"
+                                                       class="control-label">{{ trans('general.description')}}</label>
+                                                <textarea type="text" class="form-control" id="description_en"
+                                                          name="description_en"
+                                                          aria-multiline="true"
+                                                          maxlength="500">{{ old('description_en') }}</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="notes_en" class="control-label">{{ trans('general.notes')}}</label>
+                                                <textarea type="notes_en" class="form-control" id="notes_en" name="notes_en"
+                                                          aria-multiline="true"
+                                                          maxlength="500">{{ old('notes_en') }}</textarea>
+                                            </div>
+                                        </div>
+                                    @else
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="description"
+                                                       class="control-label">{{ trans('general.description')}}</label>
+                                                <textarea type="text" class="form-control" id="description_ar"
+                                                          name="description_ar"
+                                                          aria-multiline="true"
+                                                          maxlength="500">{{ old('description_ar') }}</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="notes_ar" class="control-label">{{ trans('general.notes')}}</label>
+                                                <textarea type="notes_ar" class="form-control" id="notes_ar" name="notes_ar"
+                                                          aria-multiline="true"
+                                                          maxlength="500">{{ old('notes_ar') }}</textarea>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="description"
+                                                       class="control-label">{{ trans('general.description')}}</label>
+                                                <textarea type="text" class="form-control" id="description_en"
+                                                          name="description_en"
+                                                          aria-multiline="true"
+                                                          maxlength="500">{{ old('description_en') }}</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="notes_en" class="control-label">{{ trans('general.notes')}}</label>
+                                                <textarea type="notes_en" class="form-control" id="notes_en" name="notes_en"
+                                                          aria-multiline="true"
+                                                          maxlength="500">{{ old('notes_en') }}</textarea>
+                                            </div>
+                                        </div>
                                     @endif
                                 </div>
                             </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+
+                                </div>
+                                <div class="panel-body">
+
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+
+                                </div>
+                                <div class="panel-body">
+
+                                </div>
+                            </div>
+
                             {{--<div class="col-md-12">--}}
                             {{--<div class="form-group{{ $errors->has('iphone') ? ' has-error' : '' }}">--}}
                             {{--<label for="iphone" class="control-label">{{ trans('general.iphone') }} </label>--}}
@@ -350,89 +458,6 @@
                             {{--@endif--}}
                             {{--</div>--}}
                             {{--</div>--}}
-
-                            @if(session()->get('order_lang') =='ar')
-
-
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="description"
-                                               class="control-label">{{ trans('general.description')}}</label>
-                                        <textarea type="text" class="form-control" id="description_ar"
-                                                  name="description_ar"
-                                                  aria-multiline="true"
-                                                  maxlength="500">{{ old('description_ar') }}</textarea>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="notes_ar" class="control-label">{{ trans('general.notes')}}</label>
-                                        <textarea type="notes_ar" class="form-control" id="notes_ar" name="notes_ar"
-                                                  aria-multiline="true"
-                                                  maxlength="500">{{ old('notes_ar') }}</textarea>
-                                    </div>
-                                </div>
-                            @elseif(session()->get('order_lang')=='en')
-
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="description"
-                                               class="control-label">{{ trans('general.description')}}</label>
-                                        <textarea type="text" class="form-control" id="description_en"
-                                                  name="description_en"
-                                                  aria-multiline="true"
-                                                  maxlength="500">{{ old('description_en') }}</textarea>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="notes_en" class="control-label">{{ trans('general.notes')}}</label>
-                                        <textarea type="notes_en" class="form-control" id="notes_en" name="notes_en"
-                                                  aria-multiline="true"
-                                                  maxlength="500">{{ old('notes_en') }}</textarea>
-                                    </div>
-                                </div>
-                            @else
-
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="description"
-                                               class="control-label">{{ trans('general.description')}}</label>
-                                        <textarea type="text" class="form-control" id="description_ar"
-                                                  name="description_ar"
-                                                  aria-multiline="true"
-                                                  maxlength="500">{{ old('description_ar') }}</textarea>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="notes_ar" class="control-label">{{ trans('general.notes')}}</label>
-                                        <textarea type="notes_ar" class="form-control" id="notes_ar" name="notes_ar"
-                                                  aria-multiline="true"
-                                                  maxlength="500">{{ old('notes_ar') }}</textarea>
-                                    </div>
-                                </div>
-
-
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="description"
-                                               class="control-label">{{ trans('general.description')}}</label>
-                                        <textarea type="text" class="form-control" id="description_en"
-                                                  name="description_en"
-                                                  aria-multiline="true"
-                                                  maxlength="500">{{ old('description_en') }}</textarea>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="notes_en" class="control-label">{{ trans('general.notes')}}</label>
-                                        <textarea type="notes_en" class="form-control" id="notes_en" name="notes_en"
-                                                  aria-multiline="true"
-                                                  maxlength="500">{{ old('notes_en') }}</textarea>
-                                    </div>
-                                </div>
-                            @endif
 
                             <div class="col-md-4">
                                 <div class="form-group">
