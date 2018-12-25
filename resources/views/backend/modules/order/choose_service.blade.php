@@ -9,10 +9,10 @@
                     <div class="col-xs-12">
                         <div class="blog-banner blog-container" style="padding: 10px;">
                             <h2 class="blog-title">
-                                <a href="javascript:;">{{ trans('general.our_categories') }}</a>
+                                <a href="javascript:;">{{ trans('general.our_services') }}</a>
                             </h2>
                             <p class="text-center">
-                                {{ trans('message.choose_category_message') }}
+                                {{ trans('message.choose_service_message') }}
                             </p>
                         </div>
                     </div>

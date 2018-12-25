@@ -14,10 +14,11 @@
                     <tr>
                         <th>{{ trans('general.id') }}</th>
                         <th>{{ trans('general.title') }}</th>
-                        <th>{{ trans('general.name') }}</th>
                         <th>{{ trans('general.points') }}</th>
                         <th>{{ trans('general.complete') }}</th>
                         <th>{{ trans('general.service') }}</th>
+                        <th>{{ trans('general.category') }}</th>
+                        <th>{{ trans('general.view') }}</th>
                         <th>{{ trans('general.action') }}</th>
                     </tr>
                     </thead>
@@ -26,14 +27,14 @@
                         <tr>
                             <td>{{ $element->id }}</td>
                             <td>{{ $element->title }}</td>
-                            <td>{{ $element->name }}</td>
                             <td>{{ $element->points }}</td>
                             <td>
                                     <span
                                         class="label {{ activeLabel($element->is_complete) }}">{{ activeText($element->is_complete,'Completed') }}</span>
                             </td>
                             <td>{{ $element->service->slug }}</td>
-                            <td>{{ $element->client->name }}</td>
+                            <td>{{ $element->service->category->name }}</td>
+                            <td><a class="btn btn-warning" href="{{ route("backend.order.show", $element->id) }}"><i class="fa fa-fw fa-eye"></i></a></td>
                             <td>
                                 <div class="btn-group pull-right">
                                     <button type="button"

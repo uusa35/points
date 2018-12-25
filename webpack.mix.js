@@ -40,10 +40,12 @@ mix.styles([
 
     '../metronic_v4.5.6/theme/assets/global/css/components.min.css',
     '../metronic_v4.5.6/theme/assets/global/css/plugins.min.css',
+
     '../metronic_v4.5.6/theme/assets/pages/css/portfolio.min.css',
     '../metronic_v4.5.6/theme/assets/pages/css/profile.min.css',
     '../metronic_v4.5.6/theme/assets/pages/css/pricing.min.css',
     '../metronic_v4.5.6/theme/assets/pages/css/blog.min.css',
+
     '../metronic_v4.5.6/theme/assets/layouts/layout2/css/layout.min.css',
     // '../metronic_v4.5.6/theme/assets/layouts/layout/css/themes/darkblue.min.css',
     '../metronic_v4.5.6/theme/assets/layouts/layout2/css/themes/blue.min.css',
@@ -77,13 +79,15 @@ mix.styles([
     '../metronic_v4.5.6/theme_rtl/assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css',
     '../metronic_v4.5.6/theme_rtl/assets/global/plugins/datatables/datatables.min.css',
     '../metronic_v4.5.6/theme_rtl/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap-rtl.css',
-
     '../metronic_v4.5.6/theme_rtl/assets/global/plugins/cubeportfolio/css/cubeportfolio.css',
+
     '../metronic_v4.5.6/theme_rtl/assets/global/css/components-rtl.min.css',
     '../metronic_v4.5.6/theme_rtl/assets/global/css/plugins-rtl.min.css',
+
     '../metronic_v4.5.6/theme_rtl/assets/pages/css/profile.min.css',
     '../metronic_v4.5.6/theme_rtl/assets/pages/css/portfolio.min.css',
     '../metronic_v4.5.6/theme-rtl/assets/pages/css/blog.min.css',
+
     '../metronic_v4.5.6/theme_rtl/assets/pages/css/pricing.min.css',
     '../metronic_v4.5.6/theme_rtl/assets/layouts/layout2/css/layout-rtl.min.css',
     // '../metronic_v4.5.6/theme_rtl/assets/layouts/layout/css/themes/darkblue-rtl.min.css',
