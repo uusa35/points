@@ -396,151 +396,113 @@
                             </div>
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-
+                                    {{ trans("general.colors") }}
                                 </div>
                                 <div class="panel-body">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class=" control-label">{{ trans('general.preffered_colors')}} 1</label>
+                                            <input type="text" id="hue-demo" name="preferred_colors_1" class="form-control demo"
+                                                   data-control="hue" value="{{ old('preferred_colors_1') }}">
+                                        </div>
 
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class=" control-label">{{ trans('general.preffered_colors')}} 2</label>
+                                            <input type="text" id="hue-demo" name="preferred_colors_2" class="form-control demo"
+                                                   data-control="hue" value="{{ old('preferred_colors_2') }}">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class=" control-label">{{ trans('general.preffered_colors')}} 3 </label>
+
+                                            <input type="text" id="hue-demo" name="preferred_colors_3" class="form-control demo"
+                                                   data-control="hue" value="{{ old('preferred_colors_3') }}">
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class=" control-label">{{ trans('general.unwanted_colors') }} 1</label>
+                                            <input type="text" id="hue-demo-1" name="unwanted_colors_1"
+                                                   class="form-control demo"
+                                                   data-control="hue" value="{{ old('unwanted_colors_1') }}">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class=" control-label">{{ trans('general.unwanted_colors') }} 2</label>
+
+                                            <input type="text" id="hue-demo-2" name="unwanted_colors_2"
+                                                   class="form-control demo"
+                                                   data-control="hue" value="{{ old('unwanted_colors_2') }}">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">{{ trans('general.unwatched_colors') }} 3</label>
+                                            <input type="text" id="hue-demo-3" name="unwanted_colors_3"
+                                                   class="form-control demo"
+                                                   data-control="hue" value="{{ old('unwanted_colors_3') }}">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-
+                                    {{ trans('general.maps') }}
                                 </div>
                                 <div class="panel-body">
-
+                                    <div class="col-lg-12" style="padding: 20px;">
+                                        <div id="map" style="width : 100%; min-height: 250px;"></div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="control-label">{{ trans('general.address_ar') }}</label>
+                                            <input id="address" name="address_ar" type="textbox" value="{{ old("address_ar") }}"
+                                                   class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="control-label">{{ trans('general.address_en') }}</label>
+                                            <input id="address" name="address_en" type="textbox" value="Sydney, NSW"
+                                                   class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label class="control-label"></label>
+                                            <input type="button" class="btn btn-info form-control"
+                                                   value="{{ trans('general.get_location_by_address') }}"
+                                                   onclick="codeAddress()">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d129277.816522649!2d47.89305411946607!3d29.218744454083627!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2skw!4v1545291408070"
+                                            width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="longitude"
+                                                   class="control-label">{{ trans('general.google_map_url') }}</label>
+                                            <input id="google_map_url" type="text" class="form-control" name="google_map_url"
+                                                   value="{{ old('google_map_url') }}"
+                                                   placeholder="google_map_url" autofocus>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
-                            {{--<div class="col-md-12">--}}
-                            {{--<div class="form-group{{ $errors->has('iphone') ? ' has-error' : '' }}">--}}
-                            {{--<label for="iphone" class="control-label">{{ trans('general.iphone') }} </label>--}}
-                            {{--<input id="iphone" type="text" class="form-control" name="iphone"--}}
-                            {{--value="{{ old('iphone') }}"--}}
-                            {{--placeholder="iphone" autofocus>--}}
-                            {{--@if ($errors->has('iphone'))--}}
-                            {{--<span class="help-block">--}}
-                            {{--<strong>--}}
-                            {{--{{ $errors->first('iphone') }}--}}
-                            {{--</strong>--}}
-                            {{--</span>--}}
-                            {{--@endif--}}
-                            {{--</div>--}}
-                            {{--</div>--}}
-
-                            {{--<div class="col-md-12">--}}
-                            {{--<div class="form-group{{ $errors->has('android') ? ' has-error' : '' }}">--}}
-                            {{--<label for="android" class="control-label">{{ trans('general.android') }} </label>--}}
-                            {{--<input id="android" type="text" class="form-control" name="android"--}}
-                            {{--value="{{ old('android') }}"--}}
-                            {{--placeholder="android" autofocus>--}}
-                            {{--@if ($errors->has('android'))--}}
-                            {{--<span class="help-block">--}}
-                            {{--<strong>--}}
-                            {{--{{ $errors->first('android') }}--}}
-                            {{--</strong>--}}
-                            {{--</span>--}}
-                            {{--@endif--}}
-                            {{--</div>--}}
-                            {{--</div>--}}
-
-                            {{--<div class="col-md-12">--}}
-                            {{--<div class="form-group{{ $errors->has('points') ? ' has-error' : '' }}">--}}
-                            {{--<label for="points" class="control-label">{{ trans('general.points') }} </label>--}}
-                            {{--<input id="points" type="text" class="form-control" name="points"--}}
-                            {{--value="{{ old('points') }}"--}}
-                            {{--placeholder="points" autofocus>--}}
-                            {{--@if ($errors->has('points'))--}}
-                            {{--<span class="help-block">--}}
-                            {{--<strong>--}}
-                            {{--{{ $errors->first('points') }}--}}
-                            {{--</strong>--}}
-                            {{--</span>--}}
-                            {{--@endif--}}
-                            {{--</div>--}}
-                            {{--</div>--}}
-
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label class=" control-label">{{ trans('general.preffered_colors')}}</label>
-                                    <input type="text" id="hue-demo" name="preferred_colors_1" class="form-control demo"
-                                           data-control="hue" value="{{ old('preferred_colors_1') }}">
-                                </div>
-
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label class=" control-label">{{ trans('general.preffered_colors')}}</label>
-                                    <input type="text" id="hue-demo" name="preferred_colors_2" class="form-control demo"
-                                           data-control="hue" value="{{ old('preferred_colors_2') }}">
-                                </div>
-
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label class=" control-label">{{ trans('general.preffered_colors')}}</label>
-
-                                    <input type="text" id="hue-demo" name="preferred_colors_3" class="form-control demo"
-                                           data-control="hue" value="{{ old('preferred_colors_3') }}">
-                                </div>
-
-                            </div>
-
-
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label class=" control-label">{{ trans('general.unwanted_colors') }}</label>
-                                    <input type="text" id="hue-demo-1" name="unwanted_colors_1"
-                                           class="form-control demo"
-                                           data-control="hue" value="{{ old('unwanted_colors_1') }}">
-                                </div>
-
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label class=" control-label">{{ trans('general.unwanted_colors') }}</label>
-
-                                    <input type="text" id="hue-demo-2" name="unwanted_colors_2"
-                                           class="form-control demo"
-                                           data-control="hue" value="{{ old('unwanted_colors_2') }}">
-                                </div>
-
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label class="control-label">{{ trans('general.unwatched_colors') }}</label>
-                                    <input type="text" id="hue-demo-3" name="unwanted_colors_3"
-                                           class="form-control demo"
-                                           data-control="hue" value="{{ old('unwanted_colors_3') }}">
-                                </div>
-                            </div>
-
-
-                            <div class="col-lg-12" style="padding: 20px;">
-                                <div id="map" style="width : 100%; min-height: 250px;"></div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label class="control-label">{{ trans('general.address_ar') }}</label>
-                                    <input id="address" name="address_ar" type="textbox" value="{{ old("address_ar") }}"
-                                           class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label class="control-label">{{ trans('general.address_en') }}</label>
-                                    <input id="address" name="address_en" type="textbox" value="Sydney, NSW"
-                                           class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-lg-1">
-                                <div class="form-group">
-                                    <label class="control-label"></label>
-                                    <input type="button" class="btn btn-info form-control"
-                                           value="{{ trans('general.get_location_by_address') }}"
-                                           onclick="codeAddress()">
-                                </div>
-                            </div>
                             {{--<div class="col-md-2">--}}
                             {{--<div class="form-group">--}}
                             {{--<label for="longitude"--}}
@@ -558,30 +520,6 @@
                             {{--placeholder="latitude" autofocus>--}}
                             {{--</div>--}}
                             {{--</div>--}}
-
-                            <div class="col-lg-12">
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d129277.816522649!2d47.89305411946607!3d29.218744454083627!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2skw!4v1545291408070"
-                                    width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-group">
-                                    <label for="longitude"
-                                           class="control-label">{{ trans('general.google_map_url') }}</label>
-                                    <input id="google_map_url" type="text" class="form-control" name="google_map_url"
-                                           value="{{ old('google_map_url') }}"
-                                           placeholder="google_map_url" autofocus>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label class="control-label sbold">{{ trans('general.active') }}</label></br>
-                                    <label class="radio-inline">
-                                        <input type="checkbox" class="make-switch" checked data-on-color="primary"
-                                               data-off-color="info" value="1">
-                                    </label>
-                                </div>
-                            </div>
                         </div>
                         <div class="col-lg-12">
                             @include('backend.partials.forms._btn-group')

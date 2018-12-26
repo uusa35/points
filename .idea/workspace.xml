@@ -50,12 +50,12 @@
           <entry key="env" value="65" />
           <entry key="js" value="183" />
           <entry key="json" value="10" />
-          <entry key="php" value="70943" />
+          <entry key="php" value="71024" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="30134" />
+          <entry key="Blade" value="30215" />
           <entry key="CSS" value="36" />
           <entry key="JSON" value="10" />
           <entry key="JavaScript" value="183" />
@@ -94,8 +94,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/backend/modules/order/create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="743">
-              <caret line="314" column="76" selection-start-line="314" selection-start-column="76" selection-end-line="314" selection-end-column="76" />
+            <state relative-caret-position="1022">
+              <caret line="501" column="42" selection-start-line="501" selection-start-column="42" selection-end-line="501" selection-end-column="42" />
               <folding>
                 <element signature="e#2108#3131#0#HTML" />
                 <element signature="e#3236#4259#0#HTML" />
@@ -108,9 +108,12 @@
                 <element signature="e#16863#17860#0#HTML" />
                 <element signature="e#17890#18747#0#HTML" />
                 <element signature="e#18778#19723#0#HTML" />
-                <element signature="e#29334#29356#0#HTML" expanded="true" />
-                <element signature="e#29404#29444#0#HTML" expanded="true" />
-                <element signature="e#32498#32514#0#HTML" expanded="true" />
+                <element signature="e#15196#15296#0#HTML" />
+                <element signature="e#31127#31149#0#HTML" expanded="true" />
+                <element signature="e#31197#31237#0#HTML" expanded="true" />
+                <element signature="e#33059#33505#0#HTML" />
+                <element signature="e#33424#33440#0#HTML" expanded="true" />
+                <element signature="e#33538#34174#0#HTML" />
               </folding>
             </state>
           </provider>
@@ -575,12 +578,12 @@
       <workItem from="1545646175493" duration="4465000" />
       <workItem from="1545656769125" duration="1517000" />
       <workItem from="1545680938728" duration="38000" />
-      <workItem from="1545745759834" duration="2984000" />
+      <workItem from="1545745759834" duration="3328000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="222689000" />
+    <option name="totallyTimeSpent" value="223033000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
@@ -950,8 +953,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/backend/modules/order/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="743">
-          <caret line="314" column="76" selection-start-line="314" selection-start-column="76" selection-end-line="314" selection-end-column="76" />
+        <state relative-caret-position="1022">
+          <caret line="501" column="42" selection-start-line="501" selection-start-column="42" selection-end-line="501" selection-end-column="42" />
           <folding>
             <element signature="e#2108#3131#0#HTML" />
             <element signature="e#3236#4259#0#HTML" />
@@ -964,9 +967,12 @@
             <element signature="e#16863#17860#0#HTML" />
             <element signature="e#17890#18747#0#HTML" />
             <element signature="e#18778#19723#0#HTML" />
-            <element signature="e#29334#29356#0#HTML" expanded="true" />
-            <element signature="e#29404#29444#0#HTML" expanded="true" />
-            <element signature="e#32498#32514#0#HTML" expanded="true" />
+            <element signature="e#15196#15296#0#HTML" />
+            <element signature="e#31127#31149#0#HTML" expanded="true" />
+            <element signature="e#31197#31237#0#HTML" expanded="true" />
+            <element signature="e#33059#33505#0#HTML" />
+            <element signature="e#33424#33440#0#HTML" expanded="true" />
+            <element signature="e#33538#34174#0#HTML" />
           </folding>
         </state>
       </provider>
