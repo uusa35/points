@@ -5,6 +5,48 @@
     <div class="row">
         <div class="col-md-12">
             <!-- BEGIN EXAMPLE TABLE PORTLET-->
+            <div class="portlet box blue">
+                @include('backend.partials.forms.form_title')
+                <div class="portlet-body form">
+                    <div class="form-body">
+                        <div class="row center-block">
+                            <div class="col-lg-6 col-lg-push-3">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 center-block">
+                                    <a class="dashboard-stat dashboard-stat-v2 blue-ebonyclay" data-toggle="modal"
+                                       href="#"
+                                       data-target="#order-image" data-title="{{ trans('general.image') }}">
+                                        <div class="visual">
+                                            <i class="fa fa-money"></i>
+                                        </div>
+                                        <div class="details">
+                                            <div class="number">
+                                                <span data-counter="counterup" data-value="10"></span>
+                                            </div>
+                                            <div class="desc ">{{ trans('general.add_image') }}</div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <a class="dashboard-stat dashboard-stat-v2 green-dark" data-toggle="modal" href="#"
+                                       data-target="#order-file" data-title="{{ trans('general.file') }}">
+                                        <div class="visual">
+                                            <i class="fa fa-money"></i>
+                                        </div>
+                                        <div class="details">
+                                            <div class="number">
+                                                <span data-counter="counterup" data-value="10"></span>
+                                            </div>
+                                            <div class="desc ">{{ trans('general.add_file') }}</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        @include('backend.modules.order._add_file')
+                        @include('backend.modules.order._add_image')
+                    </div>
+                </div>
+            </div>
             <div class="portlet light ">
                 @include('backend.partials.forms.form_title')
                 <div class="blog-page blog-content-1">
@@ -58,57 +100,57 @@
                     </div>
                 </div>
                 @if($element->orders)
-                <div class="portlet-body">
-                    <div class="m-heading-1 border-green m-bordered">
-                        <h3>{{ trans('general.instructions') }}</h3>
-                        <p>
-                            {{ trans('message.backend_files_index_message') }}
-                        </p>
-                    </div>
-                    <table id="dataTable" class="table table-striped table-bordered table-hover" cellspacing="0"
-                           width="100%">
-                        {{--<table class="table table-striped table-bordered table-hover order-column" id="dataTable">--}}
-                        <thead>
-                        <tr>
-                            <th>{{ trans('general.id') }}</th>
-                            <th>{{ trans('general.name_ar') }}</th>
-                            <th>{{ trans('general.name_en') }}</th>
-                            <th>{{ trans('general.client') }}</th>
-                            <th>{{ trans('general.service_name') }}</th>
-                            <th>{{ trans('general.category_name') }}</th>
-                            <th>{{ trans('general.Action') }}</th>
-                        </tr>
-                        </thead>
-                        <tfoot>
-                        <tr>
-                            <th>{{ trans('general.id') }}</th>
-                            <th>{{ trans('general.name_ar') }}</th>
-                            <th>{{ trans('general.name_en') }}</th>
-                            <th>{{ trans('general.client') }}</th>
-                            <th>{{ trans('general.service_name') }}</th>
-                            <th>{{ trans('general.category_name') }}</th>
-                            <th>{{ trans('general.view_files') }}</th>
-                        </tr>
-                        </tfoot>
-                        <tbody>
-                        @foreach($element->orders as $element)
+                    <div class="portlet-body">
+                        <div class="m-heading-1 border-green m-bordered">
+                            <h3>{{ trans('general.instructions') }}</h3>
+                            <p>
+                                {{ trans('message.backend_files_index_message') }}
+                            </p>
+                        </div>
+                        <table id="dataTable" class="table table-striped table-bordered table-hover" cellspacing="0"
+                               width="100%">
+                            {{--<table class="table table-striped table-bordered table-hover order-column" id="dataTable">--}}
+                            <thead>
                             <tr>
-                                <td>{{ $element->id }}</td>
-                                <td>{{ $element->name_ar }}</td>
-                                <td>{{ $element->name_en }}</td>
-                                <td>{{ $element->client->name }}</td>
-                                <td>{{ $element->service->name }}</td>
-                                <td>{{ $element->service->category->slug }}</td>
-                                <td>
-                                    <a href="{{ route('backend.file.show', $element->id) }}"
-                                       class="btn btn-success">{{ trans('general.view_files') }}</a>
-                                </td>
+                                <th>{{ trans('general.id') }}</th>
+                                <th>{{ trans('general.name_ar') }}</th>
+                                <th>{{ trans('general.name_en') }}</th>
+                                <th>{{ trans('general.client') }}</th>
+                                <th>{{ trans('general.service_name') }}</th>
+                                <th>{{ trans('general.category_name') }}</th>
+                                <th>{{ trans('general.Action') }}</th>
                             </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
-                </div>
-                    @else
+                            </thead>
+                            <tfoot>
+                            <tr>
+                                <th>{{ trans('general.id') }}</th>
+                                <th>{{ trans('general.name_ar') }}</th>
+                                <th>{{ trans('general.name_en') }}</th>
+                                <th>{{ trans('general.client') }}</th>
+                                <th>{{ trans('general.service_name') }}</th>
+                                <th>{{ trans('general.category_name') }}</th>
+                                <th>{{ trans('general.view_files') }}</th>
+                            </tr>
+                            </tfoot>
+                            <tbody>
+                            @foreach($element->orders as $element)
+                                <tr>
+                                    <td>{{ $element->id }}</td>
+                                    <td>{{ $element->name_ar }}</td>
+                                    <td>{{ $element->name_en }}</td>
+                                    <td>{{ $element->client->name }}</td>
+                                    <td>{{ $element->service->name }}</td>
+                                    <td>{{ $element->service->category->slug }}</td>
+                                    <td>
+                                        <a href="{{ route('backend.file.show', $element->id) }}"
+                                           class="btn btn-success">{{ trans('general.view_files') }}</a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                @else
                     <div class="alert alert-warning">{{ trans('general.no_orders') }}</div>
                 @endif
             </div>

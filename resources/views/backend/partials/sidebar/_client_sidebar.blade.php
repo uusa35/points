@@ -30,7 +30,7 @@
     </ul>
 </li>
 <li class="nav-item {{ activeItem('file') }}">
-    <a href="{{ route('backend.file.index') }}" class="nav-link nav-toggle">
+    <a href="{{ route('backend.file.index',['type' => 'user', 'id' => auth()->id()]) }}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-file"></i>
         <span class="title">{{ trans('general.my_files') }}</span>
         <span class="selected"></span>

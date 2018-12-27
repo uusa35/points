@@ -34,14 +34,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group {{ $errors->has('notes') ? ' has-error' : '' }}">
-                                <label for="notes" class="control-label">{{ trans('general.notes') }}</label>
-                                <input id="notes" type="text" class="form-control" name="notes"
-                                       value="{{ old('notes') }}"
-                                       placeholder="{{ trans('general.notes') }}" required>
-                            </div>
-                        </div>
+                        {{--<div class="col-md-6">--}}
+                            {{--<div class="form-group {{ $errors->has('notes') ? ' has-error' : '' }}">--}}
+                                {{--<label for="notes" class="control-label">{{ trans('general.notes') }}</label>--}}
+                                {{--<input id="notes" type="text" class="form-control" name="notes"--}}
+                                       {{--value="{{ old('notes') }}"--}}
+                                       {{--placeholder="{{ trans('general.notes') }}" required>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                     </div>
                     {{--<div class="row">--}}
                         {{--<div class="col-md-6">--}}

@@ -17,6 +17,13 @@ class FileController extends Controller
      */
     public function index()
     {
+        $validate = validator(request()->all(), [
+            'type' => 'required|alpha',
+            'id' => 'required|numeric'
+        ]);
+        if ($validate->fails()) {
+            return redirect()->back()->withErrors($validate->errors());
+        }
         $element = User::whereId(auth()->id())->with('files.category', 'images.category', 'orders')->first();
         $categories = Category::where(['is_files' => true])->get();
         return view('backend.modules.file.index', compact('element', 'categories'));

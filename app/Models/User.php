@@ -57,12 +57,12 @@ class User extends Authenticatable
 
     public function images()
     {
-        return $this->hasMany(Image::class);
+        return $this->morphMany(Image::class, 'imagable');
     }
 
     public function files()
     {
-        return $this->hasMany(File::class);
+        return $this->morphMany(File::class, 'filable');
     }
 
 }

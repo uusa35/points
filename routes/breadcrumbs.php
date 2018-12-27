@@ -161,12 +161,12 @@ Breadcrumbs::for('backend.file.show', function ($trail, $element) {
 });
 
 Breadcrumbs::for('backend.file.create', function ($trail) {
-    $trail->parent('backend.' .request()->type .'.index',request()->id);
+    $trail->parent('backend.home');
     $trail->push(trans('general.file_create'), route('backend.file.create'));
 });
 
 Breadcrumbs::for('backend.file.edit', function ($trail, $element) {
-    $trail->parent('backend.' .request()->type .'.index',request()->id);
+    $trail->parent('backend.home');
     $trail->push(trans('general.file_edit'), route('backend.file.edit', $element->id));
 });
 
