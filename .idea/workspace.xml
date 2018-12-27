@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e482aaea-7ea8-4e60-bb85-c7a119286766" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/FileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/FileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/file/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/file/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/order/_add_file.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/order/_add_file.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/order/_add_image.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/order/_add_image.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/partials/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/partials/nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/partials/sidebar/_client_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/partials/sidebar/_client_sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/breadcrumbs.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/breadcrumbs.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,16 +51,16 @@
           <entry key="env" value="65" />
           <entry key="js" value="183" />
           <entry key="json" value="10" />
-          <entry key="php" value="74080" />
+          <entry key="php" value="74083" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="31714" />
+          <entry key="Blade" value="31716" />
           <entry key="CSS" value="36" />
           <entry key="JSON" value="10" />
           <entry key="JavaScript" value="183" />
-          <entry key="PHP" value="42366" />
+          <entry key="PHP" value="42367" />
           <entry key="PLAIN_TEXT" value="70" />
         </counts>
       </usages-collector>
@@ -99,11 +92,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/breadcrumbs.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="168" column="35" selection-start-line="168" selection-start-column="35" selection-end-line="168" selection-end-column="35" />
+            <state relative-caret-position="702">
+              <caret line="179" column="89" lean-forward="true" selection-start-line="179" selection-start-column="89" selection-end-line="179" selection-end-column="89" />
             </state>
           </provider>
         </entry>
@@ -120,8 +113,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/backend/modules/order/_add_image.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="32" column="85" lean-forward="true" selection-start-line="32" selection-start-column="85" selection-end-line="32" selection-end-column="85" />
+            <state relative-caret-position="468">
+              <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -129,8 +122,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/backend/modules/order/_add_file.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="22" column="34" lean-forward="true" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+            <state relative-caret-position="360">
+              <caret line="20" column="70" lean-forward="true" selection-start-line="20" selection-start-column="70" selection-end-line="20" selection-end-column="70" />
             </state>
           </provider>
         </entry>
@@ -162,11 +155,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/FileController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="782">
-              <caret line="98" column="52" selection-start-line="98" selection-start-column="52" selection-end-line="98" selection-end-column="52" />
+            <state relative-caret-position="620">
+              <caret line="89" column="56" selection-start-line="89" selection-start-column="56" selection-end-line="89" selection-end-column="56" />
               <folding>
                 <element signature="e#48#72#0#PHP" expanded="true" />
               </folding>
@@ -288,12 +281,12 @@
         <option value="$PROJECT_DIR$/resources/views/backend/modules/file/show_list.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/partials/nav.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/modules/file/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/backend/modules/order/_add_file.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/modules/order/_add_image.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/partials/sidebar/_client_sidebar.blade.php" />
         <option value="$PROJECT_DIR$/app/Models/User.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/FileController.php" />
         <option value="$PROJECT_DIR$/routes/breadcrumbs.php" />
+        <option value="$PROJECT_DIR$/resources/views/backend/modules/order/_add_file.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/FileController.php" />
       </list>
     </option>
   </component>
@@ -571,7 +564,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="brea&#9;FILE&#9;file:///Users/mac/Sites/points/routes/breadcrumbs.php&#10;Filecon&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/FileController.php&#10;breadc&#9;FILE&#9;file:///Users/mac/Sites/points/routes/breadcrumbs.php&#10;FileCon&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/FileController.php&#10;User&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/User.php&#10;Order&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Order.php&#10;Order.php&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Order.php&#10;user.php&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/User.php&#10;sideba&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/sidebar/_client_sidebar.blade.php&#10;sidebar&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/sidebar/sidebar.blade.php&#10;index.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/file/index.blade.php&#10;create.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/file/create.blade.php&#10;nav.blade&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/nav.blade.php&#10;nav.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/nav.blade.php&#10;add_f&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/order/_add_file.blade.php&#10;add_&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/order/_add_image.blade.php&#10;categories_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2014_04_23_152318_create_categories_table.php&#10;images_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2017_04_24_132934_create_images_table.php&#10;index&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/file/index.blade.php&#10;show_li&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/file/show_list.blade.php&#10;web&#9;FILE&#9;file:///Users/mac/Sites/points/routes/web.php&#10;web.php&#9;FILE&#9;file:///Users/mac/Sites/points/routes/web.php&#10;show.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/order/show.blade.php&#10;choose_category&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/order/choose_category.blade.php&#10;OrderCon&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/OrderController.php&#10;File.ph&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/FileFactory.php&#10;create.bl&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/file/create.blade.php&#10;edit.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/user/edit.blade.php&#10;AuthSer&#9;null&#9;null&#10;statis&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/_order_statistics.blade.php&#10;OrderPo&#9;null&#9;null&#10;FileFa&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/FileFactory.php&#10;Image.ph&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Image.php&#10;OrdersTa&#9;null&#9;null&#10;ImageF&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/ImageFactory.php&#10;ServiceF&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/ServiceFactory.php&#10;FileFacto&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/FileFactory.php&#10;FileFac&#9;null&#9;null&#10;FileF&#9;null&#9;null&#10;CategoriesT&#9;null&#9;null&#10;files_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2018_12_11_131121_create_files_table.php&#10;create.blade&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/category/create.blade.php&#10;File.php&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/File.php&#10;Image.php&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Image.php&#10;images&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2017_04_24_132934_create_images_table.php&#10;ServicesT&#9;null&#9;null&#10;CategoryFa&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/CategoryFactory.php&#10;bread&#9;FILE&#9;file:///Users/mac/Sites/points/routes/breadcrumbs.php&#10;web.ph&#9;FILE&#9;file:///Users/mac/Sites/points/routes/web.php&#10;sideb&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/sidebar/_super_sidebar.blade.php" />
+    <property name="SearchEverywhereHistoryKey" value="Filecon&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/FileController.php&#10;_add&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/order/_add_file.blade.php&#10;_ad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/order/_add_image.blade.php&#10;brea&#9;FILE&#9;file:///Users/mac/Sites/points/routes/breadcrumbs.php&#10;breadc&#9;FILE&#9;file:///Users/mac/Sites/points/routes/breadcrumbs.php&#10;FileCon&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/FileController.php&#10;User&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/User.php&#10;Order&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Order.php&#10;Order.php&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Order.php&#10;user.php&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/User.php&#10;sideba&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/sidebar/_client_sidebar.blade.php&#10;sidebar&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/sidebar/sidebar.blade.php&#10;index.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/file/index.blade.php&#10;create.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/file/create.blade.php&#10;nav.blade&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/nav.blade.php&#10;nav.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/nav.blade.php&#10;add_f&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/order/_add_file.blade.php&#10;add_&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/order/_add_image.blade.php&#10;categories_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2014_04_23_152318_create_categories_table.php&#10;images_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2017_04_24_132934_create_images_table.php&#10;index&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/file/index.blade.php&#10;show_li&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/file/show_list.blade.php&#10;web&#9;FILE&#9;file:///Users/mac/Sites/points/routes/web.php&#10;web.php&#9;FILE&#9;file:///Users/mac/Sites/points/routes/web.php&#10;show.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/order/show.blade.php&#10;choose_category&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/order/choose_category.blade.php&#10;OrderCon&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/OrderController.php&#10;File.ph&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/FileFactory.php&#10;create.bl&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/file/create.blade.php&#10;edit.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/user/edit.blade.php&#10;AuthSer&#9;null&#9;null&#10;statis&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/_order_statistics.blade.php&#10;OrderPo&#9;null&#9;null&#10;FileFa&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/FileFactory.php&#10;Image.ph&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Image.php&#10;OrdersTa&#9;null&#9;null&#10;ImageF&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/ImageFactory.php&#10;ServiceF&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/ServiceFactory.php&#10;FileFacto&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/FileFactory.php&#10;FileFac&#9;null&#9;null&#10;FileF&#9;null&#9;null&#10;CategoriesT&#9;null&#9;null&#10;files_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2018_12_11_131121_create_files_table.php&#10;create.blade&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/category/create.blade.php&#10;File.php&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/File.php&#10;Image.php&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Image.php&#10;images&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2017_04_24_132934_create_images_table.php&#10;ServicesT&#9;null&#9;null&#10;CategoryFa&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/CategoryFactory.php&#10;bread&#9;FILE&#9;file:///Users/mac/Sites/points/routes/breadcrumbs.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="" />
@@ -652,12 +645,12 @@
       <workItem from="1545680938728" duration="38000" />
       <workItem from="1545745759834" duration="3382000" />
       <workItem from="1545831756701" duration="1895000" />
-      <workItem from="1545892490121" duration="6094000" />
+      <workItem from="1545892490121" duration="6180000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="231076000" />
+    <option name="totallyTimeSpent" value="231162000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
@@ -1006,20 +999,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/backend/modules/order/_add_file.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="34" lean-forward="true" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/backend/modules/order/_add_image.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="32" column="85" lean-forward="true" selection-start-line="32" selection-start-column="85" selection-end-line="32" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/backend/modules/file/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -1048,20 +1027,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/FileController.php">
+    <entry file="file://$PROJECT_DIR$/routes/breadcrumbs.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="98" column="52" selection-start-line="98" selection-start-column="52" selection-end-line="98" selection-end-column="52" />
-          <folding>
-            <element signature="e#48#72#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="702">
+          <caret line="179" column="89" lean-forward="true" selection-start-line="179" selection-start-column="89" selection-end-line="179" selection-end-column="89" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/breadcrumbs.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/backend/modules/order/_add_image.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="168" column="35" selection-start-line="168" selection-start-column="35" selection-end-line="168" selection-end-column="35" />
+        <state relative-caret-position="468">
+          <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/backend/modules/order/_add_file.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="70" lean-forward="true" selection-start-line="20" selection-start-column="70" selection-end-line="20" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/FileController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="89" column="56" selection-start-line="89" selection-start-column="56" selection-end-line="89" selection-end-column="56" />
+          <folding>
+            <element signature="e#48#72#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

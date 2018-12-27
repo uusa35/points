@@ -87,6 +87,7 @@ class FileController extends Controller
         if ($request->hasFile('path')) {
             $file = $element->files()->create([
                 'user_id' => auth()->id(),
+                'category_id' => request('category_id'),
                 'notes' => request('notes'),
                 'name_ar' => request('name_ar'),
                 'name_en' => request('name_en'),
