@@ -94,7 +94,7 @@ return array (
   'on_progress_orders' => 'طلبات تحت الانشاء',
   'all_images' => 'كل الصور',
   'view_larger' => 'تكبير',
-  'transactions_history' => 'تغييرات الترجمة',
+  'transactions_history' => 'سجل عمليات الدفع',
   'title' => 'العنوان',
   'complete' => 'مكتمل',
   'service' => 'خدمة',
