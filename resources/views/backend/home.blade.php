@@ -8,8 +8,8 @@
                 <div class="panel panel-info">
                     <div class="panel-body">
                         @include('backend.partials._transactions',['elements' => $transactions, 'title' => 'List of Complete Transactions'])
-                        @include('backend.partials._user_details',['elements' => $clients, 'title' => 'List of Clients'])
-                        @include('backend.partials._user_details',['elements' => $designers, 'title' => 'List of Designers'])
+                        @include('backend.partials._user_details',['elements' => $clients, 'title' => trans('general.list_of_clients')])
+                        @include('backend.partials._user_details',['elements' => $designers, 'title' => trans('general.list_of_designers')])
                         {{--@foreach($designers as $element)--}}
                             {{--<div class="col-lg-3"--}}
                                  {{--style="width: 24% !important; height : 400px; border: 1px solid lightgrey; margin: 5px;">--}}
