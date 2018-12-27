@@ -37,7 +37,7 @@ $(document).ready(function() {
         "bFilter": true,
         "bInfo": true,
         "bAutoWidth": true,
-        "pageLength": 50
+        "pageLength": 5
     });
     $(document).on('show.bs.modal', function(event) {
         var element = $(event.relatedTarget) // Button that triggered the modal

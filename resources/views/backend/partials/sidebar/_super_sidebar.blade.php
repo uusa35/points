@@ -81,14 +81,6 @@
         </li>
     </ul>
 </li>
-<li class="nav-item {{ activeItem('file') }}">
-    <a href="{{ route('backend.file.index') }}" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-file"></i>
-        <span class="title">{{ trans('general.my_files') }}</span>
-        <span class="selected"></span>
-        <span class="arrow open"></span>
-    </a>
-</li>
 <li class="nav-item {{ activeItem('point') }}">
     <a href="{{ route('backend.point.index') }}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-dollar"></i>

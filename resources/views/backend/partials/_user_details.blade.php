@@ -14,7 +14,7 @@
             <div class="portlet-body">
                 <div class="table-responsive">
                     <table class="table table-hover table-bordered table-striped"
-                           id="differentDataTable-{{ rand() }}">
+                           id="moreDataTable-{{ rand() }}">
                         <thead>
                         <tr>
                             <th>{{ trans('general.id') }}</th>
