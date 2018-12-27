@@ -17,9 +17,9 @@ class FileController extends Controller
      */
     public function index()
     {
-        $element = User::whereId(auth()->id())->with('files.category','images.category','orders')->first();
+        $element = User::whereId(auth()->id())->with('files.category', 'images.category', 'orders')->first();
         $categories = Category::where(['is_files' => true])->get();
-        return view('backend.modules.file.index', compact('element','categories'));
+        return view('backend.modules.file.index', compact('element', 'categories'));
     }
 
     /**
@@ -40,7 +40,7 @@ class FileController extends Controller
         $element = new $className();
         $element = $element->withoutGlobalScopes()->whereId(request()->id)->first();
         $categories = Category::where(['is_files' => true])->get();
-        return view('backend.modules.file.create', compact('element','categories'))->with(['type' => request()->type, 'id' => request()->id]);
+        return view('backend.modules.file.create', compact('element', 'categories'))->with(['type' => request()->type, 'id' => request()->id]);
     }
 
     /**
@@ -89,7 +89,7 @@ class FileController extends Controller
             ]);
             $this->saveMimes($file, $request, ['path'], ['750', '1334'], true);
         }
-        return redirect()->route('backend.file.create', ['type' => request()->type, 'id' => request()->id ]);
+        return redirect()->route('backend.file.create', ['type' => request()->type, 'id' => request()->id]);
 //        return redirect()->route('backend.file.create', compact('element'))
 //            ->with(['success' => trans('message.file_or_image_saved_successfully'), 'type' => request()->type, 'id' => request()->id]);
     }
@@ -138,5 +138,25 @@ class FileController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getShowList(Request $request)
+    {
+        $validate = validator($request->all(), [
+            'category_id' => 'required|exists:categories,id',
+            'type' => 'required|alpha',
+            'id' => 'required|numeric',
+        ]);
+        if ($validate->fails()) {
+            return redirect()->back()->withErrors($validate->errors());
+        }
+        $className = '\App\Models\\' . title_case(request()->type);
+        $element = new $className();
+        $element = $element->withoutGlobalScopes()->whereId(request()->id)->with(['files' => function ($q) {
+            return $q->where(['user_id' => auth()->id(), 'category_id' => request('category_id')]);
+        }])->with(['images' => function ($q) {
+            return $q->where(['user_id' => auth()->id(), 'category_id' => request('category_id')]);
+        }])->first();
+        return view('backend.modules.file.show_list', compact('element'));
     }
 }

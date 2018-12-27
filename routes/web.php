@@ -48,6 +48,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     Route::get('/make/order/service', 'OrderController@chooseOrderService')->name('order.choose.service');
     Route::get('/make/order/lang', 'OrderController@chooseOrderLang')->name('order.choose.lang');
     Route::resource('file', 'FileController');
+    Route::get('show/list', 'FileController@getShowList')->name('file.show.list');
     Route::resource('job', 'JobController');
     Route::resource('version', 'VersionController');
     Route::resource('image', 'ImageController');
