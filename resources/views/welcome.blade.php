@@ -45,7 +45,6 @@
 
         .full-height {
             width: 100%;
-            border: 1px solid red;
         }
 
         .flex-center {
@@ -137,28 +136,71 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-lg-8 col-lg-push-2">
 
-            <div class="col-lg-3">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        test
-                    </div>
-                    <div class="panel-body">
-                        {{ $settings->section_one }}
-                    </div>
+    <div class="row justify-content-md-center">
+        <div class="col">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    @foreach($sliders as $slider)
+                        <li data-target="#carouselExampleIndicators" data-slide-to="{{ $loop->index }}"
+                            class="{{ $loop->first ? 'active' : null  }}"></li>
+                    @endforeach
+                </ol>
+                <div class="carousel-inner">
+                    @foreach($sliders as $slider)
+                        <div class="carousel-item {{ $loop->first ? 'active' : null  }}">
+                            <img class="d-block w-100"
+                                 src="{{ asset(env('LARGE').$slider->image) }}"
+                                 alt="{{ $slider->caption }}">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>{{ $slider->caption }}</h5>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-md-center" style="padding: 100px;">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    <h5>{{ $settings->title_one }}</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">{{ $settings->section_one }}</p>
+                    {{--<a href="#" class="btn btn-primary">Go somewhere</a>--}}
                 </div>
             </div>
         </div>
-        <div class="col-lg-8 col-lg-push-2">
-            <div class="col-lg-3">
-                {{ $settings->section_two }}
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    <h5>{{ $settings->title_two }}</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">{{ $settings->section_two }}</p>
+                    {{--<a href="#" class="btn btn-primary">Go somewhere</a>--}}
+                </div>
             </div>
         </div>
-        <div class="col-lg-8 col-lg-push-2">
-            <div class="col-lg-3">
-                {{ $settings->section_three }}
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">{{ $settings->title_three }}</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">{{ $settings->section_three }}</p>
+                    {{--<a href="#" class="btn btn-primary">Go somewhere</a>--}}
+                </div>
             </div>
         </div>
     </div>
