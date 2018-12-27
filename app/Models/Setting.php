@@ -5,7 +5,7 @@ namespace App\Models;
 
 class Setting extends PrimaryModel
 {
-    protected $localeStrings = ['name','address','description','on_home_speech','section_one','section_two','section_three'];
+    protected $localeStrings = ['name','address','description','on_home_speech','section_one','section_two','section_three','title_one','title_two','title_three'];
     protected $guarded = [''];
 
     public function gallery()

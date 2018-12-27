@@ -15,6 +15,7 @@ use App\Models\Menu;
 use App\Models\Post;
 use App\Models\Role;
 use App\Models\Size;
+use App\Models\Slider;
 use App\Models\Transaction;
 use App\Models\User;
 use App\Models\Version;
@@ -32,6 +33,12 @@ class ViewComposers
             $roles = Role::where(['is_visible' => true])->get();
         }
         return $view->with(compact('roles'));
+    }
+
+    public function getSliders(View $view)
+    {
+        $sliders = Slider::active()->get();
+        return $view->with(compact('sliders'));
     }
 
     public function getSettings(View $view)
@@ -78,7 +85,7 @@ class ViewComposers
 
     public function getTotalLastVersionFiles(View $view)
     {
-        $totalLastVersionFiles =  Version::whereHas('job', function ($q) {
+        $totalLastVersionFiles = Version::whereHas('job', function ($q) {
             return $q->where(['is_complete' => true])->whereHas('order', function ($q) {
                 return $q->where(['is_paid' => true, 'is_complete' => true, 'user_id' => auth()->id()]);
             });
