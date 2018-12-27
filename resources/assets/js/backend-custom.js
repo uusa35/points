@@ -29,6 +29,7 @@ $(document).ready(function() {
     });
     $('table[id^="moreDataTable-"]').DataTable({
         "order": [[0, "desc"]],
+        "scrollCollapse": true,
         "bPaginate": true,
         "bLengthChange": true,
         "bFilter": true,
