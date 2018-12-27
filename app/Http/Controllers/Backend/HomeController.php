@@ -19,9 +19,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $designers = User::active()->onlyDesigners()->with('role')->orderBy('id','desc')->paginate(Self::PAGINATE, ['*'], 'clients');
-        $clients = User::active()->onlyClients()->orderBy('id','desc')->with('role')->paginate(Self::PAGINATE, ['*'], 'clients');
-        $transactions = Transaction::where(['is_complete' => true])->with('user', 'payment_plan')->orderBy('created_at', 'desc')->paginate(50, ['*'], 'transactions');
+        $designers = User::active()->onlyDesigners()->with('role')->orderBy('id','desc')->take(5)->get();
+        $clients = User::active()->onlyClients()->orderBy('id','desc')->with('role')->orderBy('created_at','desc')->take(5)->get();
+        $transactions = Transaction::where(['is_complete' => true])->with('user', 'payment_plan')->orderBy('created_at', 'desc')->take(5)->get();
         $orders = Order::where(['user_id' => auth()->id(), 'is_paid' => true])->active()->with('service.category', 'client')->orderBy('created_at', 'desc')->paginate(50, ['*'], 'orders');
         return view('backend.home', compact('designers', 'clients', 'transactions', 'orders'));
     }
