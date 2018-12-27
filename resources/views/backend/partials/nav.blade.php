@@ -311,6 +311,13 @@
                 <!-- END TODO DROPDOWN -->
                     <!-- BEGIN USER LOGIN DROPDOWN -->
                     <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                    <li class="dropdown dropdown-user" style="background-color: white;">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                           data-close-others="true">
+                            <span class="username username-hide-on-mobile" > {{ trans('general.balance') }}
+                                : {{ auth()->user()->balance->points}} {{ trans('general.points') }}</span>
+                        </a>
+                    </li>
                     <li class="dropdown dropdown-user">
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                            data-close-others="true">
