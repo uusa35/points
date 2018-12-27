@@ -40,7 +40,7 @@
                         </tr>
                         </tfoot>
                         <tbody>
-                        @foreach($elements as $element)
+                        @foreach($element->orders as $element)
                             <tr>
                                 <td>{{ $element->id }}</td>
                                 <td>{{ $element->name_ar }}</td>
@@ -49,13 +49,13 @@
                                 <td>{{ $element->service->name }}</td>
                                 <td>{{ $element->service->category->slug }}</td>
                                 <td>
-                                    <a href="{{ route('backend.file.show', $element->id) }}" class="btn btn-success">{{ trans('general.view_files') }}</a>
+                                    <a href="{{ route('backend.file.show', $element->id) }}"
+                                       class="btn btn-success">{{ trans('general.view_files') }}</a>
                                 </td>
                             </tr>
                         @endforeach
                         </tbody>
                     </table>
-                    {{ $elements->render() }}
                 </div>
             </div>
         </div>

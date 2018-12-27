@@ -28,6 +28,7 @@ class CreateCategoriesTable extends Migration
             $table->integer('parent_id')->default(0);
             $table->integer('order')->nullable();
             $table->boolean('active')->default(1)->nullable();
+            $table->boolean('is_files')->default(0)->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

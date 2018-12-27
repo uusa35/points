@@ -20,5 +20,6 @@ $factory->define(Image::class, function (Faker $faker) {
         'notes' => $faker->sentence,
         'order' => $faker->numberBetween(1, 10),
         'user_id' => User::all()->random()->id,
+        'category_id' => Category::where(['is_files' => true])->get()->random()->id,
     ];
 });

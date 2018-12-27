@@ -21,6 +21,6 @@ $factory->define(Service::class, function (Faker $faker) {
         'active' => $faker->boolean(true),
         'points' => $faker->numberBetween(50,100),
         'sale_points' => $faker->numberBetween(10,50),
-        'category_id' => Category::all()->random()->id,
+        'category_id' => Category::where(['is_files' => false ])->get()->random()->id,
     ];
 });

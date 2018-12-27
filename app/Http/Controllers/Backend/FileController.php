@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Models\Category;
 use App\Models\Order;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,8 +17,9 @@ class FileController extends Controller
      */
     public function index()
     {
-        $elements = auth()->user()->orders()->paginate(self::PAGINATE);
-        return view('backend.modules.file.index', compact('elements'));
+        $element = User::whereId(auth()->id())->with('files.category','images.category','orders')->first();
+        $categories = Category::where(['is_files' => true])->get();
+        return view('backend.modules.file.index', compact('element','categories'));
     }
 
     /**
@@ -36,7 +39,8 @@ class FileController extends Controller
         $className = '\App\Models\\' . title_case(request()->type);
         $element = new $className();
         $element = $element->withoutGlobalScopes()->whereId(request()->id)->first();
-        return view('backend.modules.file.create', compact('element'))->with(['type' => request()->type, 'id' => request()->id]);
+        $categories = Category::where(['is_files' => true])->get();
+        return view('backend.modules.file.create', compact('element','categories'))->with(['type' => request()->type, 'id' => request()->id]);
     }
 
     /**
@@ -50,6 +54,7 @@ class FileController extends Controller
         $validate = validator(request()->all(), [
             'type' => 'required|alpha',
             'id' => 'required|numeric',
+            'category_id' => 'required|exists:categories,id',
             'path' => 'mimes:pdf|nullable|max:50000',
             'image' => 'image',
         ]);
@@ -62,6 +67,7 @@ class FileController extends Controller
         if ($request->hasFile('image')) {
             $file = $element->images()->create([
                 'user_id' => auth()->id(),
+                'category_id' => request('category_id'),
                 'notes' => request('notes'),
                 'name_ar' => request('name_ar'),
                 'name_en' => request('name_en'),

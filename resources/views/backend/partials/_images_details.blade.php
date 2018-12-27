@@ -25,7 +25,7 @@
                             <th>{{ trans('general.name') }}</th>
                             <th>{{ trans('general.caption') }}</th>
                             <th>{{ trans('general.type') }}</th>
-                            <th>{{ trans('general.user') }}</th>
+                            <th>{{ trans('general.category') }}</th>
                             <th>{{ trans('general.Action') }}</th>
                         </tr>
                         </thead>
@@ -39,7 +39,7 @@
                                 <td>{{ $element->name }}</td>
                                 <td>{{ $element->caption }}</td>
                                 <td>{{ $element->imagable_type }}</td>
-                                <td>{{ $element->user->name }}</td>
+                                <td>{{ $element->category->slug }}</td>
                                 <td>
                                     <div class="btn-group pull-right">
                                         <button type="button"
