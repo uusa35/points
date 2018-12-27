@@ -158,9 +158,16 @@
                                             <li>
                                                 <a href="{{ route('backend.order.show',$element->id) }}">
                                                     <span class="photo">
-                                                    <img
-                                                        src="{{ asset(env('THUMBNAIL').$element->images->first()->image) }}"
-                                                        class="img-circle" alt=""> </span>
+                                                        @if($element->images->isNotEmpty())
+                                                            <img
+                                                                src="{{ asset(env('THUMBNAIL').$element->images->first()->image) }}"
+                                                                class="img-circle" alt="">
+                                                        @else
+                                                            <img
+                                                                src="{{ asset(env('THUMBNAIL').$settings->logo) }}"
+                                                                class="img-circle" alt="">
+                                                        @endif
+                                                    </span>
                                                     <span class="subject">
                                                         <span class="from"> {{ $element->title }} </span>
                                                         <span
