@@ -154,7 +154,7 @@ class OrderController extends Controller
 
     public function chooseOrderCategory()
     {
-        $elements = Category::active()->where(['is_files' => false ])->whereHas('services', function ($q) {
+        $elements = Category::active()->onlyParent()->where(['is_files' => false ])->whereHas('services', function ($q) {
             return $q->active();
         }, '>', 0)->with('services')->orderBy('order', 'desc')->get();
         return view('backend.modules.order.choose_category', compact('elements'));

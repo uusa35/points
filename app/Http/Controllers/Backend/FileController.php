@@ -25,7 +25,7 @@ class FileController extends Controller
             return redirect()->back()->withErrors($validate->errors());
         }
         $element = User::whereId(auth()->id())->with('files.category', 'images.category', 'orders')->first();
-        $categories = Category::where(['is_files' => true])->get();
+        $categories = Category::onlyParent()->where(['is_files' => true])->get();
         return view('backend.modules.file.index', compact('element', 'categories'));
     }
 
@@ -46,7 +46,7 @@ class FileController extends Controller
         $className = '\App\Models\\' . title_case(request()->type);
         $element = new $className();
         $element = $element->withoutGlobalScopes()->whereId(request()->id)->first();
-        $categories = Category::where(['is_files' => true])->get();
+        $categories = Category::onlyParent()->where(['is_files' => true])->get();
         return view('backend.modules.file.create', compact('element', 'categories'))->with(['type' => request()->type, 'id' => request()->id]);
     }
 

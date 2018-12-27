@@ -102,11 +102,22 @@
                             <div class="form-group">
                                 <label class="control-label sbold">{{ trans('general.active') }}</label></br>
                                 <label class="radio-inline">
-                                    <input type="radio" name="active" id="optionsRadios3" checked
+                                    <input type="radio" name="active" id="optionsRadios3" {{ $element->active ? 'checked' : null  }}
                                            value="1"> active</label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="active" id="optionsRadios4"
+                                    <input type="radio" name="active" id="optionsRadios4" {{ !$element->active ? 'checked' : null  }}
                                            value="0">{{ trans('general.not_active') }}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="control-label sbold">{{ trans('general.files') }}</label></br>
+                                <label class="radio-inline">
+                                    <input type="radio" name="is_files" id="optionsRadios3" {{ $element->is_files ? 'checked' : null  }}
+                                           value="1"> files</label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="is_files" id="optionsRadios4" {{ !$element->is_files ? 'checked' : null  }}
+                                           value="0">{{ trans('general.not_files') }}</label>
                             </div>
                         </div>
                     </div>

@@ -24,7 +24,7 @@ class CategoryUpdate extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:categories,name,' .request('id'),
+            'name' => 'required',
             'path' => 'nullable',
             'image' => 'required|image',
             'slug_ar' => 'required',
