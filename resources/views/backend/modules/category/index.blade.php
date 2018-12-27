@@ -27,7 +27,7 @@
                             <th>{{ trans('general.slug_en') }}</th>
                             <th>{{ trans('general.slug_ar') }}</th>
                             <th>{{ trans('general.active') }}</th>
-                            {{--<th width="300">{{ trans('general.sub_categories') }}</th>--}}
+                            <th>{{ trans('general.image') }}</th>
                             <th>{{ trans('general.action') }}</th>
                         </tr>
                         </thead>
@@ -38,7 +38,7 @@
                             <th>{{ trans('general.slug_en') }}</th>
                             <th>{{ trans('general.slug_ar') }}</th>
                             <th>{{ trans('general.active') }}</th>
-                            {{--<th width="300">{{ trans('general.sub_categories') }}</th>--}}
+                            <th>{{ trans('general.image') }}</th>
                             <th>{{ trans('general.action') }}</th>
                         </tr>
                         </tfoot>
@@ -55,6 +55,9 @@
                                 </td>
                                 <td>
                                     <span class="label label-lg {{ activeLabel($element->active) }} text-uppercase">{{ activeText($element->active)}}</span>
+                                </td>
+                                <td>
+                                    <img src="{{ asset(env('THUMBNAIL').$element->image) }}" alt="" class="img-xs">
                                 </td>
                                 {{--<td>--}}
                                     {{--@if($element->children->isNotEmpty())--}}
