@@ -30,9 +30,6 @@ $(document).ready(function() {
     $('table[id^="moreDataTable-"]').DataTable({
         "order": [[0, "desc"]],
         "bPaginate": true,
-        // "scrollY":        "500px",
-        // "scrollCollapse": false,
-        "paging":         true,
         "bLengthChange": true,
         "bFilter": true,
         "bInfo": true,
