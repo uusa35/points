@@ -117,6 +117,20 @@ Breadcrumbs::for('backend.admin.service.edit', function ($trail, $element) {
     $trail->push(trans('edit service'), route('backend.admin.service.edit', $element->id));
 });
 
+Breadcrumbs::for('backend.admin.slider.index', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push('sliders', route('backend.admin.slider.index'));
+});
+
+Breadcrumbs::for('backend.admin.slider.create', function ($trail) {
+    $trail->parent('backend.admin.slider.index');
+    $trail->push('create slider', route('backend.admin.slider.create'));
+});
+
+Breadcrumbs::for('backend.admin.slider.edit', function ($trail, $element) {
+    $trail->parent('backend.admin.slider.index');
+    $trail->push('edit slider', route('backend.admin.slider.edit', $element->id));
+});
 
 // users
 

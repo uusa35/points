@@ -245,7 +245,70 @@
                             <label for="form_control_1">{{ trans('general.logo') }}</label>
                             <input type="file" class="form-control" name="logo" placeholder="logo">
                             <div class="help-block text-left">
-                                W H - Best fit 250 x 250 pixels
+                                {{ trans('general.message_logo') }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label for="form_control_1">{{ trans('general.card') }}</label>
+                            <input type="file" class="form-control" name="card" placeholder="card">
+                            <div class="help-block text-left">
+                                {{ trans('general.message_card') }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label for="form_control_1">{{ trans('general.roll_up') }}</label>
+                            <input type="file" class="form-control" name="roll_up" placeholder="roll_up">
+                            <div class="help-block text-left">
+                                {{ trans('general.message_roll_up') }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label for="form_control_1">{{ trans('general.instagram_theme') }}</label>
+                            <input type="file" class="form-control" name="theme" placeholder="theme">
+                            <div class="help-block text-left">
+                                {{ trans('general.message_instagram_theme') }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label for="form_control_1">{{ trans('general.letterhead') }}</label>
+                            <input type="file" class="form-control" name="letterhead" placeholder="letterhead">
+                            <div class="help-block text-left">
+                                {{ trans('general.message_letterhead') }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label for="form_control_1">{{ trans('general.envelope') }}</label>
+                            <input type="file" class="form-control" name="envelope" placeholder="envelope">
+                            <div class="help-block text-left">
+                                {{ trans('general.message_envelope') }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input type="file" class="form-control" name="path" placeholder="path">
+                            <label for="form_control_1">{{ trans('general.path') }} </label>
+                            <div class="help-block text-left">
+                                {{ trans('message.upload_files') }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label for="form_control_1">{{ trans('general.profile') }}</label>
+                            <input type="file" class="form-control" name="profile" placeholder="profile">
+                            <div class="help-block text-left">
+                                {{ trans('general.message_profile') }}
                             </div>
                         </div>
                     </div>

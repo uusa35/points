@@ -31,6 +31,13 @@ class CreateUsersTable extends Migration
             $table->text('address_en')->nullable();
 
             $table->string('logo')->nullable();
+            $table->string('card')->nullable();
+            $table->string('roll_up')->nullable();
+            $table->string('theme')->nullable();
+            $table->string('letterhead')->nullable();
+            $table->string('envelope')->nullable();
+            $table->string('profile')->nullable();
+            $table->string('path')->nullable();
             $table->string('website')->nullable();
             $table->string('facebook')->nullable();
             $table->string('instagram')->nullable();

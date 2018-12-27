@@ -24,28 +24,24 @@
                             <thead>
                             <tr>
                                 <th>{{ trans('general.id') }}</th>
-                                <th>{{ trans('general.name_ar') }}</th>
-                                <th>{{ trans('general.name_en') }}</th>
-                                <th>{{ trans('general.client') }}</th>
+                                <th>{{ trans('general.title') }}</th>
                                 <th>{{ trans('general.service_name') }}</th>
                                 <th>{{ trans('general.category_name') }}</th>
                                 <th>{{ trans('general.created_at') }}</th>
-                                {{--                            <th>{{ trans('general.on_progress') }}</th>--}}
-                                {{--<th>{{ trans('general.is_complete') }}</th>--}}
                                 <th>{{ trans('general.is_complete') }}</th>
+                                <th>{{ trans('general.view') }}</th>
                                 <th>{{ trans('general.Action') }}</th>
                             </tr>
                             </thead>
                             <tfoot>
                             <tr>
                                 <th>{{ trans('general.id') }}</th>
-                                <th>{{ trans('general.name_ar') }}</th>
-                                <th>{{ trans('general.name_en') }}</th>
-                                <th>{{ trans('general.client') }}</th>
+                                <th>{{ trans('general.title') }}</th>
                                 <th>{{ trans('general.service_name') }}</th>
                                 <th>{{ trans('general.category_name') }}</th>
                                 <th>{{ trans('general.created_at') }}</th>
                                 <th>{{ trans('general.is_complete') }}</th>
+                                <th>{{ trans('general.view') }}</th>
                                 <th>{{ trans('general.Action') }}</th>
                             </tr>
                             </tfoot>
@@ -53,15 +49,18 @@
                             @foreach($elements as $element)
                                 <tr>
                                     <td>{{ $element->id }}</td>
-                                    <td>{{ $element->name_ar }}</td>
-                                    <td>{{ $element->name_en }}</td>
-                                    <td>{{ $element->client->name }}</td>
+                                    <td>{{ $element->title }}</td>
                                     <td>{{ $element->service->name }}</td>
                                     <td>{{ $element->service->category->slug }}</td>
                                     <td>{{ $element->created_at->diffForHumans() }}</td>
                                     <td>
                                     <span
                                         class="label {{ activeLabel($element->is_complete) }}">{{ activeText($element->is_complete) }}</span>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-warning"
+                                           href="{{ route("backend.order.show", $element->id) }}"><i
+                                                class="fa fa-fw fa-eye"></i></a>
                                     </td>
                                     <td>
                                         <div class="btn-group pull-right">
@@ -93,20 +92,17 @@
                                                             </button>
                                                         </form>
                                                     </li>
-                                                @elsecan('order.update', $element)
+                                                @endcan
+                                                @can('order.view',$element)
+                                                    <li>
+                                                        <a href="{{ route('backend.order.show',$element->id) }}">
+                                                            <i class="fa fa-fw fa-edit"></i>{{ trans('general.view_details') }}
+                                                        </a>
+                                                    </li>
                                                     @if(!$element->is_complete)
                                                         <li>
                                                             <a href="{{ route('backend.order.edit',$element->id) }}">
                                                                 <i class="fa fa-fw fa-edit"></i>{{ trans('general.edit') }}
-                                                            </a>
-                                                        </li>
-                                                    @endif
-                                                @endcan
-                                                @can('order.view',$element)
-                                                    @if(!auth()->user()->isSuper)
-                                                        <li>
-                                                            <a href="{{ route('backend.order.show',$element->id) }}">
-                                                                <i class="fa fa-fw fa-edit"></i>{{ trans('general.view_details') }}
                                                             </a>
                                                         </li>
                                                     @endif
@@ -123,11 +119,6 @@
                                                         <li>
                                                             <a href="{{ route('backend.job.edit',$element->job->id) }}">
                                                                 <i class="fa fa-fw fa-edit"></i>{{ trans('general.edit_current_job') }}
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="{{ route('backend.job.show',$element->job->id) }}">
-                                                                <i class="fa fa-fw fa-eye-slash"></i>{{ trans('general.view_job') }}
                                                             </a>
                                                         </li>
                                                     @endcan

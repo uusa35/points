@@ -33,6 +33,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::resource('version', 'VersionController');
         Route::resource('image', 'ImageController');
         Route::resource('setting', 'SettingController');
+        Route::resource('slider', 'SliderController');
     });
 
     // clients + designers

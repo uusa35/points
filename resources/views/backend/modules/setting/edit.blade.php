@@ -120,6 +120,66 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
+                                <label for="section_one"
+                                       class="control-label">section_one ar</label>
+                                <textarea type="text" class="form-control" id="section_one_ar"
+                                          name="section_one_ar"
+                                          aria-multiline="true"
+                                          maxlength="500">{{ $element->section_one_ar }}</textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="section_one"
+                                       class="control-label">section_one en</label>
+                                <textarea type="text" class="form-control" id="section_one_en"
+                                          name="section_one_en"
+                                          aria-multiline="true"
+                                          maxlength="500">{{ $element->section_one_en }}</textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="section_two_ar"
+                                       class="control-label">section_two ar</label>
+                                <textarea type="text" class="form-control" id="section_two_ar"
+                                          name="section_two_ar"
+                                          aria-multiline="true"
+                                          maxlength="500">{{ $element->section_two_ar }}</textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="section_one_en"
+                                       class="control-label">section_two en</label>
+                                <textarea type="text" class="form-control" id="section_one_en"
+                                          name="section_one_en"
+                                          aria-multiline="true"
+                                          maxlength="500">{{ $element->section_one_en }}</textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="section_three_ar"
+                                       class="control-label">section_three ar</label>
+                                <textarea type="text" class="form-control" id="section_three_ar"
+                                          name="section_three_ar"
+                                          aria-multiline="true"
+                                          maxlength="500">{{ $element->section_three_ar }}</textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="section_three_en"
+                                       class="control-label">section_three en</label>
+                                <textarea type="text" class="form-control" id="section_three_en"
+                                          name="section_three_en"
+                                          aria-multiline="true"
+                                          maxlength="500">{{ $element->section_three_en }}</textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
                                 <label for="description"
                                        class="control-label">{{ trans('general.description')}}</label>
                                 <textarea type="text" class="form-control" id="description_ar"
@@ -185,6 +245,14 @@
 
                     <!--/row-->
                     <div class="row">
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label class="control-label">video</label>
+                                <input type="text" id="video" name="video" class="form-control"
+                                       placeholder="video"
+                                       value="{{ $element->video }}">
+                            </div>
+                        </div>
                         <div class="col-md-2">
                             <div class="form-group">
                                 <label class="control-label">google_map_url</label>

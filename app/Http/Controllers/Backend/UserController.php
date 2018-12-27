@@ -61,8 +61,31 @@ class UserController extends Controller
             if ($request->hasFile('logo')) {
                 $this->saveMimes($element, $request, ['logo'], ['250', '250'], false);
             }
+            if ($request->hasFile('card')) {
+                $this->saveMimes($element, $request, ['card'], ['250', '250'], false);
+            }
+            if ($request->hasFile('roll_up')) {
+                $this->saveMimes($element, $request, ['roll_up'], ['250', '250'], false);
+            }
+            if ($request->hasFile('theme')) {
+                $this->saveMimes($element, $request, ['theme'], ['250', '250'], false);
+            }
+            if ($request->hasFile('letterhead')) {
+                $this->saveMimes($element, $request, ['letterhead'], ['250', '250'], false);
+            }
+            if ($request->hasFile('envelope')) {
+                $this->saveMimes($element, $request, ['envelope'], ['250', '250'], false);
+            }
+            if ($request->hasFile('profile')) {
+                $this->saveMimes($element, $request, ['profile'], ['250', '250'], false);
+            }
             if ($request->hasFile('bg')) {
                 $this->saveMimes($element, $request, ['bg'], ['750', '1334'], false);
+            }
+            if ($request->hasFile('path')) {
+                $path = $request->file('path')->store('public/uploads/files');
+                $path = str_replace('public/uploads/files/', '', $path);
+                $element->update(['path' => $path]);
             }
             auth()->user()->isSuper ? $element->balance()->update(['points' => request('balance')]) : null;
             return redirect()->route('backend.user.show', $element->id)->with('success', 'saved success');

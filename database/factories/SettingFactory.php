@@ -47,5 +47,12 @@ $factory->define(Setting::class, function (Faker\Generator $faker) {
         'path' => '1.pdf',
         'zapper' => $faker->numberBetween(1, 10) . '.jpeg',
         'qr' => $faker->numberBetween(1, 10) . '.jpeg',
+        'section_one_ar' => $faker->name,
+        'section_one_en' => $faker->name,
+        'section_two_ar' => $faker->name,
+        'section_two_en' => $faker->name,
+        'section_three_ar' => $faker->name,
+        'section_three_en' => $faker->name,
+        'video' => $faker->imageUrl(),
     ];
 });

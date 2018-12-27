@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend\Admin;
+namespace App\Http\Controllers\Backend;
 
 use App\Models\Slider;
 use Illuminate\Http\Request;
@@ -40,10 +40,7 @@ class SliderController extends Controller
         $element = Slider::create($request->request->all());
         if ($element) {
             if ($request->hasFile('image')) {
-                $this->saveMimes($element, $request, ['image'], ['750', '1334'], false);
-            }
-            if ($request->hasFile('bg')) {
-                $this->saveMimes($element, $request, ['bg'], ['750', '1334'], false);
+                $this->saveMimes($element, $request, ['image'], ['1905', '750'], false);
             }
             return redirect()->route('backend.slider.index')->with('success', trans('message.store_success'));
         }
@@ -86,10 +83,7 @@ class SliderController extends Controller
         $updated = $element->update($request->request->all());
         if ($updated) {
             if ($request->hasFile('image')) {
-                $this->saveMimes($element, $request, ['image'], ['750', '1334'], false);
-            }
-            if ($request->hasFile('bg')) {
-                $this->saveMimes($element, $request, ['bg'], ['750', '1334'], false);
+                $this->saveMimes($element, $request, ['image'], ['1905', '750'], false);
             }
             return redirect()->route('backend.slider.index')->with('success', trans('message.update_success'));
         }
