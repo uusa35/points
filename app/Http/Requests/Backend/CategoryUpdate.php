@@ -26,7 +26,7 @@ class CategoryUpdate extends FormRequest
         return [
             'name' => 'required',
             'path' => 'nullable',
-            'image' => 'required|image',
+            'image' => 'image',
             'slug_ar' => 'required',
             'slug_en' => 'required',
             'caption_ar' => 'nullable',

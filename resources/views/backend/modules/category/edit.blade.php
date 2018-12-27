@@ -74,6 +74,16 @@
 
 
                     <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_control_1">{{ trans('general.image') }}</label>
+                                <input type="file" class="form-control" name="image" placeholder="image">
+                                <div class="help-block text-left">
+                                    {{ trans('message.image_general_instructions') }}
+                                </div>
+                            </div>
+                            <img src="{{ asset(env('THUMBNAIL').$element->image) }}" alt="" class="img-xs">
+                        </div>
                         <div class="col-md-4">
                             <div class="form-group{{ $errors->has('order') ? ' has-error' : '' }}">
                                 <label for="order" class="control-label">{{ trans('general.order') }} *</label>
