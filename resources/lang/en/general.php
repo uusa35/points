@@ -7,4 +7,6 @@ return array (
   'cancel' => 'cancel',
   'kwd' => 'KWD',
   'projects' => 'Projects',
+  'payment_plans' => 'Payment Plans',
+  'payment_plan' => 'Payment Plan',
 );
