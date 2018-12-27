@@ -120,6 +120,24 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
+                                <label class="control-label">title_one_ar</label>
+                                <input type="text" id="title_one_ar" name="title_one_ar" class="form-control"
+                                       placeholder="title_one_ar"
+                                       value="{{ $element->title_one_ar }}">
+                                <span class="help-block"> title_one_ar </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label">title_one_en</label>
+                                <input type="text" id="title_one_en" name="title_one_en" class="form-control"
+                                       placeholder="title_one_en"
+                                       value="{{ $element->title_one_en }}">
+                                <span class="help-block"> title_one_en </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
                                 <label for="section_one"
                                        class="control-label">section_one ar</label>
                                 <textarea type="text" class="form-control" id="section_one_ar"
@@ -140,6 +158,24 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
+                                <label class="control-label">title_two_ar</label>
+                                <input type="text" id="title_two_ar" name="title_two_ar" class="form-control"
+                                       placeholder="title_two_ar"
+                                       value="{{ $element->title_two_ar }}">
+                                <span class="help-block"> title_two_ar </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label">title_two_en</label>
+                                <input type="text" id="title_two_en" name="title_two_en" class="form-control"
+                                       placeholder="title_two_en"
+                                       value="{{ $element->title_two_en }}">
+                                <span class="help-block"> title_two_en </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
                                 <label for="section_two_ar"
                                        class="control-label">section_two ar</label>
                                 <textarea type="text" class="form-control" id="section_two_ar"
@@ -156,6 +192,24 @@
                                           name="section_one_en"
                                           aria-multiline="true"
                                           maxlength="500">{{ $element->section_one_en }}</textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label">title_three_ar</label>
+                                <input type="text" id="title_three_ar" name="title_three_ar" class="form-control"
+                                       placeholder="title_three_ar"
+                                       value="{{ $element->title_three_ar }}">
+                                <span class="help-block"> title_three_ar </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label">title_three_en</label>
+                                <input type="text" id="title_three_en" name="title_three_en" class="form-control"
+                                       placeholder="title_three_en"
+                                       value="{{ $element->title_three_en }}">
+                                <span class="help-block"> title_three_en </span>
                             </div>
                         </div>
                         <div class="col-md-6">

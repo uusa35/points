@@ -47,10 +47,16 @@ class CreateSettingsTable extends Migration
             $table->string('latitude')->nullable();
             $table->text('on_home_speech_ar')->nullable();
             $table->text('on_home_speech_en')->nullable();
+            $table->text('title_one_ar')->nullable();
+            $table->text('title_one_en')->nullable();
             $table->text('section_one_ar')->nullable();
             $table->text('section_one_en')->nullable();
+            $table->text('title_two_ar')->nullable();
+            $table->text('title_two_en')->nullable();
             $table->text('section_two_ar')->nullable();
             $table->text('section_two_en')->nullable();
+            $table->text('title_three_ar')->nullable();
+            $table->text('title_three_en')->nullable();
             $table->text('section_three_ar')->nullable();
             $table->text('section_three_en')->nullable();
             $table->string('video')->nullable();
