@@ -8,9 +8,12 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
     @section('title')
         <title>{{ config('app.name') .' '. $settings->name_ar .' '. $settings->name_en }}</title>
     @show
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description"
           content="{{ trans('general.meta_description') . $settings->name_ar . $settings->name_en . trans('general.app_keywords')}}">
     <meta name="keywords" content="{{ trans('general.app_keywords') }}"/>
@@ -37,12 +40,12 @@
             color: #636b6f;
             font-family: 'Nunito', sans-serif;
             font-weight: 200;
-            height: 100vh;
             margin: 0;
         }
 
         .full-height {
-            height: 100vh;
+            width: 100%;
+            border: 1px solid red;
         }
 
         .flex-center {
@@ -85,57 +88,91 @@
     </style>
 </head>
 <body>
-<div class="flex-center position-ref full-height">
-    @if (Route::has('login'))
-        <div class="top-right links">
-            @auth
-                <a href="{{ url('/home') }}">Home</a>
-                <a href="{{ url('/logout') }}"
-                   onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                    <i class="icon-key"></i> {{ trans('general.logout') }} </a>
-            @else
-                <a href="{{ route('login') }}">Login</a>
+<div class="container-fluid">
+    <div class="flex-center position-ref full-height">
+        @if (Route::has('login'))
+            <div class="top-right links">
+                @auth
+                    <a href="{{ url('/home') }}">Home</a>
+                    <a href="{{ url('/logout') }}"
+                       onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                        <i class="icon-key"></i> {{ trans('general.logout') }} </a>
+                @else
+                    <a href="{{ route('login') }}">Login</a>
 
-                @if (Route::has('register'))
-                    <a href="{{ route('register') }}">Register</a>
-                @endif
-            @endauth
+                    @if (Route::has('register'))
+                        <a href="{{ route('register') }}">Register</a>
+                    @endif
+                @endauth
+            </div>
+        @endif
+
+        <div class="content">
+            <div class="title m-b-md">
+                <img style="max-width: 120px;" src="{{ asset(env('THUMBNAIL').$settings->logo) }}"
+                     alt="{{ $settings->name }}">
+            </div>
+            <p class="text-center">
+                {{ $settings->on_home_speech }}
+            </p>
+
+            <div class="links">
+                @auth
+                    @can('isAdmin')
+                        <a href="{{ route('backend.home') }}">DashBoard</a>
+                        <a href="{{ route('backend.admin.order.index') }}">Orders</a>
+                        <a href="{{ route('backend.admin.setting.index') }}">Settings</a>
+                        <a href="{{ route('backend.admin.category.index') }}">Categories</a>
+                        <a href="{{ route('backend.admin.service.index') }}">Services</a>
+                    @elsecan('onlyDesigner')
+                        <a href="{{ route('backend.order.index') }}">Orders & Jobs</a>
+                        <a href="{{ route('backend.user.show', auth()->id()) }}">My Profile</a>
+                    @elsecan('onlyClient')
+                        <a href="{{ route('backend.order.index') }}">My Orders</a>
+                        <a href="{{ route('backend.point.index') }}">Recharge</a>
+                        <a href="{{ route('backend.user.show', auth()->id()) }}">My Profile</a>
+                        <a href="{{ route('backend.file.show', auth()->id()) }}">My Files</a>
+                    @endif
+                @endauth
+            </div>
         </div>
-    @endif
+    </div>
+    <div class="row">
+        <div class="col-lg-8 col-lg-push-2">
 
-    <div class="content">
-        <div class="title m-b-md">
-            <img style="max-width: 120px;" src="{{ asset(env('THUMBNAIL').$settings->logo) }}"
-                 alt="{{ $settings->name }}">
+            <div class="col-lg-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        test
+                    </div>
+                    <div class="panel-body">
+                        {{ $settings->section_one }}
+                    </div>
+                </div>
+            </div>
         </div>
-        <p class="text-center">
-            {{ $settings->on_home_speech }}
-        </p>
-
-        <div class="links">
-            @auth
-                @can('isAdmin')
-                    <a href="{{ route('backend.home') }}">DashBoard</a>
-                    <a href="{{ route('backend.admin.order.index') }}">Orders</a>
-                    <a href="{{ route('backend.admin.setting.index') }}">Settings</a>
-                    <a href="{{ route('backend.admin.category.index') }}">Categories</a>
-                    <a href="{{ route('backend.admin.service.index') }}">Services</a>
-                @elsecan('onlyDesigner')
-                    <a href="{{ route('backend.order.index') }}">Orders & Jobs</a>
-                    <a href="{{ route('backend.user.show', auth()->id()) }}">My Profile</a>
-                @elsecan('onlyClient')
-                    <a href="{{ route('backend.order.index') }}">My Orders</a>
-                    <a href="{{ route('backend.point.index') }}">Recharge</a>
-                    <a href="{{ route('backend.user.show', auth()->id()) }}">My Profile</a>
-                    <a href="{{ route('backend.file.show', auth()->id()) }}">My Files</a>
-                @endif
-            @endauth
+        <div class="col-lg-8 col-lg-push-2">
+            <div class="col-lg-3">
+                {{ $settings->section_two }}
+            </div>
+        </div>
+        <div class="col-lg-8 col-lg-push-2">
+            <div class="col-lg-3">
+                {{ $settings->section_three }}
+            </div>
         </div>
     </div>
 </div>
+
 <form id="logout-form" action="{{ url('/logout') }}" method="POST"
       style="display: none;">
     {{ csrf_field() }}
 </form>
+<script>
+    window.Laravel = <?php echo json_encode([
+        'csrfToken' => csrf_token(),
+    ]); ?>
+</script>
+<script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
