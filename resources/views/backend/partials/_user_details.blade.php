@@ -14,7 +14,7 @@
             <div class="portlet-body">
                 <div class="table-responsive">
                     <table class="table table-hover table-bordered table-striped"
-                           {{--id="moreDataTable-{{ rand() }}"--}}
+                           id="moreDataTable-{{ rand() }}"
                     >
                         <thead>
                         <tr>
@@ -56,9 +56,9 @@
                         @endforeach
                         </tbody>
                     </table>
-                    {{--@if($elements->render())--}}
-                        {{--{{  $elements->render() }}--}}
-                    {{--@endif--}}
+                    @if($elements->render())
+                        {{  $elements->render() }}
+                    @endif
                 </div>
             </div>
         </div>

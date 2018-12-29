@@ -92,16 +92,17 @@
         @if (Route::has('login'))
             <div class="top-right links">
                 @auth
-                    <a href="{{ url('/home') }}">Home</a>
+                    <a href="{{ url('/home') }}">{{ trans('general.home') }}</a>
                     <a href="{{ url('/logout') }}"
                        onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                         <i class="icon-key"></i> {{ trans('general.logout') }} </a>
                 @else
-                    <a href="{{ route('login') }}">Login</a>
+                    <a href="{{ route('login') }}">{{ trans('general.login') }}</a>
 
                     @if (Route::has('register'))
-                        <a href="{{ route('register') }}">Register</a>
+                        <a href="{{ route('register') }}">{{ trans('general.register') }}</a>
                     @endif
+                    <a href="{{ route('frontend.language.change','en') }}">{{ trans('general.switch_lang') }}</a>
                 @endauth
             </div>
         @endif
@@ -118,19 +119,19 @@
             <div class="links">
                 @auth
                     @can('isAdmin')
-                        <a href="{{ route('backend.home') }}">DashBoard</a>
-                        <a href="{{ route('backend.admin.order.index') }}">Orders</a>
-                        <a href="{{ route('backend.admin.setting.index') }}">Settings</a>
-                        <a href="{{ route('backend.admin.category.index') }}">Categories</a>
-                        <a href="{{ route('backend.admin.service.index') }}">Services</a>
+                        <a href="{{ route('backend.home') }}">{{ trans('general.dashboard') }}</a>
+                        <a href="{{ route('backend.admin.order.index') }}">{{ trans('general.orders') }}</a>
+                        <a href="{{ route('backend.admin.setting.index') }}">{{ trans('general.settings') }}</a>
+                        <a href="{{ route('backend.admin.category.index') }}">{{ trans('general.categories') }}</a>
+                        <a href="{{ route('backend.admin.service.index') }}">{{ trans('general.services') }}</a>
                     @elsecan('onlyDesigner')
-                        <a href="{{ route('backend.order.index') }}">Orders & Jobs</a>
-                        <a href="{{ route('backend.user.show', auth()->id()) }}">My Profile</a>
+                        <a href="{{ route('backend.order.index') }}">Orders & {{ trans('general.my_jobs') }}</a>
+                        <a href="{{ route('backend.user.show', auth()->id()) }}">My {{ trans('general.my_profile') }}</a>
                     @elsecan('onlyClient')
-                        <a href="{{ route('backend.order.index') }}">My Orders</a>
-                        <a href="{{ route('backend.point.index') }}">Recharge</a>
-                        <a href="{{ route('backend.user.show', auth()->id()) }}">My Profile</a>
-                        <a href="{{ route('backend.file.show', auth()->id()) }}">My Files</a>
+                        <a href="{{ route('backend.order.index') }}">My {{ trans('general.orders') }}</a>
+                        <a href="{{ route('backend.point.index') }}">{{ trans('general.recharge') }}</a>
+                        <a href="{{ route('backend.user.show', auth()->id()) }}">My {{ trans('general.my_profile') }}</a>
+                        <a href="{{ route('backend.file.show', auth()->id()) }}">My {{ trans('general.my_files') }}</a>
                     @endif
                 @endauth
             </div>
@@ -160,11 +161,11 @@
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
+                    <span class="sr-only">{{ trans('general.previous') }}</span>
                 </a>
                 <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
+                    <span class="sr-only">{{ trans('general.next') }}</span>
                 </a>
             </div>
         </div>
