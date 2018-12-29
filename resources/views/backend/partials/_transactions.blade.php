@@ -9,7 +9,7 @@
         <div class="table-responsive">
             @if($elements->isNotEmpty())
                 <table class="table table-hover table-bordered table-striped"
-                       {{--id="moreDataTable-{{ rand() }}"--}}
+                       id="moreDataTable-{{ rand() }}"
                 >
                     <thead>
                     <tr>
@@ -37,9 +37,9 @@
                     @endforeach
                     </tbody>
                 </table>
-                {{--@if($elements->render())--}}
-                    {{--{{ $elements->render() }}--}}
-                {{--@endif--}}
+                @if($elements->render())
+                    {{ $elements->render() }}
+                @endif
             @else
                 <div class="alert alert-info">{{ trans('general.no_transactions') }}</div>
             @endif

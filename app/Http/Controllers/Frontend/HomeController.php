@@ -23,7 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return redirect()->route('backend.home');
+        return view('welcome');
     }
 
     public function changeLanguage()

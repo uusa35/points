@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -57,7 +58,11 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
 
 Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['namespace' => 'Frontend', 'prefix' => 'frontend', 'as' => 'frontend.', 'middleware' => []], function () {
+    Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('language/{locale}', 'HomeController@changeLanguage')->name('language.change');
+});
 
 // for development purpose only
 if ((app()->environment('production') || app()->environment('local')) && Schema::hasTable('users')) {
@@ -79,10 +84,10 @@ if ((app()->environment('production') || app()->environment('local')) && Schema:
                 return $q->where('name', $role);
             })->first();
         }
-        if($element) {
+        if ($element) {
             Auth::loginUsingId($element->id);
             return redirect()->route('backend.home');
         }
-        return redirect()->route('backend.home')->with('error','no users');
+        return redirect()->route('backend.home')->with('error', 'no users');
     });
 }
