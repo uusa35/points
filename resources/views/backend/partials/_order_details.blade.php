@@ -60,5 +60,12 @@
                 </div>
             @endif
         </div>
+        <div class="row static-info">
+            <div class="col-md-5 name"> {{ trans('general.add_more_files') }}:</div>
+            <div class="col-md-7 value">
+                <a href="{{ route('backend.file.create',['type' => 'order', 'id' => $element->id]) }}"
+                   class="btn btn-info">{{ trans('general.add_more_files') }}</a>
+            </div>
+        </div>
     </div>
 </div>

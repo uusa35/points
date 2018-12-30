@@ -7,13 +7,7 @@
                 <a href="#tab_1" data-toggle="tab"> {{ trans('general.details') }} </a>
             </li>
             <li>
-                <a href="#tab_2" data-toggle="tab"> {{ trans('general.uploaded_files') }}
-                    <span
-                        class="badge badge-success">{{ $element->files->isNotEmpty() ? $element->files->count() : null  }}</span>
-                </a>
-            </li>
-            <li>
-                <a href="#tab_3" data-toggle="tab"> {{ trans('general.job_related') }}
+                <a href="#tab_2" data-toggle="tab"> {{ trans('general.job_related') }}
                     <span class="badge badge-success"></span>
                 </a>
             </li>
@@ -57,20 +51,7 @@
                 @endif
             </div>
 
-            <div class="tab-pane" id="tab_2">
-                @if(!$element->is_complete)
-                    @if($element->files->isNotEmpty())
-                        @include('backend.partials.files',['elements' => $element->files])
-                    @else
-                        <div class="alert">{{ trans('general.no_files') }}</div>
-                    @endif
-                @else
-                    <div class="alert alert-info">
-                        {{ trans('message.this_order_is_complete_please_check_my_files_page_in_order_to_view_your_files') }}
-                    </div>
-                @endif
-            </div>
-            <zdiv class="tab-pane" id="tab_3">
+            <zdiv class="tab-pane" id="tab_2">
                 @if(!$element->is_complete)
                     @if($element->job)
                         @include('backend.partials._job_details',['element' => $element->job])
