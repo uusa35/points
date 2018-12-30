@@ -66,7 +66,7 @@ class OrderController extends Controller
         }
         session()->put('order_lang', request()->lang);
         $this->authorize('order.create');
-        return view('backend.modules.order.create');
+        return view('backend.modules.order.create', compact('service'));
     }
 
     /**
@@ -77,6 +77,8 @@ class OrderController extends Controller
      */
     public function store(OrderStore $request)
     {
+        $service = Service::whereId(session()->get('service_id'))->first();
+        $request->request->add(['points' => $service->on_sale ? $service->sale_points : $service->points]);
         $element = Order::active()->create($request->request->all());
         if ($element) {
             if ($element->is_paid) {
@@ -98,9 +100,11 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        $element = Order::active()->whereId($id)->first();
+        $element = Order::active()->whereId($id)->with('files')->first();
+        $files = $element->files()->notImages()->get();
+        $images = $element->files()->images()->get();
         $this->authorize('order.view', $element);
-        return view('backend.modules.order.show', compact('element'));
+        return view('backend.modules.order.show', compact('element', 'files', 'images'));
     }
 
     /**
@@ -154,7 +158,7 @@ class OrderController extends Controller
 
     public function chooseOrderCategory()
     {
-        $elements = Category::active()->onlyParent()->where(['is_files' => false ])->whereHas('services', function ($q) {
+        $elements = Category::active()->onlyParent()->where(['is_files' => false])->whereHas('services', function ($q) {
             return $q->active();
         }, '>', 0)->with('services')->orderBy('order', 'desc')->get();
         return view('backend.modules.order.choose_category', compact('elements'));

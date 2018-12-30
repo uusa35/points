@@ -34,21 +34,21 @@
                         <div class="well">
                             <div class="row static-info align-reverse">
                                 <div class="col-md-8 name"> {{ trans('general.total_cost') }}:</div>
-                                {{ dd($element->points) }}
                                 <div class="col-md-3 value"> {{ $element->points }} {{ trans('general.points') }}</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 @if(!$element->is_complete)
-                    @if($element->images->isNotEmpty())
-                        @include('backend.partials.gallery',['elements' => $element->images,'name' => 'image'])
+                    @if($files->isNotEmpty())
+                        @include('backend.partials.files',['elements' => $files])
                     @else
-                        <div class="alert alert-info">
-                            {{ trans('message.no_images_yet_added_to_your_order') }}
-                            <a href="{{ route('backend.file.create',['type' => 'order', 'id' => $element->id]) }}"
-                               class="btn">{{ trans('general.add_images_files_to_your_order') }}</a>
-                        </div>
+                        <div class="alert alert-warning">{{ trans('general.no_files') }}</div>
+                    @endif
+                    @if($images->isNotEmpty())
+                        @include('backend.partials.files_gallery',['elements' => $images])
+                    @else
+                        <div class="alert alert-info">{{ trans('general.no_images') }}</div>
                     @endif
                 @else
                     <div class="alert alert-info">

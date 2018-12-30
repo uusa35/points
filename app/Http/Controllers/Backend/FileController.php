@@ -48,9 +48,6 @@ class FileController extends Controller
         $element = new $className();
         $element = $element->withoutGlobalScopes()->whereId(request()->id)->first();
         $categories = Category::onlyParent()->where(['is_files' => true])->get();
-        if (request()->type === 'order') {
-            return redirect()->route('backend.order.index')->with('success', trans('message.files_saved_successfully.'));
-        }
         return view('backend.modules.file.create', compact('element', 'categories'))->with(['type' => request()->type, 'id' => request()->id]);
     }
 
@@ -65,7 +62,7 @@ class FileController extends Controller
         $validate = validator(request()->all(), [
             'type' => 'required|alpha',
             'id' => 'required|numeric',
-            'category_id' => 'required|exists:categories,id',
+            'category_id' => 'nullable|exists:categories,id',
             'path[]' => 'array|mimes:pdf,jpeg,bmp,png,gif,xls,xlsx,psd,ai,doc,docs|nullable|max:50000',
             'image' => 'image',
         ]);
@@ -105,6 +102,9 @@ class FileController extends Controller
                 $path = str_replace('public/uploads/files/', '', $path);
                 $file->update(['path' => $path]);
             }
+        }
+        if (request()->type === 'order') {
+            return redirect()->route('backend.file.create', ['type' => request('type'), 'id' => request('id')])->with('success',trans('general.file_saved'));
         }
         return redirect()->route('backend.file.index', ['type' => request()->type, 'id' => request()->id])->with('success', trans('message.file_uploaded_successfully'));
 //        return redirect()->route('backend.file.create', compact('element'))
@@ -174,11 +174,9 @@ class FileController extends Controller
         }
         $className = '\App\Models\\' . title_case(request()->type);
         $element = new $className();
-        $element = $element->withoutGlobalScopes()->whereId(request()->id)->with(['files' => function ($q) {
-            return $q->where(['user_id' => auth()->id(), 'category_id' => request('category_id')]);
-        }])->with(['images' => function ($q) {
-            return $q->where(['user_id' => auth()->id(), 'category_id' => request('category_id')]);
-        }])->first();
-        return view('backend.modules.file.show_list', compact('element'));
+        $element = $element->withoutGlobalScopes()->whereId(request()->id)->first();
+        $files = $element->files()->where(['category_id' => request()->category_id])->notImages()->get();
+        $images = $element->files()->where(['category_id' => request()->category_id])->images()->get();
+        return view('backend.modules.file.show_list', compact('element', 'files', 'images'));
     }
 }

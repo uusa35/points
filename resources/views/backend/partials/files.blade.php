@@ -44,7 +44,7 @@
                                 <div class="list-item-content">
                                     <h3 class="uppercase bold">
                                         <a target="_blank"
-                                           href="{{ asset(env('FILES').$file->path) }}">{{ $file->name ? $file->name : $file->category->name }}</a>
+                                           href="{{ asset(env('FILES').$file->path) }}">{{ $file->name ? $file->name : null  }}</a>
                                     </h3>
                                     <p>{{ $file->extension ? $file->extension : null }}</p>
                                 </div>
