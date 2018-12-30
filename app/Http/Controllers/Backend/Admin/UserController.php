@@ -96,7 +96,6 @@ class UserController extends Controller
      */
     public function update(UserUpdate $request, $id)
     {
-        dd($request->all());
         $element = User::whereId($id)->first();
         $updated = $element->update($request->except(['logo', 'bg', 'balance','user_id']));
         if ($updated) {

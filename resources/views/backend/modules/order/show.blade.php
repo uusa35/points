@@ -34,6 +34,7 @@
                         <div class="well">
                             <div class="row static-info align-reverse">
                                 <div class="col-md-8 name"> {{ trans('general.total_cost') }}:</div>
+                                {{ dd($element->points) }}
                                 <div class="col-md-3 value"> {{ $element->points }} {{ trans('general.points') }}</div>
                             </div>
                         </div>
@@ -41,7 +42,7 @@
                 </div>
                 @if(!$element->is_complete)
                     @if($element->images->isNotEmpty())
-                        @include('backend.partials.gallery',['elements' => $element->images])
+                        @include('backend.partials.gallery',['elements' => $element->images,'name' => 'image'])
                     @else
                         <div class="alert alert-info">
                             {{ trans('message.no_images_yet_added_to_your_order') }}

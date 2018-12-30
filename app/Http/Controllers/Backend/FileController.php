@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Models\Category;
+use App\Models\File;
 use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -47,6 +48,9 @@ class FileController extends Controller
         $element = new $className();
         $element = $element->withoutGlobalScopes()->whereId(request()->id)->first();
         $categories = Category::onlyParent()->where(['is_files' => true])->get();
+        if (request()->type === 'order') {
+            return redirect()->route('backend.order.index')->with('success', trans('message.files_saved_successfully.'));
+        }
         return view('backend.modules.file.create', compact('element', 'categories'))->with(['type' => request()->type, 'id' => request()->id]);
     }
 
@@ -62,7 +66,7 @@ class FileController extends Controller
             'type' => 'required|alpha',
             'id' => 'required|numeric',
             'category_id' => 'required|exists:categories,id',
-            'path' => 'mimes:pdf,jpeg,bmp,png,gif,xls,xlsx,psd,ai,doc,docs|nullable|max:50000',
+            'path[]' => 'array|mimes:pdf,jpeg,bmp,png,gif,xls,xlsx,psd,ai,doc,docs|nullable|max:50000',
             'image' => 'image',
         ]);
         if ($validate->fails()) {
@@ -84,20 +88,25 @@ class FileController extends Controller
             ]);
             $this->saveMimes($file, $request, ['image'], ['250', '250'], true);
         }
-        if ($request->hasFile('path')) {
-            $file = $element->files()->create([
-                'user_id' => auth()->id(),
-                'category_id' => request('category_id'),
-                'notes' => request('notes'),
-                'name_ar' => request('name_ar'),
-                'name_en' => request('name_en'),
-                'caption_ar' => request('caption_ar'),
-                'caption_en' => request('caption_en'),
-                'order' => request('order'),
-            ]);
-            $this->saveMimes($file, $request, ['path'], ['750', '1334'], true);
+        if ($request->hasFile(['path'])) {
+            foreach ($request->path as $key => $fileElement) {
+                $file = $element->files()->create([
+                    'user_id' => auth()->id(),
+                    'category_id' => request('category_id'),
+                    'notes' => request('notes'),
+                    'name_ar' => request('name_ar'),
+                    'name_en' => request('name_en'),
+                    'caption_ar' => request('caption_ar'),
+                    'caption_en' => request('caption_en'),
+                    'order' => request('order'),
+                    'extension' => $request->file('path')[$key]->extension()
+                ]);
+                $path = $request->file('path')[$key]->store('public/uploads/files');
+                $path = str_replace('public/uploads/files/', '', $path);
+                $file->update(['path' => $path]);
+            }
         }
-        return redirect()->route('backend.file.create', ['type' => request()->type, 'id' => request()->id]);
+        return redirect()->route('backend.file.index', ['type' => request()->type, 'id' => request()->id])->with('success', trans('message.file_uploaded_successfully'));
 //        return redirect()->route('backend.file.create', compact('element'))
 //            ->with(['success' => trans('message.file_or_image_saved_successfully'), 'type' => request()->type, 'id' => request()->id]);
     }
@@ -145,7 +154,12 @@ class FileController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $deleted = File::whereId($id)->delete();
+        if ($deleted) {
+            return redirect()->back()->with('warning', trans('message.file_deleted_succesfully'));
+        }
+        return redirect()->back()->with('error', trans('message.file_delete_failure'));
+
     }
 
     public function getShowList(Request $request)

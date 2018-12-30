@@ -30,6 +30,10 @@
                                 <a href="{{ route('backend.order.index',['user_id' => $element->id]) }}">
                                     <i class="icon-user"></i> {{ trans('general.client_projects') }}</a>
                             </li>
+                            <li>
+                                <a href="{{ route('backend.user.edit',$element->id) }}">
+                                    <i class="icon-pencil"></i> {{ trans('general.edit') }}</a>
+                            </li>
                         </ul>
                     </div>
                     <!-- END MENU -->
@@ -40,8 +44,8 @@
                     <!-- STAT -->
                     <div class="row list-separated profile-stat">
                         <div class="col-md-4 col-sm-4 col-xs-6">
-                            <div class="uppercase profile-stat-title text-center"> 10</div>
-                            <div class="uppercase profile-stat-text text-center"> {{ trans('general.reports') }}</div>
+                            <div class="uppercase profile-stat-title text-center"> {{ $element->orders->count() }}</div>
+                            <div class="uppercase profile-stat-text text-center"> {{ trans('general.total_orders') }}</div>
                         </div>
                     </div>
                     <!-- END STAT -->

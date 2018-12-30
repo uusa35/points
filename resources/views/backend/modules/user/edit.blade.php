@@ -244,10 +244,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="form-group">
-                                <input type="file" class="form-control" name="path" placeholder="path">
                                 <label for="form_control_1">{{ trans('general.path') }} </label>
+                                <input type="file" class="form-control" name="path" placeholder="path">
                                 <div class="help-block text-left">
                                     {{ trans('message.upload_files') }}
                                 </div>
@@ -450,51 +450,48 @@
                             </div>
                         @endcan
 
-                        <div class="row">
-                            <div class="col-lg-12" style="padding: 20px;">
-                                <div id="map" style="width : 100%; min-height: 250px;"></div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label class="control-label">{{ trans('general.address_ar') }}</label>
-                                    <input id="address" name="address_ar" type="textbox" value="{{ old("address_ar") }}"
-                                           class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label class="control-label">{{ trans('general.address_en') }}</label>
-                                    <input id="address" name="address_en" type="textbox" value="Sydney, NSW"
-                                           class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-lg-1">
-                                <div class="form-group">
-                                    <label class="control-label"></label>
-                                    <input type="button" class="btn btn-info form-control"
-                                           value="{{ trans('general.get_location_by_address') }}"
-                                           onclick="codeAddress()">
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-group">
-                                    <label for="longitude"
-                                           class="control-label">{{ trans('general.longitude') }}</label>
-                                    <input id="longitude" type="text" class="form-control" name="longitude"
-                                           value="{{ old('longitude') ? old('longitude') : auth()->user()->longitude}}"
-                                           placeholder="longitude" autofocus>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-group">
-                                    <label for="latitude" class="control-label">{{ trans('general.latitude') }}</label>
-                                    <input id="latitude" type="text" class="form-control" name="latitude"
-                                           value="{{ old('latitude') ? old('latitude') : auth()->user()->latitude }}"
-                                           placeholder="latitude" autofocus>
-                                </div>
+                        {{--<div class="col-lg-12" style="padding: 20px;">--}}
+                        {{--<div id="map" style="width : 100%; min-height: 250px;"></div>--}}
+                        {{--</div>--}}
+                        {{--<div class="col-lg-1">--}}
+                        {{--<div class="form-group">--}}
+                        {{--<label class="control-label"></label>--}}
+                        {{--<input type="button" class="btn btn-info form-control"--}}
+                        {{--value="{{ trans('general.get_location_by_address') }}"--}}
+                        {{--onclick="codeAddress()">--}}
+                        {{--</div>--}}
+                        {{--</div>--}}
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="control-label">{{ trans('general.address_ar') }}</label>
+                                <input id="address" name="address_ar" type="textbox" value="{{ old("address_ar") }}"
+                                       class="form-control">
                             </div>
                         </div>
-
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="control-label">{{ trans('general.address_en') }}</label>
+                                <input id="address" name="address_en" type="textbox" value="{{ old('address_en') }}"
+                                       class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="longitude"
+                                       class="control-label">{{ trans('general.longitude') }}</label>
+                                <input id="longitude" type="text" class="form-control" name="longitude"
+                                       value="{{ old('longitude') ? old('longitude') : auth()->user()->longitude}}"
+                                       placeholder="longitude" autofocus/>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="latitude" class="control-label">{{ trans('general.latitude') }}</label>
+                                <input id="latitude" type="text" class="form-control" name="latitude"
+                                       value="{{ old('latitude') ? old('latitude') : auth()->user()->latitude }}"
+                                       placeholder="latitude" autofocus/>
+                            </div>
+                        </div>
 
                     </div>
                     @include('backend.partials.forms._btn-group')

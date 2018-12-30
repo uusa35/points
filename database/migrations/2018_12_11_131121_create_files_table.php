@@ -22,8 +22,9 @@ class CreateFilesTable extends Migration
             $table->string('caption_en')->nullable();
             $table->string('notes')->nullable();
             $table->integer('order')->nullable();
-            $table->morphs('filable');
             $table->boolean('active')->default(1);
+            $table->string('extension')->nullable();
+            $table->morphs('filable');
 
             $table->integer('user_id')->unsigned()->index()->nullable();
             $table->foreign('user_id')->references('id')->on('users');

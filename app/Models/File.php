@@ -24,4 +24,15 @@ class File extends PrimaryModel
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function scopeImages($q)
+    {
+        return $q->whereIn('extension', ['jpeg', 'jpg', 'png', 'gif']);
+    }
+
+    public function scopeNotImages($q)
+    {
+        return $q->whereNotIn('extension', ['jpeg', 'jpg', 'png', 'gif']);
+    }
+
 }
