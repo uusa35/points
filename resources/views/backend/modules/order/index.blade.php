@@ -126,14 +126,14 @@
                                                             <i class="fa fa-fw fa-edit"></i>{{ trans('general.create_new_job_for_this_order') }}
                                                         </a>
                                                     </li>
+                                                    @if($settings->auto_enrollment)
+                                                        <li>
+                                                            <a href="{{ route('backend.job.enroll',$element->job->id) }}">
+                                                                <i class="fa fa-fw fa-edit"></i>{{ trans('general.toggle_enroll') }}
+                                                            </a>
+                                                        </li>
+                                                    @endif
                                                 @endcan
-                                                @if(auth()->user()->onlyDesigner)
-                                                    <li>
-                                                        <a href="{{ route('backend.job.enroll',['order_id' => $element->id]) }}">
-                                                            <i class="fa fa-fw fa-edit"></i>{{ trans('general.create_new_job_for_this_order') }}
-                                                        </a>
-                                                    </li>
-                                                @endif
                                                 @if($element->job)
                                                     @can('job.update', $element->job)
                                                         <li>

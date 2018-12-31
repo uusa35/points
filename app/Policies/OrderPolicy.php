@@ -23,7 +23,7 @@ class OrderPolicy
             if ($user->onlyClient) {
                 return $user->id === $order->user_id;
             } elseif ($user->onlyDesigner) {
-                return in_array($user->id, $order->job()->first()->designers()->pluck('id')->toArray(), true);
+                return in_array($user->id, $order->job->designers->pluck('id')->toArray(), true);
             }
         }
         return $user->isAdminOrAbove;
