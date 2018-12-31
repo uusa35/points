@@ -105,6 +105,8 @@ class FileController extends Controller
         }
         if (request()->type === 'order') {
             return redirect()->route('backend.file.create', ['type' => request('type'), 'id' => request('id')])->with('success',trans('general.file_saved'));
+        } elseif (request()->type === 'job') {
+            return redirect()->route('backend.job.show', $element->id)->with('success',trans('general.file_saved'));
         }
         return redirect()->route('backend.file.index', ['type' => request()->type, 'id' => request()->id])->with('success', trans('message.file_uploaded_successfully'));
 //        return redirect()->route('backend.file.create', compact('element'))

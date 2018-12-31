@@ -51,6 +51,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     Route::resource('file', 'FileController');
     Route::get('show/list', 'FileController@getShowList')->name('file.show.list');
     Route::resource('job', 'JobController');
+    Route::get('enroll/job{id}','JobController@toggleEnroll')->name('job.enroll');
     Route::resource('version', 'VersionController');
     Route::resource('image', 'ImageController');
     Route::resource('point', 'PointController');
