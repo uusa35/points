@@ -23,7 +23,7 @@ class OrdersTableSeeder extends Seeder
             $o->images()->saveMany(factory(Image::class, 3)->create(['user_id' => $o->user_id]));
             $o->files()->saveMany(factory(File::class, 3)->create(['user_id' => $o->user_id]));
             $o->job()->save($job);
-            $job->designers()->attach(User::onlyDesigners()->get()->random()->take(3)->pluck('id'));
+            $job->designers()->attach(User::onlyDesigners()->get()->shuffle()->take(10)->pluck('id'));
             $job->comments()->saveMany(factory(Comment::class, 10)->create());
             $job->images()->saveMany(factory(Image::class, 10)->create(['user_id' => $o->user_id]));
             $job->files()->saveMany(factory(File::class, 10)->create(['user_id' => $o->user_id]));
