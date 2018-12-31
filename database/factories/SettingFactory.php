@@ -60,5 +60,6 @@ $factory->define(Setting::class, function (Faker\Generator $faker) {
         'section_three_ar' => $faker->name,
         'section_three_en' => $faker->name,
         'video' => $faker->imageUrl(),
+        'auto_enrollment' => $faker->boolean(true)
     ];
 });

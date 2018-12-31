@@ -394,6 +394,21 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="control-label sbold">auto_enrollment</label>
+                                    <div class="radio-list">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="auto_enrollment" id="optionsRadios1"
+                                                   value="1" {{ $element->auto_enrollment ? 'checked' : null }}>
+                                            auto_enrollment </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="auto_enrollment" id="optionsRadios2"
+                                                   value="0" {{ $element->auto_enrollment  ? null : 'checked'}}>
+                                            N/A</label>
+                                    </div>
+                                </div>
+                            </div>
                             <!--/span-->
                             <div class="col-md-4">
                                 <div class="form-group">

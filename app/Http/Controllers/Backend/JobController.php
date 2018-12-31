@@ -53,7 +53,7 @@ class JobController extends Controller
     {
         $element = Job::create($request->request->all());
         if ($element) {
-            return redirect()->route('backend.job.show',$element->id)->with('success', trans('message.success_job_store'));
+            return redirect()->route('backend.job.show', $element->id)->with('success', trans('message.success_job_store'));
         }
         return redirect()->back()->with('error', trans('message.error_job_store'));
     }
@@ -103,5 +103,12 @@ class JobController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function toggleEnroll($id)
+    {
+        $job = Job::whereId($id)->first();
+        $job->designers()->toggle([auth()->user()->id]);
+        return redirect()->back()->with('success', 'successful enrolment process');
     }
 }

@@ -62,6 +62,7 @@ class CreateSettingsTable extends Migration
             $table->string('video')->nullable();
             $table->boolean('annual_subscription')->default(0);
             $table->boolean('maintenance_mode')->default(0);
+            $table->boolean('auto_enrollment')->default(0);
             $table->timestamps();
         });
     }
