@@ -30,6 +30,7 @@
                                 <th>{{ trans('general.created_at') }}</th>
                                 <th>{{ trans('general.is_complete') }}</th>
                                 <th>{{ trans('general.view') }}</th>
+                                <th>{{ trans('general.designers') }}</th>
                                 <th>{{ trans('general.Action') }}</th>
                             </tr>
                             </thead>
@@ -42,6 +43,7 @@
                                 <th>{{ trans('general.created_at') }}</th>
                                 <th>{{ trans('general.is_complete') }}</th>
                                 <th>{{ trans('general.view') }}</th>
+                                <th>{{ trans('general.designers') }}</th>
                                 <th>{{ trans('general.Action') }}</th>
                             </tr>
                             </tfoot>
@@ -61,6 +63,17 @@
                                         <a class="btn btn-warning"
                                            href="{{ route("backend.order.show", $element->id) }}"><i
                                                 class="fa fa-fw fa-eye"></i></a>
+                                    </td>
+                                    <td>
+                                        @if($element->job->designers->isNotEmpty())
+                                            <ul>
+                                                @foreach($element->job->designers as $designer)
+                                                    <li>{{ $designer->name }}</li>
+                                                @endforeach
+                                            </ul>
+                                        @else
+                                            <span class="label label-warning"></span>
+                                        @endif
                                     </td>
                                     <td>
                                         <div class="btn-group pull-right">
@@ -114,6 +127,13 @@
                                                         </a>
                                                     </li>
                                                 @endcan
+                                                @if(auth()->user()->onlyDesigner)
+                                                    <li>
+                                                        <a href="{{ route('backend.job.enroll',['order_id' => $element->id]) }}">
+                                                            <i class="fa fa-fw fa-edit"></i>{{ trans('general.create_new_job_for_this_order') }}
+                                                        </a>
+                                                    </li>
+                                                @endif
                                                 @if($element->job)
                                                     @can('job.update', $element->job)
                                                         <li>

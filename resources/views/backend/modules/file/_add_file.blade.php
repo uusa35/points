@@ -13,18 +13,18 @@
                     <input type="hidden" name="id" value="{{ request()->id}}">
                     <input type="hidden" name="user_id" value="{{ auth()->id() }}">
                     <div class="row">
-                        {{--<div class="col-md-12">--}}
-                            {{--<div class="form-group">--}}
-                                {{--<label class="control-label">{{ trans('general.category') }} </label>--}}
-                                {{--<select class="bs-select form-control" name="category_id" autofocus>--}}
-                                    {{--<option value="">{{ trans('general.select_category') }}</option>--}}
-                                    {{--@foreach($categories as $category)--}}
-                                        {{--<option value="{{ $category->id }}">{{ $category->name }}--}}
-                                            {{--- {{ $category->slug }}</option>--}}
-                                    {{--@endforeach--}}
-                                {{--</select>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label">{{ trans('general.category') }} </label>
+                                <select class="bs-select form-control" name="category_id" required autofocus>
+                                    <option value="">{{ trans('general.select_category') }}</option>
+                                    @foreach($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}
+                                            - {{ $category->slug }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="form_control_1">{{ trans('general.file') }}</label>

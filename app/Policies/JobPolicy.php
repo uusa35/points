@@ -25,7 +25,7 @@ class JobPolicy
         } elseif ($user->onlyClient) {
             return $user->id === $job->order->user_id;
         } elseif ($user->onlyDesigner) {
-            return in_array($user->id(), $job->designers()->pluck('id')->toArray(), true);
+            return in_array($user->id, $job->designers()->pluck('id')->toArray(), true);
         }
     }
 

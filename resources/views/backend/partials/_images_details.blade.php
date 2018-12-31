@@ -39,7 +39,8 @@
                                 <td>{{ $element->name }}</td>
                                 <td>{{ $element->caption }}</td>
                                 <td>{{ $element->imagable_type }}</td>
-                                <td>{{ $element->category->slug }}</td>
+                                <td>{{ $element->category ? $element->category->slug : 'N/A'}}</td>
+
                                 <td>
                                     <div class="btn-group pull-right">
                                         <button type="button"

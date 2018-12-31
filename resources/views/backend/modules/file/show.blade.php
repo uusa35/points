@@ -11,7 +11,6 @@
             </li>
         </ul>
         <div class="tab-content">
-
             <div class="tab-pane active" id="tab_1">
                 @if($element->job->versions->last()->images->isNotEmpty())
                     @include('backend.partials.gallery',['elements' => $element->images])

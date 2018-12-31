@@ -23,6 +23,8 @@ class OrderObserver
             $finalBalance = $balance - $serviceCost;
             $order->client()->first()->balance()->first()->update(['points' => $finalBalance]);
             $order->update(['is_paid' => true]);
+            // automatically create a job once order is paid
+            $order->job()->create();
         } else {
             $order->update(['is_paid' => false, 'active' => false]);
         }

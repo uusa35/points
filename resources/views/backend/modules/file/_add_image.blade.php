@@ -1,4 +1,4 @@
-<div class="modal fade" id="order-file" tabindex="-1" role="basic" aria-hidden="true">
+<div class="modal fade" id="order-image" tabindex="-1" role="basic" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -13,24 +13,24 @@
                     <input type="hidden" name="id" value="{{ request()->id}}">
                     <input type="hidden" name="user_id" value="{{ auth()->id() }}">
                     <div class="row">
-                        {{--<div class="col-md-12">--}}
-                            {{--<div class="form-group">--}}
-                                {{--<label class="control-label">{{ trans('general.category') }} </label>--}}
-                                {{--<select class="bs-select form-control" name="category_id" autofocus>--}}
-                                    {{--<option value="">{{ trans('general.select_category') }}</option>--}}
-                                    {{--@foreach($categories as $category)--}}
-                                        {{--<option value="{{ $category->id }}">{{ $category->name }}--}}
-                                            {{--- {{ $category->slug }}</option>--}}
-                                    {{--@endforeach--}}
-                                {{--</select>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label">{{ trans('general.category') }} </label>
+                                <select class="bs-select form-control" name="category_id" required autofocus>
+                                    <option value="">{{ trans('general.select_category') }}</option>
+                                    @foreach($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}
+                                            - {{ $category->slug }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="form_control_1">{{ trans('general.file') }}</label>
-                                <input type="file" class="form-control" name="path[]" placeholder="{{ trans('general.path') }}" multiple required>
+                                <label for="form_control_1">{{ trans('general.image') }}</label>
+                                <input type="file" class="form-control" name="image" placeholder="image">
                                 <div class="help-block text-left">
-                                    {{ trans('message.pdf_instructions') }}
+                                    {{ trans('message.image_general_instructions') }}
                                 </div>
                             </div>
                         </div>

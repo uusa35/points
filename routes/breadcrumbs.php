@@ -72,9 +72,9 @@ Breadcrumbs::for('backend.admin.plan.create', function ($trail) {
     $trail->push(trans('general.create_plan'), route('backend.admin.plan.create'));
 });
 
-Breadcrumbs::for('backend.admin.plan.edit', function ($trail,$element) {
+Breadcrumbs::for('backend.admin.plan.edit', function ($trail, $element) {
     $trail->parent('backend.admin.plan.index');
-    $trail->push(trans('general.edit'), route('backend.admin.plan.edit',$element->id));
+    $trail->push(trans('general.edit'), route('backend.admin.plan.edit', $element->id));
 });
 
 Breadcrumbs::for('backend.admin.setting.show', function ($trail, $element) {
@@ -165,6 +165,12 @@ Breadcrumbs::for('backend.file.create', function ($trail) {
     $trail->push(trans('general.file_create'), route('backend.file.create'));
 });
 
+Breadcrumbs::for('backend.file.show.list', function ($trail, $element) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.my_list_of_files'), route('backend.file.index', ['type' => 'user', 'id' => $element->id]));
+    $trail->push(trans('general.list_of_my_files'), route('backend.file.show.list'));
+});
+
 Breadcrumbs::for('backend.file.edit', function ($trail, $element) {
     $trail->parent('backend.home');
     $trail->push(trans('general.file_edit'), route('backend.file.edit', $element->id));
@@ -172,7 +178,7 @@ Breadcrumbs::for('backend.file.edit', function ($trail, $element) {
 
 Breadcrumbs::for('backend.order.index', function ($trail) {
     $trail->parent('backend.home');
-    $trail->push(trans('general.orders'), route('backend.order.index',['is_complete' => 0]));
+    $trail->push(trans('general.orders'), route('backend.order.index', ['is_complete' => 0]));
 });
 
 Breadcrumbs::for('backend.order.choose.lang', function ($trail) {
@@ -195,7 +201,7 @@ Breadcrumbs::for('backend.order.create', function ($trail) {
     $trail->push(trans('general.order'), route('backend.order.create'));
 });
 
-Breadcrumbs::for('backend.order.edit', function ($trail,$element) {
+Breadcrumbs::for('backend.order.edit', function ($trail, $element) {
     $trail->parent('backend.order.index');
     $trail->push(trans('general.order'), route('backend.order.edit', $element->id));
 });
@@ -207,11 +213,11 @@ Breadcrumbs::for('backend.order.show', function ($trail, $element) {
 
 
 Breadcrumbs::for('backend.job.index', function ($trail) {
-    if(request()->has("order_id")) {
-        $trail->parent('backend.order.index',['order_id' => request()->order_id]);
-        $trail->push(trans('general.job'), route('backend.job.index',['order_id' => request()->order_id]));
+    if (request()->has("order_id")) {
+        $trail->parent('backend.order.index', ['order_id' => request()->order_id]);
+        $trail->push(trans('general.job'), route('backend.job.index', ['order_id' => request()->order_id]));
     }
-    $trail->parent('backend.order.index',['jobs' => false]);
+    $trail->parent('backend.order.index', ['jobs' => false]);
     $trail->push(trans('general.create_new_job'), '#');
 });
 
@@ -238,7 +244,7 @@ Breadcrumbs::for('backend.version.index', function ($trail) {
 });
 Breadcrumbs::for('backend.version.create', function ($trail) {
     $trail->parent('backend.home');
-    if(request()->has('job_id')) {
+    if (request()->has('job_id')) {
         $trail->push(trans('general.job'), route('backend.job.show', request()->job_id));
     }
     $trail->push(trans('general.create_new_version'), route('backend.version.create'));
@@ -250,7 +256,7 @@ Breadcrumbs::for('backend.version.show', function ($trail, $element) {
 });
 
 Breadcrumbs::for('backend.version.edit', function ($trail, $element) {
-    $trail->parent('backend.job.index',['order_id' => $element->job->order_id]);
+    $trail->parent('backend.job.index', ['order_id' => $element->job->order_id]);
     $trail->push(trans('general.edit_version'), route('backend.version.edit', $element->id));
 });
 

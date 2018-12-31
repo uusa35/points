@@ -8,7 +8,7 @@
             <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.order.store') }}"
                   enctype="multipart/form-data">
                 @csrf
-                <input type="hidden" name="service_id" value="{{ session()->get('service_id')}}">
+                <input type="hidden" name="service_id" value="{{ session()->get('service_id') }}">
                 <input type="hidden" name="user_id" value="{{ auth()->id() }}">
                 <div class="form-body">
                     @if(session()->get('order_lang') == 'ar')
