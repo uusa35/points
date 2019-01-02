@@ -52,15 +52,15 @@
             </div>
 
             <zdiv class="tab-pane" id="tab_2">
-                @if(!$element->is_complete)
+                {{--@if(!$element->is_complete)--}}
                     @if($element->job)
                         @include('backend.partials._job_details',['element' => $element->job])
                         @if($element->job->versions->isNotEmpty())
                             @include('backend.partials._version_details',['elements' => $element->job->versions])
                         @endif
-                    @else
-                        <div class="alert alert-info">{{ trans('message.this_job_does_not_exist') }}</div>
-                    @endif
+                    {{--@else--}}
+                        {{--<div class="alert alert-info">{{ trans('message.this_job_does_not_exist') }}</div>--}}
+                    {{--@endif--}}
                 @else
                     <div class="alert alert-info">
                         {{ trans('message.this_order_is_complete_please_check_my_files_page_in_order_to_view_your_files') }}

@@ -31,6 +31,7 @@ class CreateOrdersTable extends Migration
             $table->string('snapchat')->nullable();
             $table->string('iphone')->nullable();
             $table->string('android')->nullable();
+            $table->string('logo_style')->nullable();
             $table->string('lang')->nullable();
             $table->integer('points')->nullable(); // in points only
 
@@ -39,8 +40,7 @@ class CreateOrdersTable extends Migration
             $table->text('notes_ar')->nullable();
 
             $table->text('notes_en')->nullable();
-            $table->text('address_ar')->nullable();
-            $table->text('address_en')->nullable();
+            $table->text('address')->nullable();
 
 
             $table->boolean('is_paid')->default(0); // paid

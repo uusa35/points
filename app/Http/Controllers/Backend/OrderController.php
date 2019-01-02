@@ -58,6 +58,7 @@ class OrderController extends Controller
             return redirect()->back()->with('error', trans('message.no_service_selected'));
         }
         session()->put('order_lang', request()->lang);
+        $service = Service::whereId(session()->get('service_id'))->first();
         $this->authorize('order.create');
         return view('backend.modules.order.create', compact('service'));
     }
