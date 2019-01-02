@@ -84,15 +84,17 @@ mix.styles([
     '../metronic_v4.5.6/theme_rtl/assets/global/css/components-rtl.min.css',
     '../metronic_v4.5.6/theme_rtl/assets/global/css/plugins-rtl.min.css',
 
-    '../metronic_v4.5.6/theme_rtl/assets/pages/css/profile.min.css',
-    '../metronic_v4.5.6/theme_rtl/assets/pages/css/portfolio.min.css',
-    '../metronic_v4.5.6/theme-rtl/assets/pages/css/blog.min.css',
 
-    '../metronic_v4.5.6/theme_rtl/assets/pages/css/pricing.min.css',
+
+    '../metronic_v4.5.6/theme_rtl/assets/pages/css/portfolio-rtl.min.css',
+    '../metronic_v4.5.6/theme_rtl/assets/pages/css/profile-rtl.min.css',
+    '../metronic_v4.5.6/theme_rtl/assets/pages/css/pricing-rtl.min.css',
+    '../metronic_v4.5.6/theme_rtl/assets/pages/css/blog-rtl.min.css',
+
     '../metronic_v4.5.6/theme_rtl/assets/layouts/layout2/css/layout-rtl.min.css',
     // '../metronic_v4.5.6/theme_rtl/assets/layouts/layout/css/themes/darkblue-rtl.min.css',
     '../metronic_v4.5.6/theme_rtl/assets/layouts/layout2/css/themes/blue-rtl.min.css',
-    // '../metronic_v4.5.6/theme_rtl/assets/layouts/layout2/css/themes/light.min.css',
+    // '../metronic_v4.5.6/theme_rtl/assets/layouts/layout2/css/themes/light-rtl.min.css',
     // '../metronic_v4.5.6/theme_rtl/assets/layouts/layout2/css/themes/grey.min.css',
     '../metronic_v4.5.6/theme_rtl/assets/layouts/layout2/css/custom-rtl.min.css',
     './resources/assets/css/backend-custom.css',

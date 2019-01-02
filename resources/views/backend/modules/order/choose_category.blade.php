@@ -19,7 +19,7 @@
                 </div>
                 <div class="row">
                     @foreach($elements as $element)
-                        <div class="col-sm-4" style="height: 400px;">
+                        <div class="col-md-4" style="height: 400px;">
                             <div class="blog-post-sm bordered blog-container">
                                 <div class="blog-img-thumb">
                                     <a href="{{ route('backend.order.choose.service', ['category_id' => $element->id]) }}">
