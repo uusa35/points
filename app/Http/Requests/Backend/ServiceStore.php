@@ -40,6 +40,11 @@ class ServiceStore extends FormRequest
             'sale_points' => 'required|numeric',
             'active' => 'nullable|boolean',
             'category_id' => 'required|exists:categories,id',
+            'show_colors' => 'required|boolean',
+            'show_socials' => 'required|boolean',
+            'show_phones' => 'required|boolean',
+            'show_address' => 'required|boolean',
+            'show_logo_style' => 'required|boolean',
         ];
     }
 }

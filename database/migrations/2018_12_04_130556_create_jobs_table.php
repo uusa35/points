@@ -16,7 +16,7 @@ class CreateJobsTable extends Migration
             $table->increments('id');
             $table->text('description')->nullable();
             $table->text('notes')->nullable();
-            $table->boolean('active')->nullable();
+            $table->boolean('active')->default(1);
             $table->boolean('is_complete')->default(0);
             $table->boolean('is_client_viewed')->default(0);
             $table->boolean('is_designer_viewed')->default(0);
