@@ -25,7 +25,7 @@ class CategoryStore extends FormRequest
     {
         return [
             'name' => 'required|unique:users,name',
-            'path' => 'nullable',
+            'path' => 'mimes:pdf|max:50000',
             'image' => 'required|image',
             'slug_ar' => 'required',
             'slug_en' => 'required',

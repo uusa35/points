@@ -58,6 +58,25 @@
                             </div>
                         </div>
 
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="form_control_1">{{ trans('general.image') }}</label>
+                                <input type="file" class="form-control" name="image" placeholder="image">
+                                <div class="help-block text-left">
+                                    {{ trans('general.message_image') }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="form_control_1">{{ trans('general.file') }}</label>
+                                <input type="file" class="form-control" name="path" placeholder="path">
+                                <div class="help-block text-left">
+                                    {{ trans('general.message_path') }}
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="col-md-6">
                             <div class="form-group {{ $errors->has('caption_ar') ? ' has-error' : '' }}">
                                 <label for="caption_ar" class="control-label">{{ trans('general.caption_ar') }}</label>

@@ -100,6 +100,16 @@
 
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_control_1">{{ trans('general.file') }}</label>
+                                <input type="file" class="form-control" name="path" placeholder="path">
+                                <div class="help-block text-left">
+                                    {{ trans('message.path_general_instructions') }}
+                                </div>
+
+                            </div>
+                        </div>
                         <div class="col-md-4">
                             <div class="form-group{{ $errors->has('order') ? ' has-error' : '' }}">
                                 <label for="order" class="control-label">{{ trans('general.order') }} *</label>
