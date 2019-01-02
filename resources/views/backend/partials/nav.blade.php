@@ -31,10 +31,12 @@
                             <a href="{{ route('backend.admin.user.create') }}">
                                 <i class="icon-plus"></i> {{ trans('general.new_user') }}</a>
                         </li>
-                        {{--<li>--}}
-                        {{--<a href="{{ route('backend.admin.order.create') }}">--}}
-                        {{--<i class="icon-plus"></i> {{ trans('general.admin_new_order') }}</a>--}}
-                        {{--</li>--}}
+                        <li class="divider"></li>
+                        <li>
+                            <a href="{{ route('backend.admin.slider.create') }}">
+                                <i class="icon-plus"></i> {{ trans('general.new_slider') }}</a>
+                        </li>
+                        <li class="divider"></li>
                     @endcan
                     @can('onlySuper')
                         <li>
@@ -169,11 +171,11 @@
                                                         @endif
                                                     </span>
                                                     <span class="subject">
-                                                        <span class="from"> {{ $element->title }} </span>
+                                                        <span class="from"> {{ str_limit($element->title,30) }} </span>
                                                         <span
                                                             class="time">{{ $element->created_at->diffForHumans() }} </span>
                                                     </span>
-                                                    <span class="message"> {{ $element->name }} </span>
+                                                    <span class="message"> {{ str_limit($element->name,20) }} </span>
                                                 </a>
                                             </li>
                                         @endforeach
@@ -327,7 +329,7 @@
                             <img alt="" class="img-xs"
                                  src="{{ asset('storage/uploads/images/thumbnail/'. auth()->user()->logo) }}"/>
                             <i class="fa fa-angle-down"></i>
-                            <span class="username username-hide-on-mobile"> {{ auth()->user()->name }}</span><br>
+                            <span class="username username-hide-on-mobile"> {{ str_limit(auth()->user()->name,30) }}</span><br>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-default">
                             <li>
@@ -336,7 +338,7 @@
                                             class="fa fa-fw fa-university"></i>{{ trans('general.role') }}
                                         : {{ auth()->user()->role->name }} : </span>
                                     <span
-                                        class="username username-hide-on-mobile"> {{ auth()->user()->name }}</span><br>
+                                        class="username username-hide-on-mobile"> {{ str_limit(auth()->user()->name,5) }}</span><br>
                                 </a>
                             </li>
                             @if(auth()->user()->balance && auth()->user()->isClientOrAbove)
@@ -347,6 +349,7 @@
                                             : {{ auth()->user()->balance->points}} {{ trans('general.points') }}</span>
                                     </a>
                                 </li>
+                                <li class="divider"></li>
                             @endif
                             <li>
                                 <a href="{{ route('home') }}">
@@ -356,11 +359,13 @@
                                 <a href="{{ route('backend.index') }}">
                                     <i class="icon-pencil"></i>{{ trans('general.dashboard') }}</a>
                             </li>
+                            <li class="divider"></li>
                             <li>
                                 <a href="{{ route('backend.language.change',app()->isLocale('ar') ? 'en' : 'ar') }}">
                                     <i class="fa fa-fw fa-language"></i>{{ trans(app()->isLocale('ar') ? 'general.change_to_english_language' : 'general.change_to_arabic_language') }}
                                 </a>
                             </li>
+                            <li class="divider"></li>
                             <li>
                                 <a href="{{ route('backend.admin.setting.index') }}">
                                     <i class="icon-settings"></i> {{ trans('general.app_settings') }} </a>

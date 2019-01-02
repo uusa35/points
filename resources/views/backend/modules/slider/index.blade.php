@@ -19,6 +19,7 @@
                         <thead>
                         <tr>
                             <th>Id</th>
+                            <th>caption</th>
                             <th>url</th>
                             <th>order</th>
                             <th>image</th>
@@ -30,6 +31,7 @@
                         <tfoot>
                         <tr>
                             <th>Id</th>
+                            <th>caption</th>
                             <th>url</th>
                             <th>order</th>
                             <th>active</th>
@@ -42,6 +44,7 @@
                         @foreach($elements as $element)
                             <tr>
                                 <td>{{ $element->id }}</td>
+                                <td>{{ $element->caption }}</td>
                                 <td>
                                     {{ str_limit($element->url,20,'..') }}
                                 </td>

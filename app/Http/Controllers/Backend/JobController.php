@@ -67,7 +67,9 @@ class JobController extends Controller
     public function show($id)
     {
         $element = Job::whereId($id)->with('versions')->first();
-        return view('backend.modules.job.show', compact('element'));
+        $files = $element->files()->notImages()->get();
+        $images = $element->files()->images()->get();
+        return view('backend.modules.job.show', compact('element','files','images'));
     }
 
     /**

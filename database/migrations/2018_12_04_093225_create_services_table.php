@@ -30,6 +30,11 @@ class CreateServicesTable extends Migration
             $table->integer('points')->unsigned();
             $table->integer('sale_points')->unsigned();
             $table->boolean('active')->default(0);
+            $table->boolean('show_colors')->default(0);
+            $table->boolean('show_socials')->default(0);
+            $table->boolean('show_phones')->default(0);
+            $table->boolean('show_address')->default(0);
+            $table->boolean('show_logo_style')->default(0);
 
             $table->integer('category_id')->unsigned()->index();
             $table->foreign('category_id')->references('id')->on('categories');

@@ -126,30 +126,28 @@
                                                             <i class="fa fa-fw fa-edit"></i>{{ trans('general.create_new_job_for_this_order') }}
                                                         </a>
                                                     </li>
-                                                    @if($settings->auto_enrollment)
-                                                        <li>
-                                                            <a href="{{ route('backend.job.enroll',$element->job->id) }}">
-                                                                <i class="fa fa-fw fa-edit"></i>{{ trans('general.toggle_enroll') }}
-                                                            </a>
-                                                        </li>
-                                                    @endif
                                                 @endcan
-                                                @if($element->job)
-                                                    @can('job.update', $element->job)
-                                                        <li>
-                                                            <a href="{{ route('backend.job.edit',$element->job->id) }}">
-                                                                <i class="fa fa-fw fa-edit"></i>{{ trans('general.edit_current_job') }}
-                                                            </a>
-                                                        </li>
-                                                    @endcan
-                                                    @can('job.view', $element->job)
-                                                        <li>
-                                                            <a href="{{ route('backend.job.show',$element->job->id) }}">
-                                                                <i class="fa fa-fw fa-eye"></i>{{ trans('general.view_job') }}
-                                                            </a>
-                                                        </li>
-                                                    @endcan
+                                                @if($settings->auto_enrollment)
+                                                    <li>
+                                                        <a href="{{ route('backend.job.enroll',$element->job->id) }}">
+                                                            <i class="fa fa-fw fa-edit"></i>{{ trans('general.toggle_enroll') }}
+                                                        </a>
+                                                    </li>
                                                 @endif
+                                                @can('job.update', $element->job)
+                                                    <li>
+                                                        <a href="{{ route('backend.job.edit',$element->job->id) }}">
+                                                            <i class="fa fa-fw fa-edit"></i>{{ trans('general.edit_current_job') }}
+                                                        </a>
+                                                    </li>
+                                                @endcan
+                                                @can('job.view', $element->job)
+                                                    <li>
+                                                        <a href="{{ route('backend.job.show',$element->job->id) }}">
+                                                            <i class="fa fa-fw fa-eye"></i>{{ trans('general.view_job') }}
+                                                        </a>
+                                                    </li>
+                                                @endcan
                                             </ul>
                                         </div>
                                     </td>

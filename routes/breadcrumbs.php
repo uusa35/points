@@ -252,6 +252,7 @@ Breadcrumbs::for('backend.version.create', function ($trail) {
 
 Breadcrumbs::for('backend.version.show', function ($trail, $element) {
     $trail->parent('backend.home');
+    $trail->push(trans('general.job'),route('backend.job.show',$element->job_id));
     $trail->push(trans('general.show_version'), route('backend.version.show', $element->id));
 });
 

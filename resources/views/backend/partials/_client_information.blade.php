@@ -4,9 +4,12 @@
             <i class="fa fa-cogs"></i>{{ trans('general.client_information') }}
         </div>
         <div class="actions">
-            <a href="{{ route('backend.user.edit', $element->id) }}" class="btn btn-default btn-sm">
-                <i class="fa fa-pencil"></i> {{ trans('general.edit') }} </a>
+            @if(auth()->user()->id === $element->id)
+                <a href="{{ route('backend.user.edit', $element->id) }}" class="btn btn-default btn-sm">
+                    <i class="fa fa-pencil"></i> {{ trans('general.edit') }} </a>
+            @endif
         </div>
+
     </div>
     <div class="portlet-body">
         <div class="row static-info">

@@ -56,8 +56,10 @@ class VersionController extends Controller
      */
     public function show($id)
     {
-        $element = Version::whereId($id)->first();
-        return view('backend.modules.version.show', compact('element'));
+        $element = Version::whereId($id)->with('files','images','job.order')->first();
+        $files = $element->files()->notImages()->get();
+        $images = $element->files()->images()->get();
+        return view('backend.modules.version.show', compact('element','files','images'));
     }
 
     /**

@@ -13,14 +13,14 @@
             <div class="form-body">
                 <div class="form-group form-md-line-input">
                     <input type="text" class="form-control" name="caption_ar" value={{$element->caption_ar}}>
-                    <label for="form_control_1">Slide Title Ar *</label>
+                    <label for="form_control_1">Slide caption Ar *</label>
                     <span class="help-block">please enter proper title</span>
                 </div>
             </div>
             <div class="form-body">
                 <div class="form-group form-md-line-input">
                     <input type="text" class="form-control" name="caption_en" value={{ $element->caption_en }}>
-                    <label for="form_control_1">Slide Title En*</label>
+                    <label for="form_control_1">Slide caption En*</label>
                     <span class="help-block">please enter proper title</span>
                 </div>
             </div>
