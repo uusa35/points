@@ -7,11 +7,11 @@
             <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.admin.service.store') }}"
                   enctype="multipart/form-data">
                 @csrf
-                <div class="form-body">
-                    <div class="row">
+                <div class="row">
+                    <div class="form-body">
                         <div class="col-md-6">
                             <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
-                                <label for="name" class="control-label">{{ trans('general.order_name') }}</label>
+                                <label for="name" class="control-label">{{ trans('general.order_name') }}*</label>
                                 <input id="name" type="text" class="form-control" name="name"
                                        value="{{ old('name') }}"
                                        placeholder="name" required autofocus>
@@ -26,10 +26,10 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group {{ $errors->has('slug_ar') ? ' has-error' : '' }}">
-                                <label for="slug_ar" class="control-label">{{ trans('general.slug_ar') }}</label>
+                                <label for="slug_ar" class="control-label">{{ trans('general.slug_ar') }}*</label>
                                 <input id="slug_ar" type="text" class="form-control" name="slug_ar"
                                        value="{{ old('slug_ar') }}"
-                                       placeholder="slug_ar" autofocus>
+                                       placeholder="slug_ar" autofocus required>
                                 @if ($errors->has('slug_ar'))
                                     <span class="help-block">
                                 <strong>
@@ -43,10 +43,10 @@
 
                         <div class="col-md-6">
                             <div class="form-group {{ $errors->has('slug_en') ? ' has-error' : '' }}">
-                                <label for="slug_en" class="control-label">{{ trans('general.slug_en') }}</label>
+                                <label for="slug_en" class="control-label">{{ trans('general.slug_en') }}*</label>
                                 <input id="slug_en" type="text" class="form-control" name="slug_en"
                                        value="{{ old('slug_en') }}"
-                                       placeholder="slug_en" autofocus>
+                                       placeholder="slug_en" autofocus required>
                                 @if ($errors->has('slug_en'))
                                     <span class="help-block">
                                 <strong>
@@ -119,7 +119,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="control-label">Client *</label>
+                                <label class="control-label">Category *</label>
                                 <select class="bs-select form-control" name="category_id" required>
                                     @foreach($categories as $category)
                                         <option value="{{ $category->id }}">{{ $category->slug }}</option>
@@ -127,7 +127,26 @@
                                 </select>
                             </div>
                         </div>
-
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="description"
+                                       class="control-label">{{ trans('general.description')}}</label>
+                                <textarea type="text" class="form-control" id="description_en"
+                                          name="description_en"
+                                          aria-multiline="true"
+                                          maxlength="500">{{ old('description_en') }}</textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="description"
+                                       class="control-label">{{ trans('general.description')}}</label>
+                                <textarea type="text" class="form-control" id="description_ar"
+                                          name="description_ar"
+                                          aria-multiline="true"
+                                          maxlength="500">{{ old('description_ar') }}</textarea>
+                            </div>
+                        </div>
                         <div class="col-md-3">
                             <div class="form-group{{ $errors->has('points') ? ' has-error' : '' }}">
                                 <label for="points" class="control-label">{{ trans('general.points') }} </label>
@@ -161,26 +180,83 @@
                             </div>
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-3">
                             <div class="form-group">
-                                <label for="description"
-                                       class="control-label">{{ trans('general.description')}}</label>
-                                <textarea type="text" class="form-control" id="description_en"
-                                          name="description_en"
-                                          aria-multiline="true"
-                                          maxlength="500">{{ old('description_en') }}</textarea>
+                                <label class="control-label sbold">{{ trans('general.show_colors') }}</label>
+                                <div class="radio-list">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="show_colors" id="optionsRadios1" value="1"> {{ trans('show_colors')
+                                    }}
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="show_colors" id="optionsRadios2" value="0" checked> {{
+                                    trans('general.not_is_complete') }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="control-label sbold">{{ trans('general.show_socials') }}</label>
+                                <div class="radio-list">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="show_socials" id="optionsRadios1" value="1"> {{ trans('show_socials')
+                                    }}
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="show_socials" id="optionsRadios2" value="0" checked> {{
+                                    trans('general.not_is_complete') }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="control-label sbold">{{ trans('general.show_phones') }}</label>
+                                <div class="radio-list">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="show_phones" id="optionsRadios1" value="1"> {{ trans('show_phones')
+                                    }}
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="show_phones" id="optionsRadios2" value="0" checked> {{
+                                    trans('general.not_is_complete') }}
+                                    </label>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="description"
-                                       class="control-label">{{ trans('general.description')}}</label>
-                                <textarea type="text" class="form-control" id="description_ar"
-                                          name="description_ar"
-                                          aria-multiline="true"
-                                          maxlength="500">{{ old('description_ar') }}</textarea>
+                                <label class="control-label sbold">{{ trans('general.show_logo_style') }}</label>
+                                <div class="radio-list">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="show_logo_style" id="optionsRadios1" value="1"> {{ trans('show_logo_style')
+                                    }}
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="show_logo_style" id="optionsRadios2" value="0"
+                                               checked> {{
+                                    trans('general.not_is_complete') }}
+                                    </label>
+                                </div>
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label sbold">{{ trans('general.show_address') }}</label>
+                                <div class="radio-list">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="show_address" id="optionsRadios1" value="1"> {{ trans('show_address')
+                                    }}
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="show_address" id="optionsRadios2" value="0" checked> {{
+                                    trans('general.not_is_complete') }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
                 @include('backend.partials.forms._btn-group')

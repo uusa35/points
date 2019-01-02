@@ -7,6 +7,7 @@
             <form class="horizontal-form" role="form" method="POST"
                   action="{{ route('backend.version.store') }}" enctype="multipart/form-data">
                 @csrf
+                <input type="hidden" name="job_id" value="{{ request()->job_id }}">
                 <div class="form-body">
                     <div class="row">
                         <div class="col-md-4">
@@ -30,7 +31,8 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group {{ $errors->has('description') ? ' has-error' : '' }}">
-                                <label for="description" class="control-label">{{ trans('general.description') }}</label>
+                                <label for="description"
+                                       class="control-label">{{ trans('general.description') }}</label>
                                 <input id="description"
                                        type="text"
                                        class="form-control"
@@ -47,33 +49,25 @@
                                 @endif
                             </div>
                         </div>
-                       
+
                         <div class="col-md-4">
-                        <div class="form-group">
-                            <label class="control-label sbold">{{ trans('general.active') }}</label>
-                            <div class="radio-list">
-                                <label class="radio-inline">
-                                    <input type="radio" name="active" id="optionsRadios1" value="1"> {{ trans('active')
+                            <div class="form-group">
+                                <label class="control-label sbold">{{ trans('general.is_complete') }}</label>
+                                <div class="radio-list">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="is_complete" id="optionsRadios1" value="1"> {{ trans('is_complete')
                                     }}
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="active" id="optionsRadios2" value="0"> {{
-                                    trans('general.not_active') }}
-                                </label>
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="is_complete" id="optionsRadios2" value="0" checked> {{
+                                    trans('general.not_is_complete') }}
+                                    </label>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
 
                     </div>
-
-                    
-                    
-                 
-
-                  
-
-                    
 
 
                     @include('backend.partials.forms._btn-group')

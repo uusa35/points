@@ -4,7 +4,8 @@
     <div class="portlet box blue">
         @include('backend.partials.forms.form_title')
         <div class="portlet-body form">
-            <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.admin.service.update', $element->id) }}"
+            <form class="horizontal-form" role="form" method="POST"
+                  action="{{ route('backend.admin.service.update', $element->id) }}"
                   enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="_method" value="put">
@@ -122,7 +123,8 @@
                                 <label class="control-label">Category *</label>
                                 <select class="bs-select form-control" name="category_id" required>
                                     @foreach($categories as $category)
-                                        <option value="{{ $category->id }}" {{ $element->id === $category->id ? 'selected' : null }}>{{ $category->slug }}</option>
+                                        <option
+                                            value="{{ $category->id }}" {{ $element->id === $category->id ? 'selected' : null }}>{{ $category->slug }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -179,6 +181,93 @@
                                           name="description_ar"
                                           aria-multiline="true"
                                           maxlength="500">{{ $element->description_ar }}</textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="control-label sbold">{{ trans('general.show_colors') }}</label>
+                                <div class="radio-list">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="show_colors" id="optionsRadios1"
+                                               value="1" {{ $element->show_colors ? 'checked' : null  }} > {{ trans('show_colors')
+                                    }}
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="show_colors" id="optionsRadios2" value="0"
+                                               {{ !$element->show_colors ? 'checked' : null  }}> {{
+                                    trans('general.not_is_complete') }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="control-label sbold">{{ trans('general.show_socials') }}</label>
+                                <div class="radio-list">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="show_socials" id="optionsRadios3"
+                                               value="1" {{ $element->show_socials ? 'checked' : null  }}> {{ trans('show_socials')
+                                    }}
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="show_socials" id="optionsRadios4" value="0"
+                                               {{ !$element->show_socials ? 'checked' : null  }} > {{
+                                    trans('general.not_is_complete') }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="control-label sbold">{{ trans('general.show_phones') }}</label>
+                                <div class="radio-list">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="show_phones" id="optionsRadios5"
+                                               value="1" {{ $element->show_phones ? 'checked' : null  }}> {{ trans('show_phones')
+                                    }}
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="show_phones" id="optionsRadios6" value="0"
+                                               {{ !$element->show_phones ? 'checked' : null  }} > {{
+                                    trans('general.not_is_complete') }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="control-label sbold">{{ trans('general.show_address') }}</label>
+                                <div class="radio-list">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="show_address" id="optionsRadios7"
+                                               value="1" {{ $element->show_address ? 'checked' : null  }}> {{ trans('show_address')
+                                    }}
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="show_address" id="optionsRadios8" value="0"
+                                               {{ !$element->show_address ? 'checked' : null  }} > {{
+                                    trans('general.not_is_complete') }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="control-label sbold">{{ trans('general.show_logo_style') }}</label>
+                                <div class="radio-list">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="show_logo_style" id="optionsRadios9"
+                                               value="1" {{ $element->show_logo_style ? 'checked' : null  }}> {{ trans('show_logo_style')
+                                    }}
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="show_logo_style" id="optionsRadios10" value="0"
+                                               {{ !$element->show_logo_style ? 'checked' : null  }}
+                                               > {{
+                                    trans('general.not_is_complete') }}
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>

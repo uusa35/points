@@ -114,7 +114,7 @@
     </a>
 </li>
 <li class="nav-item {{ activeItem('slider') }}">
-    <a href="{{ route('backend.admin.slider.show', auth()->user()->id) }}" class="nav-link nav-toggle">
+    <a href="{{ route('backend.admin.slider.index') }}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-slideshare"></i>
         <span class="title">{{ trans('general.sliders') }}</span>
         <span class="selected"></span>
