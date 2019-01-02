@@ -37,9 +37,8 @@ class CreateOrdersTable extends Migration
 
             $table->text('description_ar')->nullable();
             $table->text('description_en')->nullable();
-            $table->text('notes_ar')->nullable();
 
-            $table->text('notes_en')->nullable();
+            $table->text('notes')->nullable();
             $table->text('address')->nullable();
 
 

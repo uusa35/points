@@ -124,7 +124,7 @@
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                            data-close-others="true">
                             <img alt="" src="{{ asset('img/flags/'.app()->getLocale().'.png') }}">
-                            <span class="langname">&nbsp; {{ app()->getLocale() }} </span>
+                            <span class="langname">&nbsp; {{ trans('general.language') .' : '.app()->getLocale() }} </span>
                             <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="dropdown-menu">

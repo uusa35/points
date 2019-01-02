@@ -9,7 +9,7 @@ class Order extends PrimaryModel
 {
     use LocaleTrait;
     protected $guarded = [''];
-    protected $localeStrings = ['name','notes','description'];
+    protected $localeStrings = ['name','description'];
 
     public function service()
     {
