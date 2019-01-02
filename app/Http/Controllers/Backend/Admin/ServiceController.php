@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend\Admin;
 
 use App\Http\Requests\Backend\ServiceStore;
+use App\Http\Requests\Backend\ServiceUpdate;
 use App\Models\Category;
 use App\Models\Service;
 use Illuminate\Http\Request;
@@ -87,7 +88,7 @@ class ServiceController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ServiceUpdate $request, $id)
     {
         $element = Service::whereId($id)->first();
         $updated = $element->update($request->request->all());

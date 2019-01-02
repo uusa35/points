@@ -29,7 +29,7 @@ class CreateServicesTable extends Migration
             $table->boolean('on_sale')->default(0);
             $table->integer('points')->unsigned();
             $table->integer('sale_points')->unsigned();
-            $table->boolean('active')->default(0);
+            $table->boolean('active')->default(1);
             $table->boolean('show_colors')->default(0);
             $table->boolean('show_socials')->default(0);
             $table->boolean('show_phones')->default(0);

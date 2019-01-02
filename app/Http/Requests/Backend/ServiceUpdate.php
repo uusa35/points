@@ -24,7 +24,7 @@ class ServiceUpdate extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:services,name,' . request('id'),
+            'name' => 'required|max:500',
             'slug_ar' => 'required',
             'slug_en' => 'required',
             'description_en' => 'nullable',
@@ -40,6 +40,11 @@ class ServiceUpdate extends FormRequest
             'sale_points' => 'required|numeric',
             'active' => 'nullable|boolean',
             'category_id' => 'required|exists:categories,id',
+            'show_colors' => 'required|boolean',
+            'show_socials' => 'required|boolean',
+            'show_phones' => 'required|boolean',
+            'show_address' => 'required|boolean',
+            'show_logo_style' => 'required|boolean',
         ];
     }
 }
