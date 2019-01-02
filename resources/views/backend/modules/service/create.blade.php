@@ -9,9 +9,9 @@
                 @csrf
                 <div class="row">
                     <div class="form-body">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
-                                <label for="name" class="control-label">order_name{{ trans("general.*") }}</label>
+                                <label for="name" class="control-label">{{ trans("general.name") }}*</label>
                                 <input id="name" type="text" class="form-control" name="name"
                                        value="{{ old('name') }}"
                                        placeholder="name" required autofocus>
@@ -24,9 +24,9 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group {{ $errors->has('slug_ar') ? ' has-error' : '' }}">
-                                <label for="slug_ar" class="control-label">slug_ar{{ trans("general.*") }}</label>
+                                <label for="slug_ar" class="control-label">{{ trans("general.slug_ar") }}*</label>
                                 <input id="slug_ar" type="text" class="form-control" name="slug_ar"
                                        value="{{ old('slug_ar') }}"
                                        placeholder="slug_ar" autofocus required>
@@ -41,9 +41,9 @@
                         </div>
 
 
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group {{ $errors->has('slug_en') ? ' has-error' : '' }}">
-                                <label for="slug_en" class="control-label">slug_en{{ trans("general.*") }}</label>
+                                <label for="slug_en" class="control-label">{{ trans("general.slug_en") }}*</label>
                                 <input id="slug_en" type="text" class="form-control" name="slug_en"
                                        value="{{ old('slug_en') }}"
                                        placeholder="slug_en" autofocus required>
@@ -57,6 +57,24 @@
                             </div>
                         </div>
 
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="form_control_1">{{ trans('general.image') }}</label>
+                                <input type="file" class="form-control" name="image" placeholder="image" required>
+                                <div class="help-block text-left">
+                                    {{ trans('general.message_image') }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="form_control_1">{{ trans('general.file') }}</label>
+                                <input type="file" class="form-control" name="path" placeholder="path">
+                                <div class="help-block text-left">
+                                    {{ trans('general.message_path') }}
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-md-6">
                             <div class="form-group {{ $errors->has('caption_ar') ? ' has-error' : '' }}">
                                 <label for="caption_ar" class="control-label">{{ trans("general.caption_ar") }}</label>
@@ -117,6 +135,7 @@
                                 @endif
                             </div>
                         </div>
+
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="control-label"> {{ trans("general.category") }}*</label>

@@ -32,7 +32,7 @@ class ServiceStore extends FormRequest
             'caption_ar' => 'nullable',
             'caption_en' => 'nullable',
             'duration' => 'required|numeric',
-            'image' => 'image|nullable',
+            'image' => 'required|image',
             'path' => 'mimes:pdf|nullable',
             'order' => 'required|nullable',
             'on_sale' => 'required|boolean',

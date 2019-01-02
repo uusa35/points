@@ -25,7 +25,7 @@ class CategoryUpdate extends FormRequest
     {
         return [
             'name' => 'required',
-            'path' => 'nullable',
+            'path' => 'mimes:pdf|max:50000',
             'image' => 'image',
             'slug_ar' => 'required',
             'slug_en' => 'required',

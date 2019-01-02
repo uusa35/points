@@ -63,7 +63,7 @@ class FileController extends Controller
             'type' => 'required|alpha',
             'id' => 'required|numeric',
             'category_id' => 'nullable|exists:categories,id',
-            'path[]' => 'array|mimes:pdf,jpeg,bmp,png,gif,xls,xlsx,psd,ai,doc,docs|nullable|max:50000',
+            'path[]' => 'array|mimes:pdf,jpeg,bmp,png,gif,xls,xlsx,psd,ai,doc,docs|max:50000',
             'image' => 'image',
         ]);
         if ($validate->fails()) {
