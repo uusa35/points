@@ -291,21 +291,21 @@
                 {{ trans('general.address') }}
             </div>
             <div class="panel-body">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label class="control-label">{{ trans('general.address_ar') }}</label>
-                            <input id="address" name="address_ar" type="textbox"
-                                   value="{{ old("address_ar") }}"
-                                   class="form-control">
-                        </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="control-label">{{ trans('general.address_ar') }}</label>
+                        <input id="address" name="address_ar" type="textbox"
+                               value="{{ old("address_ar") }}"
+                               class="form-control">
                     </div>
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label class="control-label">{{ trans('general.address_en') }}</label>
-                            <input id="address" name="address_en" type="textbox" value="Sydney, NSW"
-                                   class="form-control">
-                        </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="control-label">{{ trans('general.address_en') }}</label>
+                        <input id="address" name="address_en" type="textbox" value="Sydney, NSW"
+                               class="form-control">
                     </div>
+                </div>
                 {{--<div class="col-lg-12">--}}
                 {{--<div class="form-group">--}}
                 {{--<label class="control-label"></label>--}}
