@@ -7,7 +7,21 @@
     <title>{{ env('APP_NAME') }}</title>
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+    @if(app()->isLocale('ar'))
+        <style type="text/css">
+            @font-face {
+                font-family: "Cairo";
+                src: url('../fonts/Cairo-Bold.ttf') format('embedded-opentype'),
+                url('../fonts/Cairo-Bold.ttf') format('truetype')
+            }
+
+            body, html, div, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, thead, tfoot, button, span, .btn, .btn-del, ul, li, .page-content, .portlet, .light, .profile-sidebar-portlet {
+                font-family: 'Cairo', sans-serif !important;
+            }
+        </style>
+    @else
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+    @endif
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
     @section('title')
@@ -31,7 +45,6 @@
     <link rel="shortcut icon" href="{{ asset('images/logo.ico') }}"/>
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset(env('THUMBNAIL').$settings->logo) }}">
     <link href="{{ asset(env('THUMBNAIL').$settings->logo) }}" rel="shortcut icon" type="image/jpg">
-
 
     <!-- Styles -->
     <style>
