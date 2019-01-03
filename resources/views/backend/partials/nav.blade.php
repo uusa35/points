@@ -362,7 +362,7 @@
                             <li class="divider"></li>
                             <li>
                                 <a href="{{ route('backend.language.change',app()->isLocale('ar') ? 'en' : 'ar') }}">
-                                    <i class="fa fa-fw fa-language"></i>{{ trans(app()->isLocale('ar') ? 'general.change_to_english_language' : 'general.change_to_arabic_language') }}
+                                    <i class="fa fa-fw fa-language"></i>{{ trans('general.switch_lang')  }}
                                 </a>
                             </li>
                             <li class="divider"></li>
