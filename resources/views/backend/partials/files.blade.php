@@ -7,7 +7,8 @@
                         <div class="col-xs-8">
                             <div class="list-head-title-container">
                                 <h3 class="list-title uppercase sbold">{{ trans('general.list_of_files') }}</h3>
-                                <div class="list-date">{{ trans('general.member_since') }} : {{ $element->created_at->diffForHumans() }}</div>
+                                <div class="list-date">{{ trans('general.member_since') }}
+                                    : {{ $element->created_at->diffForHumans() }}</div>
                             </div>
                         </div>
                     </div>
@@ -22,24 +23,22 @@
                                         <i class="fa fa-fw fa-file"></i>
                                     </a>
                                 </div>
-                                <div class="list-datetime">{{ $file->created_at->diffForHumans() }}
-                                </div>
+                                <div class="list-datetime">{{ $file->created_at->diffForHumans() }}</div>
                                 <div class="list-datetime">
                                     <a data-toggle="modal" href="#" data-target="#basic"
                                        data-title="Delete"
                                        data-content="Are you sure you want to delete image ? "
                                        data-form_id="delete-{{ $file->id }}"
-                                       class="btn red uppercase"
-                                    >
-                                        <i class="fa fa-fw fa-recycle"></i> {{ trans('general.delete') }}</a>
-                                    <form method="post" id="delete-{{ $file->id }}"
-                                          action="{{ route('backend.file.destroy',$file->id) }}">
-                                        @csrf
-                                        <input type="hidden" name="_method" value="delete"/>
-                                        <button type="submit" class="btn btn-del hidden">
-                                            <i class="fa fa-fw fa-times-circle"></i> {{ trans('general.delete') }}
-                                        </button>
-                                    </form>
+                                       class="btn red btn-del"
+                                    ><i class="fa fa-fw fa-remove"></i></a>
+                                        <form method="post" id="delete-{{ $file->id }}"
+                                              action="{{ route('backend.file.destroy',$file->id) }}">
+                                            @csrf
+                                            <input type="hidden" name="_method" value="delete"/>
+                                            <button type="submit" class="btn btn-del hidden">
+                                                <i class="fa fa-fw fa-times-circle"></i>
+                                            </button>
+                                        </form>
                                 </div>
                                 <div class="list-item-content">
                                     <h3 class="uppercase bold">
