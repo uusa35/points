@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+
     }
 
     /**
@@ -30,7 +30,7 @@ class HomeController extends Controller
     {
         app()->setLocale(request('locale'));
         session()->put('locale', request('locale'));
-        return redirect()->back();
+        return redirect()->home();
     }
 
 }

@@ -55,14 +55,13 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     Route::resource('image', 'ImageController');
     Route::resource('point', 'PointController');
 });
-
-Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::group(['namespace' => 'Frontend', 'prefix' => 'frontend', 'as' => 'frontend.', 'middleware' => []], function () {
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('language/{locale}', 'HomeController@changeLanguage')->name('language.change');
 });
+Auth::routes();
 
 // for development purpose only
 if ((app()->environment('production') || app()->environment('local')) && Schema::hasTable('users')) {
