@@ -4,18 +4,18 @@
         @include('backend.partials.forms.form_title')
         <div class="portlet-body form">
             <!-- BEGIN FORM-->
-            <form method="post" action="{{ route('backend.admin.role.update', $element->id) }}" class="horizontal-form" action="post">
+            <form method="post" action="{{ route('backend.admin.privilege.update', $element->id) }}" class="horizontal-form" action="post">
                 @csrf
                 <input type="hidden" name="_method" value="patch">
                 <div class="form-body">
-                    <h3 class="form-section">{{ $element->name }} {{ trans('general.role_name') }}</h3>
+                    <h3 class="form-section">{{ $element->name }} {{ trans('general.privilege_name') }}</h3>
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label class="control-label">{{ trans('general.role_name') }}</label>
-                                <input type="text" id="name" name="name" class="form-control" placeholder="{{ trans('general.role_name') }}"
+                                <label class="control-label">{{ trans('general.privilege_name') }}</label>
+                                <input type="text" id="name" name="name" class="form-control" placeholder="{{ trans('general.privilege_name') }}"
                                        value="{{ $element->name }}" disabled>
-                                <span class="help-block"> {{ trans('message.role_must_be_unique') }} </span>
+                                <span class="help-block"> {{ trans('message.privilege_must_be_unique') }} </span>
                             </div>
                         </div>
                         <!--/span-->
@@ -45,7 +45,7 @@
                                 <label class="control-label">{{ trans('general.order') }}</label>
                                 <input type="text" id="order" name="order" class="form-control" placeholder="{{ trans('general.order') }}"
                                        value="{{ $element->order }}">
-                                <span class="help-block"> {{ trans('message.role_must_be_unique') }} </span>
+                                <span class="help-block"> {{ trans('message.privilege_must_be_unique') }} </span>
                             </div>
                         </div>
                         <div class="col-md-2">
@@ -171,7 +171,7 @@
                                                                 Not
                                                                 Visible</label>
                                                         </div>
-                                                        <span class="help-block"> Visible Means that this role shall appear on Application (ex. admin is invisible)</span>
+                                                        <span class="help-block"> Visible Means that this privilege shall appear on Application (ex. admin is invisible)</span>
                                                     </div>
                                                 </div>
                                             </div>

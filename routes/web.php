@@ -23,6 +23,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::resource('user', 'UserController');
         Route::resource('plan', 'PaymentPlanController');
         Route::resource('role', 'RoleController');
+        Route::resource('privilege', 'PrivilegeController');
         Route::resource('category', 'CategoryController');
         Route::resource('service', 'ServiceController');
         Route::resource('slider', 'SliderController');

@@ -16,7 +16,13 @@ class Role extends PrimaryModel
         'is_admin' => 'boolean',
     ];
 
-    public function users() {
+    public function privileges()
+    {
+        return $this->belongsToMany(Privilege::class);
+    }
+
+    public function users()
+    {
         return $this->hasMany(User::class);
     }
 }
