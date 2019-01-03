@@ -102,7 +102,7 @@
                     @if (Route::has('register'))
                         <a href="{{ route('register') }}">{{ trans('general.register') }}</a>
                     @endif
-                    <a href="{{ route('frontend.language.change','en') }}">{{ trans('general.switch_lang') }}</a>
+                    <a href="{{ route('frontend.language.change',app()->isLocale('ar') ? 'en' : 'ar') }}">{{ trans('general.switch_lang') }}</a>
                 @endauth
             </div>
         @endif
