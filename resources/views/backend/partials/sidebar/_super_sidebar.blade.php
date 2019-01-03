@@ -34,6 +34,22 @@
         <span class="selected"></span>
         <span class="arrow open"></span>
     </a>
+    {{--<ul class="sub-menu">--}}
+        {{--<li class="nav-item start ">--}}
+            {{--<a href="{{ route('backend.admin.role.index') }}"--}}
+               {{--class="nav-link ">--}}
+                {{--<i class="icon-users"></i>--}}
+                {{--<span class="title">{{ trans('general.roles') }}</span>--}}
+            {{--</a>--}}
+        {{--</li>--}}
+        {{--<li class="nav-item start ">--}}
+            {{--<a href="{{ route('backend.admin.privilege.index') }}"--}}
+               {{--class="nav-link ">--}}
+                {{--<i class="icon-layers"></i>--}}
+                {{--<span class="title">{{ trans('general.privileges') }}</span>--}}
+            {{--</a>--}}
+        {{--</li>--}}
+    {{--</ul>--}}
 </li>
 <li class="nav-item {{ activeItem('plan') }}">
     <a href="{{ route('backend.admin.plan.index') }}" class="nav-link nav-toggle">

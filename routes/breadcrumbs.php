@@ -57,6 +57,17 @@ Breadcrumbs::for('backend.admin.role.edit', function ($trail, $element) {
 });
 
 
+Breadcrumbs::for('backend.admin.privilege.index', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.privileges'), route('backend.admin.privilege.index'));
+});
+
+Breadcrumbs::for('backend.admin.privilege.edit', function ($trail, $element) {
+    $trail->parent('backend.admin.privilege.index');
+    $trail->push(trans('general.edit'), route('backend.admin.privilege.edit', $element->id));
+});
+
+
 Breadcrumbs::for('backend.admin.category.index', function ($trail) {
     $trail->parent('backend.home');
     $trail->push(trans('general.categories'), route('backend.admin.category.index'));

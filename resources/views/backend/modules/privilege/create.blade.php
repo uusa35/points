@@ -9,11 +9,11 @@
                     @include('backend.partials.forms.form_title')
                     <div class="portlet-body form">
                         <!-- BEGIN FORM-->
-                        <h3 class="form-section">create Role</h3>
-                        <form action="{{ route('backend.role.store') }}" class="horizontal-form" action="post">
+                        <h3 class="form-section">create privilege</h3>
+                        <form action="{{ route('backend.privilege.store') }}" class="horizontal-form" action="post">
                             {{ csrf_field() }}
                             <div class="form-body">
-                                <h3 class="form-section">Create New Role</h3>
+                                <h3 class="form-section">Create New privilege</h3>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -21,7 +21,7 @@
                                             <input type="text" id="name" class="form-control" placeholder="Usama Ahmed"
                                                    value="{{ old('name_ar') }}"
                                                    required>
-                                            <span class="help-block"> Role Name must be unique </span>
+                                            <span class="help-block"> privilege Name must be unique </span>
                                         </div>
                                     </div>
                                     <!--/span-->
@@ -87,7 +87,7 @@
                                         </div>
                                     </div>
                                     <!--/span-->
-                                    @if(auth()->user()->role->is_super)
+                                    @if(auth()->user()->privilege->is_super)
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="control-label sbold">Is Super</label>
@@ -149,7 +149,7 @@
                                                         <input type="radio" name="visible" id="optionsRadios6"
                                                                value="0"> Not Visible</label>
                                                 </div>
-                                                <span class="help-block"> Visible Means that this role shall appear on Application (ex. admin is invisible)</span>
+                                                <span class="help-block"> Visible Means that this privilege shall appear on Application (ex. admin is invisible)</span>
                                             </div>
                                         </div>
                                     </div>
@@ -165,7 +165,7 @@
                                                     <input type="radio" name="is_company" id="optionsRadios8" value="0"
                                                            checked> No Company Attributes</label>
                                             </div>
-                                            <span class="help-block"> Role that has companies attributes (ex. branches) </span>
+                                            <span class="help-block"> privilege that has companies attributes (ex. branches) </span>
                                         </div>
                                     </div>
                                     <!--/span-->
