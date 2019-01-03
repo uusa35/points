@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e482aaea-7ea8-4e60-bb85-c7a119286766" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/job/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/job/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/partials/files.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/partials/files.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,13 +52,13 @@
           <entry key="env" value="65" />
           <entry key="js" value="239" />
           <entry key="json" value="11" />
-          <entry key="php" value="88033" />
+          <entry key="php" value="88155" />
           <entry key="scss" value="135" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="39232" />
+          <entry key="Blade" value="39354" />
           <entry key="CSS" value="36" />
           <entry key="JSON" value="11" />
           <entry key="JavaScript" value="239" />
@@ -73,7 +75,7 @@
           <entry key="jpeg" value="4" />
           <entry key="js" value="38" />
           <entry key="json" value="8" />
-          <entry key="php" value="2050" />
+          <entry key="php" value="2052" />
           <entry key="rnc" value="1" />
           <entry key="scss" value="10" />
           <entry key="ttf" value="1" />
@@ -81,7 +83,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Blade" value="751" />
+          <entry key="Blade" value="753" />
           <entry key="CSS" value="12" />
           <entry key="HTML" value="22" />
           <entry key="Image" value="4" />
@@ -106,11 +108,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/OrderController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+            <state relative-caret-position="702">
+              <caret line="41" column="6" lean-forward="true" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/backend/modules/job/show.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="817">
+              <caret line="47" column="61" selection-start-line="47" selection-start-column="61" selection-end-line="47" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/backend/partials/files.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="558">
+              <caret line="31" column="61" selection-start-line="31" selection-start-column="61" selection-end-line="31" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -170,7 +190,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/backend/modules/service/create.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2014_04_23_152318_create_categories_table.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/modules/category/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/modules/category/edit.blade.php" />
@@ -193,7 +212,6 @@
         <option value="$PROJECT_DIR$/app/Http/Requests/VersionUpdate.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/modules/version/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/VersionController.php" />
-        <option value="$PROJECT_DIR$/resources/views/backend/modules/job/show.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/JobController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Controller.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/FileController.php" />
@@ -221,6 +239,8 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/OrderController.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/modules/order/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/OrderController.php" />
+        <option value="$PROJECT_DIR$/resources/views/backend/modules/job/show.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/backend/partials/files.blade.php" />
       </list>
     </option>
   </component>
@@ -589,7 +609,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="Ordercon&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/Admin/OrderController.php&#10;index.blade&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/order/index.blade.php&#10;index.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/order/index.blade.php&#10;LocalTr&#9;null&#9;null&#10;OrderPoli&#9;FILE&#9;file:///Users/mac/Sites/points/app/Policies/OrderPolicy.php&#10;Job.php&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Job.php&#10;OrderCon&#9;null&#9;null&#10;sideba&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/sidebar/sidebar.blade.php&#10;PrivilegePol&#9;FILE&#9;file:///Users/mac/Sites/points/app/Policies/PrivilegePolicy.php&#10;_des&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/sidebar/_designer_sidebar.blade.php&#10;PrivilegesTab&#9;FILE&#9;file:///Users/mac/Sites/points/database/seeds/PrivilegesTableSeeder.php&#10;sidebar&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/sidebar/sidebar.blade.php&#10;privilegeCon&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/Admin/PrivilegeController.php&#10;privileges_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2019_01_03_104257_create_privileges_table.php&#10;breadc&#9;FILE&#9;file:///Users/mac/Sites/points/routes/breadcrumbs.php&#10;_sup&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/sidebar/_super_sidebar.blade.php&#10;web&#9;FILE&#9;file:///Users/mac/Sites/points/routes/web.php&#10;web.p&#9;FILE&#9;file:///Users/mac/Sites/points/routes/web.php&#10;sidebar.blade&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/sidebar/sidebar.blade.php&#10;PrivilegesT&#9;FILE&#9;file:///Users/mac/Sites/points/database/seeds/PrivilegesTableSeeder.php&#10;Privilege.php&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Privilege.php&#10;DataSe&#9;null&#9;null&#10;FileFac&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/FileFactory.php&#10;Privil&#9;FILE&#9;file:///Users/mac/Sites/points/database/seeds/PrivilegesTableSeeder.php&#10;rolesT&#9;null&#9;null&#10;Role.php&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Role.php&#10;PrivileagesTableSeeder&#9;null&#9;null&#10;OrderPo&#9;null&#9;null&#10;slider&#9;null&#9;null&#10;payment_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2018_12_04_145650_create_payment_plans_table.php&#10;FileCon&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/FileController.php&#10;JobCon&#9;null&#9;null&#10;show.blade&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/job/show.blade.php&#10;edit.blade&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/version/edit.blade.php&#10;VersionUp&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Requests/VersionUpdate.php&#10;JobStore&#9;null&#9;null&#10;create.blade&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/version/create.blade.php&#10;VersionStore&#9;null&#9;null&#10;versions_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2018_12_04_135005_create_versions_table.php&#10;VersionCon&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/VersionController.php&#10;home.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/home.blade.php&#10;web.php&#9;FILE&#9;file:///Users/mac/Sites/points/routes/web.php&#10;orders_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2018_12_04_130012_create_orders_table.php&#10;OrderOb&#9;FILE&#9;file:///Users/mac/Sites/points/app/Observers/OrderObserver.php&#10;Balance&#9;null&#9;null&#10;User.php&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/User.php&#10;backend-rtl&#9;FILE&#9;file:///Users/mac/Sites/points/public/css/backend-rtl.css&#10;styles.blade&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/styles.blade.php&#10;choose_c&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/order/choose_category.blade.php&#10;choose_ca&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/order/choose_category.blade.php" />
+    <property name="SearchEverywhereHistoryKey" value="show.blade&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/job/show.blade.php&#10;Ordercon&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/Admin/OrderController.php&#10;index.blade&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/order/index.blade.php&#10;index.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/order/index.blade.php&#10;LocalTr&#9;null&#9;null&#10;OrderPoli&#9;FILE&#9;file:///Users/mac/Sites/points/app/Policies/OrderPolicy.php&#10;Job.php&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Job.php&#10;OrderCon&#9;null&#9;null&#10;sideba&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/sidebar/sidebar.blade.php&#10;PrivilegePol&#9;FILE&#9;file:///Users/mac/Sites/points/app/Policies/PrivilegePolicy.php&#10;_des&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/sidebar/_designer_sidebar.blade.php&#10;PrivilegesTab&#9;FILE&#9;file:///Users/mac/Sites/points/database/seeds/PrivilegesTableSeeder.php&#10;sidebar&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/sidebar/sidebar.blade.php&#10;privilegeCon&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/Admin/PrivilegeController.php&#10;privileges_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2019_01_03_104257_create_privileges_table.php&#10;breadc&#9;FILE&#9;file:///Users/mac/Sites/points/routes/breadcrumbs.php&#10;_sup&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/sidebar/_super_sidebar.blade.php&#10;web&#9;FILE&#9;file:///Users/mac/Sites/points/routes/web.php&#10;web.p&#9;FILE&#9;file:///Users/mac/Sites/points/routes/web.php&#10;sidebar.blade&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/sidebar/sidebar.blade.php&#10;PrivilegesT&#9;FILE&#9;file:///Users/mac/Sites/points/database/seeds/PrivilegesTableSeeder.php&#10;Privilege.php&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Privilege.php&#10;DataSe&#9;null&#9;null&#10;FileFac&#9;FILE&#9;file:///Users/mac/Sites/points/database/factories/FileFactory.php&#10;Privil&#9;FILE&#9;file:///Users/mac/Sites/points/database/seeds/PrivilegesTableSeeder.php&#10;rolesT&#9;null&#9;null&#10;Role.php&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/Role.php&#10;PrivileagesTableSeeder&#9;null&#9;null&#10;OrderPo&#9;null&#9;null&#10;slider&#9;null&#9;null&#10;payment_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2018_12_04_145650_create_payment_plans_table.php&#10;FileCon&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/FileController.php&#10;JobCon&#9;null&#9;null&#10;edit.blade&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/version/edit.blade.php&#10;VersionUp&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Requests/VersionUpdate.php&#10;JobStore&#9;null&#9;null&#10;create.blade&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/version/create.blade.php&#10;VersionStore&#9;null&#9;null&#10;versions_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2018_12_04_135005_create_versions_table.php&#10;VersionCon&#9;FILE&#9;file:///Users/mac/Sites/points/app/Http/Controllers/Backend/VersionController.php&#10;home.blad&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/home.blade.php&#10;web.php&#9;FILE&#9;file:///Users/mac/Sites/points/routes/web.php&#10;orders_&#9;FILE&#9;file:///Users/mac/Sites/points/database/migrations/2018_12_04_130012_create_orders_table.php&#10;OrderOb&#9;FILE&#9;file:///Users/mac/Sites/points/app/Observers/OrderObserver.php&#10;Balance&#9;null&#9;null&#10;User.php&#9;FILE&#9;file:///Users/mac/Sites/points/app/Models/User.php&#10;backend-rtl&#9;FILE&#9;file:///Users/mac/Sites/points/public/css/backend-rtl.css&#10;styles.blade&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/partials/styles.blade.php&#10;choose_c&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/order/choose_category.blade.php&#10;choose_ca&#9;FILE&#9;file:///Users/mac/Sites/points/resources/views/backend/modules/order/choose_category.blade.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="" />
@@ -682,12 +702,12 @@
       <workItem from="1546412921890" duration="966000" />
       <workItem from="1546426721931" duration="11218000" />
       <workItem from="1546492714233" duration="3444000" />
-      <workItem from="1546511484556" duration="5147000" />
+      <workItem from="1546511484556" duration="6065000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="295447000" />
+    <option name="totallyTimeSpent" value="296365000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1177" extended-state="6" />
@@ -723,13 +743,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_04_130012_create_orders_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="45" column="65" selection-start-line="45" selection-start-column="65" selection-end-line="45" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webpack.mix.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -769,13 +782,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
           <caret line="68" column="64" selection-start-line="68" selection-start-column="64" selection-end-line="68" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/backend/modules/job/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="40" column="38" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -1067,8 +1073,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/OrderController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+        <state relative-caret-position="702">
+          <caret line="41" column="6" lean-forward="true" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/backend/modules/job/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="817">
+          <caret line="47" column="61" selection-start-line="47" selection-start-column="61" selection-end-line="47" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/backend/partials/files.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="31" column="61" selection-start-line="31" selection-start-column="61" selection-end-line="31" selection-end-column="61" />
         </state>
       </provider>
     </entry>
