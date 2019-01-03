@@ -15,7 +15,6 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.', 'middleware' => ['auth', 'onlyActiveUsers']], function () {
-
     // only admins + super
     Route::group(['namespace' => 'Admin', 'as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['admin']], function () {
         Route::get('backup/db', ['as' => 'backup.db', 'uses' => 'HomeController@BackupDB']);
@@ -36,7 +35,6 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::resource('setting', 'SettingController');
         Route::resource('slider', 'SliderController');
     });
-
     // clients + designers
     Route::get('/', 'HomeController@index')->name('index');
     Route::get('/home', 'HomeController@index')->name('home');

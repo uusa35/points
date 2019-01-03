@@ -29,7 +29,7 @@
                                 </div>
                             </div>
                         @endif
-                        @if($images->isNotEmpty())
+                        @if($images && $images->isNotEmpty())
                             @include('backend.partials.files_gallery',['elements' => $images])
                         @else
                             <div class="alert alert-info">{{ trans('general.no_images') }}</div>
@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="tab-pane" id="tab_2">
-                        @if($files->isNotEmpty())
+                        @if($files && $files->isNotEmpty())
                             @include('backend.partials.files',['elements' => $files])
                         @else
                             <div class="alert alert-warning">{{ trans('general.no_files') }}</div>

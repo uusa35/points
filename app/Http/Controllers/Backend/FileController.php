@@ -72,23 +72,15 @@ class FileController extends Controller
         $className = '\App\Models\\' . title_case(request()->type);
         $element = new $className();
         $element = $element->withoutGlobalScopes()->whereId(request()->id)->first();
+        $request->request->add(['user_id' => auth()->id()]);
         if ($request->hasFile('image')) {
-            $file = $element->images()->create([
-                'user_id' => auth()->id(),
-                'category_id' => request('category_id'),
-                'notes' => request('notes'),
-                'name_ar' => request('name_ar'),
-                'name_en' => request('name_en'),
-                'caption_ar' => request('caption_ar'),
-                'caption_en' => request('caption_en'),
-                'order' => request('order'),
-            ]);
+            $file = $element->images()->create($request->request->all());
             $this->saveMimes($file, $request, ['image'], ['250', '250'], true);
         }
         if ($request->hasFile(['path'])) {
             foreach ($request->path as $key => $fileElement) {
                 $file = $element->files()->create([
-                    'user_id' => auth()->id(),
+                    'user_id' => request('user_id'),
                     'category_id' => request('category_id'),
                     'notes' => request('notes'),
                     'name_ar' => request('name_ar'),
@@ -104,13 +96,13 @@ class FileController extends Controller
             }
         }
         if (request()->type === 'order') {
-            return redirect()->route('backend.file.create', ['type' => request('type'), 'id' => request('id')])->with('success',trans('general.file_saved'));
+            return redirect()->route('backend.file.create', ['type' => request('type'), 'id' => request('id')])->with('success', trans('general.file_saved'));
         } elseif (request()->type === 'job') {
-            return redirect()->route('backend.job.show', $element->id)->with('success',trans('general.file_saved'));
+            return redirect()->route('backend.job.show', $element->id)->with('success', trans('general.file_saved'));
+        } elseif (request()->type === 'version') {
+            return redirect()->route('backend.version.show', $element->id)->with('success', trans('general.file_saved'));
         }
         return redirect()->route('backend.file.index', ['type' => request()->type, 'id' => request()->id])->with('success', trans('message.file_uploaded_successfully'));
-//        return redirect()->route('backend.file.create', compact('element'))
-//            ->with(['success' => trans('message.file_or_image_saved_successfully'), 'type' => request()->type, 'id' => request()->id]);
     }
 
     /**
