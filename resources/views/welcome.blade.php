@@ -88,6 +88,7 @@
 
         .links {
             margin: 25px;
+            text-align: center;
         }
         .links > a {
             color: #636b6f;
