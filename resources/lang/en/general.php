@@ -9,4 +9,6 @@ return array (
   'projects' => 'Projects',
   'payment_plans' => 'Payment Plans',
   'payment_plan' => 'Payment Plan',
+  'login' => 'Login',
+  'switch_lang' => 'Switch Language',
 );
