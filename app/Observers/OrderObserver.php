@@ -17,10 +17,9 @@ class OrderObserver
         // get the service points cost
         $serviceCost = $order->service->on_sale ? $order->service->sale_points : $order->service->sale_point;
         // check if the current balance > service points cost
-        $userBalance = auth()->user()->balance()->first()->points;
-        if ($userBalance > $serviceCost && $userBalance - $serviceCost > 0) {
-            $balance = $order->client->balance->points;
-            $finalBalance = $balance - $serviceCost;
+        $userBalance = $order->client->balance->points;
+        if ($userBalance > $serviceCost && ($userBalance - $serviceCost > 0)) {
+            $finalBalance = $userBalance - $serviceCost;
             $order->client()->first()->balance()->first()->update(['points' => $finalBalance]);
             $order->update(['is_paid' => true]);
             // automatically create a job once order is paid

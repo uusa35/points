@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Http\Requests\VersionStore;
+use App\Http\Requests\VersionUpdate;
 use App\Models\Job;
 use App\Models\Version;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class VersionController extends Controller
@@ -43,9 +44,13 @@ class VersionController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(VersionStore $request)
     {
-        //
+        $version = Version::create($request->request->all());
+        if ($version) {
+            return redirect()->route('backend.job.show', $version->job_id);
+        }
+        return redirect()->back()->with('error', trans('message.version_create_error'));
     }
 
     /**
@@ -56,10 +61,10 @@ class VersionController extends Controller
      */
     public function show($id)
     {
-        $element = Version::whereId($id)->with('files','images','job.order')->first();
+        $element = Version::whereId($id)->with('files', 'images', 'job.order')->first();
         $files = $element->files()->notImages()->get();
         $images = $element->files()->images()->get();
-        return view('backend.modules.version.show', compact('element','files','images'));
+        return view('backend.modules.version.show', compact('element', 'files', 'images'));
     }
 
     /**
@@ -81,9 +86,13 @@ class VersionController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(VersionUpdate $request, $id)
     {
-        //
+        $version = Version::whereId($id)->first();
+        if($version) {
+            $version->update($request->request->all());
+        }
+        return redirect()->back()->with('error', trans('message.version_update_error'));
     }
 
     /**
