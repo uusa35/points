@@ -55,7 +55,7 @@ trait ImageHelpers
                                         $constraint->aspectRatio();
                                     });
                                 } else {
-                                    $img->resize($img->height(), $img->width());
+                                    $img->resize($img->width(), $img->height());
                                 }
                                 $img->save(storage_path('app/public/uploads/images/' . $value . '/' . $imagePath));
                             } elseif ($value === 'medium') {
@@ -64,7 +64,7 @@ trait ImageHelpers
                                         $constraint->aspectRatio();
                                     });
                                 } else {
-                                    $img->resize($img->height() / 2, $img->width() / 2);
+                                    $img->resize($img->width() / 2, $img->height() / 2);
                                 }
                                 $img->save(storage_path('app/public/uploads/images/' . $value . '/' . $imagePath));
                             } elseif ($value === 'thumbnail') {
@@ -73,7 +73,7 @@ trait ImageHelpers
                                         $constraint->aspectRatio();
                                     });
                                 } else {
-                                    $img->resize($img->height() / 3, $img->width() / 3);
+                                    $img->resize($img->width() / 3, $img->height() / 3);
                                 }
                                 $img->save(storage_path('app/public/uploads/images/' . $value . '/' . $imagePath));
                             }
@@ -199,13 +199,13 @@ trait ImageHelpers
         $img = Image::make(public_path('storage/uploads/images/' . $imagePath));
         foreach ($sizes as $key => $value) {
             if ($value === 'large') {
-                $img->resize($img->height(), $img->width());
+                $img->resize($img->width(), $img->height());
                 $img->save(public_path('storage/uploads/images/' . $value . '/' . $imagePath));
             } elseif ($value === 'medium') {
-                $img->resize($img->height() / 2, $img->width() / 2);
+                $img->resize($img->width() / 2, $img->height() / 2);
                 $img->save(public_path('storage/uploads/images/' . $value . '/' . $imagePath));
             } elseif ($value === 'thumbnail') {
-                $img->resize($img->height() / 3, $img->width() / 3);
+                $img->resize($img->width() / 3, $img->height() / 3);
                 $img->save(public_path('storage/uploads/images/' . $value . '/' . $imagePath));
             }
         }

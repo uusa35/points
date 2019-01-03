@@ -37,8 +37,6 @@
                                 <i class="icon-plus"></i> {{ trans('general.new_slider') }}</a>
                         </li>
                         <li class="divider"></li>
-                    @endcan
-                    @can('onlySuper')
                         <li>
                             <a href="{{ route('backend.admin.plan.create') }}">
                                 <i class="icon-calculator"></i> {{ trans('general.create_new_payment_plan') }}</a>
@@ -124,7 +122,8 @@
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                            data-close-others="true">
                             <img alt="" src="{{ asset('img/flags/'.app()->getLocale().'.png') }}">
-                            <span class="langname">&nbsp; {{ trans('general.language') .' : '.app()->getLocale() }} </span>
+                            <span
+                                class="langname">&nbsp; {{ trans('general.language') .' : '.app()->getLocale() }} </span>
                             <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="dropdown-menu">
@@ -329,7 +328,8 @@
                             <img alt="" class="img-xs"
                                  src="{{ asset('storage/uploads/images/thumbnail/'. auth()->user()->logo) }}"/>
                             <i class="fa fa-angle-down"></i>
-                            <span class="username username-hide-on-mobile"> {{ str_limit(auth()->user()->name,30) }}</span><br>
+                            <span
+                                class="username username-hide-on-mobile"> {{ str_limit(auth()->user()->name,30) }}</span><br>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-default">
                             <li>
@@ -366,19 +366,23 @@
                                 </a>
                             </li>
                             <li class="divider"></li>
-                            <li>
-                                <a href="{{ route('backend.admin.setting.index') }}">
-                                    <i class="icon-settings"></i> {{ trans('general.app_settings') }} </a>
-                            </li>
-                            <li>
-                                <a href="{{ url('backend/admin/translations') }}">
-                                    <i class="fa fa-fw fa-language"></i> {{ trans('general.translation_manager') }}</a>
-                            </li>
-                            <li>
-                                <a href="{{ route('backend.admin.export.translation') }}">
-                                    <i class="icon-envelope-letter"></i> {{ trans('general.export_translations') }}</a>
-                            </li>
-                            <li class="divider"></li>
+                            @can('onlySuper')
+                                <li>
+                                    <a href="{{ route('backend.admin.setting.index') }}">
+                                        <i class="icon-settings"></i> {{ trans('general.app_settings') }} </a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('backend/admin/translations') }}">
+                                        <i class="fa fa-fw fa-language"></i> {{ trans('general.translation_manager') }}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('backend.admin.export.translation') }}">
+                                        <i class="icon-envelope-letter"></i> {{ trans('general.export_translations') }}
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                            @endcan
                             @if(auth()->user())
                                 <li>
                                     <a href="{{ route('backend.reset.password',['email' => auth()->user()->email]) }}">
