@@ -20,12 +20,12 @@
                         <tr>
                             <th>id</th>
                             <th>name</th>
-                            <th>slug_ar</th>
-                            <th>slug_en</th>
-                            <th>is_admin</th>
-                            <th>is_client</th>
-                            <th>is_designer</th>
-                            <th>visible</th>
+                            <th>slug</th>
+                            <th>image</th>
+                            <th>path</th>
+                            <th>price</th>
+                            <th>bonus</th>
+                            <th>apply_bonus</th>
                             <th>active</th>
                             <th>color</th>
                             <th>Action</th>
@@ -35,12 +35,12 @@
                         <tr>
                             <th>id</th>
                             <th>name</th>
-                            <th>slug_ar</th>
-                            <th>slug_en</th>
-                            <th>is_admin</th>
-                            <th>is_client</th>
-                            <th>is_designer</th>
-                            <th>visible</th>
+                            <th>slug</th>
+                            <th>image</th>
+                            <th>path</th>
+                            <th>price</th>
+                            <th>bonus</th>
+                            <th>apply_bonus</th>
                             <th>active</th>
                             <th>color</th>
                             <th>Action</th>
@@ -51,32 +51,23 @@
                             <tr>
                                 <td>{{ $element->id }}</td>
                                 <td>{{ $element->name }}</td>
-                                <td>{{ $element->slug_ar }}</td>
-                                <td>{{ $element->slug_en }}</td>
+                                <td>{{ $element->slug }}</td>
                                 <td>
-                                    <span
-                                        class="label {{ activeLabel($element->is_admin) }}">{{ activeText($element->is_admin,'Yes') }}</span>
+                                    <img class="img-xs" src="{{ asset(env('THUMBNAIL').$element->image) }}" alt="">
                                 </td>
+                                <td><a href="{{ asset(env('FILES').$element->path) }}" class="btn btn-info"><i class="fa fa-fw fa-eye"></i></a></td>
+                                <td>{{ $element->price }}</td>
+                                <td>{{ $element->bonus }}</td>
                                 <td>
                                     <span
-                                        class="label {{ activeLabel($element->is_client) }}">{{ activeText($element->is_client,'Yes') }}</span>
-                                </td>
-                                <td>
-                                    <span
-                                        class="label {{ activeLabel($element->is_designer) }}">{{ activeText($element->is_designer,'Yes') }}</span>
-                                </td>
-                                <td>
-                                    <span
-                                        class="label {{ activeLabel($element->is_visible) }}">{{ activeText($element->is_visible,'Yes') }}</span>
-
+                                        class="label {{ activeLabel($element->apply_bonus) }}">{{ activeText($element->apply_bonus,'Yes') }}</span>
                                 </td>
                                 <td>
                                     <span
                                         class="label {{ activeLabel($element->active) }}">{{ activeText($element->active) }}</span>
                                 </td>
                                 <td>
-                                    <span class="label {{ activeLabel($element->active) }}"
-                                          style="background-color: {{ $element->color }}">{{ $element->name }}</span>
+                                    <label style="background-color: {{ $element->color }}">{{ $element->slug }}</label>
                                 </td>
                                 <td>
                                     <div class="btn-group pull-right">
