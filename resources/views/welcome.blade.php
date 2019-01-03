@@ -158,7 +158,7 @@
     </div>
 
     <div class="row justify-content-md-center">
-        <div class="col">
+        <div class="col" style="padding-right: 0px; padding-left: 0px;">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     @foreach($sliders as $slider)
