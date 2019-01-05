@@ -41,6 +41,11 @@ Breadcrumbs::for('backend.admin.order.show', function ($trail, $element) {
     $trail->push($element->title, route('backend.admin.order.show', $element->id));
 });
 
+Breadcrumbs::for('backend.admin.order.assign', function ($trail, $element) {
+    $trail->parent('backend.admin.order.index');
+    $trail->push(trans('general.assign_order'), route('backend.admin.order.assign', $element->id));
+});
+
 Breadcrumbs::for('backend.admin.order.index', function ($trail) {
     $trail->parent('backend.home');
     $trail->push(trans('general.orders'), route('backend.admin.order.index'));

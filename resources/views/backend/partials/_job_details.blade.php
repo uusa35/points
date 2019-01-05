@@ -50,7 +50,26 @@
         <div class="row static-info">
             <div class="col-md-5 name"> {{ trans('general.add_images_or_files') }}:</div>
             <div class="col-md-7 value">
-                <a class="btn btn-success" href="{{ route('backend.file.create', ['type' => 'job', 'id' => $element->id]) }}">Add Files / Images</a>
+                <a class="btn btn-success"
+                   href="{{ route('backend.file.create', ['type' => 'job', 'id' => $element->id]) }}">Add Files /
+                    Images</a>
+            </div>
+        </div>
+        <hr>
+        <div class="row static-info">
+            <div class="col-md-5 name"> {{ trans('general.designers_responsible_for_the_job') }}:</div>
+            <div class="col-md-7 value">
+                @if($element->designers->isNotEmpty())
+                    <ul>
+                        @foreach($element->designers as $designer)
+                            <li>
+                                <span>{{ trans('general.name') }} : {{ $designer->name }} </span>
+                                <span>{{ trans('general.designer_id') }} : {{ $designer->id }} </span>
+                                <hr>
+                            </li>
+                        @endforeach
+                    </ul>
+                @endif
             </div>
         </div>
     </div>

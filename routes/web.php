@@ -28,8 +28,8 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::resource('service', 'ServiceController');
         Route::resource('slider', 'SliderController');
         Route::resource('order', 'OrderController');
-//        Route::get('assign/order/{id}', 'OrderController@getAssign');
-//        Route::post('assign/order', 'OrderController@postAssign');
+        Route::get('assign/order/{id}', 'OrderController@getAssign')->name('order.assign');
+        Route::post('assign/order', 'OrderController@postAssign')->name('order.make.assign');
         Route::resource('job', 'JobController');
         Route::resource('version', 'VersionController');
         Route::resource('image', 'ImageController');
@@ -50,7 +50,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     Route::resource('file', 'FileController');
     Route::get('show/list', 'FileController@getShowList')->name('file.show.list');
     Route::resource('job', 'JobController');
-    Route::get('enroll/job{id}','JobController@toggleEnroll')->name('job.enroll');
+    Route::get('enroll/job{id}', 'JobController@toggleEnroll')->name('job.enroll');
     Route::resource('version', 'VersionController');
     Route::resource('image', 'ImageController');
     Route::resource('point', 'PointController');
@@ -78,7 +78,7 @@ if ((app()->environment('production') || app()->environment('local')) && Schema:
             $element = User::whereHas('role', function ($q) use ($role) {
                 return $q->where('name', $role);
             })->has('orders', '>', 1)->first();
-        }  else {
+        } else {
             $element = User::whereHas('role', function ($q) use ($role) {
                 return $q->where('name', $role);
             })->first();

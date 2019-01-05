@@ -89,6 +89,11 @@
                                                         </a>
                                                     </li>
                                                     <li>
+                                                        <a href="{{ route('backend.admin.order.assign',$element->id) }}">
+                                                            <i class="fa fa-fw fa-user-plus"></i>{{ trans('general.assign_this_job_to_designers') }}
+                                                        </a>
+                                                    </li>
+                                                    <li>
                                                         <a data-toggle="modal" href="#" data-target="#basic"
                                                            data-title="Delete"
                                                            data-content="Are you sure you want to delete this order ? "

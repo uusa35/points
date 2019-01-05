@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend\Admin;
 
 use App\Models\Order;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -92,5 +93,26 @@ class OrderController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getAssign($id)
+    {
+        $element = Order::whereId($id)->with('job.designers')->first();
+        $designers = User::active()->onlyDesigners()->get();
+        return view('backend.modules.order.assign', compact('designers', 'element'));
+    }
+
+    public function postAssign(Request $request)
+    {
+        $validate = validator($request->all(), [
+            'order_id' => 'required|exists:orders,id',
+            'designers' => 'array|exists:users,id|nullable'
+        ]);
+        if ($validate->fails()) {
+            return redirect()->back()->withErrors($validate->errors());
+        }
+        $job = Order::whereId($request->order_id)->first()->job()->first();
+        $job->designers()->sync($request->designers);
+        return redirect()->route('backend.order.show',$job->order_id)->with('success', trans('message.designers_assiged_successfully_to_job'));
     }
 }
