@@ -62,8 +62,8 @@
                 @if($element->designers->isNotEmpty())
                     <ul>
                         @foreach($element->designers as $designer)
-                            <li>
-                                <span>{{ trans('general.name') }} : {{ $designer->name }} </span>
+                            <li class="col-lg-4">
+                                <span>{{ trans('general.name') }} : {{ $designer->name }} </span></br>
                                 <span>{{ trans('general.designer_id') }} : {{ $designer->id }} </span>
                                 <hr>
                             </li>
