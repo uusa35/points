@@ -52,7 +52,7 @@
                                 <td>{{ $element->id }}</td>
                                 <td>{{ $element->name_ar }}</td>
                                 <td><img src="{{ asset('storage/uploads/images/thumbnail/'.$element->logo) }}"
-                                         class="img-sm" alt="">
+                                         class="img-xs" alt="{{ $element->name }}">
                                 </td>
                                 <td>
                                     {{ $element->email }}
