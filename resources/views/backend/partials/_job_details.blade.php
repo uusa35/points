@@ -30,11 +30,11 @@
         </div>
         <div class="row static-info">
             <div class="col-md-5 name"> {{ trans('general.description') }}:</div>
-            <div class="col-md-7 value"> {{ $element->description }}</div>
+            <div class="col-md-7 value"> {{ $element->description  ? $element->description : trans('general.not_available')}}</div>
         </div>
         <div class="row static-info">
             <div class="col-md-5 name"> {{ trans('general.notes') }}:</div>
-            <div class="col-md-7 value"> {{ $element->notes }}</div>
+            <div class="col-md-7 value"> {{ $element->notes ? $element->notes : trans('general.not_available') }}</div>
         </div>
         <div class="row static-info">
             <div class="col-md-5 name"> {{ trans('general.created_at') }}:</div>
