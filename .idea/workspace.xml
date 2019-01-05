@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e482aaea-7ea8-4e60-bb85-c7a119286766" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/partials/_job_details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/partials/_job_details.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,13 +50,13 @@
           <entry key="env" value="65" />
           <entry key="js" value="239" />
           <entry key="json" value="11" />
-          <entry key="php" value="90687" />
+          <entry key="php" value="90689" />
           <entry key="scss" value="135" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="40620" />
+          <entry key="Blade" value="40622" />
           <entry key="CSS" value="36" />
           <entry key="JSON" value="11" />
           <entry key="JavaScript" value="239" />
@@ -663,12 +662,12 @@
       <workItem from="1546511484556" duration="7892000" />
       <workItem from="1546527537320" duration="2076000" />
       <workItem from="1546687489384" duration="3447000" />
-      <workItem from="1546692015753" duration="408000" />
+      <workItem from="1546692015753" duration="478000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="304123000" />
+    <option name="totallyTimeSpent" value="304193000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1177" extended-state="6" />
