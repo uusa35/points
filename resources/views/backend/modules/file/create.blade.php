@@ -46,10 +46,10 @@
             </div>
             <div class="form-actions right">
                 {{--<button type="button" class="btn default">Cancel</button>--}}
-                <a href="{{ route('backend.order.show',request('id')) }}" class="btn btn-info">{{ trans('general.show_order') }}</a>
-                <button type="submit" class="btn btn-success">
-                    <i class="fa fa-check"></i> {{ trans('general.save') }}
-                </button>
+                <a href="{{ route('backend.home') }}" class="btn btn-danger">{{ trans('general.skip_to_home_page') }}</a>
+                {{--<button type="submit" class="btn btn-success">--}}
+                    {{--<i class="fa fa-check"></i> {{ trans('general.save') }}--}}
+                {{--</button>--}}
             </div>
 
         </div>

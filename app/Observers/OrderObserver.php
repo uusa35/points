@@ -15,7 +15,7 @@ class OrderObserver
     public function created(Order $order)
     {
         // get the service points cost
-        $serviceCost = $order->service->on_sale ? $order->service->sale_points : $order->service->sale_point;
+        $serviceCost = $order->service->on_sale ? $order->service->sale_points : $order->service->points;
         // check if the current balance > service points cost
         $userBalance = $order->client->balance->points;
         if ($userBalance > $serviceCost && ($userBalance - $serviceCost > 0)) {

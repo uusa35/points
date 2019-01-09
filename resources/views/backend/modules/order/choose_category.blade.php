@@ -34,16 +34,6 @@
                                     <p class="text-center">
                                         {{ $element->caption }}
                                     </p>
-                                    <div class="blog-post-foot">
-                                        <div class="blog-post-meta">
-                                            <i class="fa fa-fw fa-paint-brush font-blue"></i>
-                                            <a href="javascript:;">{{ $element->services->count() }} {{ trans('general.services_available') }}</a>
-                                        </div>
-                                        {{--<div class="blog-post-meta">--}}
-                                            {{--<i class="icon-bubble font-blue"></i>--}}
-                                            {{--<a href="javascript:;">{{ $element->caption }}</a>--}}
-                                        {{--</div>--}}
-                                    </div>
                                 </div>
                             </div>
                         </div>
