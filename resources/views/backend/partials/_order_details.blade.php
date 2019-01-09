@@ -45,6 +45,12 @@
             <div class="col-md-5 name"> {{ trans('general.service_caption') }}:</div>
             <div class="col-md-7 value"> {{ $element->service->caption }}</div>
         </div>
+        @if($element->service->show_logo_style)
+        <div class="row static-info">
+            <div class="col-md-5 name"> {{ trans('general.show_log_style') }}:</div>
+            <div class="col-md-7 value"><img class="img-sm form-logos" src="{{ asset('img/'.$element->logo_style.'.jpeg') }}" alt="{{ $element->service->slug }}"></div>
+        </div>
+        @endif
 
         <div class="row static-info">
             <div class="col-md-5 name"> {{ trans('general.job_order') }}:</div>

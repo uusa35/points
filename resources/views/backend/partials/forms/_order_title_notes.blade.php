@@ -15,7 +15,7 @@
                                 <strong>
                                     {{ $errors->first('title') }}
                                 </strong>
-                            </span>
+                    </span>
                 @endif
             </div>
         </div>
@@ -26,6 +26,7 @@
                 <textarea type="notes_ar" class="form-control" id="notes"
                           name="notes"
                           aria-multiline="true"
+                          rows="6"
                           maxlength="500">{{ old('notes') }}</textarea>
             </div>
         </div>

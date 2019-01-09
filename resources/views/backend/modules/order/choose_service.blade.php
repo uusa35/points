@@ -28,7 +28,7 @@
                                 </div>
                                 <div class="blog-post-content" style="height : 300px;">
                                     <h2 class="blog-title blog-post-title">
-                                        <a href="{{ route('backend.order.choose.lang', ['service_id' => $element->id]) }}">{{ $element->slug }}</a>
+                                        <a href="{{ route('backend.order.create', ['service_id' => $element->id]) }}">{{ $element->slug }}</a>
                                     </h2>
                                     <p class="blog-post-desc">
                                     {{ $element->description  }}

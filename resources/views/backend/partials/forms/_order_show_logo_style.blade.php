@@ -5,21 +5,21 @@
         </div>
         <div class="panel-body">
             <div class="col-md-4 text-center center-block">
-                <div class="col-lg-12" style="margin-top: 20px; margin-bottom: 20px;">
-                    <img src="{{ asset('img/logo.png') }}" alt="iphone" class="img-responsive img-sm">
+                <div class="col-lg-12 form-logo">
+                    <img src="{{ asset('img/apple.jpeg') }}" alt="iphone" class="img-responsive img-sm form-logos center-block">
                 </div>
                 <div class="form-group">
                     <div class="radio-list">
                         <label class="radio-inline">
-                            <input type="radio" name="logo_style" id="optionsRadios1" value="iphone"
+                            <input type="radio" name="logo_style" id="optionsRadios1" value="apple"
                                    checked> iphone</label>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-4 text-center center-block">
-                <div class="col-lg-12" style="margin-top: 20px; margin-bottom: 20px;">
-                    <img src="{{ asset('img/logo.png') }}" alt="iphone" class="img-responsive img-sm">
+                <div class="col-lg-12 form-logo">
+                    <img src="{{ asset('img/google.jpeg') }}" alt="iphone" class="img-responsive img-sm form-logos center-block">
                 </div>
                 <div class="form-group">
                     <div class="radio-list">
@@ -31,8 +31,8 @@
             </div>
 
             <div class="col-md-4 text-center center-block">
-                <div class="col-lg-12" style="margin-top: 20px; margin-bottom: 20px;">
-                    <img src="{{ asset('img/logo.png') }}" alt="starbucks" class="img-responsive img-sm">
+                <div class="col-lg-12 form-logo">
+                    <img src="{{ asset('img/starbucks.jpeg') }}" alt="starbucks" class="img-responsive img-sm form-logos center-block">
                 </div>
                 <div class="form-group">
                     <div class="radio-list">

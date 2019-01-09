@@ -54,8 +54,12 @@ class OrderController extends Controller
      */
     public function create()
     {
-        if (!session()->has('service_id')) {
-            return redirect()->back()->with('error', trans('message.no_service_selected'));
+        $validate = validator(request()->all(),
+            [
+                'service_id' => 'numeric|exists:services,id'
+            ]);
+        if ($validate->fails()) {
+            return redirect()->back()->with($validate->errors());
         }
         session()->put('order_lang', request()->lang);
         $service = Service::whereId(session()->get('service_id'))->first();
