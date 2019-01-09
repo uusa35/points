@@ -177,7 +177,7 @@
                                                     {{--<i class="fa fa-fw fa-edit"></i> assign child</a>--}}
                                             {{--</li>--}}
                                             <li>
-                                                <a href="{{ route('backend.admin.activate',['model' => 'product','id' => $element->id]) }}">
+                                                <a href="{{ route('backend.admin.activate',['model' => 'category','id' => $element->id]) }}">
                                                     <i class="fa fa-fw fa-check-circle"></i> toggle active</a>
                                             </li>
                                             <li>
