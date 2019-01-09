@@ -20,7 +20,7 @@ class HomeController extends Controller
     public function index()
     {
         $designers = User::active()->onlyDesigners()->with('role')->orderBy('id', 'desc')->paginate(20, ['*'], 'designers');
-        $clients = User::active()->onlyClients()->orderBy('id', 'desc')->with('role')->orderBy('created_at', 'desc')->paginate(20, ['*'], 'clients');
+        $clients = User::active()->onlyClients()->with('role')->orderBy('id', 'desc')->paginate(20, ['*'], 'clients');
         $transactions = Transaction::where(['is_complete' => true])->with('user', 'payment_plan')->orderBy('created_at', 'desc')->paginate(20, ['*'], 'transactions');
         $orders = Order::where(['user_id' => auth()->id(), 'is_paid' => true])->active()->with('service.category', 'client')->orderBy('created_at', 'desc')->paginate(50, ['*'], 'orders');
         return view('backend.home', compact('designers', 'clients', 'transactions', 'orders'));

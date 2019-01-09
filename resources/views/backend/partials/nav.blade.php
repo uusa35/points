@@ -381,6 +381,11 @@
                                         <i class="icon-envelope-letter"></i> {{ trans('general.export_translations') }}
                                     </a>
                                 </li>
+                                <li>
+                                    <a href="{{ url('backend/admin/telescope') }}">
+                                        <i class="fa fa-fw fa-bug"></i> Telescope Debug Mode
+                                    </a>
+                                </li>
                                 <li class="divider"></li>
                             @endcan
                             @if(auth()->user())

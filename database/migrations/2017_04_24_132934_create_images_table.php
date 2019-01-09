@@ -21,9 +21,10 @@ class CreateImagesTable extends Migration
             $table->string('caption_ar')->nullable();
             $table->string('caption_en')->nullable();
             $table->string('notes')->nullable();
-            $table->integer('order')->nullable();
+            $table->smallInteger('order')->unsigned()->nullable();
             $table->morphs('imagable');
             $table->boolean('active')->default(1);
+
             $table->integer('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users');
 

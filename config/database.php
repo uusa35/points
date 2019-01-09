@@ -55,7 +55,20 @@ return [
             'strict' => true,
             'engine' => null,
         ],
-
+        'mysql_tunnel' => [
+            'driver'    => 'mysql',
+            'host'      => env('TUNNELER_BIND_ADDRESS'),
+            'port'      => env('TUNNELER_BIND_PORT'),
+            'database'  => 'points',
+            'username'  => 'root',
+//            'password' => env('DB_PASSWORD', ''),
+            'password'  => 'OwnersContactKwSQL!@!@.2018',
+            'charset'   => env('DB_CHARSET', 'utf8'),
+            'collation' => env('DB_COLLATION', 'utf8_unicode_ci'),
+            'prefix'    => env('DB_PREFIX', ''),
+            'timezone'  => env('DB_TIMEZONE', '+00:00'),
+            'strict'    => env('DB_STRICT_MODE', true),
+        ],
         'pgsql' => [
             'driver' => 'pgsql',
             'host' => env('DB_HOST', '127.0.0.1'),
