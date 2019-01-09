@@ -25,8 +25,10 @@ class CreateCategoriesTable extends Migration
             $table->text('description_ar')->nullable();
             $table->text('description_en')->nullable();
             $table->integer('duration')->unsigned()->nullable();
-            $table->integer('parent_id')->default(0);
-            $table->integer('order')->nullable();
+
+            $table->smallInteger('parent_id')->unsigned()->default(0);
+            $table->smallInteger('order')->unsigned()->nullable();
+
             $table->boolean('active')->default(1)->nullable();
             $table->boolean('is_files')->default(0)->nullable();
             $table->softDeletes();

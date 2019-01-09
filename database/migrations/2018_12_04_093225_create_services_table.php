@@ -21,14 +21,14 @@ class CreateServicesTable extends Migration
             $table->longText('description_ar')->nullable();
             $table->string('caption_ar')->nullable();
             $table->string('caption_en')->nullable();
-            $table->integer('duration')->nullable();
+            $table->smallInteger('duration')->unsigned()->nullable();
             $table->string('image')->nullable();
             $table->string('path')->nullable();
-            $table->string('order')->nullable();
+            $table->smallInteger('order')->unsigned()->nullable();
 
             $table->boolean('on_sale')->default(0);
-            $table->integer('points')->unsigned();
-            $table->integer('sale_points')->unsigned();
+            $table->smallInteger('points')->unsigned();
+            $table->smallInteger('sale_points')->unsigned();
             $table->boolean('active')->default(1);
             $table->boolean('show_colors')->default(0);
             $table->boolean('show_socials')->default(0);

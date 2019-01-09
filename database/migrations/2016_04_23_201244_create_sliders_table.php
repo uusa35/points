@@ -19,7 +19,7 @@ class CreateSlidersTable extends Migration
             $table->string('caption_en')->nullable();
             $table->string('caption_ar')->nullable();
             $table->boolean('active')->default(1);
-            $table->integer('order')->nullable();
+            $table->smallInteger('order')->unsigned()->nullable();
 
             $table->timestamps();
             $table->softDeletes();

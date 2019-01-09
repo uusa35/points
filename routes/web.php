@@ -13,6 +13,7 @@
 
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.', 'middleware' => ['auth', 'onlyActiveUsers']], function () {
     // only admins + super
@@ -90,3 +91,31 @@ if ((app()->environment('production') || app()->environment('local')) && Schema:
         return redirect()->route('backend.home')->with('error', 'no users');
     });
 }
+
+//DB_CONNECTION=mysql
+//DB_HOST=127.0.0.1
+//DB_PORT=3306
+//DB_DATABASE=points
+//DB_USERNAME=root
+//DB_PASSWORD=
+
+//"php": ">=7.0.0",
+//        "alexpechkarev/google-maps": "1.0.9",
+//        "berkayk/onesignal-laravel": "^1.0",
+//        "davibennun/laravel-push-notification": "dev-laravel5",
+//        "doctrine/dbal": "^2.6",
+//        "fideloper/proxy": "~4.0",
+//        "guzzlehttp/guzzle": "^6.3",
+//        "intervention/image": "^2.4 ",
+//        "intervention/imagecache": "^2.3",
+//        "izal/knet-payment-php": "^2.0.1",
+//        "laravel/framework": "5.7.*",
+//        "laravel/horizon": "^1.2",
+//        "laravel/telescope": "^1.0",
+//        "laravel/tinker": "~1.0",
+//        "laravelcollective/html": "^5.6",
+//        "maatwebsite/excel": "^3.1",
+//        "predis/predis": "^1.1",
+//        "sentry/sentry-laravel": "^0.8.0",
+//        "spatie/laravel-medialibrary": "^7.1",
+//        "twilio/sdk": "5.24.1"
