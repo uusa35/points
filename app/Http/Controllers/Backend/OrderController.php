@@ -172,7 +172,7 @@ class OrderController extends Controller
         if ($validate->fails()) {
             return redirect()->back()->with($validate->errors());
         }
-        $elements = Service::active()->where('category_id', request()->category_id)->orderBy('order', 'desc')->get();
+        $elements = Service::active()->where('category_id', request()->category_id)->orderBy('order', 'asc')->get();
         return view('backend.modules.order.choose_service', compact('elements'));
     }
 }
