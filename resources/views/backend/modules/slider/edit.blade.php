@@ -27,8 +27,8 @@
             <div class="form-body">
                 <div class="form-group form-md-line-input">
                     <input type="text" class="form-control" name="order" value={{ $element->order }}>
-                    <label for="form_control_1">Slide order En*</label>
-                    <span class="help-block">please enter proper title</span>
+                    <label for="form_control_1">Slide order *</label>
+                    <span class="help-block">Slider Order</span>
                 </div>
             </div>
             <div class="form-body">
@@ -40,17 +40,9 @@
             </div>
             <div class="form-body">
                 <div class="form-group form-md-line-input">
-                    <input type="text" class="form-control" name="order" value="{{ $element->order }}"
-                           placeholder="...">
-                    <label for="form_control_1">Slide Order*</label>
-                    <span class="help-block">slider Order is a number</span>
-                </div>
-            </div>
-            <div class="form-body">
-                <div class="form-group form-md-line-input">
                     <input type="file" class="form-control" name="image" placeholder="...">
                     <label for="form_control_1">Slide Image*</label>
-                    <span class="help-block">slider Image only JPG / PNG is accepted -best fit ['750', '1334']</span>
+                    <span class="help-block">slider Image only JPG / PNG is accepted -best fit w / h '1905', '750'</span>
                 </div>
             </div>
 
