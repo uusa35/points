@@ -112,7 +112,7 @@
         @if (Route::has('login'))
             <div class="top-right links">
                 @auth
-                    <a href="{{ url('/home') }}">{{ trans('general.home') }}</a>
+                    <a href="{{ route('home') }}">{{ trans('general.home') }}</a>
                     <a href="{{ url('/logout') }}"
                        onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                         <i class="icon-key"></i> {{ trans('general.logout') }} </a>
