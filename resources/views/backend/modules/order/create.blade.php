@@ -6,6 +6,7 @@
         @include('backend.partials.forms.form_title')
         <div class="portlet-body form">
             <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.order.store') }}"
+                  id="order-create"
                   enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="service_id" value="{{ session()->get('service_id') }}">
@@ -39,7 +40,40 @@
                                     </div>
                                 </div>
                             @endif
-                            @include('backend.partials.forms._btn-group')
+                            <div class="form-actions right">
+                                {{--<button type="button" class="btn default">Cancel</button>--}}
+                                <a href="{!! route('backend.home') !!}"
+                                   class="btn btn-danger">{{ trans('general.cancel') }}</a>
+
+                                <a class="btn btn-info"
+                                   data-toggle="modal" href="#" data-target="#order"
+                                   data-title="{{ trans('general.confirm_create_order') }}"
+                                   data-content="{{ trans('message.create_order_confirmation_message') }}"
+                                   data-form_id="order-create"
+                                >
+                                    <i class="fa fa-fw fa-check-square"></i> {{ trans('general.confirm_create_order') }}
+                                </a>
+                                <div class="modal fade" id="order" tabindex="-1" role="basic" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-hidden="true"></button>
+                                                <h4 class="modal-title"></h4>
+                                            </div>
+                                            <div class="modal-body"></div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn red btn-outline"
+                                                        data-dismiss="modal">{{ trans('general.cancel') }}</button>
+                                                <button type="button"
+                                                        class="btn green modal-save">{{ trans('general.confirm_create_order') }}</button>
+                                            </div>
+                                        </div>
+                                        <!-- /.modal-content -->
+                                    </div>
+                                    <!-- /.modal-dialog -->
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -47,4 +81,3 @@
         </div>
     </div>
 @endsection
-
