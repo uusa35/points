@@ -3,8 +3,10 @@
 namespace App\Policies;
 
 use App\Models\Job;
+use App\Models\Setting;
 use App\Models\User;
 use App\Models\Version;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class VersionPolicy
@@ -32,7 +34,12 @@ class VersionPolicy
     public function create(?User $user, Job $job)
     {
         // if the designer is included within the job designers array
-        return auth()->user()->isSuper ? auth()->user()->isSuper : in_array(auth()->id(), $job->designers()->pluck('id')->toArray(), true);
+        $settings = Setting::first();
+        if ($job->versions()->count() <= $settings->service_versions_limit && !auth()->user()->isSuper) {
+            return auth()->user()->isSuper ? auth()->user()->isSuper : in_array(auth()->id(), $job->designers()->pluck('id')->toArray(), true);
+        }
+        throw new AuthorizationException(trans("message.versions_limit_exceed"));
+
     }
 
     /**

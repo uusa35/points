@@ -9,12 +9,12 @@
                         {{--<div class="mt-step-title uppercase font-grey-cascade">{{ trans("general.choose_your_language") }}</div>--}}
                         {{--<div class="mt-step-content font-grey-cascade">{{ trans('message.choose_your_language') }}</div>--}}
                     {{--</div>--}}
-                    <div class="col-md-4 bg-grey mt-step-col {{ activeItem('order') }}">
+                    <div class="col-md-6 bg-green-haze mt-step-col {{ activeItem('order') }}">
                         <div class="mt-step-number bg-white font-grey">1</div>
                         <div class="mt-step-title uppercase font-grey-cascade">{{ trans('general.create_your_order') }}</div>
                         <div class="mt-step-content font-grey-cascade">{{ trans('message.create_your_order') }}</div>
                     </div>
-                    <div class="col-md-4 bg-grey mt-step-col {{ activeItem('file') }}">
+                    <div class="col-md-6 bg-yellow-lemon mt-step-col {{ activeItem('file') }}">
                         <div class="mt-step-number bg-white font-grey">2</div>
                         <div class="mt-step-title uppercase font-grey-cascade">{{ trans('general.add_images_files_to_your_order') }}</div>
                         <div class="mt-step-content font-grey-cascade">{{ trans("message.add_images_files_to_your_order") }}</div>

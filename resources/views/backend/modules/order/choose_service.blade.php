@@ -22,7 +22,7 @@
                         <div class="col-sm-4">
                             <div class="blog-post-sm bordered blog-container">
                                 <div class="blog-img-thumb">
-                                    <a href="{{ route('backend.order.choose.lang', ['service_id' => $element->id]) }}">
+                                    <a href="{{ route('backend.order.create', ['service_id' => $element->id]) }}">
                                         <img src="{{ asset(env('LARGE').$element->image) }}"/>
                                     </a>
                                 </div>

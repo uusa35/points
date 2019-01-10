@@ -60,6 +60,7 @@ class CreateSettingsTable extends Migration
             $table->text('section_three_ar')->nullable();
             $table->text('section_three_en')->nullable();
             $table->string('video')->nullable();
+            $table->tinyInteger('service_versions_limit')->nullable();
             $table->boolean('annual_subscription')->default(0);
             $table->boolean('maintenance_mode')->default(0);
             $table->boolean('auto_enrollment')->default(0);

@@ -61,8 +61,9 @@ class OrderController extends Controller
         if ($validate->fails()) {
             return redirect()->back()->with($validate->errors());
         }
-        session()->put('order_lang', request()->lang);
-        $service = Service::whereId(session()->get('service_id'))->first();
+        session()->put('order_lang', app()->getLocale());
+        session()->put('service_id', request()->service_id);
+        $service = Service::whereId(request()->service_id)->first();
         $this->authorize('order.create');
         return view('backend.modules.order.create', compact('service'));
     }

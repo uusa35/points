@@ -19,12 +19,12 @@
                         <div class="col-md-12 col-sm-12">
                             @include('backend.partials._version_details',['element' => $element])
                         </div>
-                        <div class="col-md-6 col-sm-12">
-                            @include('backend.partials._order_details',['element' => $element->job->order])
-                        </div>
-                        <div class="col-md-6 col-sm-12">
-                            @include('backend.partials._job_details',['element' => $element->job])
-                        </div>
+                        {{--<div class="col-md-6 col-sm-12">--}}
+                            {{--@include('backend.partials._order_details',['element' => $element->job->order])--}}
+                        {{--</div>--}}
+                        {{--<div class="col-md-6 col-sm-12">--}}
+                            {{--@include('backend.partials._job_details',['element' => $element->job])--}}
+                        {{--</div>--}}
                         @if($images->isNotEmpty())
                             @include('backend.partials.files_gallery',['elements' => $images])
                         @else
@@ -34,17 +34,11 @@
                 </div>
 
                 <div class="tab-pane" id="tab_2">
-{{--                    @if(!$element->is_complete)--}}
-                        @if($files->isNotEmpty())
-                            @include('backend.partials.files',['elements' => $files])
-                        @else
-                            <div class="alert alert-warning">{{ trans('general.no_files') }}</div>
-                        @endif
-                    {{--@else--}}
-                        {{--<div class="alert alert-info">--}}
-                            {{--{{ trans('message.this_job_is_complete_please_check_my_files_page_in_job_to_view_your_files') }}--}}
-                        {{--</div>--}}
-                    {{--@endif--}}
+                    @if($files->isNotEmpty())
+                        @include('backend.partials.files',['elements' => $files])
+                    @else
+                        <div class="alert alert-warning">{{ trans('general.no_files') }}</div>
+                    @endif
                 </div>
             </div>
             @include('backend.partials._comments')

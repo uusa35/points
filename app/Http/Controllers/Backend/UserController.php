@@ -22,7 +22,7 @@ class UserController extends Controller
     {
         $element = User::whereId($id)->with(['orders' => function ($q) {
             if (auth()->user()->onlyDesigner) {
-                return $q->active()->where(['is_paid' => true])->whereHas('designers', function ($q) {
+                return $q->active()->where(['is_paid' => true])->whereHas('job.designers', function ($q) {
                     return $q->whereIn('id', [auth()->id()]);
                 });
             } else {
