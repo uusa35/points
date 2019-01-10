@@ -41,16 +41,9 @@
             </div>
             <div class="form-body">
                 <div class="form-group form-md-line-input">
-                    <input type="file" class="form-control" name="bg" placeholder="...">
+                    <input type="file" class="form-control" name="image" placeholder="...">
                     <label for="bg">Slide Background*</label>
-                    <span class="help-block">slider Image only JPG / PNG is accepted -best fit ['750', '1334']</span>
-                </div>
-            </div>
-            <div class="form-body">
-                <div class="form-group form-md-line-input">
-                    <input type="file" class="form-control" name="bg" placeholder="...">
-                    <label for="bg">Slide Bg*</label>
-                    <span class="help-block">slider Image only JPG / PNG is accepted -best fit ['1440', '400']</span>
+                    <span class="help-block">slider Image only JPG / PNG is accepted -best fit w / h '1905', '750'</span>
                 </div>
             </div>
 
