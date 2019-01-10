@@ -79,11 +79,12 @@
                                        class="col-md-4 col-form-label text-md-right">{{ __('general.role') }}</label>
 
                                 <div class="col-md-6">
-                                    @foreach($roles->where('is_visible', true) as $role)
-                                        <label for="role_id"
-                                               class="col-md-4 col-form-label text-md-right">{{ $role->slug }}</label>
-                                        <input type="radio" name="role_id" value="{{ $role->id }}">
-                                    @endforeach
+                                    <input type="hidden" name="role_id" value="{{ $roles->where('is_visible', true)->first()->id }}">
+                                    {{--@foreach($roles->where('is_visible', true) as $role)--}}
+                                        {{--<label for="role_id"--}}
+                                               {{--class="col-md-4 col-form-label text-md-right">{{ $role->slug }}</label>--}}
+                                        {{--<input type="hidden" name="role_id" value="{{ $role->id }}">--}}
+                                    {{--@endforeach--}}
 
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">
