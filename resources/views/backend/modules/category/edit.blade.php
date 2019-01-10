@@ -140,6 +140,60 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group {{ $errors->has('caption_ar') ? ' has-error' : '' }}">
+                                <label for="caption_ar" class="control-label">{{ trans('general.caption_ar') }}*</label>
+                                <input id="caption_ar"
+                                       type="text"
+                                       class="form-control"
+                                       name="caption_ar"
+                                       value="{{ $element->caption_ar }}"
+                                       placeholder="name in arabic"
+                                       required autofocus>
+                                @if ($errors->has('caption_ar'))
+                                    <span class="help-block">
+                                        <strong>
+                                            {{ $errors->first('caption_ar') }}
+                                        </strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group{{ $errors->has('caption_en') ? ' has-error' : '' }}">
+                                <label for="caption_en" class="control-label">{{ trans('general.caption_en') }}*</label>
+                                <input id="caption_en"
+                                       type="text"
+                                       class="form-control"
+                                       name="caption_en"
+                                       value="{{ $element->caption_en }}"
+                                       placeholder="name in english"
+                                       required autofocus>
+                                @if ($errors->has('caption_en'))
+                                    <span class="help-block">
+                                        <strong>
+                                            {{ $errors->first('caption_en') }}
+                                        </strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="description" class="control-label">description arabic</label>
+                                <textarea type="text" class="form-control" id="description_ar" name="description_ar"
+                                          aria-multiline="true" maxlength="500">{{ $element->description_ar }}</textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="description" class="control-label">description english</label>
+                                <textarea type="text" class="form-control" id="description_en" name="description_en"
+                                          aria-multiline="true" maxlength="500">{{ $element->description_en }}</textarea>
+                            </div>
+                        </div>
+                    </div>
                     @include('backend.partials.forms._btn-group')
                 </div>
             </form>
