@@ -2,7 +2,7 @@
 <div class="portlet grey-cascade box">
     <div class="portlet-title">
         <div class="caption">
-            <i class="fa fa-cogs"></i>{{ trans('general.transactions_history') }}
+            <i class="fa fa-cogs"></i>{{ trans('general.orders_list') }}
         </div>
     </div>
     <div class="portlet-body">

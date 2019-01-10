@@ -30,7 +30,8 @@
         </div>
         <div class="row static-info">
             <div class="col-md-5 name"> {{ trans('general.description') }}:</div>
-            <div class="col-md-7 value"> {{ $element->description  ? $element->description : trans('general.not_available')}}</div>
+            <div
+                class="col-md-7 value"> {{ $element->description  ? $element->description : trans('general.not_available')}}</div>
         </div>
         <div class="row static-info">
             <div class="col-md-5 name"> {{ trans('general.notes') }}:</div>
@@ -48,13 +49,21 @@
             </div>
         </div>
         <div class="row static-info">
-            <div class="col-md-5 name"> {{ trans('general.add_images_or_files') }}:</div>
+            <div class="col-md-5 name"> {{ trans('general.order') }}:</div>
             <div class="col-md-7 value">
                 <a class="btn btn-success"
-                   href="{{ route('backend.file.create', ['type' => 'job', 'id' => $element->id]) }}">Add Files /
-                    Images</a>
+                   href="{{ route('backend.order.show', $element->order_id) }}">{{ trans('general.back_to_order_details_page') }}</a>
             </div>
         </div>
+        @if(!$element->order->is_complete)
+            <div class="row static-info">
+                <div class="col-md-5 name"> {{ trans('general.add_images_or_files') }}:</div>
+                <div class="col-md-7 value">
+                    <a class="btn btn-success"
+                       href="{{ route('backend.file.create', ['type' => 'job', 'id' => $element->id]) }}">{{ trans('general.add_new_image_file_to_your_job') }}</a>
+                </div>
+            </div>
+        @endif
         <hr>
         <div class="row static-info">
             <div class="col-md-5 name"> {{ trans('general.designers_responsible_for_the_job') }}:</div>

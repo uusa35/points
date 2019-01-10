@@ -455,6 +455,15 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="number" class="form-control" name="service_versions_limit" placeholder="service_versions_limit">
+                                    <label for="service_versions_limit">service_versions_limit</label>
+                                    <div class="help-block text-left">
+                                        Number of versions limit for services
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <!--/span-->

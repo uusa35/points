@@ -46,10 +46,12 @@
             <div class="col-md-7 value"> {{ $element->service->caption }}</div>
         </div>
         @if($element->service->show_logo_style)
-        <div class="row static-info">
-            <div class="col-md-5 name"> {{ trans('general.show_log_style') }}:</div>
-            <div class="col-md-7 value"><img class="img-sm form-logos" src="{{ asset('img/'.$element->logo_style.'.jpeg') }}" alt="{{ $element->service->slug }}"></div>
-        </div>
+            <div class="row static-info">
+                <div class="col-md-5 name"> {{ trans('general.show_log_style') }}:</div>
+                <div class="col-md-7 value"><img class="img-sm form-logos"
+                                                 src="{{ asset('img/'.$element->logo_style.'.jpeg') }}"
+                                                 alt="{{ $element->service->slug }}"></div>
+            </div>
         @endif
 
         <div class="row static-info">
@@ -66,12 +68,14 @@
                 </div>
             @endif
         </div>
-        <div class="row static-info">
-            <div class="col-md-5 name"> {{ trans('general.add_more_files') }}:</div>
-            <div class="col-md-7 value">
-                <a href="{{ route('backend.file.create',['type' => 'order', 'id' => $element->id]) }}"
-                   class="btn btn-info">{{ trans('general.add_more_files') }}</a>
+        @if(!$element->is_complete)
+            <div class="row static-info">
+                <div class="col-md-5 name"> {{ trans('general.add_more_files') }}:</div>
+                <div class="col-md-7 value">
+                    <a href="{{ route('backend.file.create',['type' => 'order', 'id' => $element->id]) }}"
+                       class="btn btn-info">{{ trans('general.add_more_files') }}</a>
+                </div>
             </div>
-        </div>
+        @endif
     </div>
 </div>

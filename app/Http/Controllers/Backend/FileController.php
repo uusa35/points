@@ -46,9 +46,13 @@ class FileController extends Controller
         }
         $className = '\App\Models\\' . title_case(request()->type);
         $element = new $className();
-        $element = $element->withoutGlobalScopes()->whereId(request()->id)->first();
+        $element = $element->withoutGlobalScopes()->whereId(request()->id)->with('files')->first();
         $categories = Category::onlyParent()->where(['is_files' => true])->get();
-        return view('backend.modules.file.create', compact('element', 'categories'))->with(['type' => request()->type, 'id' => request()->id]);
+        if($element->has('files','>',0)) {
+            $files = $element->files()->notImages()->get();
+            $images = $element->files()->images()->get();
+        }
+        return view('backend.modules.file.create', compact('element', 'categories','files','images'))->with(['type' => request()->type, 'id' => request()->id]);
     }
 
     /**
