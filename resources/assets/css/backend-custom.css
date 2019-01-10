@@ -65,3 +65,8 @@ body, html, div, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, thead, tf
     max-width : 90px;
     max-height: 90px;
 }
+
+.btn-colors {
+    color: black; width: 100px; margin-left: 10px; margin-right: 10px;
+    font-size: smaller;
+}
