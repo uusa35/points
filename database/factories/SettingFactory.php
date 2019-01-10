@@ -61,6 +61,7 @@ $factory->define(Setting::class, function (Faker\Generator $faker) {
         'section_three_en' => $faker->name,
         'video' => $faker->imageUrl(),
         'auto_enrollment' => $faker->boolean(true),
-        'service_versions_limit' => 2
+        'service_versions_limit' => 2,
+        'initial_points' => 2
     ];
 });

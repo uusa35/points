@@ -5,7 +5,8 @@
         @include('backend.partials.forms.form_title')
         <div class="portlet-body form">
             <!-- BEGIN FORM-->
-            <form method="post" action="{{ route('backend.admin.setting.update', $element->id) }}" class="horizontal-form"  enctype="multipart/form-data">
+            <form method="post" action="{{ route('backend.admin.setting.update', $element->id) }}"
+                  class="horizontal-form" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="_method" value="patch">
                 <div class="form-body">
@@ -37,7 +38,8 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="control-label">info_email</label>
-                                <input type="text" id="info_email" name="info_email" class="form-control" placeholder="info_email"
+                                <input type="text" id="info_email" name="info_email" class="form-control"
+                                       placeholder="info_email"
                                        value="{{ $element->info_email }}">
                                 <span class="help-block"> info_email </span>
                             </div>
@@ -45,7 +47,8 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="control-label">support_email</label>
-                                <input type="text" id="support_email" name="support_email" class="form-control" placeholder="support_email"
+                                <input type="text" id="support_email" name="support_email" class="form-control"
+                                       placeholder="support_email"
                                        value="{{ $element->support_email }}">
                                 <span class="help-block"> support_email </span>
                             </div>
@@ -53,7 +56,8 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="control-label">admin_email</label>
-                                <input type="text" id="admin_email" name="admin_email" class="form-control" placeholder="admin_email"
+                                <input type="text" id="admin_email" name="admin_email" class="form-control"
+                                       placeholder="admin_email"
                                        value="{{ $element->admin_email }}">
                                 <span class="help-block"> admin_email </span>
                             </div>
@@ -89,7 +93,8 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label class="control-label">whatsapp</label>
-                                <input type="text" id="whatsapp" name="whatsapp" class="form-control" placeholder="whatsapp"
+                                <input type="text" id="whatsapp" name="whatsapp" class="form-control"
+                                       placeholder="whatsapp"
                                        value="{{ $element->whatsapp }}">
                                 <span class="help-block"> whatsapp </span>
                             </div>
@@ -457,10 +462,22 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <input type="number" class="form-control" name="service_versions_limit" placeholder="service_versions_limit">
+                                    <input type="number" class="form-control" name="service_versions_limit"
+                                           placeholder="service_versions_limit"
+                                           value="{{ $element->service_versions_limit }}">
                                     <label for="service_versions_limit">service_versions_limit</label>
                                     <div class="help-block text-left">
                                         Number of versions limit for services
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="number" class="form-control" name="initial_points"
+                                           placeholder="initial_points" value="{{ $element->initial_points }}">
+                                    <label for="initial_points">initial_points</label>
+                                    <div class="help-block text-left">
+                                        Client initial_points once registered
                                     </div>
                                 </div>
                             </div>
