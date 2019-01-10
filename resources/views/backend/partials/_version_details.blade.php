@@ -43,7 +43,7 @@
         <div class="row static-info">
             <div class="col-md-5 name"> {{ trans('general.job') }}:</div>
             <div class="col-md-7 value">
-                <a href="{{ route('backend.job.show', $element->job_id) }}" class="btn btn-info">{{ trans('general.back_to_job') }}</a>
+                <a href="{{ route('backend.job.show', $element->job->id) }}" class="btn btn-info">{{ trans('general.back_to_job') }}</a>
             </div>
         </div>
         <div class="row static-info">

@@ -33,6 +33,44 @@
                 <span class="label label-success"> {{ trans('general.'.$element->status) }}</span>
             </div>
         </div>
+        @if($element->preferred_colors_1 || $element->preferred_colors_2 || $element->preferred_colors_3)
+            <div class="row static-info">
+                <div class="col-md-5 name"> {{ trans('general.preferred_colors') }}:</div>
+                <div class="col-md-7 value">
+                    @if($element->preferred_colors_1)
+                        <a class="btn btn-default btn-colors"
+                           style="background-color: {{ $element->preferred_colors_1 }};"> {{ $element->preferred_colors_1 }}</a>
+                    @endif
+                    @if($element->preferred_colors_2)
+                        <a class="btn btn-default btn-colors"
+                           style="background-color: {{ $element->preferred_colors_2 }};"> {{ $element->preferred_colors_2 }}</a>
+                    @endif
+                        @if($element->preferred_colors_3)
+                        <a class="btn btn-default btn-colors"
+                           style="background-color: {{ $element->preferred_colors_3 }};"> {{ $element->preferred_colors_3 }}</a>
+                    @endif
+                </div>
+            </div>
+        @endif
+        @if($element->unwanted_colors_1 || $element->unwanted_colors_2 || $element->unwanted_colors_3)
+            <div class="row static-info">
+                <div class="col-md-5 name"> {{ trans('general.unwanted_colors') }}:</div>
+                <div class="col-md-7 value">
+                    @if($element->unwanted_colors_1)
+                        <a class="btn btn-default btn-colors"
+                           style="background-color: {{ $element->unwanted_colors_1 }};"> {{ $element->unwanted_colors_1 }}</a>
+                    @endif
+                    @if($element->unwanted_colors_2)
+                        <a class="btn btn-default btn-colors"
+                           style="background-color: {{ $element->unwanted_colors_2 }};"> {{ $element->unwanted_colors_2 }}</a>
+                    @endif
+                        @if($element->unwanted_colors_3)
+                        <a class="btn btn-default btn-colors"
+                           style="background-color: {{ $element->unwanted_colors_3 }};"> {{ $element->unwanted_colors_3 }}</a>
+                    @endif
+                </div>
+            </div>
+        @endif
         <div class="row static-info">
             <div class="col-md-5 name"> {{ trans('general.total_cost') }}</div>
             <div class="col-md-7 value"> {{ trans('general.points') }} {{ $element->points }}</div>
