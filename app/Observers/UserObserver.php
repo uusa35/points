@@ -3,6 +3,7 @@
 namespace App\Observers;
 
 
+use App\Models\Setting;
 use App\Models\User;
 
 class UserObserver
@@ -15,7 +16,8 @@ class UserObserver
      */
     public function created(User $user)
     {
-        $user->balance()->create();
+        $settings = Setting::first();
+        $user->onlyClient ? $user->balance()->create(['points' => $settings->initial_points]) : $user->balance()->create(['points' => 0]);
     }
 
     /**
