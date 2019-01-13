@@ -23,4 +23,6 @@ return array (
   'category_deleted_successfully' => 'تم المسح بنجاح',
   'delete_success' => 'تم المسح',
   'delete_error' => 'خطا في المسح',
+  'create_order_confirmation_message' => 'يرجى العلم أنه سيتم خصم نقاط الخدمة من رصيدك .. تأكيد عملية الخصم ؟',
+  'create_service' => 'إنشاء خدمة جديدة',
 );

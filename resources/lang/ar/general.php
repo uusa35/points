@@ -314,4 +314,5 @@ return array (
   'not_available' => 'غير متاح',
   'assign_job_to_designers' => 'إضافة المصممين إلى أمر العمل',
   'assign_this_job_to_designers' => 'إضافه المصممين إلى أمر العمل',
+  'confirm_create_order' => 'تأكيد إنشاء طلب العمل',
 );
