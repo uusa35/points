@@ -1,7 +1,7 @@
 @if($service && $service->show_logo_style)
     <div class="panel panel-default">
         <div class="panel-heading">
-            {{ trans('general.logo_style') }}
+            {{ trans('general.choose_logo_style') }}
         </div>
         <div class="panel-body">
             <div class="col-md-4 text-center center-block">
@@ -12,7 +12,7 @@
                     <div class="radio-list">
                         <label class="radio-inline">
                             <input type="radio" name="logo_style" id="optionsRadios1" value="apple"
-                                   checked> iphone</label>
+                                   checked> {{ trans('general.logo_only_image') }}</label>
                     </div>
                 </div>
             </div>
@@ -25,7 +25,7 @@
                     <div class="radio-list">
                         <label class="radio-inline">
                             <input type="radio" name="logo_style" id="optionsRadios1" value="google"
-                                   checked> google</label>
+                                   checked> {{ trans('general.logo_text_only') }}</label>
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
                     <div class="radio-list">
                         <label class="radio-inline">
                             <input type="radio" name="logo_style" id="optionsRadios1" value="starbucks"
-                                   checked> starbucks</label>
+                                   checked> {{ trans('general.logo_image_and_text') }}</label>
                     </div>
                 </div>
             </div>

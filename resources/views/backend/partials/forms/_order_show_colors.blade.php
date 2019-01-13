@@ -1,7 +1,7 @@
 @if($service && $service->show_colors)
     <div class="panel panel-default">
         <div class="panel-heading">
-            {{ trans("general.colors") }}
+            {{ trans("general.choose_colors_you_prefer_and_unwanted_colors") }}
         </div>
         <div class="panel-body">
             <div class="col-md-4">
@@ -23,7 +23,6 @@
                            class="form-control demo"
                            data-control="hue" value="{{ old('preferred_colors_2') }}">
                 </div>
-
             </div>
             <div class="col-md-4">
                 <div class="form-group">
@@ -34,9 +33,7 @@
                            class="form-control demo"
                            data-control="hue" value="{{ old('preferred_colors_3') }}">
                 </div>
-
             </div>
-
 
             <div class="col-md-4">
                 <div class="form-group">
@@ -46,7 +43,6 @@
                            class="form-control demo"
                            data-control="hue" value="{{ old('unwanted_colors_1') }}">
                 </div>
-
             </div>
             <div class="col-md-4">
                 <div class="form-group">
@@ -57,7 +53,6 @@
                            class="form-control demo"
                            data-control="hue" value="{{ old('unwanted_colors_2') }}">
                 </div>
-
             </div>
             <div class="col-md-4">
                 <div class="form-group">
