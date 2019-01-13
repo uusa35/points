@@ -3,7 +3,7 @@
 return array (
   'choose_your_language' => 'اختر اللغة - بك',
   'create_your_order' => 'انشئ طلبك',
-  'add_images_files_to_your_order' => 'اضف صور الى طلبك',
+  'add_images_files_to_your_order' => 'اضغط لإضافة صور لتصاميم اعجبتك لتوصيل الفكرة المطلوب للمصمم',
   'backend_setting_index_message' => 'الاعدادات - بك',
   'backend_notification_index' => 'الاشعارات - بك',
   'choose_category_message' => 'القسم - بك',

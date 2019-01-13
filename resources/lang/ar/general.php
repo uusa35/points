@@ -315,4 +315,10 @@ return array (
   'assign_job_to_designers' => 'إضافة المصممين إلى أمر العمل',
   'assign_this_job_to_designers' => 'إضافه المصممين إلى أمر العمل',
   'confirm_create_order' => 'تأكيد إنشاء طلب العمل',
+  'choose_logo_style' => 'اختر الشكل العام للشعار',
+  'logo_only_image' => 'صورة فقط',
+  'logo_text_only' => 'نص فقط',
+  'logo_image_and_text' => 'صورة ونص',
+  'choose_colors_you_prefer_and_unwanted_colors' => 'اختر الالوان المفضلة و الالوان غير المرغوب بها (اختياري)',
+  'describe_what_you_want' => 'وصف التصميم ، اشرح التصميم المطلوب :',
 );
