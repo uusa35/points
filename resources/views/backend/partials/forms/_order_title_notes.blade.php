@@ -22,7 +22,7 @@
         <div class="col-md-12">
             <div class="form-group">
                 <label for="notes_ar"
-                       class="control-label">{{ trans('general.notes')}}</label>
+                       class="control-label">{{ trans('general.describe_what_you_want')}}</label>
                 <textarea type="notes_ar" class="form-control" id="notes"
                           name="notes"
                           aria-multiline="true"
