@@ -9,10 +9,6 @@
         <strong
             style="direction: {{ app()->isLocale('ar') ? 'rtl' : 'ltr' }}; float: {{ app()->isLocale('ar') ? 'right' : 'left' }};"> {{ trans('general.gentlemen') }}
             / {{ $user->name }}</strong><br>
-        <strong
-            style="direction: {{ app()->isLocale('ar') ? 'rtl' : 'ltr' }}; float: {{ app()->isLocale('ar') ? 'right' : 'left' }};"> {{ trans('general.address') }}
-            / {{ $user->address }}</strong><br>
-        <strong
             style="direction: {{ app()->isLocale('ar') ? 'rtl' : 'ltr' }}; float: {{ app()->isLocale('ar') ? 'right' : 'left' }};"> {{ trans('general.mobile') }}
             / {{ $user->mobile }}</strong>
         <br>
