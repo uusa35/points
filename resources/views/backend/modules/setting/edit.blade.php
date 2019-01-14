@@ -55,6 +55,15 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
+                                <label class="control-label">sales_email</label>
+                                <input type="text" id="sales_email" name="sales_email" class="form-control"
+                                       placeholder="sales_email"
+                                       value="{{ $element->sales_email }}">
+                                <span class="help-block"> sales_email </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
                                 <label class="control-label">admin_email</label>
                                 <input type="text" id="admin_email" name="admin_email" class="form-control"
                                        placeholder="admin_email"
