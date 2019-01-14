@@ -2,14 +2,14 @@
 
 namespace App\Mail;
 
-use App\Models\Order;
+use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class OrderComplete extends Mailable
+class TransactionComplete extends Mailable
 {
     use Queueable, SerializesModels;
     public $element;
@@ -20,7 +20,7 @@ class OrderComplete extends Mailable
      *
      * @return void
      */
-    public function __construct(Order $element, User $user)
+    public function __construct(Transaction $element, User $user)
     {
         $this->element = $element;
         $this->user = $user;
@@ -33,6 +33,6 @@ class OrderComplete extends Mailable
      */
     public function build()
     {
-        $this->markdown('emails.order-complete');
+        $this->markdown('emails.transaction-complete');
     }
 }

@@ -4,6 +4,7 @@ namespace Usama\Tap;
 
 use App\Http\Controllers\Controller;
 use App\Mail\OrderComplete;
+use App\Mail\TransactionComplete;
 use App\Models\Ad;
 use App\Models\Setting;
 use App\Models\Deal;
@@ -141,7 +142,7 @@ class TapPaymentController extends Controller
         $transaction = Transaction::where(['reference_id' => $request->ref])->with('user','payment_plan')->first();
         $transaction->update(['is_complete' => true]);
         $contactus = Setting::first();
-//        Mail::to($transaction->user->email)->cc($contactus->email)->send(new OrderComplete($transaction, $transaction->user));
+        Mail::to($transaction->user->email)->cc($contactus->info_email)->cc($contactus->sales_email)->send(new TransactionComplete($transaction, $transaction->user));
         $this->clearCart();
         $markdown = new Markdown(view(), config('mail.markdown'));
         return $markdown->render('emails.transaction-complete', ['element' => $transaction, 'user' => $transaction->user]);

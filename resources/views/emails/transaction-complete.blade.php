@@ -1,22 +1,34 @@
 @component('mail::message')
     <div style="width : 100%">
-        <div style="text-align: left;">
+        <div style="text-align: {{ app()->isLocale('ar') ? 'right' : 'left' }}">
             {{ trans('general.date') }} : {{ Carbon\Carbon::today()->format('d/m/Y') }}
         </div>
-        <div style="text-align: left;">
-            # {{ trans('general.order_number') }}{{ $element->id }}
-            <strong style="direction: {{ app()->isLocale('ar') ? 'rtl' : 'ltr' }}; float: none;"> {{ trans('general.gentlemen') }} / {{ $user->name }}</strong><br>
-            <strong style="direction: {{ app()->isLocale('ar') ? 'rtl' : 'ltr' }}; float: none;"> {{ trans('general.address') }}/ {{ $user->address }}</strong><br>
-            <strong style="direction: {{ app()->isLocale('ar') ? 'rtl' : 'ltr' }}; float: none;"> {{ trans('general.mobile') }} / {{ $user->mobile }}</strong>
-        </div>
+
+        # {{ trans('general.order_number') }}{{ $element->id }}<br>
+        <hr>
+        <strong
+            style="direction: {{ app()->isLocale('ar') ? 'rtl' : 'ltr' }}; float: {{ app()->isLocale('ar') ? 'right' : 'left' }};"> {{ trans('general.gentlemen') }}
+            / {{ $user->name }}</strong><br>
+        <strong
+            style="direction: {{ app()->isLocale('ar') ? 'rtl' : 'ltr' }}; float: {{ app()->isLocale('ar') ? 'right' : 'left' }};"> {{ trans('general.address') }}
+            / {{ $user->address }}</strong><br>
+        <strong
+            style="direction: {{ app()->isLocale('ar') ? 'rtl' : 'ltr' }}; float: {{ app()->isLocale('ar') ? 'right' : 'left' }};"> {{ trans('general.mobile') }}
+            / {{ $user->mobile }}</strong>
         <br>
-        <br>
+        <hr>
         @component('mail::table')
-            | {{ trans('general.name') }} |{{ trans('general.price') }} |{{ trans('general.qty') }}|{{ trans('general.description') }}  |{{ trans('general.has_bouns') }}  |{{ trans('general.bouns') }}  |
-            | -------------:|| -------------:|| -------------:|| -------------:|| -------------:|-------------:|-------------:|-------------:|
-            | {{ $element->payment_plan->name }}|{{ $element->payment_plan->price }}|{{ 1 }}|{{ $element->payment_plan->slug }}|{{ $element->payment_plan->apply_bouns ? trnas('general.has_bouns') : trans('general.no_bouns') }}|{{ $element->payment_plan->apply_bouns ? $element->payment_plan->points : trans('general.no_points') }}|
+            | {{ trans('general.name') }} |{{ trans('general.price') }} |{{ trans('general.qty') }}
+            |{{ trans('general.description') }}  |{{ trans('general.has_bouns') }}  |{{ trans('general.bouns') }}  |
+            | -------------:|| -------------:|| -------------:|| -------------:||
+            -------------:|-------------:|-------------:|-------------:|
+            | {{ $element->payment_plan->name }}|{{ $element->payment_plan->price }}|{{ 1 }}
+            |{{ $element->payment_plan->slug }}
+            |{{ $element->payment_plan->apply_bouns ? trnas('general.has_bouns') : trans('general.no_bouns') }}
+            |{{ $element->payment_plan->apply_bouns ? $element->payment_plan->points : trans('general.no_points') }}|
             | | | | | {{ trans("general.amount_paid") }}        |     {{ $element->payment_plan->price }}        |
-            | | | | | {{ trans("general.points_added") }}|     {{ $element->payment_plan->apply_bouns ? $element->PriceWithBonus : $element->payment_plan->price }}|
+            | | | | | {{ trans("general.points_added") }}
+            |     {{ $element->payment_plan->apply_bouns ? $element->PriceWithBonus : $element->payment_plan->price }}|
         @endcomponent
         {{--@component('mail::table')--}}
         {{--| Prices       | {{ $element->title }}         | S.  |--}}

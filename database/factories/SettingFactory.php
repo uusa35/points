@@ -31,9 +31,9 @@ $factory->define(Setting::class, function (Faker\Generator $faker) {
         'mobile' => $faker->bankAccountNumber,
         'fax' => $faker->bankAccountNumber,
         'whatsapp' => $faker->bankAccountNumber,
-        'info_email' => $faker->email,
+        'info_email' => 'info@ideasowners.net',
         'support_email' => $faker->email,
-        'sales_email' => $faker->email,
+        'sales_email' => 'points@ideasowners.net',
         'admin_email' => $faker->email,
         'address_ar' => $faker->address,
         'address_en' => $faker->address,
@@ -62,6 +62,6 @@ $factory->define(Setting::class, function (Faker\Generator $faker) {
         'video' => $faker->imageUrl(),
         'auto_enrollment' => $faker->boolean(true),
         'service_versions_limit' => 2,
-        'initial_points' => 2
+        'initial_points' => 9999
     ];
 });
