@@ -13,14 +13,14 @@
                 {{--name arabic / name english --}}
                 <div class="row">
                 <div class="col-md-4">
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="control-label">{{ trans('general.name') }}</label>
-                            <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"
-                                placeholder="name in arabic" autofocus>
-                            @if ($errors->has('name'))
+                        <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
+                            <label for="username" class="control-label">{{ trans('general.username') }}</label>
+                            <input id="username" type="text" class="form-control" username="username" value="{{ old('username') }}"
+                                placeholder="username in arabic" autofocus>
+                            @if ($errors->has('username'))
                             <span class="help-block">
                                 <strong>
-                                    {{ $errors->first('name') }}
+                                    {{ $errors->first('username') }}
                                 </strong>
                             </span>
                             @endif
