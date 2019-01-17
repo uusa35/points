@@ -118,27 +118,44 @@
                 {{--<!-- BEGIN INBOX DROPDOWN -->--}}
                 {{--<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->--}}
                 <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-                    <li class="dropdown dropdown-language">
-                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                    {{--<li class="dropdown dropdown-language">--}}
+                        {{--<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"--}}
+                           {{--data-close-others="true">--}}
+                            {{--<img alt="" src="{{ asset('img/flags/'.app()->getLocale().'.png') }}">--}}
+                            {{--<span--}}
+                                {{--class="langname">&nbsp; {{ trans('general.language') .' : '.app()->getLocale() }} </span>--}}
+                            {{--<i class="fa fa-angle-down"></i>--}}
+                        {{--</a>--}}
+                        {{--<ul class="dropdown-menu">--}}
+                            {{--<li>--}}
+                                {{--<a href="{{ route('backend.language.change','en') }}">--}}
+                                    {{--<img alt="" src="{{ asset('img/flags/us.png') }}"> {{ trans('general.english') }}--}}
+                                {{--</a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="{{ route('backend.language.change','ar') }}">--}}
+                                    {{--<img alt="" src="{{ asset('img/flags/kw.png') }}"> {{ trans('general.arabic') }}--}}
+                                {{--</a>--}}
+                            {{--</li>--}}
+                        {{--</ul>--}}
+                    {{--</li>--}}
+                    <li class="dropdown dropdown-language" style="background-color: {{ app()->isLocale('ar') ? 'white' : 'transparent' }}; padding-right: 20px; padding-left: 20px; ">
+                        <a href="{{ route('backend.language.change','ar') }}" class="dropdown-toggle"
                            data-close-others="true">
-                            <img alt="" src="{{ asset('img/flags/'.app()->getLocale().'.png') }}">
+                            <img alt="" src="{{ asset('img/flags/ar.png') }}">
                             <span
-                                class="langname">&nbsp; {{ trans('general.language') .' : '.app()->getLocale() }} </span>
-                            <i class="fa fa-angle-down"></i>
+                                class="langname">&nbsp; {{ trans('general.arabic') }} </span>
                         </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="{{ route('backend.language.change','en') }}">
-                                    <img alt="" src="{{ asset('img/flags/us.png') }}"> {{ trans('general.english') }}
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('backend.language.change','ar') }}">
-                                    <img alt="" src="{{ asset('img/flags/kw.png') }}"> {{ trans('general.arabic') }}
-                                </a>
-                            </li>
-                        </ul>
                     </li>
+                    <li class="dropdown dropdown-language" style="background-color: {{ app()->isLocale('en') ? 'white' : 'transparent' }}; padding-right: 20px; padding-left: 20px; ">
+                        <a href="{{ route('backend.language.change','en') }}" class="dropdown-toggle"
+                           data-close-others="true">
+                            <img alt="" src="{{ asset('img/flags/en.png') }}">
+                            <span
+                                class="langname">&nbsp; {{ trans('general.english') }} </span>
+                        </a>
+                    </li>
+
                     <!-- END LANGUAGE BAR -->
                     @can('onlyAdmin')
                         <li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
