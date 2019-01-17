@@ -20,7 +20,7 @@
                         {{--<th>{{ trans('general.category') }}</th>--}}
                         <th>{{ trans('general.view_job') }}</th>
                         <th>{{ trans('general.view_last_version') }}</th>
-                        <th>{{ trans('general.view_order') }}</th>
+                        {{--<th>{{ trans('general.view_order') }}</th>--}}
                         <th>{{ trans('general.action') }}</th>
                     </tr>
                     </thead>
@@ -71,7 +71,7 @@
                                     </div>
                                 @endif
                             </td>
-                            <td><a class="btn btn-warning" href="{{ route("backend.order.show", $element->id) }}"><i class="fa fa-fw fa-eye"></i></a></td>
+{{--                            <td><a class="btn btn-warning" href="{{ route("backend.order.show", $element->id) }}"><i class="fa fa-fw fa-eye"></i></a></td>--}}
                             <td>
                                 <div class="btn-group pull-right">
                                     <button type="button"
