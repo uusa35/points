@@ -27,7 +27,7 @@
                                 <th>{{ trans('general.title') }}</th>
                                 <th>{{ trans('general.service_name') }}</th>
                                 <th>{{ trans('general.category_name') }}</th>
-                                <th>{{ trans('general.created_at') }}</th>
+                                {{--<th>{{ trans('general.created_at') }}</th>--}}
                                 <th>{{ trans('general.is_complete') }}</th>
                                 <th>{{ trans('general.view_order') }}</th>
                                 <th>{{ trans('general.view_job') }}</th>
@@ -42,7 +42,7 @@
                                 <th>{{ trans('general.title') }}</th>
                                 <th>{{ trans('general.service_name') }}</th>
                                 <th>{{ trans('general.category_name') }}</th>
-                                <th>{{ trans('general.created_at') }}</th>
+                                {{--<th>{{ trans('general.created_at') }}</th>--}}
                                 <th>{{ trans('general.is_complete') }}</th>
                                 <th>{{ trans('general.view_order') }}</th>
                                 <th>{{ trans('general.view_job') }}</th>
@@ -58,7 +58,7 @@
                                     <td>{{ str_limit($element->title,15) }}</td>
                                     <td>{{ str_limit($element->service->name,15) }}</td>
                                     <td>{{ str_limit($element->service->category->slug,15) }}</td>
-                                    <td>{{ $element->created_at->diffForHumans() }}</td>
+                                    {{--<td>{{ $element->created_at->diffForHumans() }}</td>--}}
                                     <td>
                                     <span
                                         class="label {{ activeLabel($element->is_complete) }}">{{ activeText($element->is_complete) }}</span>

@@ -116,8 +116,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/backend/modules/order/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="979">
-              <caret line="95" column="96" selection-start-line="95" selection-start-column="96" selection-end-line="95" selection-end-column="96" />
+            <state relative-caret-position="720">
+              <caret line="61" column="40" lean-forward="true" selection-start-line="61" selection-start-column="40" selection-end-line="61" selection-end-column="40" />
+              <folding>
+                <element signature="e#6037#6061#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -644,12 +647,12 @@
       <workItem from="1547628052831" duration="96000" />
       <workItem from="1547628442659" duration="25000" />
       <workItem from="1547639767536" duration="943000" />
-      <workItem from="1547703363213" duration="4857000" />
+      <workItem from="1547703363213" duration="4927000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="342708000" />
+    <option name="totallyTimeSpent" value="342778000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
@@ -1047,8 +1050,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/backend/modules/order/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="979">
-          <caret line="95" column="96" selection-start-line="95" selection-start-column="96" selection-end-line="95" selection-end-column="96" />
+        <state relative-caret-position="720">
+          <caret line="61" column="40" lean-forward="true" selection-start-line="61" selection-start-column="40" selection-end-line="61" selection-end-column="40" />
+          <folding>
+            <element signature="e#6037#6061#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
