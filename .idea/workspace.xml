@@ -56,7 +56,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="44550" />
+          <entry key="Blade" value="44562" />
           <entry key="CSS" value="141" />
           <entry key="JSON" value="11" />
           <entry key="JavaScript" value="239" />
@@ -116,8 +116,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/backend/modules/order/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="829">
-              <caret line="59" column="90" selection-start-line="59" selection-start-column="90" selection-end-line="59" selection-end-column="90" />
+            <state relative-caret-position="979">
+              <caret line="95" column="96" selection-start-line="95" selection-start-column="96" selection-end-line="95" selection-end-column="96" />
             </state>
           </provider>
         </entry>
@@ -644,12 +644,12 @@
       <workItem from="1547628052831" duration="96000" />
       <workItem from="1547628442659" duration="25000" />
       <workItem from="1547639767536" duration="943000" />
-      <workItem from="1547703363213" duration="4763000" />
+      <workItem from="1547703363213" duration="4857000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="342614000" />
+    <option name="totallyTimeSpent" value="342708000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
@@ -1047,8 +1047,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/backend/modules/order/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="829">
-          <caret line="59" column="90" selection-start-line="59" selection-start-column="90" selection-end-line="59" selection-end-column="90" />
+        <state relative-caret-position="979">
+          <caret line="95" column="96" selection-start-line="95" selection-start-column="96" selection-end-line="95" selection-end-column="96" />
         </state>
       </provider>
     </entry>
