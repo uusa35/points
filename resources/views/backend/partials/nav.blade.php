@@ -142,7 +142,7 @@
                     <li class="dropdown dropdown-language" style="background-color: {{ app()->isLocale('ar') ? 'white' : 'transparent' }}; padding-right: 20px; padding-left: 20px; ">
                         <a href="{{ route('backend.language.change','ar') }}" class="dropdown-toggle"
                            data-close-others="true">
-                            <img alt="" src="{{ asset('img/flags/ar.png') }}">
+                            {{--<img alt="" src="{{ asset('img/flags/ar.png') }}">--}}
                             <span
                                 class="langname">&nbsp; {{ trans('general.arabic') }} </span>
                         </a>
@@ -150,7 +150,7 @@
                     <li class="dropdown dropdown-language" style="background-color: {{ app()->isLocale('en') ? 'white' : 'transparent' }}; padding-right: 20px; padding-left: 20px; ">
                         <a href="{{ route('backend.language.change','en') }}" class="dropdown-toggle"
                            data-close-others="true">
-                            <img alt="" src="{{ asset('img/flags/en.png') }}">
+                            {{--<img alt="" src="{{ asset('img/flags/en.png') }}">--}}
                             <span
                                 class="langname">&nbsp; {{ trans('general.english') }} </span>
                         </a>
