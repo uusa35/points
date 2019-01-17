@@ -29,26 +29,26 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="form-group {{ $errors->has('description') ? ' has-error' : '' }}">
-                                <label for="description"
-                                       class="control-label">{{ trans('general.description') }}</label>
-                                <input id="description"
-                                       type="text"
-                                       class="form-control"
-                                       name="description"
-                                       value="{{ old('description') }}"
-                                       placeholder="description"
-                                       required autofocus>
-                                @if ($errors->has('description'))
-                                    <span class="help-block">
-                                        <strong>
-                                            {{ $errors->first('description') }}
-                                        </strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        {{--<div class="col-md-4">--}}
+                            {{--<div class="form-group {{ $errors->has('description') ? ' has-error' : '' }}">--}}
+                                {{--<label for="description"--}}
+                                       {{--class="control-label">{{ trans('general.description') }}</label>--}}
+                                {{--<input id="description"--}}
+                                       {{--type="text"--}}
+                                       {{--class="form-control"--}}
+                                       {{--name="description"--}}
+                                       {{--value="{{ old('description') }}"--}}
+                                       {{--placeholder="description"--}}
+                                       {{--required autofocus>--}}
+                                {{--@if ($errors->has('description'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>--}}
+                                            {{--{{ $errors->first('description') }}--}}
+                                        {{--</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
 
                         <div class="col-md-4">
                             <div class="form-group">

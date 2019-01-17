@@ -8,6 +8,7 @@
                   action="{{ route('backend.job.update', $element->id) }}" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="order_id" value="{{ $element->order_id }}">
+                <input type="hidden" name="_method" value="put">
                 <div class="form-body">
                     <div class="row">
                         <div class="col-md-6">

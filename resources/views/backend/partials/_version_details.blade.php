@@ -19,43 +19,48 @@
     </div>
     <div class="portlet-body">
         <div class="row static-info">
-            <div class="col-md-5 name"> {{ trans('general.version_id') }} #:</div>
-            <div class="col-md-7 value"> {{ $element->id }}
-                <span class="label label-info label-sm"> {{ trans('general.email_confirmation_was_sent') }}</span>
-            </div>
-        </div>
-        <div class="row static-info">
-            <div class="col-md-5 name"> {{ trans('general.version_order_number') }}:</div>
+            <div class="col-md-2 name"> {{ trans('general.order_number') }}:</div>
             <div class="col-md-7 value"> {{ $element->job->order->id }}</div>
         </div>
         <div class="row static-info">
-            <div class="col-md-5 name"> {{ trans('general.description') }}:</div>
-            <div class="col-md-7 value"> {{ $element->description }}</div>
+            <div class="col-md-2 name"> {{ trans('general.job_number') }}:</div>
+            <div class="col-md-7 value"> {{ $element->job->id}}</div>
         </div>
         <div class="row static-info">
-            <div class="col-md-5 name"> {{ trans('general.notes') }}:</div>
-            <div class="col-md-7 value"> {{ $element->notes }}</div>
-        </div>
-        <div class="row static-info">
-            <div class="col-md-5 name"> {{ trans('general.created_at') }}:</div>
-            <div class="col-md-7 value"> {{ $element->created_at->diffForHumans() }}</div>
-        </div>
-        <div class="row static-info">
-            <div class="col-md-5 name"> {{ trans('general.job') }}:</div>
-            <div class="col-md-7 value">
-                <a href="{{ route('backend.job.show', $element->job->id) }}" class="btn btn-info">{{ trans('general.back_to_job') }}</a>
+            <div class="col-md-2 name"> {{ trans('general.version_id') }} #:</div>
+            <div class="col-md-7 value"> {{ $element->id }}
+                {{--<span class="label label-info label-sm"> {{ trans('general.email_confirmation_was_sent') }}</span>--}}
             </div>
         </div>
+        {{--<div class="row static-info">--}}
+            {{--<div class="col-md-2 name"> {{ trans('general.description') }}:</div>--}}
+            {{--<div class="col-md-7 value"> {{ $element->description }}</div>--}}
+        {{--</div>--}}
         <div class="row static-info">
-            <div class="col-md-5 name"> {{ trans('general.version_status') }}:</div>
+            <div class="col-md-2 name"> {{ trans('general.version_status') }}:</div>
             <div class="col-md-7 value">
                 <span
                     class="label label-{{ $element->is_complete ? 'success' : 'warning'  }}"> {{ activeText($element->is_complete,'Complete') }}</span>
             </div>
         </div>
+        <div class="row static-info">
+            <div class="col-md-2 name"> {{ trans('general.version_created_at') }}:</div>
+            <div class="col-md-7 value"> {{ $element->created_at->diffForHumans() }}</div>
+        </div>
+        <hr>
+        <div class="row static-info">
+            <div class="col-md-2 name"> {{ trans('general.notes') }}:</div>
+            <div class="col-md-7 value"> {{ $element->notes }}</div>
+        </div>
+        <div class="row static-info">
+            <div class="col-md-2 name"> {{ trans('general.job') }}:</div>
+            <div class="col-md-7 value">
+                <a href="{{ route('backend.job.show', $element->job->id) }}" class="btn btn-info">{{ trans('general.back_to_job') }}</a>
+            </div>
+        </div>
         @if(!$element->is_complete)
             <div class="row static-info">
-                <div class="col-md-5 name"> {{ trans('general.add_images_or_files') }}:</div>
+                <div class="col-md-2 name"> {{ trans('general.add_images_or_files') }}:</div>
                 <div class="col-md-7 value">
                     <a class="btn btn-success"
                        href="{{ route('backend.file.create', ['type' => 'version', 'id' => $element->id]) }}">{{ trans('general.add_more_files') }}</a>

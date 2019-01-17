@@ -44,16 +44,9 @@
                 <div class="tab-pane" id="tab_2">
                     <div class="row">
                         <div class="col-lg-12">
-                            @if($files && $files->isNotEmpty())
+                            @if($files)
                                 @include('backend.partials.files',['elements' => $files])
-                            @else
-                                <div class="alert alert-warning">{{ trans('general.no_files') }}</div>
                             @endif
-                            {{--@else--}}
-                            {{--<div class="alert alert-info">--}}
-                            {{--{{ trans('message.this_job_is_complete_please_check_my_files_page_in_job_to_view_your_files') }}--}}
-                            {{--</div>--}}
-                            {{--@endif--}}
                         </div>
                     </div>
                 </div>

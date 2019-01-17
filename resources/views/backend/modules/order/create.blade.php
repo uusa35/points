@@ -48,7 +48,7 @@
                                 <a class="btn btn-info"
                                    data-toggle="modal" href="#" data-target="#order"
                                    data-title="{{ trans('general.confirm_create_order') }}"
-                                   data-content="{{ trans('message.create_order_confirmation_message') }}"
+                                   data-content="{{ trans('message.create_order_confirmation_message',['points' => $service->finalPoints]) }}"
                                    data-form_id="order-create"
                                 >
                                     <i class="fa fa-fw fa-check-square"></i> {{ trans('general.confirm_create_order') }}

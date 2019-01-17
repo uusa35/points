@@ -69,7 +69,7 @@ class JobController extends Controller
         $element = Job::whereId($id)->with('versions')->first();
         $files = $element->files()->notImages()->get();
         $images = $element->files()->images()->get();
-        return view('backend.modules.job.show', compact('element','files','images'));
+        return view('backend.modules.job.show', compact('element', 'files', 'images'));
     }
 
     /**
@@ -93,7 +93,11 @@ class JobController extends Controller
      */
     public function update(JobUpdate $request, $id)
     {
-        //
+        $element = Job::whereId($id)->first()->update($request->request->all());
+        if ($element) {
+            return redirect()->route('backend.job.show', $id)->with('success', trans('message.success_job_store'));
+        }
+        return redirect()->back()->with('error', trans('message.error_job_store'));
     }
 
     /**

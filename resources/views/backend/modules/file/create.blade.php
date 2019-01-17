@@ -54,16 +54,8 @@
         </div>
     </div>
     <div class="row">
-        @if($files->isNotEmpty())
             @include('backend.partials.files',['elements' => $files])
-        @else
-            <div class="alert alert-warning">{{ trans('general.no_files') }}</div>
-        @endif
-        @if($images->isNotEmpty())
             @include('backend.partials.files_gallery',['elements' => $images])
-        @else
-            <div class="alert alert-info">{{ trans('general.no_images') }}</div>
-        @endif
     </div>
 @endsection
 

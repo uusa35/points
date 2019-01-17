@@ -56,7 +56,9 @@
                 @if($element->job)
                     @include('backend.partials._job_details',['element' => $element->job])
                     @if($element->job->versions->isNotEmpty())
-                        @include('backend.partials._version_details',['elements' => $element->job->versions])
+                        <div class="col-lg-6">
+                            @include('backend.partials._version_details',['elements' => $element->job->versions])
+                        </div>
                     @endif
                     {{--@else--}}
                     {{--<div class="alert alert-info">{{ trans('message.this_job_does_not_exist') }}</div>--}}

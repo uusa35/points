@@ -21,10 +21,11 @@
                         <tr>
                             <th>{{ trans('general.id') }}</th>
                             <th>{{ trans('general.notes') }}</th>
-                            <th>{{ trans('general.description') }}</th>
+                            {{--<th>{{ trans('general.description') }}</th>--}}
                             <th>{{ trans('general.is_complete') }}</th>
                             {{--<th>{{ trans('general.is_client_viewed') }}</th>--}}
                             {{--<th>{{ trans('general.is_designer_viewed') }}</th>--}}
+                            <th>{{ trans('general.view') }}</th>
                             <th>{{ trans('general.job_id') }}</th>
                             <th>{{ trans('general.Action') }}</th>
                         </tr>
@@ -34,11 +35,14 @@
                             <tr>
                                 <td>{{ $element->id }}</td>
                                 <td>{{ $element->notes }}</td>
-                                <td>{{ $element->description }}</td>
+                                {{--<td>{{ $element->description }}</td>--}}
                                 <td><span class="label label-{{ $element->is_complete ? 'success' : 'danger' }}">{{ activeText($element->is_complete,'Complete') }}</span></td>
                                 {{--<td>{{ $element->is_client_viewed }}</td>--}}
                                 {{--<td>{{ $element->is_designer_viewed }}</td>--}}
-                                <td>{{ $element->job->order->name }}</td>
+                                <td>
+                                    <a href="{{ route("backend.version.show", $element->id) }}" class="btn btn-info"><i class="fa fa-fw fa-eye"></i></a>
+                                </td>
+                                <td>{{ $element->job->id }}</td>
                                 <td>
                                     <div class="btn-group pull-right">
                                         <button type="button"

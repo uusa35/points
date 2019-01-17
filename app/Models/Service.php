@@ -28,4 +28,8 @@ class Service extends PrimaryModel
     public function category() {
         return $this->belongsTo(Category::class);
     }
+
+    public function getFinalPointsAttribute() {
+        return $this->on_sale ? $this->sale_points : $this->points;
+    }
 }

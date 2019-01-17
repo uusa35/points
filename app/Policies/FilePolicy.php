@@ -54,7 +54,7 @@ class FilePolicy
      */
     public function delete(User $user, File $file)
     {
-        return $user->isSuper ? $user->isSuper : $file->user_id === $user->id;
+        return $user->isDesignerOrAbove;
     }
 
     /**

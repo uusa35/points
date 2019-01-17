@@ -1,6 +1,5 @@
 <div class="col-lg-12">
     @if($elements->isNotEmpty())
-
         <div class="portfolio-content portfolio-1">
             <div id="js-filters-juicy-projects" class="cbp-l-filters-button">
                 <div data-filter="*"
@@ -23,21 +22,23 @@
                                         <a href="{{ asset(env('FILES').$img->path) }}"
                                            class="cbp-lightbox cbp-l-caption-buttonRight uppercase btn green uppercase"
                                            data-title="{{  $element->caption }} <br> {{ $element->notes  }}">{{ trans('general.view_larger') }}</a>
-                                        <a data-toggle="modal" href="#" data-target="#basic"
-                                           data-title="Delete"
-                                           data-content="Are you sure you want to delete image ? "
-                                           data-form_id="delete-{{ $img->id }}"
-                                           class="btn red uppercase"
-                                        >
-                                            <i class="fa fa-fw fa-recycle"></i> {{ trans('general.delete') }}</a>
-                                        <form method="post" id="delete-{{ $img->id }}"
-                                              action="{{ route('backend.file.destroy',$img->id) }}">
-                                            @csrf
-                                            <input type="hidden" name="_method" value="delete"/>
-                                            <button type="submit" class="btn btn-del hidden">
-                                                <i class="fa fa-fw fa-times-circle"></i> {{ trans('general.delete') }}
-                                            </button>
-                                        </form>
+                                        @can('file.delete', $img)
+                                            <a data-toggle="modal" href="#" data-target="#basic"
+                                               data-title="Delete"
+                                               data-content="Are you sure you want to delete image ? "
+                                               data-form_id="delete-{{ $img->id }}"
+                                               class="btn red uppercase"
+                                            >
+                                                <i class="fa fa-fw fa-recycle"></i> {{ trans('general.delete') }}</a>
+                                            <form method="post" id="delete-{{ $img->id }}"
+                                                  action="{{ route('backend.file.destroy',$img->id) }}">
+                                                @csrf
+                                                <input type="hidden" name="_method" value="delete"/>
+                                                <button type="submit" class="btn btn-del hidden">
+                                                    <i class="fa fa-fw fa-times-circle"></i> {{ trans('general.delete') }}
+                                                </button>
+                                            </form>
+                                        @endcan
                                     </div>
                                 </div>
                             </div>
@@ -51,7 +52,7 @@
             </div>
         </div>
     @else
-        <div class="alert alert-warning">
+        <div class="alert alert-info">
             {{ trans('general.no_files') }}
         </div>
     @endif

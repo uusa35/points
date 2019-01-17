@@ -16,29 +16,21 @@
             <div class="tab-content">
                 <div class="tab-pane active" id="tab_1">
                     <div class="row">
-                        <div class="col-md-12 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             @include('backend.partials._version_details',['element' => $element])
                         </div>
                         {{--<div class="col-md-6 col-sm-12">--}}
-                            {{--@include('backend.partials._order_details',['element' => $element->job->order])--}}
+                        {{--@include('backend.partials._order_details',['element' => $element->job->order])--}}
                         {{--</div>--}}
                         {{--<div class="col-md-6 col-sm-12">--}}
-                            {{--@include('backend.partials._job_details',['element' => $element->job])--}}
+                        {{--@include('backend.partials._job_details',['element' => $element->job])--}}
                         {{--</div>--}}
-                        @if($images->isNotEmpty())
-                            @include('backend.partials.files_gallery',['elements' => $images])
-                        @else
-                            <div class="alert alert-info">{{ trans('general.no_images') }}</div>
-                        @endif
+                        @include('backend.partials.files_gallery',['elements' => $images])
                     </div>
                 </div>
 
                 <div class="tab-pane" id="tab_2">
-                    @if($files->isNotEmpty())
                         @include('backend.partials.files',['elements' => $files])
-                    @else
-                        <div class="alert alert-warning">{{ trans('general.no_files') }}</div>
-                    @endif
                 </div>
             </div>
             @include('backend.partials._comments')

@@ -29,7 +29,9 @@
                                 <th>{{ trans('general.category_name') }}</th>
                                 <th>{{ trans('general.created_at') }}</th>
                                 <th>{{ trans('general.is_complete') }}</th>
-                                <th>{{ trans('general.view') }}</th>
+                                <th>{{ trans('general.view_order') }}</th>
+                                <th>{{ trans('general.view_job') }}</th>
+                                <th>{{ trans('general.view_last_version') }}</th>
                                 <th>{{ trans('general.designers') }}</th>
                                 <th>{{ trans('general.Action') }}</th>
                             </tr>
@@ -42,7 +44,9 @@
                                 <th>{{ trans('general.category_name') }}</th>
                                 <th>{{ trans('general.created_at') }}</th>
                                 <th>{{ trans('general.is_complete') }}</th>
-                                <th>{{ trans('general.view') }}</th>
+                                <th>{{ trans('general.view_order') }}</th>
+                                <th>{{ trans('general.view_job') }}</th>
+                                <th>{{ trans('general.view_last_version') }}</th>
                                 <th>{{ trans('general.designers') }}</th>
                                 <th>{{ trans('general.Action') }}</th>
                             </tr>
@@ -63,6 +67,36 @@
                                         <a class="btn btn-warning"
                                            href="{{ route("backend.order.show", $element->id) }}"><i
                                                 class="fa fa-fw fa-eye"></i></a>
+                                    </td>
+                                    <td>
+                                        @if($element->job)
+                                            @can('job.view', $element->job)
+                                                <a class="btn btn-info"
+                                                   href="{{ route("backend.job.show", $element->id) }}"><i
+                                                        class="fa fa-fw fa-eye"></i></a>
+                                            @else
+                                                <div class="alert alert-danger">
+                                                    {{ trans('general.you_not_enrolled_in_job') }}
+                                                </div>
+                                            @endcan
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if($element->job && $element->job->versions->isNotEmpty())
+                                            @can('job.view', $element->job)
+                                                <a class="btn btn-info"
+                                                   href="{{ route("backend.version.show", $element->job->versions->last()->id) }}"><i
+                                                        class="fa fa-fw fa-eye"></i></a>
+                                            @else
+                                                <div class="alert alert-danger">
+                                                    {{ trans('general.you_not_enrolled_in_job') }}
+                                                </div>
+                                            @endcan
+                                        @else
+                                            <div class="alert alert-danger">
+                                                {{ trans('general.no_versions_yet') }}
+                                            </div>
+                                        @endif
                                     </td>
                                     <td>
                                         @if($element->job->designers->isNotEmpty())
