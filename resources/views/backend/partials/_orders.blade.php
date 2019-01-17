@@ -8,7 +8,7 @@
     <div class="portlet-body">
         <div class="table-responsive">
             @if($elements->isNotEmpty())
-                <table class="table table-hover table-bordered table-striped"
+                <table class="table table-hover table-bordered table-striped text-center"
                        id="differentDataTable-{{ rand() }}">
                     <thead>
                     <tr>
@@ -17,10 +17,10 @@
                         <th>{{ trans('general.points') }}</th>
                         <th>{{ trans('general.complete') }}</th>
                         <th>{{ trans('general.service') }}</th>
-                        <th>{{ trans('general.category') }}</th>
-                        <th>{{ trans('general.view_order') }}</th>
+                        {{--<th>{{ trans('general.category') }}</th>--}}
                         <th>{{ trans('general.view_job') }}</th>
                         <th>{{ trans('general.view_last_version') }}</th>
+                        <th>{{ trans('general.view_order') }}</th>
                         <th>{{ trans('general.action') }}</th>
                     </tr>
                     </thead>
@@ -35,12 +35,12 @@
                                         class="label {{ activeLabel($element->is_complete) }}">{{ activeText($element->is_complete,'Completed') }}</span>
                             </td>
                             <td>{{ $element->service->slug }}</td>
-                            <td>{{ $element->service->category->name }}</td>
-                            <td>
-                                <a class="btn btn-warning"
-                                   href="{{ route("backend.order.show", $element->id) }}"><i
-                                        class="fa fa-fw fa-eye"></i></a>
-                            </td>
+                            {{--<td>{{ $element->service->category->name }}</td>--}}
+                            {{--<td>--}}
+                                {{--<a class="btn btn-warning"--}}
+                                   {{--href="{{ route("backend.order.show", $element->id) }}"><i--}}
+                                        {{--class="fa fa-fw fa-eye"></i></a>--}}
+                            {{--</td>--}}
                             <td>
                                 @if($element->job)
                                     @can('job.view', $element->job)
