@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e482aaea-7ea8-4e60-bb85-c7a119286766" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Policies/JobPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/JobPolicy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Policies/VersionPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/VersionPolicy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/partials/forms/form_title.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/partials/forms/form_title.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="e482aaea-7ea8-4e60-bb85-c7a119286766" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +29,7 @@
     <session id="1912888141">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="61" />
+          <entry key="project.closed" value="62" />
           <entry key="project.open.time.0" value="26" />
           <entry key="project.open.time.1" value="9" />
           <entry key="project.open.time.2" value="7" />
@@ -89,7 +84,7 @@
           <entry key="Blade" value="872" />
           <entry key="CSS" value="15" />
           <entry key="HTML" value="22" />
-          <entry key="Image" value="4" />
+          <entry key="Image" value="13" />
           <entry key="JSON" value="9" />
           <entry key="JavaScript" value="38" />
           <entry key="PHP" value="1434" />
@@ -101,62 +96,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/OrderController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="41" column="115" selection-start-line="41" selection-start-column="115" selection-end-line="41" selection-end-column="115" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/Job.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Policies/OrderPolicy.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="32" column="52" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Policies/JobPolicy.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="54" column="57" selection-start-line="54" selection-start-column="57" selection-end-line="54" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Policies/VersionPolicy.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="738">
-              <caret line="46" column="6" selection-start-line="46" selection-start-column="6" selection-end-line="46" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Policies/FilePolicy.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="51" column="30" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -548,13 +488,37 @@
             <path>
               <item name="points" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="storage" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="points" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="storage" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="points" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="storage" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="points" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="storage" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="uploads" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="points" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="storage" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="uploads" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="files" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -580,19 +544,19 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/storage/app/public/uploads/images/thumbnail" />
+      <recent name="$PROJECT_DIR$/storage/app/public/uploads/images/medium" />
+      <recent name="$PROJECT_DIR$/storage/app/public/uploads/images/large" />
+      <recent name="$PROJECT_DIR$/resources/views/emails" />
+      <recent name="$PROJECT_DIR$/app/Mail" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Backend/Admin" />
       <recent name="$PROJECT_DIR$/app/Models" />
       <recent name="$PROJECT_DIR$/resources/views/backend/partials" />
       <recent name="$PROJECT_DIR$/resources/views" />
       <recent name="$PROJECT_DIR$/resources/views/backend/partials/sidebar" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/emails" />
-      <recent name="$PROJECT_DIR$/app/Mail" />
-      <recent name="$PROJECT_DIR$/public/img" />
-      <recent name="$PROJECT_DIR$/resources/views/backend/modules/order" />
-      <recent name="$PROJECT_DIR$/resources/views/backend/modules" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -678,16 +642,15 @@
       <workItem from="1547628052831" duration="96000" />
       <workItem from="1547628442659" duration="25000" />
       <workItem from="1547639767536" duration="943000" />
-      <workItem from="1547703363213" duration="5683000" />
+      <workItem from="1547703363213" duration="6759000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="343534000" />
+    <option name="totallyTimeSpent" value="344610000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2625133" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -719,69 +682,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/backend/partials/forms/_order_show_logo_style.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="33" column="49" lean-forward="true" selection-start-line="33" selection-start-column="49" selection-end-line="33" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/backend/partials/forms/_order_title_notes.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="47" lean-forward="true" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/SettingFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="36" column="39" lean-forward="true" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2017_04_24_160036_create_settings_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="52" column="55" lean-forward="true" selection-start-line="52" selection-start-column="55" selection-end-line="52" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Observers/UserObserver.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Observers/TransactionObserver.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="29" column="101" lean-forward="true" selection-start-line="29" selection-start-column="101" selection-end-line="29" selection-end-column="101" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Mail/PendingMail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="124" column="5" lean-forward="true" selection-start-line="124" selection-start-column="5" selection-end-line="124" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Observers/OrderObserver.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="31" column="113" lean-forward="true" selection-start-line="31" selection-start-column="113" selection-end-line="31" selection-end-column="113" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Mail/TransactionComplete.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Mail/OrderComplete.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="558">
@@ -1047,17 +947,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Job.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/storage/app/public/uploads/images/large/2.jpg">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Policies/JobPolicy.php">
+    <entry file="file://$PROJECT_DIR$/storage/app/public/uploads/images/large/1.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Policies/FilePolicy.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="54" column="57" selection-start-line="54" selection-start-column="57" selection-end-line="54" selection-end-column="57" />
+        <state relative-caret-position="718">
+          <caret line="66" column="41" selection-start-line="66" selection-start-column="41" selection-end-line="66" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -1068,10 +967,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Policies/FilePolicy.php">
+    <entry file="file://$PROJECT_DIR$/app/Policies/JobPolicy.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="51" column="30" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
+        <state relative-caret-position="268">
+          <caret line="54" column="57" selection-start-line="54" selection-start-column="57" selection-end-line="54" selection-end-column="57" />
         </state>
       </provider>
     </entry>
@@ -1082,12 +981,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Job.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/OrderController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="648">
           <caret line="41" column="115" selection-start-line="41" selection-start-column="115" selection-end-line="41" selection-end-column="115" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/app/public/uploads/images/large/e69076d3a8934bb2257a5c6b50f176785f6d9195-PLT_CMA0617.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/app/public/uploads/images/large/d96d32b5a8369853076e079496e8859e4c0f1e17-NG_AGG80268-208.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/app/public/uploads/images/large/c7189f968925fbf5893684ffe143a7bb8082e24a-NE_920138-0074.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/app/public/uploads/images/large/822e87e70f95692956ee4b504c4fd1d7f0ed4d65-PLT_CLX5610.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/app/public/uploads/images/large/83b872cbe54582c2f4560cd6657305ca98787e19-LRD_GER686-6527.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/app/public/uploads/images/large/7c9e43845e771f8e9982ed22a45b676dd9dcdbab-PLT_CLY8114.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/app/public/uploads/images/large/1.jpeg">
+      <provider selected="true" editor-type-id="images" />
     </entry>
   </component>
   <component name="masterDetails">
