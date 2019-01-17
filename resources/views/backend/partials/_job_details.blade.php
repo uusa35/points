@@ -19,37 +19,37 @@
     </div>
     <div class="portlet-body">
         <div class="row static-info">
-            <div class="col-md-5 name"> {{ trans('general.job_id') }} #:</div>
+            <div class="col-md-2 name"> {{ trans('general.job_id') }} #:</div>
             <div class="col-md-7 value"> {{ $element->id }}
                 <span class="label label-info label-sm"> {{ trans('general.email_confirmation_was_sent') }}</span>
             </div>
         </div>
         <div class="row static-info">
-            <div class="col-md-5 name"> {{ trans('general.job_order_number') }}:</div>
+            <div class="col-md-2 name"> {{ trans('general.job_order_number') }}:</div>
             <div class="col-md-7 value"> {{ $element->order_id }}</div>
         </div>
         <div class="row static-info">
-            <div class="col-md-5 name"> {{ trans('general.description') }}:</div>
+            <div class="col-md-2 name"> {{ trans('general.description') }}:</div>
             <div
                 class="col-md-7 value"> {{ $element->description  ? $element->description : trans('general.not_available')}}</div>
         </div>
         <div class="row static-info">
-            <div class="col-md-5 name"> {{ trans('general.notes') }}:</div>
+            <div class="col-md-2 name"> {{ trans('general.notes') }}:</div>
             <div class="col-md-7 value"> {{ $element->notes ? $element->notes : trans('general.not_available') }}</div>
         </div>
         <div class="row static-info">
-            <div class="col-md-5 name"> {{ trans('general.created_at') }}:</div>
+            <div class="col-md-2 name"> {{ trans('general.created_at') }}:</div>
             <div class="col-md-7 value"> {{ $element->created_at->diffForHumans() }}</div>
         </div>
         <div class="row static-info">
-            <div class="col-md-5 name"> {{ trans('general.job_status') }}:</div>
+            <div class="col-md-2 name"> {{ trans('general.job_status') }}:</div>
             <div class="col-md-7 value">
                 <span
                     class="label label-{{ $element->is_complete ? 'success' : 'warning'  }}"> {{ activeText($element->is_complete,'Complete') }}</span>
             </div>
         </div>
         <div class="row static-info">
-            <div class="col-md-5 name"> {{ trans('general.order') }}:</div>
+            <div class="col-md-2 name"> {{ trans('general.order') }}:</div>
             <div class="col-md-7 value">
                 <a class="btn btn-success"
                    href="{{ route('backend.order.show', $element->order_id) }}">{{ trans('general.back_to_order_details_page') }}</a>
@@ -57,7 +57,7 @@
         </div>
         @if(!$element->order->is_complete)
             <div class="row static-info">
-                <div class="col-md-5 name"> {{ trans('general.add_images_or_files') }}:</div>
+                <div class="col-md-2 name"> {{ trans('general.add_images_or_files') }}:</div>
                 <div class="col-md-7 value">
                     <a class="btn btn-success"
                        href="{{ route('backend.file.create', ['type' => 'job', 'id' => $element->id]) }}">{{ trans('general.add_new_image_file_to_your_job') }}</a>
@@ -66,7 +66,7 @@
         @endif
         <hr>
         <div class="row static-info">
-            <div class="col-md-5 name"> {{ trans('general.designers_responsible_for_the_job') }}:</div>
+            <div class="col-md-2 name"> {{ trans('general.designers_responsible_for_the_job') }}:</div>
             <div class="col-md-7 value">
                 @if($element->designers->isNotEmpty())
                     <ul>
