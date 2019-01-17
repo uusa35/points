@@ -9,7 +9,7 @@
         <div class="table-responsive">
             @if($elements->isNotEmpty())
                 <table class="table table-hover table-bordered table-striped text-center"
-                       id="differentDataTable-{{ rand() }}">
+                       id="dataTable">
                     <thead>
                     <tr>
                         <th>{{ trans('general.id') }}</th>
