@@ -22,13 +22,13 @@ class OrderController extends Controller
         if (auth()->user()->onlyClient) {
             if (request()->has('is_complete')) {
                 $elements = Order::active()->where(['user_id' => auth()->id(), 'is_complete' => request()->is_complete, 'is_paid' => true])
-                    ->active()->with('job.versions', 'service.category', 'client')
+                    ->active()->with('job.versions', 'service.category', 'client','job.designers')
                     ->orderBy('id', 'desc'
                     )->paginate(self::PAGINATE);
             } elseif (request()->has('is_paid')) {
                 $elements = Order::active()->where(['user_id' => auth()->id(), 'is_complete' => false, 'is_paid' => request('is_paid')])
                     ->active()
-                    ->with('job.versions', 'service.category', 'client')
+                    ->with('job.versions', 'service.category', 'client','job.designers')
                     ->orderBy('id', 'desc')
                     ->paginate(self::PAGINATE);
             } else {
@@ -37,9 +37,9 @@ class OrderController extends Controller
         } elseif (auth()->user()->onlyDesigner) {
             if (request()->has('is_complete')) { // is_complete and paid
                 $elements = Order::active()->where(['is_complete' => request()->is_complete, 'is_paid' => true])
-                    ->with('job.designers', 'service.category')->orderBy('id', 'desc')->paginate(self::PAGINATE);
+                    ->with('job.designers', 'service.category','job.versions','client')->orderBy('id', 'desc')->paginate(self::PAGINATE);
             } else { // not complete and paid
-                $elements = Order::active()->where(['is_complete' => false, 'is_paid' => true])->with('job', 'service.category')->orderBy('id', 'desc')->paginate(self::PAGINATE);
+                $elements = Order::active()->where(['is_complete' => false, 'is_paid' => true])->with('job.versions', 'service.category','client','job.designers')->orderBy('id', 'desc')->paginate(self::PAGINATE);
             }
         } elseif (auth()->user()->isAdminOrAbove) {
             return redirect()->route('backend.admin.order.index');

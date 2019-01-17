@@ -35,7 +35,7 @@ class VersionPolicy
     {
         // if the designer is included within the job designers array
         $settings = Setting::first();
-        if ($job->versions()->count() <= $settings->service_versions_limit && !auth()->user()->isSuper) {
+        if ($job->versions->count() <= $settings->service_versions_limit && !auth()->user()->isSuper) {
             return auth()->user()->isSuper ? auth()->user()->isSuper : in_array(auth()->id(), $job->designers()->pluck('id')->toArray(), true);
         }
         throw new AuthorizationException(trans("message.versions_limit_exceed"));

@@ -25,7 +25,7 @@ class JobPolicy
         } elseif ($user->onlyClient) {
             return $user->id === $job->order->user_id;
         } elseif ($user->onlyDesigner) {
-            return in_array($user->id, $job->designers()->pluck('id')->toArray(), true);
+            return in_array($user->id, $job->designers->pluck('id')->toArray(), true);
         }
     }
 
@@ -52,7 +52,7 @@ class JobPolicy
         if (auth()->user()->onlyClient) {
             return auth()->id() === $job->order->user_id;
         } elseif (auth()->user()->onlyDesigner) {
-            return in_array(auth()->id(), $job->designers()->pluck('id')->toArray(), true);
+            return in_array(auth()->id(), $job->designers->pluck('id')->toArray(), true);
         } else {
             return $user->isSuper;
         }
