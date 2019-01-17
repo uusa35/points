@@ -55,9 +55,9 @@
                             @foreach($elements as $element)
                                 <tr>
                                     <td>{{ $element->id }}</td>
-                                    <td>{{ $element->title }}</td>
-                                    <td>{{ $element->service->name }}</td>
-                                    <td>{{ $element->service->category->slug }}</td>
+                                    <td>{{ str_limit($element->title,15) }}</td>
+                                    <td>{{ str_limit($element->service->name,15) }}</td>
+                                    <td>{{ str_limit($element->service->category->slug,15) }}</td>
                                     <td>{{ $element->created_at->diffForHumans() }}</td>
                                     <td>
                                     <span
