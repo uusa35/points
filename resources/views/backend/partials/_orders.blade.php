@@ -66,7 +66,7 @@
                                         </div>
                                     @endcan
                                 @else
-                                    <div class="alert alert-danger" style="max-width: 100px;">
+                                    <div class="alert alert-danger">
                                         {{ trans('general.no_versions_yet') }}
                                     </div>
                                 @endif
