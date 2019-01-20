@@ -8,7 +8,6 @@
             enctype="multipart/form-data">
             @csrf
             <div class="form-body">
-                
             <div class="row">
                     <div class="col-md-4">
                         <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
@@ -63,7 +62,22 @@
 
 
                 <div class="row">
-                    <div class="col-lg-4">
+                    <div class="col-md-2">
+                        <div class="form-group {{ $errors->has('order') ? ' has-error' : '' }}">
+                            <label for="order" class="control-label">{{ trans('general.order') }}</label>
+                            <input id="order" type="text" class="form-control" name="order"
+                                   value=""
+                                   placeholder="order" autofocus>
+                            @if ($errors->has('order'))
+                                <span class="help-block">
+                                <strong>
+                                    {{ $errors->first('order') }}
+                                </strong>
+                            </span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
                         <div class="form-group">
                             <label for="form_control_1">{{ trans('general.image') }}</label>
                             <input type="file" class="form-control" name="image" placeholder="image">
@@ -136,7 +150,7 @@
                                     }}
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="apply_bonus" id="optionsRadios2" value="0"> {{
+                                    <input type="radio" name="apply_bonus" id="optionsRadios2" value="0" checked> {{
                                     trans('general.not_apply_bonus') }}
                                 </label>
                             </div>
@@ -149,7 +163,7 @@
                             <label class="control-label sbold">{{ trans('general.active') }}</label>
                             <div class="radio-list">
                                 <label class="radio-inline">
-                                    <input type="radio" name="active" id="optionsRadios1" value="1"> {{ trans('active')
+                                    <input type="radio" name="active" id="optionsRadios1" value="1" checked> {{ trans('active')
                                     }}
                                 </label>
                                 <label class="radio-inline">

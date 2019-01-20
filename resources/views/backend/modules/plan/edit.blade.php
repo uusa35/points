@@ -5,21 +5,14 @@
         @include('backend.partials.forms.form_title')
         <div class="portlet-body form">
             <!-- BEGIN FORM-->
-            <form method="post" action="{{ route('backend.admin.plan.update', $element->id) }}" class="horizontal-form">
+            <form method="post" action="{{ route('backend.admin.plan.update', $element->id) }}"
+                  class="horizontal-form"
+                  enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="_method" value="patch">
                 <div class="form-body">
                     <h3 class="form-section">{{ $element->name }}</h3>
                     <div class="row">
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label class="control-label">{{ trans('general.role_name') }}</label>
-                                <input type="text" id="name" name="name" class="form-control"
-                                       placeholder="{{ trans('general.role_name') }}"
-                                       value="{{ $element->name }}" disabled>
-                                <span class="help-block"> {{ trans('message.role_must_be_unique') }} </span>
-                            </div>
-                        </div>
                         <div class="col-md-3">
                             <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
                                 <label for="name" class="control-label">{{ trans('general.name') }}</label>
@@ -62,6 +55,21 @@
                                     <span class="help-block">
                                 <strong>
                                     {{ $errors->first('slug_en') }}
+                                </strong>
+                            </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group {{ $errors->has('order') ? ' has-error' : '' }}">
+                                <label for="order" class="control-label">{{ trans('general.order') }}</label>
+                                <input id="order" type="text" class="form-control" name="order"
+                                       value="{{ $element->order}}"
+                                       placeholder="order" autofocus>
+                                @if ($errors->has('order'))
+                                    <span class="help-block">
+                                <strong>
+                                    {{ $errors->first('order') }}
                                 </strong>
                             </span>
                                 @endif
@@ -139,12 +147,12 @@
                                 <div class="radio-list">
                                     <label class="radio-inline">
                                         <input type="radio" name="apply_bonus" id="optionsRadios1"
-                                               value="{{ $element->apply_bonus }}"> {{ trans('apply_bonus')
+                                               value="{{ $element->apply_bonus }}" {{ $element->apply_bonus ? 'checked' : null   }}> {{ trans('apply_bonus')
                                     }}
                                     </label>
                                     <label class="radio-inline">
                                         <input type="radio" name="apply_bonus" id="optionsRadios2"
-                                               value="{{ $element->apply_bonus }}"> {{
+                                               value="{{ $element->apply_bonus }}" {{ !$element->apply_bonus ? 'checked' : null  }}> {{
                                     trans('general.not_apply_bonus') }}
                                     </label>
                                 </div>
@@ -158,12 +166,12 @@
                                 <div class="radio-list">
                                     <label class="radio-inline">
                                         <input type="radio" name="active" id="optionsRadios1"
-                                               value="{{ $element->active }}"> {{ trans('active')
+                                               value="{{ $element->active }}" {{ $element->active ? 'checked' : null  }}> {{ trans('active')
                                     }}
                                     </label>
                                     <label class="radio-inline">
                                         <input type="radio" name="active" id="optionsRadios2"
-                                               value="{{ $element->active }}"> {{
+                                               value="{{ $element->active }}" {{ !$element->active ? 'checked' : null  }}> {{
                                     trans('general.not_active') }}
                                     </label>
                                 </div>
