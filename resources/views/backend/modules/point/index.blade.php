@@ -12,7 +12,7 @@
                                 <div class="col-md-4">
                                     <div class="price-column-container border-active">
                                         <div class="price-table-head" style="background-color: {{ $plan->color  }};">
-                                            <h2 class="no-margin">{{ $plan->name }}</h2>
+                                            <h2 class="no-margin">{{ $plan->slug }}</h2>
                                         </div>
                                         <div class="arrow-down border-top-black"></div>
                                         <div class="price-table-pricing">
