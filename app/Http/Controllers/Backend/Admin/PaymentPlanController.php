@@ -49,9 +49,9 @@ class PaymentPlanController extends Controller
                 $path = str_replace('public/uploads/files/', '', $path);
                 $element->update(['path' => $path]);
             }
-            return route('backend.admin.plan.index')->with('success', 'plan stored.');
+            return redirect()->route('backend.admin.plan.index')->with('success', 'plan stored.');
         }
-        return route('backend.admin.plan.index')->with('error', 'plan not stored.');
+        return redirect()->route('backend.admin.plan.index')->with('error', 'plan not stored.');
     }
 
     /**

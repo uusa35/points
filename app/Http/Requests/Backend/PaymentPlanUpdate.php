@@ -24,7 +24,7 @@ class PaymentPlanUpdate extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:payment_plans:name,' . request('id'),
+            'name' => 'required|unique:payment_plans,name,' . request()->segment(4),
             'slug_ar' => 'required',
             'slug_en' => 'required',
             'description_ar' => 'nullable',

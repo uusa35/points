@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-
 use App\Services\Traits\LocaleTrait;
 
 class PaymentPlan extends PrimaryModel

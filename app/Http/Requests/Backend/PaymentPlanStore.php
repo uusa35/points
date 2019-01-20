@@ -24,7 +24,7 @@ class PaymentPlanStore extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:payment_plans:name',
+            'name' => 'required|unique:payment_plans,name',
             'slug_ar' => 'required',
             'slug_en' => 'required',
             'description_ar' => 'nullable',
