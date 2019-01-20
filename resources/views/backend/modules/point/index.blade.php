@@ -17,8 +17,9 @@
                                         <div class="arrow-down border-top-black"></div>
                                         <div class="price-table-pricing">
                                             <h3>
+                                                {{ $plan->price }}
                                                 <span
-                                                    class="price-sign">{{ trans('general.kwd') }}</span>{{ $plan->price }}
+                                                    class="price-sign" style="padding: 20px;">{{ trans('general.kwd') }}</span>
                                             </h3>
                                             <p>{{ $plan->slug }}</p>
                                             @if($plan->apply_bonus)
@@ -28,10 +29,7 @@
                                         </div>
                                         <div class="price-table-content">
                                             <div class="row mobile-padding">
-                                                <div class="col-xs-3 text-right mobile-padding">
-                                                    <i class="icon-user-follow"></i>
-                                                </div>
-                                                <div class="col-xs-9 text-left mobile-padding">
+                                                <div class="col-xs-12 text-center mobile-padding">
                                                     <p style="min-height: 150px;">
                                                         {{ $plan->description }}
                                                     </p>
@@ -43,7 +41,7 @@
                                             <Form action="{{ route('web.payment.create') }}" method="post">
                                                 @csrf
                                                 <input type="hidden" name="id" value="{{ $plan->id }}">
-                                                <button type="submit" class="btn price-button sbold uppercase" style="background-color : {{ $plan->color }}">{{ trans('general.buy_now') }}
+                                                <button type="submit" class="btn price-button sbold uppercase" style="width : 80%; background-color : {{ $plan->color }}">{{ trans('general.buy_now') }}
                                                 </button>
                                             </Form>
                                         </div>
