@@ -11,4 +11,5 @@ return array (
   'payment_plan' => 'Payment Plan',
   'login' => 'Login',
   'switch_lang' => 'Switch Language',
+  'no_versions_yet' => 'No Versions',
 );
