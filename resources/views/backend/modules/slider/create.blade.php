@@ -2,7 +2,7 @@
 @section('content')
     <div class="clearfix"></div>
     <div class="portlet-body form">
-        <form role="form" method="post" action="{{ route('backend.slider.store') }}" enctype="multipart/form-data">
+        <form role="form" method="post" action="{{ route('backend.admin.slider.store') }}" enctype="multipart/form-data">
             @csrf
             <div class="form-body">
                 <div class="form-group form-md-line-input">
@@ -47,20 +47,20 @@
                 </div>
             </div>
 
-            <div class="form-body">
-                <div class="form-group form-md-line-input">
-                    <input type="text" class="form-control" name="content_ar" placeholder="...">
-                    <label for="content_ar">Slide content Ar *</label>
-                    <span class="help-block">please enter proper content</span>
-                </div>
-            </div>
-            <div class="form-body">
-                <div class="form-group form-md-line-input">
-                    <input type="text" class="form-control" name="content_en" placeholder="...">
-                    <label for="content_en">Slide content En*</label>
-                    <span class="help-block">please enter proper content</span>
-                </div>
-            </div>
+            {{--<div class="form-body">--}}
+                {{--<div class="form-group form-md-line-input">--}}
+                    {{--<input type="text" class="form-control" name="content_ar" placeholder="...">--}}
+                    {{--<label for="content_ar">Slide content Ar *</label>--}}
+                    {{--<span class="help-block">please enter proper content</span>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="form-body">--}}
+                {{--<div class="form-group form-md-line-input">--}}
+                    {{--<input type="text" class="form-control" name="content_en" placeholder="...">--}}
+                    {{--<label for="content_en">Slide content En*</label>--}}
+                    {{--<span class="help-block">please enter proper content</span>--}}
+                {{--</div>--}}
+            {{--</div>--}}
 
             <div class="form-body">
                 <div class="md-radio-inline">
@@ -80,24 +80,24 @@
                     </div>
                 </div>
             </div>
-            <div class="form-body">
-                <div class="md-radio-inline">
-                    <div class="md-radio">
-                        <input type="radio" id="radio53" name="is_splash" value="1" class="md-radiobtn" checked>
-                        <label for="radio53">
-                            <span></span>
-                            <span class="check"></span>
-                            <span class="box"></span> is splash</label>
-                    </div>
-                    <div class="md-radio">
-                        <input type="radio" id="radio54" name="is_splash" value="0" class="md-radiobtn">
-                        <label for="radio54">
-                            <span></span>
-                            <span class="check"></span>
-                            <span class="box"></span> N/A</label>
-                    </div>
-                </div>
-            </div>
+            {{--<div class="form-body">--}}
+                {{--<div class="md-radio-inline">--}}
+                    {{--<div class="md-radio">--}}
+                        {{--<input type="radio" id="radio53" name="is_splash" value="1" class="md-radiobtn" checked>--}}
+                        {{--<label for="radio53">--}}
+                            {{--<span></span>--}}
+                            {{--<span class="check"></span>--}}
+                            {{--<span class="box"></span> is splash</label>--}}
+                    {{--</div>--}}
+                    {{--<div class="md-radio">--}}
+                        {{--<input type="radio" id="radio54" name="is_splash" value="0" class="md-radiobtn">--}}
+                        {{--<label for="radio54">--}}
+                            {{--<span></span>--}}
+                            {{--<span class="check"></span>--}}
+                            {{--<span class="box"></span> N/A</label>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
 
 
             @include('backend.partials.forms._btn-group')
