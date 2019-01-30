@@ -157,17 +157,13 @@
         @endif
     @endcan
     @can('onlyClient')
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-            <a class="dashboard-stat dashboard-stat-v2 blue" href="{{ route('backend.order.choose.category') }}">
-                <div class="visual">
-                    <i class="fa fa-money"></i>
-                </div>
-                <div class="details">
-                    <div class="number">
-                        <span data-counter="counterup" data-value="10">{{ trans('general.create_new_order') }}</span>
-                    </div>
-                </div>
+        <div class="col-lg-3 col-md-3 col-xs-12">
+            <a href="{{ route('backend.order.choose.category') }}">
+                <img src="{{ asset('img/elements/create_order.jpg') }}" alt="" class="img-responsive" style="height: 96px;">
             </a>
+        </div>
+        <div class="col-md-9 col-xs-12">
+            <img src="{{ asset('img/elements/banner_index.jpg') }}" alt="" class="img-responsive">
         </div>
         {{--@if($totalClientActiveOrders)--}}
         {{--<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">--}}

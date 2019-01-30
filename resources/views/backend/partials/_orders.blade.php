@@ -37,9 +37,9 @@
                             <td>{{ $element->service->slug }}</td>
                             {{--<td>{{ $element->service->category->name }}</td>--}}
                             {{--<td>--}}
-                                {{--<a class="btn btn-warning"--}}
-                                   {{--href="{{ route("backend.order.show", $element->id) }}"><i--}}
-                                        {{--class="fa fa-fw fa-eye"></i></a>--}}
+                            {{--<a class="btn btn-warning"--}}
+                            {{--href="{{ route("backend.order.show", $element->id) }}"><i--}}
+                            {{--class="fa fa-fw fa-eye"></i></a>--}}
                             {{--</td>--}}
                             <td>
                                 @if($element->job)
@@ -71,7 +71,7 @@
                                     </div>
                                 @endif
                             </td>
-{{--                            <td><a class="btn btn-warning" href="{{ route("backend.order.show", $element->id) }}"><i class="fa fa-fw fa-eye"></i></a></td>--}}
+                            {{--                            <td><a class="btn btn-warning" href="{{ route("backend.order.show", $element->id) }}"><i class="fa fa-fw fa-eye"></i></a></td>--}}
                             <td>
                                 <div class="btn-group pull-right">
                                     <button type="button"
