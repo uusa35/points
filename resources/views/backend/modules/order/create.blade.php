@@ -40,6 +40,22 @@
                                     </div>
                                 </div>
                             @endif
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    {{ trans('general.address') }}
+                                </div>
+                                <div class="panel-body">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="control-label">{{ trans('general.address') }}</label>
+                                            <input id="address" name="address" type="textbox"
+                                                   value="{{ old("address") }}"
+                                                   class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @include('backend.partials.forms._order_show_phones')
                             <div class="form-actions right">
                                 {{--<button type="button" class="btn default">Cancel</button>--}}
                                 <a href="{!! route('backend.home') !!}"
