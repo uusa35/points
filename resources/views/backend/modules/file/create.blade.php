@@ -24,7 +24,7 @@
                                 {{--</div>--}}
                             {{--</a>--}}
                         {{--</div>--}}
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-lg-push-4">
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-lg-push-4" style="margin-right: 65px;">
                             <a href="#"
                                data-toggle="modal" href="#"
                                data-target="#order-file" data-title="{{ trans('general.file') }}"
@@ -52,7 +52,7 @@
                 @include('backend.modules.order._add_file')
 {{--                @include('backend.modules.order._add_image')--}}
             </div>
-            <div class="form-actions right">
+            <div class="form-actions text-center">
                 {{--<button type="button" class="btn default">Cancel</button>--}}
                 <a href="{{ route('backend.home') }}" class="btn btn-danger">{{ trans('general.skip_to_home_page') }}</a>
                 {{--<button type="submit" class="btn btn-success">--}}

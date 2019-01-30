@@ -24,6 +24,7 @@ class ComposerServiceProvider extends ServiceProvider
         
         view()->composer([
             'backend.layouts.app',
+            'backend.home',
             'backend.modules.order.index',
             'welcome',
             'auth.login',

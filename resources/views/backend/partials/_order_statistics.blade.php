@@ -163,7 +163,9 @@
             </a>
         </div>
         <div class="col-md-9 col-xs-12">
-            <img src="{{ asset('img/elements/banner_index.jpg') }}" alt="" class="img-responsive">
+            <a href="https://api.whatsapp.com/send?phone={{ $settings->whatsapp  }}" target="_blank">
+                <img src="{{ asset('img/elements/banner_index.jpg') }}" alt="" class="img-responsive">
+            </a>
         </div>
         {{--@if($totalClientActiveOrders)--}}
         {{--<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">--}}
