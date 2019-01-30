@@ -221,9 +221,9 @@
                                 <label class="control-label sbold">show_colors</label>
                                 <div class="radio-list">
                                     <label class="radio-inline">show_colors</label>
-                                    <input type="radio" name="show_colors" id="optionsRadios2" value="1">
+                                    <input type="radio" name="show_colors" id="optionsRadios2" value="1" {{ $element->show_colors ? 'checked' : null }} >
                                     <label class="radio-inline">hide colors</label>
-                                    <input type="radio" name="show_colors" id="optionsRadios3" value="0" checked>
+                                    <input type="radio" name="show_colors" id="optionsRadios3" value="0" {{ !$element->show_colors ? 'checked' : null }}>
                                 </div>
                             </div>
                         </div>
@@ -232,9 +232,9 @@
                                 <label class="control-label sbold">show_socials</label>
                                 <div class="radio-list">
                                     <label class="radio-inline">show_socials</label>
-                                    <input type="radio" name="show_socials" id="optionsRadios4" value="1">
+                                    <input type="radio" name="show_socials" id="optionsRadios4" value="1" {{ $element->show_socials ? 'checked' : null }}>
                                     <label class="radio-inline"> hide socials</label>
-                                    <input type="radio" name="show_socials" id="optionsRadios5" value="0" checked>
+                                    <input type="radio" name="show_socials" id="optionsRadios5" value="0" {{ !$element->show_socials ? 'checked' : null }}>
                                 </div>
                             </div>
                         </div>
@@ -243,9 +243,9 @@
                                 <label class="control-label sbold">show_phones</label>
                                 <div class="radio-list">
                                     <label class="radio-inline">show_phones</label>
-                                    <input type="radio" name="show_phones" id="optionsRadios6" value="1">
+                                    <input type="radio" name="show_phones" id="optionsRadios6" value="1" {{ $element->show_phones ? 'checked' : null }}>
                                     <label class="radio-inline">hide phones</label>
-                                    <input type="radio" name="show_phones" id="optionsRadios7" value="0" checked>
+                                    <input type="radio" name="show_phones" id="optionsRadios7" value="0" {{ !$element->show_phones ? 'checked' : null }}>
                                 </div>
                             </div>
                         </div>
@@ -254,9 +254,9 @@
                                 <label class="control-label sbold">show_logo_style</label>
                                 <div class="radio-list">
                                     <label class="radio-inline">show_logo_style</label>
-                                    <input type="radio" name="show_logo_style" id="optionsRadios8" value="1">
+                                    <input type="radio" name="show_logo_style" id="optionsRadios8" value="1" {{ $element->show_logo_style ? 'checked' : null }}>
                                     <label class="radio-inline"> hide logos </label>
-                                    <input type="radio" name="show_logo_style" id="optionsRadios9" value="0" checked>
+                                    <input type="radio" name="show_logo_style" id="optionsRadios9" value="0" {{ !$element->show_logo_style ? 'checked' : null }}>
                                 </div>
                             </div>
                         </div>
@@ -265,9 +265,9 @@
                                 <label class="control-label sbold">show_address</label>
                                 <div class="radio-list">
                                     <label class="radio-inline">show_address</label>
-                                    <input type="radio" name="show_address" id="optionsRadios10" value="1">
+                                    <input type="radio" name="show_address" id="optionsRadios10" value="1" {{ $element->show_address ? 'checked' : null }}>
                                     <label class="radio-inline">hide address</label>
-                                    <input type="radio" name="show_address" id="optionsRadios11" value="0" checked>
+                                    <input type="radio" name="show_address" id="optionsRadios11" value="0" {{ !$element->show_address ? 'checked' : null }}>
                                 </div>
                             </div>
                         </div>
