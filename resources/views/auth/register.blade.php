@@ -94,7 +94,7 @@
                                            name="password_confirmation" required>
                                 </div>
                                 <label for="password-confirm"
-                                       class="col-md-4 col-form-label text-md-right">{{ trans('general.Confirm Password') }}</label>
+                                       class="col-md-4 col-form-label text-md-right">{{ trans('general.confirm_assword') }}</label>
                             </div>
 
 
