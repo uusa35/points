@@ -12,6 +12,8 @@ const mix = require('laravel-mix').mix;
  */
 mix.js('resources/assets/js/app.js', 'public/js').version()
     .sass('resources/assets/sass/app.scss', 'public/css').version();
+mix.styles(['resources/assets/css/frontend-custom-ar.css'], 'public/css/frontend-custom-ar.css').version();
+mix.styles(['resources/assets/css/frontend-custom.css'], 'public/css/frontend-custom.css').version();
 // backend
 mix.styles([
     './node_modules/font-awesome/css/font-awesome.min.css',
@@ -83,7 +85,6 @@ mix.styles([
 
     '../metronic_v4.5.6/theme_rtl/assets/global/css/components-rtl.min.css',
     '../metronic_v4.5.6/theme_rtl/assets/global/css/plugins-rtl.min.css',
-
 
 
     '../metronic_v4.5.6/theme_rtl/assets/pages/css/portfolio-rtl.min.css',
