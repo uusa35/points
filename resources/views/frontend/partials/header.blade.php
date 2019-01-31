@@ -4,7 +4,7 @@
             <form class="form-inline" method="POST" action="{{ route('login') }}">
                 @csrf
                 <div class="form-group mb-4">
-                    <label for="staticEmail2" class="sr-only">Email</label>
+                    <label for="staticEmail2" class="sr-only">{{ trans('general.email') }}</label>
                     <input id="email" type="email"
                            placeholder="{{ trans('general.email') }}"
                            class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
@@ -17,7 +17,7 @@
 
                 </div>
                 <div class="form-group mx-sm-3 mb-4">
-                    <label for="inputPassword2" class="sr-only">Password</label>
+                    <label for="inputPassword2" class="sr-only">{{ trans('general.password') }}</label>
                     <input id="password" type="password"
                            placeholder="{{ trans('general.password') }}"
                            class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
@@ -28,7 +28,7 @@
                                     </span>
                     @endif
                 </div>
-                <button type="submit" class="btn btn-primary mb-3">{{ trans('general.login') }}</button>
+                <button type="submit" class="btn btn-outline-info mb-4">{{ trans('general.login') }}</button>
             </form>
         </div>
     @endif
@@ -48,8 +48,9 @@
                    onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                     <i class="icon-key"></i> {{ trans('general.logout') }} </a>
             @else
-                {{--                        <a href="{{ route('login') }}">{{ trans('general.login') }}</a>--}}
-
+                @if (Route::has('login') || Route::has('register'))
+                    <a href="{{ route('home') }}">{{ trans('general.home') }}</a>
+                @endif
                 @if (Route::has('register'))
                     <a href="{{ route('register') }}">{{ trans('general.register') }}</a>
                 @endif
