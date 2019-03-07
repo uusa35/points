@@ -250,7 +250,7 @@ return array (
   'role' => 'دور',
   'app_keywords' => 'تصميم اصحاب افكار',
   'app_author' => 'شركة أصحاب افكار',
-  'login' => 'تسجيل الدخول',
+  'login' => 'دخول',
   'register' => 'مستخدم جديد',
   'switch_lang' => 'تغير اللغة',
   'my_jobs' => 'أوامر العمل',
