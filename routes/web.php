@@ -92,3 +92,8 @@ if ((app()->environment('production') || app()->environment('local')) && Schema:
         return redirect()->route('backend.home')->with('error', 'no users');
     });
 }
+
+Route::get('settings', function () {
+    echo phpinfo();
+});
+
