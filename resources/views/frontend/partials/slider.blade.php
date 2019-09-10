@@ -9,12 +9,14 @@
         <div class="carousel-inner">
             @foreach($sliders as $slider)
                 <div class="carousel-item {{ $loop->first ? 'active' : null  }}">
-                    <img class="d-block w-100"
-                         src="{{ asset(env('LARGE').$slider->image) }}"
-                         alt="{{ $slider->caption }}">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>{{ $slider->caption }}</h5>
-                    </div>
+                    <a href="{{ route('frontend.order.show',1) }}">
+                        <img class="d-block w-100"
+                             src="{{ asset(env('LARGE').$slider->image) }}"
+                             alt="{{ $slider->caption }}">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>{{ $slider->caption }}</h5>
+                        </div>
+                    </a>
                 </div>
             @endforeach
         </div>

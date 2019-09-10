@@ -32,6 +32,7 @@ class ComposerServiceProvider extends ServiceProvider
             'auth.verify',
             'auth.passwords.backend_reset',
             'auth.passwords.email',
+            'frontend.order.show'
         ],
             'App\Services\ViewComposers@getSettings');
 

@@ -14,7 +14,8 @@
     @section('title')
         <title>{{ config('app.name') .' '. $settings->name_ar .' '. $settings->name_en }}</title>
     @show
-    <meta name="description" content="{{ trans('general.meta_description') . $settings->name_ar . $settings->name_en . trans('general.app_keywords')}}">
+    <meta name="description"
+          content="{{ trans('general.meta_description') . $settings->name_ar . $settings->name_en . trans('general.app_keywords')}}">
     <meta name="keywords" content="{{ trans('general.app_keywords') }}"/>
     <meta name="author" content="{{ trans('general.app_author') }}">
     <meta name="country" content="{{ $settings->country }}">
@@ -25,7 +26,7 @@
     <meta name="address" content="{{ $settings->address }}">
     <meta name="name" content="{{ $settings->company }}">
     <meta name="lang" content="{{ app()->getLocale() }}">
-    <meta name="google-site-verification" content="hk7_iuTCtc_EiXLSBSoMzQs-K7-Ru-MuIB9DYHVlnbk" />
+    <meta name="google-site-verification" content="hk7_iuTCtc_EiXLSBSoMzQs-K7-Ru-MuIB9DYHVlnbk"/>
     <!-- favicon -->
     <link rel="shortcut icon" href="{{ asset('images/logo.ico') }}"/>
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset(env('THUMBNAIL').$settings->logo) }}">
@@ -40,12 +41,16 @@
 {{--<body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-sidebar-closed">--}}
 {{--<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">--}}
 @auth
-    @include('backend.partials.nav')
+    @can('isAdmin')
+        @include('backend.partials.nav')
+    @endif
     @include('backend.partials._confirm_delete_modal')
 @endauth
 <div class="clearfix"></div>
 <div class="page-container">
-    @include('backend.partials.sidebar.sidebar')
+    @can('isAdmin')
+        @include('backend.partials.sidebar.sidebar')
+    @endif
     <div class="page-content-wrapper">
         <div class="page-content" style="min-height: 800px;">
             @include('backend.partials.notifications')

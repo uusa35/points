@@ -14,10 +14,15 @@
 </head>
 <body>
 <div class="container-fluid">
-    <div class="row">
-        @include('frontend.partials.header')
-    </div>
-    @include('frontend.partials.main_links')
+    @can('isAdmin')
+        <div class="row">
+            @include('frontend.partials.header')
+        </div>
+        @include('frontend.partials.main_links')
+    @endcan
+        <div class="col-12">
+            @include('backend.partials.notifications')
+        </div>
     <div class="row justify-content-md-center">
         @include('frontend.partials.slider')
     </div>

@@ -17,6 +17,7 @@
     <div class="row">
         @include('frontend.partials.header')
     </div>
+    @can('isAdmin')
     @include('frontend.partials.main_links')
     @section('content')
         @show

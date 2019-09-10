@@ -18,7 +18,7 @@
             @elsecan('onlyDesigner')
                 @include('backend.partials.sidebar._designer_sidebar')
             @elseif('onlyClient')
-                @include('backend.partials.sidebar._client_sidebar')
+{{--                @include('backend.partials.sidebar._client_sidebar')--}}
             @endcan
         </ul>
         <!-- END SIDEBAR MENU -->

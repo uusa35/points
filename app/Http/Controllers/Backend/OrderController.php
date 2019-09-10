@@ -77,15 +77,17 @@ class OrderController extends Controller
     public function store(OrderStore $request)
     {
         $service = Service::whereId(session()->get('service_id'))->first();
-        $request->request->add(['points' => $service->on_sale ? $service->sale_points : $service->points]);
+//        $request->request->add(['points' => $service->on_sale ? $service->sale_points : $service->points]);
+        $request->request->add(['points' => 999]);
         $element = Order::active()->create($request->request->all());
         if ($element) {
             if ($element->is_paid) {
-                return redirect()
-                    ->route('backend.file.create', ['element' => $element, 'type' => 'order', 'id' => $element->id])
-                    ->with('success', trans('message.order_has_been_successfully_created_points_deducted_from_your_balance'));
+                return redirect()->home()->with('success','order created .. thank you for using our service');
+//                return redirect()
+//                    ->route('backend.file.create', ['element' => $element, 'type' => 'order', 'id' => $element->id])
+//                    ->with('success', trans('message.order_has_been_successfully_created_points_deducted_from_your_balance'));
             } else {
-                return redirect()->route('backend.home')->with('error', trans('message.your_balance_is_not_enough'));
+                return redirect()->route('home')->with('error', trans('message.your_balance_is_not_enough'));
             }
         }
         return redirect()->back()->with('error', trans('message.order_failure'));

@@ -1,7 +1,9 @@
 @extends('backend.layouts.app')
 @section('content')
-    @include('backend.partials.breadcrumbs')
-    @include('backend.partials._order_steps')
+    @can('isAdmin')
+        @include('backend.partials.breadcrumbs')
+        @include('backend.partials._order_steps')
+    @endif
     <div class="portlet box blue">
         @include('backend.partials.forms.form_title')
         <div class="portlet-body form">
@@ -42,10 +44,11 @@
                             @endif
                             @include('backend.partials.forms._order_show_phones')
                             <div class="form-actions text-center">
-                                {{--<button type="button" class="btn default">Cancel</button>--}}
-                                <a href="{!! route('backend.home') !!}"
+                                <a href="{!! route('frontend.home') !!}"
                                    class="btn btn-danger">{{ trans('general.cancel') }}</a>
-
+                                <button type="submit"
+                                        class="btn btn-info">{{ trans('general.submit') }}</button>
+                                @can('isAdmin')
                                 <a class="btn btn-info"
                                    data-toggle="modal" href="#" data-target="#order"
                                    data-title="{{ trans('general.confirm_create_order') }}"
@@ -54,6 +57,7 @@
                                 >
                                     <i class="fa fa-fw fa-check-square"></i> {{ trans('general.confirm_create_order') }}
                                 </a>
+                                @endif
                                 <div class="modal fade" id="order" tabindex="-1" role="basic" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">

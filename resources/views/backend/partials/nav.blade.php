@@ -18,6 +18,7 @@
         <!-- END RESPONSIVE MENU TOGGLER -->
         <!-- BEGIN PAGE ACTIONS -->
         <!-- DOC: Remove "hide" class to enable the page header actions -->
+        @can('isAdmin')
         <div class="page-actions">
             <div class="btn-group">
                 <button type="button" class="btn btn-circle btn-info dropdown-toggle" data-toggle="dropdown">
@@ -64,6 +65,7 @@
                 </ul>
             </div>
         </div>
+        @endif
         <!-- END PAGE ACTIONS -->
         <!-- BEGIN PAGE TOP -->
         <div class="page-top">

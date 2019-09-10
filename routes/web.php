@@ -61,6 +61,7 @@ Route::get('/home', 'HomeController@index');
 Route::group(['namespace' => 'Frontend', 'prefix' => 'frontend', 'as' => 'frontend.', 'middleware' => []], function () {
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::resource('order','OrderController')->only(['show','store']);
     Route::get('language/{locale}', 'HomeController@changeLanguage')->name('language.change');
 });
 Auth::routes();

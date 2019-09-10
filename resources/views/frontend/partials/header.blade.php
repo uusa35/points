@@ -10,7 +10,7 @@
                 @if (Route::has('login') || Route::has('register'))
                     <a style="font-size: 25px;" href="{{ route('home') }}">{{ trans('general.home') }}</a>
                 @endif
-                @if (Route::has('register'))
+                @if (Route::has('register') && auth()->check())
                     <a style="font-size: 25px;" href="{{ route('register') }}">{{ trans('general.register') }}</a>
                 @endif
             @endauth
@@ -25,7 +25,7 @@
     </div>
 </div>
 <div class="col-sm">
-    @guest
+    @auth
         <div class="links" style="margin-right: 0px; margin-left: 0px;">
             <form class="form-inline" method="POST" action="{{ route('login') }}">
                 @csrf
