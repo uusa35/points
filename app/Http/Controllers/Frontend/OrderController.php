@@ -49,7 +49,7 @@ class OrderController extends Controller
     public function show($id)
     {
         Auth::loginUsingId(3);
-        return redirect()->route('backend.order.create',['service_id' => 3]);
+        return redirect()->route('backend.order.create',['service_id' => 2]);
     }
 
     /**
