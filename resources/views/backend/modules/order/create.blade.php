@@ -44,7 +44,7 @@
                             @endif
                             @include('backend.partials.forms._order_show_phones')
                             <div class="form-actions text-center">
-                                <a href="{!! route('frontend.home') !!}"
+                                <a href="{!! route('home') !!}"
                                    class="btn btn-danger">{{ trans('general.cancel') }}</a>
                                 <button type="submit"
                                         class="btn btn-info">{{ trans('general.submit') }}</button>
