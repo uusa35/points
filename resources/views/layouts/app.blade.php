@@ -17,7 +17,6 @@
     <div class="row">
         @include('frontend.partials.header')
     </div>
-    @can('isAdmin')
     @include('frontend.partials.main_links')
     @section('content')
         @show
@@ -25,7 +24,7 @@
 
 <form id="logout-form" action="{{ url('/logout') }}" method="POST"
       style="display: none;">
-    {{ csrf_field() }}
+    @csrf
 </form>
 <script>
     window.Laravel = <?php echo json_encode([

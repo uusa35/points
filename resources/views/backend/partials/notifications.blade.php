@@ -1,13 +1,13 @@
 @section('notification')
     <div class="row">
-        <div class="col-lg-10 col-lg-push-1">
+        <div class="col-lg-12 text-center center-block">
             @if (isset($success) || $success = session()->get('success'))
                 <div class="alert alert-success alert-block" role="alert">
                     <div class="row">
                         <div class="col-lg-1">
                             <i class="fa fa-2x fa-check-circle-o fa-fw"></i>
                         </div>
-                        <div class="col-lg-11">
+                        <div class="col-lg-11 text-center">
                             <button type="button" class="close" data-dismiss="alert">&times;</button>
                             @if(is_array($success))
                                 @foreach ($success as $m)

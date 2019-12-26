@@ -1,4 +1,12 @@
 @extends('backend.layouts.app')
+@section('styles')
+    @parent
+    <style>
+        .page-header-fixed .page-container {
+            margin-top : 0px;
+        }
+    </style>
+    @endsection
 @section('content')
     @can('isAdmin')
         @include('backend.partials.breadcrumbs')

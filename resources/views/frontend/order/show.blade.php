@@ -2,6 +2,7 @@
 @section('content')
 {{--    @include('backend.partials.breadcrumbs')--}}
 {{--    @include('backend.partials._order_steps')--}}
+<div class="portlet box blue">
     <div class="portlet-body form">
         <form class="horizontal-form" role="form" method="POST" action="{{ route('frontend.order.store') }}"
               id="order-create"
@@ -78,4 +79,5 @@
             </div>
         </form>
     </div>
+</div>
 @endsection

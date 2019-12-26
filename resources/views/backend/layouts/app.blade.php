@@ -37,8 +37,8 @@
 </head>
 
 {{--<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white page-md">--}}
-<body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-md">
-{{--<body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-sidebar-closed">--}}
+{{--<body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-md">--}}
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-sidebar-closed">
 {{--<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">--}}
 @auth
     @can('isAdmin')
@@ -51,14 +51,18 @@
     @can('isAdmin')
         @include('backend.partials.sidebar.sidebar')
     @endif
-    <div class="page-content-wrapper">
-        <div class="page-content" style="min-height: 800px;">
-            @include('backend.partials.notifications')
-            @include('backend.partials._confirm_delete_modal')
-            @section('content')
-            @show
+    @can('isAdmin')
+        <div class="page-content-wrapper">
+            <div class="page-content" style="min-height: 800px;">
+                @endcan
+                @include('backend.partials.notifications')
+                @include('backend.partials._confirm_delete_modal')
+                @section('content')
+                @show
+                @can('isAdmin')
+            </div>
         </div>
-    </div>
+    @endauth
     @include('backend.partials.footer')
 </div>
 @section('scripts')
