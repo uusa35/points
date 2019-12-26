@@ -25,7 +25,7 @@
     </div>
 </div>
 <div class="col-sm">
-    @auth
+    @guest
         <div class="links" style="margin-right: 0px; margin-left: 0px;">
             <form class="form-inline" method="POST" action="{{ route('login') }}">
                 @csrf
@@ -57,6 +57,6 @@
                 <button type="submit" class="btn btn-lg btn-outline-info mb-4">{{ trans('general.login') }}</button>
             </form>
         </div>
-    @endif
+    @endguest
 </div>
 
